@@ -1,0 +1,256 @@
+/* ===== Unified Hero Banner System ===== */
+/* 統一尺寸：桌面 1920x500 / 平板 1024x350 / 手機 768x250 */
+/* 方便更新：修改 --hero-color 即可更換主題色，替換 hero.jpg 可更換背景圖 */
+
+.site-hero {
+  --hero-color: #6366f1;
+  --hero-color-dark: #4338ca;
+  --hero-color-light: #818cf8;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  font-family: 'Segoe UI', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+  margin-top: 52px; /* 避開統一導航 header */
+}
+
+/* 背景層 */
+.site-hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--hero-color-dark) 0%, var(--hero-color) 50%, var(--hero-color-light) 100%);
+  z-index: 1;
+}
+
+/* 背景圖片（可選，hero.jpg 存在時顯示） */
+.site-hero .hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  z-index: 2;
+}
+
+/* 裝飾圖案 */
+.site-hero .hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+  z-index: 3;
+}
+
+/* 大型裝飾圖示 */
+.site-hero .hero-icon {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+  font-size: 280px;
+  color: rgba(255,255,255,0.08);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* 內容層 */
+.site-hero .hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.site-hero .hero-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  width: fit-content;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.site-hero .hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  letter-spacing: -0.5px;
+}
+
+.site-hero .hero-desc {
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin: 0 0 32px 0;
+  max-width: 600px;
+  line-height: 1.7;
+  opacity: 0.92;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.15);
+}
+
+.site-hero .hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.site-hero .hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.site-hero .hero-btn-primary {
+  background: #fff;
+  color: var(--hero-color-dark);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.site-hero .hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.site-hero .hero-btn-outline {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+}
+
+.site-hero .hero-btn-outline:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.7);
+  transform: translateY(-2px);
+}
+
+/* 底部裝飾條 */
+.site-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--hero-color-dark), var(--hero-color-light), var(--hero-color-dark));
+  z-index: 20;
+}
+
+/* ===== 響應式：平板（768px - 1199px） ===== */
+@media (max-width: 1199px) {
+  .site-hero {
+    height: 350px;
+  }
+  .site-hero .hero-icon {
+    font-size: 200px;
+    right: -30px;
+  }
+  .site-hero .hero-content {
+    padding: 0 30px;
+  }
+  .site-hero .hero-title {
+    font-size: 2.2rem;
+  }
+  .site-hero .hero-desc {
+    font-size: 1rem;
+    max-width: 500px;
+  }
+  .site-hero .hero-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== 響應式：手機（<768px） ===== */
+@media (max-width: 767px) {
+  .site-hero {
+    height: 250px;
+    margin-top: 52px;
+  }
+  .site-hero .hero-icon {
+    font-size: 140px;
+    right: -20px;
+    opacity: 0.06;
+  }
+  .site-hero .hero-content {
+    padding: 0 20px;
+    align-items: center;
+    text-align: center;
+  }
+  .site-hero .hero-badge {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+  }
+  .site-hero .hero-title {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  .site-hero .hero-desc {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+    max-width: 100%;
+    line-height: 1.5;
+  }
+  .site-hero .hero-actions {
+    justify-content: center;
+    gap: 10px;
+  }
+  .site-hero .hero-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+}
+
+/* ===== 動畫 ===== */
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.site-hero .hero-badge {
+  animation: heroFadeInUp 0.6s ease-out 0.1s both;
+}
+.site-hero .hero-title {
+  animation: heroFadeInUp 0.6s ease-out 0.2s both;
+}
+.site-hero .hero-desc {
+  animation: heroFadeInUp 0.6s ease-out 0.3s both;
+}
+.site-hero .hero-actions {
+  animation: heroFadeInUp 0.6s ease-out 0.4s both;
+}
+
+/* 深色模式適配 */
+@media (prefers-color-scheme: dark) {
+  .site-hero .hero-bg {
+    filter: brightness(0.85);
+  }
+}

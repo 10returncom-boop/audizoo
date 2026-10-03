@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta name="robots" content="index,follow">
+<meta name="twitter:title" content="卡拉OK評分">
+<meta name="twitter:description" content="卡拉OK評分">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>卡拉OK評分</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a0a2e;color:#fff;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;user-select:none;touch-action:none}
+#game{position:relative;width:100%;max-width:500px;height:100%;display:flex;flex-direction:column;padding:10px;gap:10px}
+#hud{display:flex;justify-content:space-between;font-size:16px}
+#score{color:#ff0;font-weight:bold}
+#combo{color:#0ff;font-weight:bold}
+#best{color:#f80;font-weight:bold}
+#lyrics{text-align:center;font-size:22px;font-weight:bold;min-height:35px;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.5)}
+#pitch-area{flex:1;position:relative;background:#0d0d2b;border:2px solid #333;border-radius:8px;overflow:hidden}
+#pitch-canvas{width:100%;height:100%;display:block}
+#target-indicator{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:14px;color:#888;text-align:right;line-height:1.6}
+#status{text-align:center;font-size:18px;min-height:25px;font-weight:bold}
+#controls{display:flex;gap:10px;justify-content:center}
+.btn{padding:12px 30px;font-size:18px;font-weight:bold;border:none;border-radius:25px;cursor:pointer;transition:all .1s}
+.btn-primary{background:linear-gradient(90deg,#f0f,#0ff);color:#000}
+.btn-primary:active{transform:scale(.95)}
+.btn-secondary{background:#333;color:#fff;border:2px solid #555}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:20px;padding:20px}
+.overlay h1{font-size:34px;background:linear-gradient(90deg,#f0f,#ff0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.overlay p{font-size:15px;color:#aaa;text-align:center;line-height:1.8;max-width:350px}
+.overlay button{padding:14px 40px;font-size:20px;font-weight:bold;border:none;border-radius:30px;background:linear-gradient(90deg,#f0f,#0ff);color:#000;cursor:pointer}
+.overlay .stats{font-size:18px;line-height:2;text-align:center}
+.overlay .stats b{color:#f0f}
+.hidden{display:none!important}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="卡拉OK評分">
+<meta property="og:title" content="卡拉OK評分">
+<meta property="og:description" content="卡拉OK評分">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="音樂遊戲合集20款">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="13-卡拉OK評分.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "音樂遊戲合集20款", "description": "卡拉OK評分", "url": "13-卡拉OK評分.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "卡拉OK評分",
+   "item": "13-卡拉OK評分.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "卡拉OK評分",
+ "name": "卡拉OK評分",
+ "url": "13-卡拉OK評分.html"
+}
+</script>
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <span>分數：<span id="score">0</span></span>
+    <span>連擊：<span id="combo">0</span></span>
+    <span>最高：<span id="best">0</span></span>
+  </div>
+  <div id="lyrics">準備開始</div>
+  <div id="pitch-area">
+    <canvas id="pitch-canvas"></canvas>
+    <div id="target-indicator"></div>
+  </div>
+  <div id="status">點選開始，允許麥克風後唱歌</div>
+  <div id="controls">
+    <button class="btn btn-primary" id="startBtn">開始演唱</button>
+  </div>
+  <div id="startScreen" class="overlay">
+    <h1>卡拉OK評分</h1>
+    <p>對著麥克風唱出顯示的音符！<br>畫面上會顯示目標音高區域<br>你的聲音越接近目標音高，分數越高<br>需要允許麥克風許可權才能遊玩<br>（也可以用哼聲或彈奏樂器）</p>
+    <button id="overlayStart">開始遊戲</button>
+  </div>
+  <div id="endScreen" class="overlay hidden">
+    <h2>演唱結束</h2>
+    <div class="stats">
+      本局分數：<b id="finalScore">0</b><br>
+      最高連擊：<b id="finalCombo">0</b><br>
+      歷史最高：<b id="finalBest">0</b><br>
+      評價：<b id="rank">C</b>
+    </div>
+    <button id="restartBtn">再唱一首</button>
+  </div>
+</div>
+<script>
+const AC=window.AudioContext||window.webkitAudioContext;
+let audioCtx=null,analyser=null,micStream=null,micSource=null;
+const cv=document.getElementById('pitch-canvas');
+const ctx=cv.getContext('2d');
+const NOTE_NAMES=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+const NOTE_FREQS=[];
+for(let i=0;i<60;i++)NOTE_FREQS.push(440*Math.pow(2,(i-33)/12));
+const SONG=[
+  {note:43,dur:1,lyric:'小'},{note:43,dur:1,lyric:'星'},{note:45,dur:1,lyric:'星'},{note:47,dur:1,lyric:'閃'},
+  {note:48,dur:2,lyric:'亮'},{note:47,dur:1,lyric:'天'},{note:45,dur:1,lyric:'空'},{note:43,dur:2,lyric:'中'},
+  {note:40,dur:1,lyric:'好'},{note:40,dur:1,lyric:'像'},{note:43,dur:1,lyric:'有'},{note:45,dur:1,lyric:'隻'},
+  {note:47,dur:2,lyric:'小'},{note:45,dur:1,lyric:'船'},{note:43,dur:3,lyric:'兒'},
+];
+const game={score:0,combo:0,maxCombo:0,running:false,songIdx:0,noteTime:0,currentPitch:0,pitchHistory:[],lastTime:0};
+const scoreEl=document.getElementById('score');
+const comboEl=document.getElementById('combo');
+const lyricsEl=document.getElementById('lyrics');
+const statusEl=document.getElementById('status');
+let best=0;
+try{best=parseInt(localStorage.getItem('karaoke_best')||'0')}catch(e){}
+document.getElementById('best').textContent=best;
+
+function resize(){cv.width=cv.clientWidth*devicePixelRatio;cv.height=cv.clientHeight*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);}
+window.addEventListener('resize',resize);
+
+async function initMic(){
+  try{
+    micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false}});
+    if(!audioCtx)audioCtx=new AC();
+    micSource=audioCtx.createMediaStreamSource(micStream);
+    analyser=audioCtx.createAnalyser();
+    analyser.fftSize=2048;
+    micSource.connect(analyser);
+    return true;
+  }catch(e){
+    statusEl.textContent='無法存取麥克風，請檢查權限';
+    return false;
+  }
+}
+
+function detectPitch(){
+  if(!analyser)return 0;
+  const buf=new Float32Array(analyser.fftSize);
+  analyser.getFloatTimeDomainData(buf);
+  let rms=0;
+  for(let i=0;i<buf.length;i++)rms+=buf[i]*buf[i];
+  rms=Math.sqrt(rms/buf.length);
+  if(rms<.01)return 0;
+  let r1=0,r2=0,r3=0;
+  const N=buf.length;
+  for(let i=0;i<N;i++){
+    r1+=buf[i]*buf[i];
+    if(i<N-1)r2+=buf[i]*buf[i+1];
+    if(i<N-2)r3+=buf[i]*buf[i+2];
+  }
+  const threshold=.95*r1;
+  if(r2>threshold&&r3>threshold)return 0;
+  let minLag=0,maxLag=N-1;
+  for(let i=1;i<N-1;i++){
+    if(buf[i]<buf[i-1]&&buf[i]<buf[i+1]){if(minLag===0)minLag=i;maxLag=i;}
+  }
+  if(maxLag-minLag<10)return 0;
+  let bestCorr=0,bestLag=0;
+  for(let lag=minLag;lag<=maxLag;lag++){
+    let corr=0;
+    for(let i=0;i<N-lag;i++)corr+=buf[i]*buf[i+lag];
+    if(corr>bestCorr){bestCorr=corr;bestLag=lag;}
+  }
+  if(bestLag===0||bestCorr<.3*r1)return 0;
+  return audioCtx.sampleRate/bestLag;
+}
+
+function freqToNoteIdx(freq){
+  if(freq<=0)return -1;
+  return Math.round(12*Math.log2(freq/440)+69)-12;
+}
+
+function draw(){
+  const W=cv.clientWidth,H=cv.clientHeight;
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#0d0d2b';ctx.fillRect(0,0,W,H);
+  const minNote=36,maxNote=60;
+  const noteH=H/(maxNote-minNote);
+  for(let i=0;i<maxNote-minNote;i++){
+    const n=minNote+i;
+    if(n%12===0||n%12===7){ctx.fillStyle='rgba(255,255,255,.05)';ctx.fillRect(0,H-(i+1)*noteH,W,noteH);}
+  }
+  if(game.running&&game.songIdx<SONG.length){
+    const target=SONG[game.songIdx].note;
+    const y=H-(target-minNote)*noteH;
+    ctx.fillStyle='rgba(0,255,255,.2)';
+    ctx.fillRect(0,y-noteH/2,W,noteH);
+    ctx.strokeStyle='#0ff';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
+  }
+  if(game.pitchHistory.length>1){
+    ctx.strokeStyle='#f0f';ctx.lineWidth=2;ctx.beginPath();
+    for(let i=0;i<game.pitchHistory.length;i++){
+      const p=game.pitchHistory[i];
+      if(p<=0)continue;
+      const idx=freqToNoteIdx(p);
+      const x=(i/game.pitchHistory.length)*W;
+      const y=H-(idx-minNote)*noteH;
+      if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+  }
+  if(game.currentPitch>0){
+    const idx=freqToNoteIdx(game.currentPitch);
+    const y=H-(idx-minNote)*noteH;
+    ctx.fillStyle='#ff0';ctx.shadowColor='#ff0';ctx.shadowBlur=10;
+    ctx.beginPath();ctx.arc(W-20,y,6,0,Math.PI*2);ctx.fill();
+    ctx.shadowBlur=0;
+  }
+  const names=[];
+  for(let i=minNote;i<=maxNote;i+=2)names.push({note:i,name:NOTE_NAMES[i%12]+(Math.floor(i/12)-1)});
+  ctx.fillStyle='#666';ctx.font='10px sans-serif';ctx.textAlign='right';
+  names.forEach(n=>{ctx.fillText(n.name,W-5,H-(n.note-minNote)*noteH+3);});
+}
+
+function loop(t){
+  if(!game.running)return;
+  const dt=Math.min((t-game.lastTime)/1000,.1);
+  game.lastTime=t;
+  game.currentPitch=detectPitch();
+  game.pitchHistory.push(game.currentPitch);
+  if(game.pitchHistory.length>100)game.pitchHistory.shift();
+  if(game.songIdx<SONG.length){
+    game.noteTime+=dt;
+    const target=SONG[game.songIdx];
+    lyricsEl.textContent=target.lyric;
+    if(game.currentPitch>0){
+      const playerNote=freqToNoteIdx(game.currentPitch);
+      const diff=Math.abs(playerNote-target.note);
+      if(diff<=1){
+        game.score+=Math.round((2-diff)*10*dt*10);
+        game.combo++;
+        game.maxCombo=Math.max(game.maxCombo,game.combo);
+        statusEl.textContent=diff===0?'完美！':'很好！';
+        statusEl.style.color=diff===0?'#0ff':'#0f0';
+      }else{
+        game.combo=0;
+        statusEl.textContent='繼續加油';
+        statusEl.style.color='#888';
+      }
+    }else{
+      game.combo=0;
+      statusEl.textContent='請發出聲音';
+      statusEl.style.color='#888';
+    }
+    scoreEl.textContent=game.score;
+    comboEl.textContent=game.combo;
+    if(game.noteTime>=target.dur*.8){
+      game.noteTime=0;
+      game.songIdx++;
+      game.pitchHistory=[];
+    }
+  }else{
+    endGame();
+    return;
+  }
+  draw();
+  requestAnimationFrame(loop);
+}
+
+async function startGame(){
+  if(!await initMic())return;
+  if(audioCtx.state==='suspended')await audioCtx.resume();
+  game.score=0;game.combo=0;game.maxCombo=0;game.songIdx=0;game.noteTime=0;game.pitchHistory=[];game.currentPitch=0;
+  scoreEl.textContent=0;comboEl.textContent=0;
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('endScreen').classList.add('hidden');
+  resize();
+  game.running=true;game.lastTime=performance.now();
+  requestAnimationFrame(loop);
+}
+
+function endGame(){
+  game.running=false;
+  if(micStream){micStream.getTracks().forEach(t=>t.stop());micStream=null;}
+  if(game.score>best){best=game.score;try{localStorage.setItem('karaoke_best',best)}catch(e){}}
+  document.getElementById('best').textContent=best;
+  document.getElementById('finalScore').textContent=game.score;
+  document.getElementById('finalCombo').textContent=game.maxCombo;
+  document.getElementById('finalBest').textContent=best;
+  let rank='C';
+  if(game.score>3000)rank='S';
+  else if(game.score>2000)rank='A';
+  else if(game.score>1000)rank='B';
+  document.getElementById('rank').textContent=rank;
+  document.getElementById('endScreen').classList.remove('hidden');
+}
+
+document.getElementById('startBtn').onclick=startGame;
+document.getElementById('overlayStart').onclick=startGame;
+document.getElementById('restartBtn').onclick=startGame;
+resize();
+draw();
+</script>
+</body>
+</html>

@@ -1,0 +1,7476 @@
+{
+  "naming": "P01.004.00.781.000_781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience_20261001_V1.json",
+  "project_code": "P01",
+  "doc_sequence": "004",
+  "jd": "00",
+  "ddc": "781.000",
+  "site_name": "781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience",
+  "site_folder": "D:\\_WWW_325_public\\781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience",
+  "title": "曾侯乙編鐘 — 千古絕響",
+  "lang": "zh-TW",
+  "encoding_issues": false,
+  "garbled": false,
+  "redirect_only": false,
+  "page_count": 13,
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "曾侯乙編鐘 — 千古絕響",
+      "role": "入口頁",
+      "size_bytes": 383344,
+      "tables": 9,
+      "tools": 0
+    },
+    {
+      "file": "index_20260904_V0_backup.html",
+      "title": "曾侯乙編鐘 — 千古絕響",
+      "role": "子頁面",
+      "size_bytes": 343624,
+      "tables": 9,
+      "tools": 0
+    },
+    {
+      "file": "interactive/01_quiz.html",
+      "title": "主題知識小測驗 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 33225,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/02_memory.html",
+      "title": "翻牌記憶遊戲 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 31702,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/03_timeline.html",
+      "title": "互動時間軸 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 28998,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/04_story.html",
+      "title": "滾動動畫敘事 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 28991,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/05_hotspots.html",
+      "title": "點擊探索熱區 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 29797,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/06_puzzle.html",
+      "title": "滑動拼圖遊戲 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 31744,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/07_dialogue.html",
+      "title": "角色對話模擬器 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 31007,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/08_fortune.html",
+      "title": "隨機籤詩抽取 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 30662,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/09_flashcards.html",
+      "title": "知識卡片翻轉 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 30272,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/10_quest.html",
+      "title": "闖關解謎小遊戲 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 35026,
+      "tables": 0,
+      "tools": 0
+    },
+    {
+      "file": "interactive/index.html",
+      "title": "互動遊戲館 | 曾侯乙編鐘",
+      "role": "子頁面",
+      "size_bytes": 8914,
+      "tables": 0,
+      "tools": 0
+    }
+  ],
+  "navigation": [
+    {
+      "type": "nav",
+      "text": "🏠 Portal",
+      "href": "../../Portal_index.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "📊 Dashboard",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "首頁",
+      "href": "../../Portal_index.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🌐 全部入口",
+      "href": "../../Portal_index.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🏠 325入口",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🔍 搜尋",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🖶 列印",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "⛶ 全螢幕",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🌐 Portal",
+      "href": "../../Portal_index.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🏠 325",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "00首頁",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "01虛擬編鐘演奏臺",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "02五音互動鍵盤",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "03一鐘雙音演示",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "04音域頻譜視覺化",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "05三分損益法",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "06自動演奏樂曲",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "07編鐘結構展示",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "08銘文探索",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "09音律知識問答",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "10參觀指南與成就",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "11十二律半音鍵盤",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "12錄音回放",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "13隨機作曲",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "14和絃演奏",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "15力度變化演奏",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "16節拍器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "17音階練習器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "18速度漸變練習",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "19頻率計算器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "20音階對比器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "21旋宮轉調演示",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "22古今音名對照",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "23五音五行五臟",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "24音樂術語詞典",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "25世界音樂史對比",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "26音高辨識訓練",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "27節奏訓練器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "28音色對比實驗",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "29音樂記憶遊戲",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "30調式辨識",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "31琶音練習器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "32即時轉調器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "33節奏型生成器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "34旋律變換",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "35複節奏練習",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "36即興伴奏機",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "37進階和絃大全",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "38調式音階大全",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "39音程計算器",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "40和絃轉位演示",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "41終止式大全",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "42對位法基礎",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "43音程辨識訓練",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "44和絃聽辨訓練",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "45節奏聽寫",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "46旋律聽寫",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "47音樂家小測驗",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "48樂器家族圖鑑",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "49音樂時期導覽",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "50視唱練習",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "51曾侯乙墓樂器全覽",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "52編磬互動演奏",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "53古代弦樂器圖鑑",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "54古代管樂器圖鑑",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "55失傳樂器探秘",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "56古代音樂家名人堂",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "57十大名曲故事",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "58樂聖師曠傳奇",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "59周代樂隊編制",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "60八音分類互動",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "知識小測驗",
+      "href": "interactive/01_quiz.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "翻牌記憶",
+      "href": "interactive/02_memory.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "互動時間軸",
+      "href": "interactive/03_timeline.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "滾動敘事",
+      "href": "interactive/04_scroll.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "點擊探索",
+      "href": "interactive/05_explorer.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "拼圖遊戲",
+      "href": "interactive/06_puzzle.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "對話模擬",
+      "href": "interactive/07_dialogue.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "隨機籤詩",
+      "href": "interactive/08_fortune.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "知識卡片",
+      "href": "interactive/09_flashcards.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "闖關解謎",
+      "href": "interactive/10_quest.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "進入互動專區入口",
+      "href": "interactive/index.html",
+      "meta": "",
+      "file": "index.html"
+    }
+  ],
+  "css_variables": [
+    {
+      "name": "--bronze-deep",
+      "value": "#141817",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--bronze-dark",
+      "value": "#1a1f1e",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--bronze-mid",
+      "value": "#252c2a",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--bronze-light",
+      "value": "#343d3a",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--patina",
+      "value": "#5a7a6a",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--patina-light",
+      "value": "#7ba38f",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--vermilion",
+      "value": "#a33a2a",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--vermilion-bright",
+      "value": "#c44a3a",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--gold",
+      "value": "#c9a96a",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--gold-bright",
+      "value": "#dcc080",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--ivory",
+      "value": "#e8e0d0",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--ivory-dim",
+      "value": "#b8b0a0",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--ink",
+      "value": "#0d0f0e",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--sidebar-w",
+      "value": "280px",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-primary",
+      "value": "#6366f1",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-accent",
+      "value": "#ec4899",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-success",
+      "value": "#22c55e",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-bg",
+      "value": "rgba(15,18,35,.92)",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-fg",
+      "value": "#e2e8f0",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-muted",
+      "value": "#94a3b8",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-border",
+      "value": "rgba(255,255,255,.12)",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-radius",
+      "value": "12px",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-shadow",
+      "value": "0 8px 32px rgba(0,0,0,.35)",
+      "sources": [
+        "index.html"
+      ]
+    }
+  ],
+  "js_constants": [
+    {
+      "name": "devtoolsOpen",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "threshold",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "activeOscillators",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "harmonics",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "gain",
+        "ratio",
+        "type"
+      ],
+      "sample": "{ratio:1, gain:0.5, type:'sine'},\r\n    {ratio:2.76, gain:0.25, type:'sine'},\r\n    {ratio:5.4, gain:0.12, type:'sine'},\r\n    {ratio:8.93, gain:0.06, type:'sine'},\r\n    {ratio:0.5, gain:0.15, type:'tria",
+      "pipe": false
+    },
+    {
+      "name": "routes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 61,
+      "fields": [],
+      "sample": "home | bell-play | pentatonic",
+      "pipe": false
+    },
+    {
+      "name": "bellNotes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 9,
+      "fields": [
+        "key",
+        "name",
+        "note"
+      ],
+      "sample": "{note:'C3',name:'宮',key:'a'},{note:'D3',name:'商',key:'s'},{note:'E3',name:'角',key:'d'},\r\n  {note:'F3',name:'清角',key:'f'},{note:'G3',name:'徵',key:'g'},{note:'A3',name:'羽',key:'h'},\r\n  {note:'B3',name:'",
+      "pipe": false
+    },
+    {
+      "name": "pentatonic",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "color",
+        "freq",
+        "name",
+        "sol",
+        "wuxing",
+        "zang"
+      ],
+      "sample": "{name:'宮',sol:'do',freq:261.63,wuxing:'土',zang:'脾',color:'#c9a96a'},\r\n  {name:'商',sol:'re',freq:293.66,wuxing:'金',zang:'肺',color:'#e8e0d0'},\r\n  {name:'角',sol:'mi',freq:329.63,wuxing:'木',zang:'肝',color",
+      "pipe": false
+    },
+    {
+      "name": "freqs",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "sfNotes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "freq",
+        "len",
+        "method",
+        "name",
+        "ratio"
+      ],
+      "sample": "{name:'宮',ratio:'1/1',freq:261.63,method:'基準',len:81},\r\n  {name:'徵',ratio:'3/2',freq:392.00,method:'益一 (×4/3)',len:108},\r\n  {name:'商',ratio:'9/8',freq:293.66,method:'損一 (×2/3)',len:72},\r\n  {name:'羽',r",
+      "pipe": false
+    },
+    {
+      "name": "compare",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "diff",
+        "eq",
+        "name",
+        "sf"
+      ],
+      "sample": "{name:'宮 (C)',sf:1.000,eq:1.000,diff:0},\r\n    {name:'商 (D)',sf:1.125,eq:1.122,diff:3.9},\r\n    {name:'角 (E)',sf:1.266,eq:1.260,diff:7.7},\r\n    {name:'徵 (G)',sf:1.500,eq:1.498,diff:2.0},\r\n    {name:'羽 (",
+      "pipe": false
+    },
+    {
+      "name": "tracks",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 74,
+      "fields": [
+        "d",
+        "n"
+      ],
+      "sample": "{name:'楚商',desc:'先秦楚國風格樂曲，五聲音階',notes:[\r\n    {n:'G3',d:0.5},{n:'A3',d:0.5},{n:'C4',d:1},{n:'D4',d:0.5},{n:'C4',d:0.5},\r\n    {n:'A3',d:1},{n:'G3',d:0.5},{n:'E3',d:0.5},{n:'G3',d:1},{n:'D3',d:1},\r\n    {",
+      "pipe": false
+    },
+    {
+      "name": "layers",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 9,
+      "fields": [
+        "h",
+        "length",
+        "name",
+        "w"
+      ],
+      "sample": "{title:'上層 · 鈕鐘',count:19,type:'鈕鐘',desc:'體形較小，有鈕可懸掛，音高較高',sizes:Array.from({length:19},(_,i)=>({w:16+i*0.5,h:30+i*2,name:'紐'+(i+1)}))},\r\n    {title:'中層 · 甬鐘',count:33,type:'甬鐘',desc:'體形適中，有甬（柄），為編鐘主體",
+      "pipe": false
+    },
+    {
+      "name": "inscriptionData",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [
+        "desc",
+        "highlight",
+        "tags",
+        "text",
+        "title"
+      ],
+      "sample": "{text:'惟王五十又六祀',highlight:'王五十又六祀',title:'紀年銘文',desc:'記載楚惠王五十六年（公元前433年），楚王為曾侯乙製作鎛鐘。這是確定編鐘年代的關鍵證據。',tags:['紀年','楚惠王','公元前433年']},\r\n  {text:'返自西陽',highlight:'西陽',title:'地名考證',desc:'西陽為曾國都城所在地，在今湖北隨州一帶。",
+      "pipe": false
+    },
+    {
+      "name": "quizData",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [
+        "ans",
+        "exp",
+        "opts",
+        "q"
+      ],
+      "sample": "{q:'曾侯乙編鐘出土於哪一年？',opts:['1968年','1978年','1988年','1998年'],ans:1,exp:'1978年，湖北隨州擂鼓墩曾侯乙墓發掘，出土了全套65件編鐘。'},\r\n  {q:'曾侯乙編鐘共有多少件？',opts:['56件','60件','65件','72件'],ans:2,exp:'全套共65件，包括鈕鐘19件、甬鐘45件、鎛鐘1件。'},\r\n  {q",
+      "pipe": false
+    },
+    {
+      "name": "achievements",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 10,
+      "fields": [
+        "desc",
+        "icon",
+        "id",
+        "name"
+      ],
+      "sample": "{id:'home',name:'初入其境',desc:'瀏覽首頁',icon:'入'},\r\n  {id:'bell-play',name:'叩鐘者',desc:'演奏編鐘',icon:'鐘'},\r\n  {id:'pentatonic',name:'五音通',desc:'體驗五音鍵盤',icon:'音'},\r\n  {id:'dual-tone',name:'雙音曉',desc:'了解一鐘雙音',i",
+      "pipe": false
+    },
+    {
+      "name": "lvlNames",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "黃鐘 | 大呂 | 太簇",
+      "pipe": false
+    },
+    {
+      "name": "lvlNotes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "lvlMonths",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "十一月 | 十二月 | 正月",
+      "pipe": false
+    },
+    {
+      "name": "lvlYinYang",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "陽 | 陰 | 陽",
+      "pipe": false
+    },
+    {
+      "name": "octaves",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 3,
+      "fields": [],
+      "sample": "3 | 4 | 5",
+      "pipe": false
+    },
+    {
+      "name": "recNotes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "currentMelody",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "vols",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "0.08 | 0.12 | 0.18",
+      "pipe": false
+    },
+    {
+      "name": "tempoTerms",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 6,
+      "fields": [
+        "max",
+        "min",
+        "term"
+      ],
+      "sample": "{min:40,max:59,term:'莊板 (Largo)'},{min:60,max:75,term:'行板 (Andante)'},\r\n  {min:76,max:107,term:'中板 (Moderato)'},{min:108,max:139,term:'快板 (Allegro)'},\r\n  {min:140,max:179,term:'急板 (Vivace)'},{min:180,",
+      "pipe": false
+    },
+    {
+      "name": "notes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 15,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "noteIdx",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "noteNames",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "tunings",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 4,
+      "fields": [],
+      "sample": "equal | just | pythagorean",
+      "pipe": false
+    },
+    {
+      "name": "degreeNames",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "宮(C) | 商(D) | 角(E)",
+      "pipe": false
+    },
+    {
+      "name": "wuxingData",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "color",
+        "emotion",
+        "freq",
+        "season",
+        "wuxing",
+        "yin",
+        "zang"
+      ],
+      "sample": "{yin:'宮',wuxing:'土',zang:'脾',color:'#c9a96a',freq:261.63,emotion:'思',season:'長夏'},\r\n    {yin:'商',wuxing:'金',zang:'肺',color:'#e8e0d0',freq:293.66,emotion:'悲',season:'秋'},\r\n    {yin:'角',wuxing:'木',zang:",
+      "pipe": false
+    },
+    {
+      "name": "musicDict",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 20,
+      "fields": [
+        "def",
+        "term"
+      ],
+      "sample": "{term:'宮商角徵羽',def:'中國傳統五聲音階的名稱，對應do re mi sol la。宮為君、商為臣、角為民、徵為事、羽為物。'},\r\n  {term:'十二律',def:'中國古代將八度分為十二個半音的律制，包括黃鐘、大呂、太簇、夾鐘、姑洗、中呂、蕤賓、林鐘、夷則、南呂、無射、應鐘。'},\r\n  {term:'三分損益法',def:'中國古代生律法。將弦長分為三份，去其一（損一）升高",
+      "pipe": false
+    },
+    {
+      "name": "shuffled",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "rtPattern",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "userDurs",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "timbres",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "desc",
+        "name"
+      ],
+      "sample": "{name:'編鐘',desc:'非諧波泛音，金石之聲'},\r\n  {name:'鋼琴',desc:'諧波泛音，渾厚明亮'},\r\n  {name:'小提琴',desc:'諧波豐富，歌唱性強'},\r\n  {name:'笛子',desc:'空靈清越，穿透力強'},\r\n  {name:'古箏',desc:'清脆流暢，餘韻悠長'}",
+      "pipe": false
+    },
+    {
+      "name": "types",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 4,
+      "fields": [],
+      "sample": "triangle | sawtooth | sine",
+      "pipe": false
+    },
+    {
+      "name": "mgSequence",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "mgNotes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "color",
+        "freq",
+        "name"
+      ],
+      "sample": "{name:'宮',freq:261.63,color:'#c9a96a'},\r\n  {name:'商',freq:293.66,color:'#e8e0d0'},\r\n  {name:'角',freq:329.63,color:'#5a7a6a'},\r\n  {name:'徵',freq:392.00,color:'#a33a2a'},\r\n  {name:'羽',freq:440.00,color:",
+      "pipe": false
+    },
+    {
+      "name": "modes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 6,
+      "fields": [
+        "desc",
+        "name",
+        "notes"
+      ],
+      "sample": "{name:'五聲音階',notes:[0,2,4,7,9,12],desc:'純樸和諧，東方韻味'},\r\n  {name:'大調',notes:[0,2,4,5,7,9,11,12],desc:'明亮歡快'},\r\n  {name:'小調',notes:[0,2,3,5,7,8,10,12],desc:'陰鬱憂傷'},\r\n  {name:'多里亞',notes:[0,2,3,5,7,9,10,12",
+      "pipe": false
+    },
+    {
+      "name": "rootIdx",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "transMelody",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "baseIdx",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "rhythmPatterns",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 9,
+      "fields": [
+        "desc",
+        "name",
+        "pattern"
+      ],
+      "sample": "{name:'四拍穩定', pattern:[1,1,1,1], desc:'最基本的4/4拍'},\r\n  {name:'搖滾', pattern:[1,0.5,0.5,1,0.5,0.5], desc:'動感的搖滾節奏'},\r\n  {name:'爵士', pattern:[0.75,0.25,1,0.75,0.25,1], desc:'切分音的爵士感'},\r\n  {name:'倫巴', patt",
+      "pipe": false
+    },
+    {
+      "name": "mtMelody",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "0 | 2 | 4",
+      "pipe": false
+    },
+    {
+      "name": "names",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "C | D | E",
+      "pipe": false
+    },
+    {
+      "name": "accCurrentProg",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "idx",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "modeScales",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [
+        "desc",
+        "formula",
+        "name",
+        "notes"
+      ],
+      "sample": "{name:'伊奧尼亞 (Ionian)',notes:['C','D','E','F','G','A','B','C\\''],formula:'全 全 半 全 全 全 半',desc:'即大調音階，明亮開朗，是西方音樂最基礎的音階。'},\r\n  {name:'多里亞 (Dorian)',notes:['D','E','F','G','A','B','C\\'','D\\''],formula:'全 ",
+      "pipe": false
+    },
+    {
+      "name": "intervalNames",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 13,
+      "fields": [],
+      "sample": "純一度 | 小二度 | 大二度",
+      "pipe": false
+    },
+    {
+      "name": "intervalChars",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 13,
+      "fields": [],
+      "sample": "完全協和 | 極不協和 | 不協和",
+      "pipe": false
+    },
+    {
+      "name": "labels",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 3,
+      "fields": [],
+      "sample": "原位 | 第一轉位 | 第二轉位",
+      "pipe": false
+    },
+    {
+      "name": "rotated",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 1,
+      "fields": [],
+      "sample": "0",
+      "pipe": false
+    },
+    {
+      "name": "cadences",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 6,
+      "fields": [
+        "desc",
+        "name",
+        "prog",
+        "type"
+      ],
+      "sample": "{name:'正格終止 (Authentic Cadence)',prog:['G','C'],desc:'屬和弦到主和弦（V→I），最強的終止感，給人明確的結束感。',type:'強終止'},\r\n  {name:'變格終止 (Plagal Cadence)',prog:['F','C'],desc:'下屬和弦到主和弦（IV→I），又稱「阿門終止」，溫和而莊嚴。',type:'弱終止'},\r\n  ",
+      "pipe": false
+    },
+    {
+      "name": "cfMelodyNotes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 11,
+      "fields": [],
+      "sample": "0 | 2 | 4",
+      "pipe": false
+    },
+    {
+      "name": "counterpoints",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "desc",
+        "intervals",
+        "name"
+      ],
+      "sample": "{name:'第一類：全音符對位',desc:'每個固定旋律音符對應一個對位音符，最基本的對位形式。',intervals:[12,11,9,7,5,4,5,7,9,11,12]},\r\n  {name:'第二類：二分音符對位',desc:'每個固定旋律音符對應兩個對位音符，節奏更活潑。',intervals:[12,11,9,7,5,4,5,7,9,11,12,11]},\r\n  {name:'第三",
+      "pipe": false
+    },
+    {
+      "name": "itEasy",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 6,
+      "fields": [],
+      "sample": "1 | 2 | 3",
+      "pipe": false
+    },
+    {
+      "name": "itMedium",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "1 | 2 | 3",
+      "pipe": false
+    },
+    {
+      "name": "itHard",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "1 | 2 | 3",
+      "pipe": false
+    },
+    {
+      "name": "chordTypes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 7,
+      "fields": [
+        "intervals",
+        "name"
+      ],
+      "sample": "{name:'大三和弦',intervals:[0,4,7]},\r\n  {name:'小三和弦',intervals:[0,3,7]},\r\n  {name:'增三和弦',intervals:[0,4,8]},\r\n  {name:'減三和弦',intervals:[0,3,6]},\r\n  {name:'大七和弦',intervals:[0,4,7,11]},\r\n  {name:'小七和弦',inte",
+      "pipe": false
+    },
+    {
+      "name": "rdPattern",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "mdMelody",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "composerQuestions",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 10,
+      "fields": [
+        "ans",
+        "opts",
+        "q"
+      ],
+      "sample": "{q:'被稱為「音樂之父」，創作了《布蘭登堡協奏曲》的作曲家是？',opts:['巴赫','貝多芬','莫扎特','海頓'],ans:0},\r\n  {q:'「樂聖」貝多芬的《第九交響曲》又稱為？',opts:['命運','田園','合唱','英雄'],ans:2},\r\n  {q:'中國古代「高山流水」的故事與哪位音樂家有關？',opts:['師曠','伯牙','嵇康','李龜年'],ans:1},",
+      "pipe": false
+    },
+    {
+      "name": "instrumentFamilies",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 4,
+      "fields": [
+        "desc",
+        "examples",
+        "icon",
+        "name"
+      ],
+      "sample": "{name:'體鳴樂器 (Idiophone)',icon:'鐘',desc:'樂器本身振動發聲，如編鐘、編磬、木琴、三角鐵。曾侯乙編鐘屬於此類。',examples:['編鐘','編磬','木琴','三角鐵','鈸']},\r\n  {name:'膜鳴樂器 (Membranophone)',icon:'鼓',desc:'通過張緊的膜振動發聲，如各種鼓。曾侯乙墓出土的建鼓、懸鼓屬於此類。',examp",
+      "pipe": false
+    },
+    {
+      "name": "bayinData",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [
+        "examples",
+        "material",
+        "name"
+      ],
+      "sample": "{name:'金',material:'青銅',examples:['編鐘','鎛鐘','鐃','鉦']},\r\n      {name:'石',material:'玉石',examples:['編磬','特磬']},\r\n      {name:'土',material:'陶土',examples:['塤','缶']},\r\n      {name:'革',material:'皮革',examples",
+      "pipe": false
+    },
+    {
+      "name": "musicPeriods",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 7,
+      "fields": [
+        "composers",
+        "desc",
+        "name",
+        "years"
+      ],
+      "sample": "{name:'中世紀',years:'400-1400',desc:'宗教音樂為主，葛麗果聖詠，奧爾加農複調音樂的興起。',composers:['希爾德加德·馮·賓根','佩羅坦','馬肖']},\r\n  {name:'文藝復興',years:'1400-1600',desc:'人文主義興起，複調音樂黃金時代，聲樂主導，器樂逐漸獨立。',composers:['杜費','帕萊斯特里納','拉索',",
+      "pipe": false
+    },
+    {
+      "name": "ssMelody",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "solfegeNames",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "do | re | mi",
+      "pipe": false
+    },
+    {
+      "name": "tombInstruments",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 10,
+      "fields": [
+        "category",
+        "count",
+        "desc",
+        "icon",
+        "name"
+      ],
+      "sample": "{name:'編鐘',category:'金',count:'65件',desc:'青銅鑄造，分三層八組懸掛。上層19件鈕鐘，中層33件甬鐘，下層12件長枚甬鐘+1件鎛鐘。總重2.5噸，音域五個半八度。',icon:'鐘'},\r\n  {name:'編磬',category:'石',count:'32件',desc:'石灰石或大理石磨製，分兩層懸掛於青銅磬架上。每件磬刻有樂律銘文，音色清脆玲瓏，與編",
+      "pipe": false
+    },
+    {
+      "name": "qingNotes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 13,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "ancientStrings",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "desc",
+        "era",
+        "found",
+        "funfact",
+        "name",
+        "strings"
+      ],
+      "sample": "{name:'十弦琴',era:'戰國早期',strings:'10弦',found:'曾侯乙墓（唯一實物）',desc:'目前發現的唯一一件十弦琴，長67厘米，整塊桐木斫成，髹黑漆。十弦制可能是早期琴制向七弦演變的過渡形態。',funfact:'琴面沒有標記音位的「徽」，說明當時按弦取音的技術尚未成熟。'},\r\n  {name:'五弦琴（均鍾木）',era:'戰國早期',strings:'5弦'",
+      "pipe": false
+    },
+    {
+      "name": "ancientWinds",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [
+        "count",
+        "desc",
+        "era",
+        "funfact",
+        "material",
+        "name"
+      ],
+      "sample": "{name:'笙',era:'戰國早期',material:'匏（葫蘆）+竹',count:'6件',desc:'目前發現最早的笙實物，由葫蘆製作笙斗，插入竹製笙管，管端裝有竹製簧片。通過吹氣使簧片振動發聲，可同時吹奏多個音。',funfact:'笙是世界上最早使用「自由簧」的樂器，這一原理後來傳到西方，啟發了19世紀手風琴、口琴和簧風琴的發明。'},\r\n  {name:'排簫',era:'戰國早",
+      "pipe": false
+    },
+    {
+      "name": "lostInstruments",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 6,
+      "fields": [
+        "desc",
+        "era",
+        "name",
+        "status"
+      ],
+      "sample": "{name:'篪（chí）',era:'戰國',status:'曾侯乙墓出土後復原',desc:'閉管橫吹竹管樂器，漢代之後失傳。曾侯乙墓出土2件，是目前唯一實物。音色低沉渾厚，與笛完全不同。'},\r\n  {name:'築（zhù）',era:'戰國至漢',status:'完全失傳',desc:'古代擊弦樂器，形如琴，用竹尺擊弦發聲。高漸離擊築刺秦王的故事家喻戶曉。宋代以後完全失傳，形制眾說紛紜。",
+      "pipe": false
+    },
+    {
+      "name": "ancientMusicians",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [
+        "desc",
+        "era",
+        "name",
+        "title"
+      ],
+      "sample": "{name:'師曠',era:'春秋·晉國',title:'樂聖',desc:'盲人樂師，官至太宰。精於音律，能辨吉凶之音。傳說演奏《清角》可招來風雨，用琴砸昏君，以音樂諫政。「樂與政通」思想的創始者。'},\r\n  {name:'伯牙',era:'春秋·楚國',title:'琴仙',desc:'著名琴師，師從成連先生。「高山流水」遇知音鍾子期的故事千古流傳。子期死後，伯牙摔琴絕弦，終身不復鼓琴。'",
+      "pipe": false
+    },
+    {
+      "name": "famousMelodies",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 10,
+      "fields": [
+        "era",
+        "instrument",
+        "name",
+        "story"
+      ],
+      "sample": "{name:'《高山流水》',story:'伯牙彈琴，志在高山，鍾子期曰「巍巍乎若泰山」；志在流水，子期曰「洋洋乎若江河」。子期死，伯牙摔琴絕弦，終身不復鼓琴。',era:'春秋',instrument:'古琴'},\r\n  {name:'《廣陵散》',story:'嵇康臨刑東市，神氣不變，索琴彈之，奏《廣陵散》。曲終歎曰：「袁孝尼嘗請學此散，吾靳固不與，《廣陵散》於今絕矣！」時年四十。',era:",
+      "pipe": false
+    },
+    {
+      "name": "shikuangStories",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 4,
+      "fields": [
+        "content",
+        "title"
+      ],
+      "sample": "{title:'「清角」傳說：一曲招來風雨',content:'晉平公請師曠演奏《清徵》，師曠一奏，有玄鶴二隻從南方飛來，集於廊門；再奏，玄鶴排列成行；三奏，玄鶴延頸而鳴，舒翼而舞。平公大驚，問有沒有更悲愴的曲子。師曠說有《清角》，但這是黃帝在泰山會合鬼神時所奏，德薄者不可聽。平公強求，師曠不得已奏之。一奏，有白雲從西北起；再奏，大風至而大雨隨之，裂帷幕，破俎豆，墮廊瓦。坐者散走，平公恐懼，伏於廊",
+      "pipe": false
+    },
+    {
+      "name": "noteFreq",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const noteFreq = {\r\n  'C2':65.41,'D2':73.42,'E2':82.41,'F2':87.31,'G2':98.00,'A2':110.00,'B2':123.47,\r\n  'C3':130.81,'D3':146.83,'E3':164.81,'F3':174.61,'G3':196.00,'A3':220.00,'B3':246.94,\r\n  'C4':26",
+      "pipe": false
+    },
+    {
+      "name": "scaleNotes",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const scaleNotes = {\r\n  pentatonic: ['C4','D4','E4','G4','A4','C5','D5','E5'],\r\n  diatonic: ['C4','D4','E4','F4','G4','A4','B4','C5'],\r\n  minor: ['A3','B3','C4','D4','E4','F4','G4','A4'],\r\n  blues: ['",
+      "pipe": false
+    },
+    {
+      "name": "moodConfig",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const moodConfig = {\r\n  calm: {repeat:0.4, jump:0.2, rhythm:[0.5,0.5,1,1]},\r\n  joyful: {repeat:0.2, jump:0.5, rhythm:[0.25,0.25,0.5,0.5]},\r\n  solemn: {repeat:0.5, jump:0.1, rhythm:[1,1,2,1]},\r\n  melan",
+      "pipe": false
+    },
+    {
+      "name": "chords",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const chords = {\r\n  'C': ['C4','E4','G4'], 'Dm': ['D4','F4','A4'], 'Em': ['E4','G4','B4'],\r\n  'F': ['F4','A4','C5'], 'G': ['G4','B4','D5'], 'Am': ['A4','C5','E5'],\r\n  'Bdim': ['B4','D5','F5'], 'C7': [",
+      "pipe": false
+    },
+    {
+      "name": "map",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const map = {'I':'C','IV':'F','V':'G','vi':'Am','ii':'Dm','iii':'Em','vii°':'Bdim'};\r\n  const parts = prog.split('-');\r\n  parts.forEach((p,i)=>{\r\n    setTimeout(()=>playChord(map[p]||'C'), i*800);\r\n  ",
+      "pipe": false
+    },
+    {
+      "name": "spScales",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const spScales = {\r\n  pentatonic: ['C4','D4','E4','G4','A4','C5'],\r\n  major: ['C4','D4','E4','F4','G4','A4','B4','C5'],\r\n  minor: ['A3','B3','C4','D4','E4','F4','G4','A4'],\r\n  chromatic: ['C4','C#4','",
+      "pipe": false
+    },
+    {
+      "name": "tuningRatios",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const tuningRatios = {\r\n  equal: [1, Math.pow(2,2/12), Math.pow(2,4/12), Math.pow(2,5/12), Math.pow(2,7/12), Math.pow(2,9/12), Math.pow(2,11/12), 2],\r\n  just: [1, 9/8, 5/4, 4/3, 3/2, 5/3, 15/8, 2],\r\n ",
+      "pipe": false
+    },
+    {
+      "name": "rtPatterns",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const rtPatterns = {\r\n  slow: [500,500,1000,500,500,1000],\r\n  medium: [250,250,500,250,250,500,500,500],\r\n  fast: [200,200,200,400,200,200,200,400]\r\n};\r\nfunction startRhythmTrain(){\r\n  initAudio();\r\n ",
+      "pipe": false
+    },
+    {
+      "name": "arpeggioIntervals",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const arpeggioIntervals = {\r\n  maj:[0,4,7], min:[0,3,7], dim:[0,3,6], aug:[0,4,8],\r\n  maj7:[0,4,7,11], min7:[0,3,7,10], dom7:[0,4,7,10]\r\n};\r\nfunction getArpeggioNotes(){\r\n  const type = document.getEl",
+      "pipe": false
+    },
+    {
+      "name": "accProgressions",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const accProgressions = {\r\n  pop:['C','G','Am','F'], jazz:['Cmaj7','Dm7','G7','Cmaj7'],\r\n  classical:['C','F','G','C'], blues:['C7','F7','C7','G7']\r\n};\r\nlet accCurrentProg = [];\r\n(function(){\r\n  const",
+      "pipe": false
+    },
+    {
+      "name": "advChords",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const advChords = {\r\n  '三和弦':[\r\n    {name:'C',notes:['C','E','G'],desc:'大三和弦，明亮穩定'},\r\n    {name:'Cm',notes:['C','Eb','G'],desc:'小三和弦，柔和憂鬱'},\r\n    {name:'Cdim',notes:['C','Eb','Gb'],desc:'減三和弦，緊張不安'},\r",
+      "pipe": false
+    },
+    {
+      "name": "chordNotesMap",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const chordNotesMap = {\r\n  'C':['C','E','G'],'Am':['A','C','E'],'G':['G','B','D'],'F':['F','A','C'],\r\n  'Dm':['D','F','A'],'Em':['E','G','B'],'Bdim':['B','D','F']\r\n};\r\nfunction showInversions(){\r\n  co",
+      "pipe": false
+    },
+    {
+      "name": "isPlaying",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "i",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "h",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "w",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentFreq",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "minFreq",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "f",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "elapsed",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "freq",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "quizIdx",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "blackIdx",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "oct",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "html",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "recording",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "beatDur",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "t",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentVolume",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "metroRunning",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "interval",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "x",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "midi",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentTuning",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "baseFreq",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "base",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentGongIdx",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "g",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "ptScore",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "totalDiff",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentTransKey",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "k",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "rgCurrentPattern",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "prLeft",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "beat",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "accPlaying",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "advCurrentTab",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentScaleIdx",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "f1",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "f2",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "inv",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "baseF",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "correct",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "last",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "cqIdx",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "height",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "matches",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "rows",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 3,
+      "fields": [],
+      "sample": "Title | URL | Time",
+      "pipe": false
+    },
+    {
+      "name": "uu",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "var uu={\r\n    lang:'zh',\r\n    fontSize:100,\r\n    copyProtect:false,\r\n    dict:{\r\n      zh:{home:'首頁',current:'目前頁面',nav:'導覽',portal:'🌐 全部入口',portal325:'🏠 325入口',\r\n        fav:'我的最愛',recent:'最近造訪',tool",
+      "pipe": false
+    },
+    {
+      "name": "entry",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "var entry={title:document.title,url:location.href,ts:Date.now()};\r\n    var exists=favs.some(function(f){return f.url===entry.url});\r\n    if(exists){\r\n      favs=favs.filter(function(f){return f.url!==",
+      "pipe": false
+    },
+    {
+      "name": "card",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "var card={title:document.title,url:location.href,ts:Date.now()};\r\n    var cards=JSON.parse(localStorage.getItem('uu-cards')||'[]');\r\n    cards.unshift(card);\r\n    if(cards.length>30)cards.pop();\r\n    ",
+      "pipe": false
+    },
+    {
+      "name": "devtoolsOpen",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "threshold",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "activeOscillators",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "harmonics",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "gain",
+        "ratio",
+        "type"
+      ],
+      "sample": "{ratio:1, gain:0.5, type:'sine'},\n    {ratio:2.76, gain:0.25, type:'sine'},\n    {ratio:5.4, gain:0.12, type:'sine'},\n    {ratio:8.93, gain:0.06, type:'sine'},\n    {ratio:0.5, gain:0.15, type:'triangle",
+      "pipe": false
+    },
+    {
+      "name": "routes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 61,
+      "fields": [],
+      "sample": "home | bell-play | pentatonic",
+      "pipe": false
+    },
+    {
+      "name": "bellNotes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 9,
+      "fields": [
+        "key",
+        "name",
+        "note"
+      ],
+      "sample": "{note:'C3',name:'宮',key:'a'},{note:'D3',name:'商',key:'s'},{note:'E3',name:'角',key:'d'},\n  {note:'F3',name:'清角',key:'f'},{note:'G3',name:'徵',key:'g'},{note:'A3',name:'羽',key:'h'},\n  {note:'B3',name:'變宮",
+      "pipe": false
+    },
+    {
+      "name": "pentatonic",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "color",
+        "freq",
+        "name",
+        "sol",
+        "wuxing",
+        "zang"
+      ],
+      "sample": "{name:'宮',sol:'do',freq:261.63,wuxing:'土',zang:'脾',color:'#c9a96a'},\n  {name:'商',sol:'re',freq:293.66,wuxing:'金',zang:'肺',color:'#e8e0d0'},\n  {name:'角',sol:'mi',freq:329.63,wuxing:'木',zang:'肝',color:'",
+      "pipe": false
+    },
+    {
+      "name": "freqs",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "sfNotes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "freq",
+        "len",
+        "method",
+        "name",
+        "ratio"
+      ],
+      "sample": "{name:'宮',ratio:'1/1',freq:261.63,method:'基準',len:81},\n  {name:'徵',ratio:'3/2',freq:392.00,method:'益一 (×4/3)',len:108},\n  {name:'商',ratio:'9/8',freq:293.66,method:'損一 (×2/3)',len:72},\n  {name:'羽',rati",
+      "pipe": false
+    },
+    {
+      "name": "compare",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "diff",
+        "eq",
+        "name",
+        "sf"
+      ],
+      "sample": "{name:'宮 (C)',sf:1.000,eq:1.000,diff:0},\n    {name:'商 (D)',sf:1.125,eq:1.122,diff:3.9},\n    {name:'角 (E)',sf:1.266,eq:1.260,diff:7.7},\n    {name:'徵 (G)',sf:1.500,eq:1.498,diff:2.0},\n    {name:'羽 (A)',",
+      "pipe": false
+    },
+    {
+      "name": "tracks",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 74,
+      "fields": [
+        "d",
+        "n"
+      ],
+      "sample": "{name:'楚商',desc:'先秦楚國風格樂曲，五聲音階',notes:[\n    {n:'G3',d:0.5},{n:'A3',d:0.5},{n:'C4',d:1},{n:'D4',d:0.5},{n:'C4',d:0.5},\n    {n:'A3',d:1},{n:'G3',d:0.5},{n:'E3',d:0.5},{n:'G3',d:1},{n:'D3',d:1},\n    {n:'",
+      "pipe": false
+    },
+    {
+      "name": "layers",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 9,
+      "fields": [
+        "h",
+        "length",
+        "name",
+        "w"
+      ],
+      "sample": "{title:'上層 · 鈕鐘',count:19,type:'鈕鐘',desc:'體形較小，有鈕可懸掛，音高較高',sizes:Array.from({length:19},(_,i)=>({w:16+i*0.5,h:30+i*2,name:'紐'+(i+1)}))},\n    {title:'中層 · 甬鐘',count:33,type:'甬鐘',desc:'體形適中，有甬（柄），為編鐘主體，",
+      "pipe": false
+    },
+    {
+      "name": "inscriptionData",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [
+        "desc",
+        "highlight",
+        "tags",
+        "text",
+        "title"
+      ],
+      "sample": "{text:'惟王五十又六祀',highlight:'王五十又六祀',title:'紀年銘文',desc:'記載楚惠王五十六年（公元前433年），楚王為曾侯乙製作鎛鐘。這是確定編鐘年代的關鍵證據。',tags:['紀年','楚惠王','公元前433年']},\n  {text:'返自西陽',highlight:'西陽',title:'地名考證',desc:'西陽為曾國都城所在地，在今湖北隨州一帶。說",
+      "pipe": false
+    },
+    {
+      "name": "quizData",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [
+        "ans",
+        "exp",
+        "opts",
+        "q"
+      ],
+      "sample": "{q:'曾侯乙編鐘出土於哪一年？',opts:['1968年','1978年','1988年','1998年'],ans:1,exp:'1978年，湖北隨州擂鼓墩曾侯乙墓發掘，出土了全套65件編鐘。'},\n  {q:'曾侯乙編鐘共有多少件？',opts:['56件','60件','65件','72件'],ans:2,exp:'全套共65件，包括鈕鐘19件、甬鐘45件、鎛鐘1件。'},\n  {q:'",
+      "pipe": false
+    },
+    {
+      "name": "achievements",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 10,
+      "fields": [
+        "desc",
+        "icon",
+        "id",
+        "name"
+      ],
+      "sample": "{id:'home',name:'初入其境',desc:'瀏覽首頁',icon:'入'},\n  {id:'bell-play',name:'叩鐘者',desc:'演奏編鐘',icon:'鐘'},\n  {id:'pentatonic',name:'五音通',desc:'體驗五音鍵盤',icon:'音'},\n  {id:'dual-tone',name:'雙音曉',desc:'了解一鐘雙音',icon",
+      "pipe": false
+    },
+    {
+      "name": "lvlNames",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "黃鐘 | 大呂 | 太簇",
+      "pipe": false
+    },
+    {
+      "name": "lvlNotes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "lvlMonths",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "十一月 | 十二月 | 正月",
+      "pipe": false
+    },
+    {
+      "name": "lvlYinYang",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "陽 | 陰 | 陽",
+      "pipe": false
+    },
+    {
+      "name": "octaves",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 3,
+      "fields": [],
+      "sample": "3 | 4 | 5",
+      "pipe": false
+    },
+    {
+      "name": "recNotes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "currentMelody",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "vols",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "0.08 | 0.12 | 0.18",
+      "pipe": false
+    },
+    {
+      "name": "tempoTerms",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "fields": [
+        "max",
+        "min",
+        "term"
+      ],
+      "sample": "{min:40,max:59,term:'莊板 (Largo)'},{min:60,max:75,term:'行板 (Andante)'},\n  {min:76,max:107,term:'中板 (Moderato)'},{min:108,max:139,term:'快板 (Allegro)'},\n  {min:140,max:179,term:'急板 (Vivace)'},{min:180,ma",
+      "pipe": false
+    },
+    {
+      "name": "notes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 15,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "noteIdx",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "noteNames",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "tunings",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 4,
+      "fields": [],
+      "sample": "equal | just | pythagorean",
+      "pipe": false
+    },
+    {
+      "name": "degreeNames",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "宮(C) | 商(D) | 角(E)",
+      "pipe": false
+    },
+    {
+      "name": "wuxingData",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "color",
+        "emotion",
+        "freq",
+        "season",
+        "wuxing",
+        "yin",
+        "zang"
+      ],
+      "sample": "{yin:'宮',wuxing:'土',zang:'脾',color:'#c9a96a',freq:261.63,emotion:'思',season:'長夏'},\n    {yin:'商',wuxing:'金',zang:'肺',color:'#e8e0d0',freq:293.66,emotion:'悲',season:'秋'},\n    {yin:'角',wuxing:'木',zang:'肝",
+      "pipe": false
+    },
+    {
+      "name": "musicDict",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 20,
+      "fields": [
+        "def",
+        "term"
+      ],
+      "sample": "{term:'宮商角徵羽',def:'中國傳統五聲音階的名稱，對應do re mi sol la。宮為君、商為臣、角為民、徵為事、羽為物。'},\n  {term:'十二律',def:'中國古代將八度分為十二個半音的律制，包括黃鐘、大呂、太簇、夾鐘、姑洗、中呂、蕤賓、林鐘、夷則、南呂、無射、應鐘。'},\n  {term:'三分損益法',def:'中國古代生律法。將弦長分為三份，去其一（損一）升高五度",
+      "pipe": false
+    },
+    {
+      "name": "shuffled",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "rtPattern",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "userDurs",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "timbres",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "desc",
+        "name"
+      ],
+      "sample": "{name:'編鐘',desc:'非諧波泛音，金石之聲'},\n  {name:'鋼琴',desc:'諧波泛音，渾厚明亮'},\n  {name:'小提琴',desc:'諧波豐富，歌唱性強'},\n  {name:'笛子',desc:'空靈清越，穿透力強'},\n  {name:'古箏',desc:'清脆流暢，餘韻悠長'}",
+      "pipe": false
+    },
+    {
+      "name": "types",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 4,
+      "fields": [],
+      "sample": "triangle | sawtooth | sine",
+      "pipe": false
+    },
+    {
+      "name": "mgSequence",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "mgNotes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "color",
+        "freq",
+        "name"
+      ],
+      "sample": "{name:'宮',freq:261.63,color:'#c9a96a'},\n  {name:'商',freq:293.66,color:'#e8e0d0'},\n  {name:'角',freq:329.63,color:'#5a7a6a'},\n  {name:'徵',freq:392.00,color:'#a33a2a'},\n  {name:'羽',freq:440.00,color:'#5a",
+      "pipe": false
+    },
+    {
+      "name": "modes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "fields": [
+        "desc",
+        "name",
+        "notes"
+      ],
+      "sample": "{name:'五聲音階',notes:[0,2,4,7,9,12],desc:'純樸和諧，東方韻味'},\n  {name:'大調',notes:[0,2,4,5,7,9,11,12],desc:'明亮歡快'},\n  {name:'小調',notes:[0,2,3,5,7,8,10,12],desc:'陰鬱憂傷'},\n  {name:'多里亞',notes:[0,2,3,5,7,9,10,12],d",
+      "pipe": false
+    },
+    {
+      "name": "rootIdx",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "transMelody",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "baseIdx",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "rhythmPatterns",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 9,
+      "fields": [
+        "desc",
+        "name",
+        "pattern"
+      ],
+      "sample": "{name:'四拍穩定', pattern:[1,1,1,1], desc:'最基本的4/4拍'},\n  {name:'搖滾', pattern:[1,0.5,0.5,1,0.5,0.5], desc:'動感的搖滾節奏'},\n  {name:'爵士', pattern:[0.75,0.25,1,0.75,0.25,1], desc:'切分音的爵士感'},\n  {name:'倫巴', pattern",
+      "pipe": false
+    },
+    {
+      "name": "mtMelody",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "0 | 2 | 4",
+      "pipe": false
+    },
+    {
+      "name": "names",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "C | D | E",
+      "pipe": false
+    },
+    {
+      "name": "accCurrentProg",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "idx",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "C | C# | D",
+      "pipe": false
+    },
+    {
+      "name": "modeScales",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [
+        "desc",
+        "formula",
+        "name",
+        "notes"
+      ],
+      "sample": "{name:'伊奧尼亞 (Ionian)',notes:['C','D','E','F','G','A','B','C\\''],formula:'全 全 半 全 全 全 半',desc:'即大調音階，明亮開朗，是西方音樂最基礎的音階。'},\n  {name:'多里亞 (Dorian)',notes:['D','E','F','G','A','B','C\\'','D\\''],formula:'全 半",
+      "pipe": false
+    },
+    {
+      "name": "intervalNames",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 13,
+      "fields": [],
+      "sample": "純一度 | 小二度 | 大二度",
+      "pipe": false
+    },
+    {
+      "name": "intervalChars",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 13,
+      "fields": [],
+      "sample": "完全協和 | 極不協和 | 不協和",
+      "pipe": false
+    },
+    {
+      "name": "labels",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 3,
+      "fields": [],
+      "sample": "原位 | 第一轉位 | 第二轉位",
+      "pipe": false
+    },
+    {
+      "name": "rotated",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 1,
+      "fields": [],
+      "sample": "0",
+      "pipe": false
+    },
+    {
+      "name": "cadences",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "fields": [
+        "desc",
+        "name",
+        "prog",
+        "type"
+      ],
+      "sample": "{name:'正格終止 (Authentic Cadence)',prog:['G','C'],desc:'屬和弦到主和弦（V→I），最強的終止感，給人明確的結束感。',type:'強終止'},\n  {name:'變格終止 (Plagal Cadence)',prog:['F','C'],desc:'下屬和弦到主和弦（IV→I），又稱「阿門終止」，溫和而莊嚴。',type:'弱終止'},\n  {n",
+      "pipe": false
+    },
+    {
+      "name": "cfMelodyNotes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 11,
+      "fields": [],
+      "sample": "0 | 2 | 4",
+      "pipe": false
+    },
+    {
+      "name": "counterpoints",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "desc",
+        "intervals",
+        "name"
+      ],
+      "sample": "{name:'第一類：全音符對位',desc:'每個固定旋律音符對應一個對位音符，最基本的對位形式。',intervals:[12,11,9,7,5,4,5,7,9,11,12]},\n  {name:'第二類：二分音符對位',desc:'每個固定旋律音符對應兩個對位音符，節奏更活潑。',intervals:[12,11,9,7,5,4,5,7,9,11,12,11]},\n  {name:'第三類：",
+      "pipe": false
+    },
+    {
+      "name": "itEasy",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "fields": [],
+      "sample": "1 | 2 | 3",
+      "pipe": false
+    },
+    {
+      "name": "itMedium",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "1 | 2 | 3",
+      "pipe": false
+    },
+    {
+      "name": "itHard",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "1 | 2 | 3",
+      "pipe": false
+    },
+    {
+      "name": "chordTypes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 7,
+      "fields": [
+        "intervals",
+        "name"
+      ],
+      "sample": "{name:'大三和弦',intervals:[0,4,7]},\n  {name:'小三和弦',intervals:[0,3,7]},\n  {name:'增三和弦',intervals:[0,4,8]},\n  {name:'減三和弦',intervals:[0,3,6]},\n  {name:'大七和弦',intervals:[0,4,7,11]},\n  {name:'小七和弦',intervals",
+      "pipe": false
+    },
+    {
+      "name": "rdPattern",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "mdMelody",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "composerQuestions",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 10,
+      "fields": [
+        "ans",
+        "opts",
+        "q"
+      ],
+      "sample": "{q:'被稱為「音樂之父」，創作了《布蘭登堡協奏曲》的作曲家是？',opts:['巴赫','貝多芬','莫扎特','海頓'],ans:0},\n  {q:'「樂聖」貝多芬的《第九交響曲》又稱為？',opts:['命運','田園','合唱','英雄'],ans:2},\n  {q:'中國古代「高山流水」的故事與哪位音樂家有關？',opts:['師曠','伯牙','嵇康','李龜年'],ans:1},\n ",
+      "pipe": false
+    },
+    {
+      "name": "instrumentFamilies",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 4,
+      "fields": [
+        "desc",
+        "examples",
+        "icon",
+        "name"
+      ],
+      "sample": "{name:'體鳴樂器 (Idiophone)',icon:'鐘',desc:'樂器本身振動發聲，如編鐘、編磬、木琴、三角鐵。曾侯乙編鐘屬於此類。',examples:['編鐘','編磬','木琴','三角鐵','鈸']},\n  {name:'膜鳴樂器 (Membranophone)',icon:'鼓',desc:'通過張緊的膜振動發聲，如各種鼓。曾侯乙墓出土的建鼓、懸鼓屬於此類。',exampl",
+      "pipe": false
+    },
+    {
+      "name": "bayinData",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [
+        "examples",
+        "material",
+        "name"
+      ],
+      "sample": "{name:'金',material:'青銅',examples:['編鐘','鎛鐘','鐃','鉦']},\n      {name:'石',material:'玉石',examples:['編磬','特磬']},\n      {name:'土',material:'陶土',examples:['塤','缶']},\n      {name:'革',material:'皮革',examples:['",
+      "pipe": false
+    },
+    {
+      "name": "musicPeriods",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 7,
+      "fields": [
+        "composers",
+        "desc",
+        "name",
+        "years"
+      ],
+      "sample": "{name:'中世紀',years:'400-1400',desc:'宗教音樂為主，葛麗果聖詠，奧爾加農複調音樂的興起。',composers:['希爾德加德·馮·賓根','佩羅坦','馬肖']},\n  {name:'文藝復興',years:'1400-1600',desc:'人文主義興起，複調音樂黃金時代，聲樂主導，器樂逐漸獨立。',composers:['杜費','帕萊斯特里納','拉索','",
+      "pipe": false
+    },
+    {
+      "name": "ssMelody",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "solfegeNames",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "do | re | mi",
+      "pipe": false
+    },
+    {
+      "name": "tombInstruments",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 10,
+      "fields": [
+        "category",
+        "count",
+        "desc",
+        "icon",
+        "name"
+      ],
+      "sample": "{name:'編鐘',category:'金',count:'65件',desc:'青銅鑄造，分三層八組懸掛。上層19件鈕鐘，中層33件甬鐘，下層12件長枚甬鐘+1件鎛鐘。總重2.5噸，音域五個半八度。',icon:'鐘'},\n  {name:'編磬',category:'石',count:'32件',desc:'石灰石或大理石磨製，分兩層懸掛於青銅磬架上。每件磬刻有樂律銘文，音色清脆玲瓏，與編鐘",
+      "pipe": false
+    },
+    {
+      "name": "qingNotes",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 13,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "ancientStrings",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "desc",
+        "era",
+        "found",
+        "funfact",
+        "name",
+        "strings"
+      ],
+      "sample": "{name:'十弦琴',era:'戰國早期',strings:'10弦',found:'曾侯乙墓（唯一實物）',desc:'目前發現的唯一一件十弦琴，長67厘米，整塊桐木斫成，髹黑漆。十弦制可能是早期琴制向七弦演變的過渡形態。',funfact:'琴面沒有標記音位的「徽」，說明當時按弦取音的技術尚未成熟。'},\n  {name:'五弦琴（均鍾木）',era:'戰國早期',strings:'5弦',",
+      "pipe": false
+    },
+    {
+      "name": "ancientWinds",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "fields": [
+        "count",
+        "desc",
+        "era",
+        "funfact",
+        "material",
+        "name"
+      ],
+      "sample": "{name:'笙',era:'戰國早期',material:'匏（葫蘆）+竹',count:'6件',desc:'目前發現最早的笙實物，由葫蘆製作笙斗，插入竹製笙管，管端裝有竹製簧片。通過吹氣使簧片振動發聲，可同時吹奏多個音。',funfact:'笙是世界上最早使用「自由簧」的樂器，這一原理後來傳到西方，啟發了19世紀手風琴、口琴和簧風琴的發明。'},\n  {name:'排簫',era:'戰國早期",
+      "pipe": false
+    },
+    {
+      "name": "lostInstruments",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "fields": [
+        "desc",
+        "era",
+        "name",
+        "status"
+      ],
+      "sample": "{name:'篪（chí）',era:'戰國',status:'曾侯乙墓出土後復原',desc:'閉管橫吹竹管樂器，漢代之後失傳。曾侯乙墓出土2件，是目前唯一實物。音色低沉渾厚，與笛完全不同。'},\n  {name:'築（zhù）',era:'戰國至漢',status:'完全失傳',desc:'古代擊弦樂器，形如琴，用竹尺擊弦發聲。高漸離擊築刺秦王的故事家喻戶曉。宋代以後完全失傳，形制眾說紛紜。'",
+      "pipe": false
+    },
+    {
+      "name": "ancientMusicians",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "fields": [
+        "desc",
+        "era",
+        "name",
+        "title"
+      ],
+      "sample": "{name:'師曠',era:'春秋·晉國',title:'樂聖',desc:'盲人樂師，官至太宰。精於音律，能辨吉凶之音。傳說演奏《清角》可招來風雨，用琴砸昏君，以音樂諫政。「樂與政通」思想的創始者。'},\n  {name:'伯牙',era:'春秋·楚國',title:'琴仙',desc:'著名琴師，師從成連先生。「高山流水」遇知音鍾子期的故事千古流傳。子期死後，伯牙摔琴絕弦，終身不復鼓琴。'}",
+      "pipe": false
+    },
+    {
+      "name": "famousMelodies",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 10,
+      "fields": [
+        "era",
+        "instrument",
+        "name",
+        "story"
+      ],
+      "sample": "{name:'《高山流水》',story:'伯牙彈琴，志在高山，鍾子期曰「巍巍乎若泰山」；志在流水，子期曰「洋洋乎若江河」。子期死，伯牙摔琴絕弦，終身不復鼓琴。',era:'春秋',instrument:'古琴'},\n  {name:'《廣陵散》',story:'嵇康臨刑東市，神氣不變，索琴彈之，奏《廣陵散》。曲終歎曰：「袁孝尼嘗請學此散，吾靳固不與，《廣陵散》於今絕矣！」時年四十。',era:'",
+      "pipe": false
+    },
+    {
+      "name": "shikuangStories",
+      "kind": "array",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 4,
+      "fields": [
+        "content",
+        "title"
+      ],
+      "sample": "{title:'「清角」傳說：一曲招來風雨',content:'晉平公請師曠演奏《清徵》，師曠一奏，有玄鶴二隻從南方飛來，集於廊門；再奏，玄鶴排列成行；三奏，玄鶴延頸而鳴，舒翼而舞。平公大驚，問有沒有更悲愴的曲子。師曠說有《清角》，但這是黃帝在泰山會合鬼神時所奏，德薄者不可聽。平公強求，師曠不得已奏之。一奏，有白雲從西北起；再奏，大風至而大雨隨之，裂帷幕，破俎豆，墮廊瓦。坐者散走，平公恐懼，伏於廊",
+      "pipe": false
+    },
+    {
+      "name": "noteFreq",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const noteFreq = {\n  'C2':65.41,'D2':73.42,'E2':82.41,'F2':87.31,'G2':98.00,'A2':110.00,'B2':123.47,\n  'C3':130.81,'D3':146.83,'E3':164.81,'F3':174.61,'G3':196.00,'A3':220.00,'B3':246.94,\n  'C4':261.6",
+      "pipe": false
+    },
+    {
+      "name": "scaleNotes",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const scaleNotes = {\n  pentatonic: ['C4','D4','E4','G4','A4','C5','D5','E5'],\n  diatonic: ['C4','D4','E4','F4','G4','A4','B4','C5'],\n  minor: ['A3','B3','C4','D4','E4','F4','G4','A4'],\n  blues: ['C4',",
+      "pipe": false
+    },
+    {
+      "name": "moodConfig",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const moodConfig = {\n  calm: {repeat:0.4, jump:0.2, rhythm:[0.5,0.5,1,1]},\n  joyful: {repeat:0.2, jump:0.5, rhythm:[0.25,0.25,0.5,0.5]},\n  solemn: {repeat:0.5, jump:0.1, rhythm:[1,1,2,1]},\n  melanchol",
+      "pipe": false
+    },
+    {
+      "name": "chords",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const chords = {\n  'C': ['C4','E4','G4'], 'Dm': ['D4','F4','A4'], 'Em': ['E4','G4','B4'],\n  'F': ['F4','A4','C5'], 'G': ['G4','B4','D5'], 'Am': ['A4','C5','E5'],\n  'Bdim': ['B4','D5','F5'], 'C7': ['C4",
+      "pipe": false
+    },
+    {
+      "name": "map",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const map = {'I':'C','IV':'F','V':'G','vi':'Am','ii':'Dm','iii':'Em','vii°':'Bdim'};\n  const parts = prog.split('-');\n  parts.forEach((p,i)=>{\n    setTimeout(()=>playChord(map[p]||'C'), i*800);\n  });\n",
+      "pipe": false
+    },
+    {
+      "name": "spScales",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const spScales = {\n  pentatonic: ['C4','D4','E4','G4','A4','C5'],\n  major: ['C4','D4','E4','F4','G4','A4','B4','C5'],\n  minor: ['A3','B3','C4','D4','E4','F4','G4','A4'],\n  chromatic: ['C4','C#4','D4',",
+      "pipe": false
+    },
+    {
+      "name": "tuningRatios",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const tuningRatios = {\n  equal: [1, Math.pow(2,2/12), Math.pow(2,4/12), Math.pow(2,5/12), Math.pow(2,7/12), Math.pow(2,9/12), Math.pow(2,11/12), 2],\n  just: [1, 9/8, 5/4, 4/3, 3/2, 5/3, 15/8, 2],\n  py",
+      "pipe": false
+    },
+    {
+      "name": "rtPatterns",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const rtPatterns = {\n  slow: [500,500,1000,500,500,1000],\n  medium: [250,250,500,250,250,500,500,500],\n  fast: [200,200,200,400,200,200,200,400]\n};\nfunction startRhythmTrain(){\n  initAudio();\n  const ",
+      "pipe": false
+    },
+    {
+      "name": "arpeggioIntervals",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const arpeggioIntervals = {\n  maj:[0,4,7], min:[0,3,7], dim:[0,3,6], aug:[0,4,8],\n  maj7:[0,4,7,11], min7:[0,3,7,10], dom7:[0,4,7,10]\n};\nfunction getArpeggioNotes(){\n  const type = document.getElement",
+      "pipe": false
+    },
+    {
+      "name": "accProgressions",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const accProgressions = {\n  pop:['C','G','Am','F'], jazz:['Cmaj7','Dm7','G7','Cmaj7'],\n  classical:['C','F','G','C'], blues:['C7','F7','C7','G7']\n};\nlet accCurrentProg = [];\n(function(){\n  const kb = ",
+      "pipe": false
+    },
+    {
+      "name": "advChords",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const advChords = {\n  '三和弦':[\n    {name:'C',notes:['C','E','G'],desc:'大三和弦，明亮穩定'},\n    {name:'Cm',notes:['C','Eb','G'],desc:'小三和弦，柔和憂鬱'},\n    {name:'Cdim',notes:['C','Eb','Gb'],desc:'減三和弦，緊張不安'},\n    ",
+      "pipe": false
+    },
+    {
+      "name": "chordNotesMap",
+      "kind": "object",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const chordNotesMap = {\n  'C':['C','E','G'],'Am':['A','C','E'],'G':['G','B','D'],'F':['F','A','C'],\n  'Dm':['D','F','A'],'Em':['E','G','B'],'Bdim':['B','D','F']\n};\nfunction showInversions(){\n  const c",
+      "pipe": false
+    },
+    {
+      "name": "isPlaying",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "i",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "h",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "w",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentFreq",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "minFreq",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "f",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "elapsed",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "freq",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "quizIdx",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "blackIdx",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "oct",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "html",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "recording",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "beatDur",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "t",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentVolume",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "metroRunning",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "interval",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "x",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "midi",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentTuning",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "baseFreq",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "base",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentGongIdx",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "g",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "ptScore",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "totalDiff",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentTransKey",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "k",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "rgCurrentPattern",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "prLeft",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "beat",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "accPlaying",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "advCurrentTab",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "currentScaleIdx",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "f1",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "f2",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "inv",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "baseF",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "correct",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "last",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "cqIdx",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "height",
+      "kind": "scalar",
+      "file": "index_20260904_V0_backup.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/01_quiz.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/01_quiz.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N = {\r\n  zh:{title:'主題知識小測驗',subtitle:'測試你對「'+SITE_CONFIG.theme+'」的了解程度！',start:'開始測驗',next:'下一題',scoreLabel:'分',restart:'再測一次',q:'第',of:'題',explanation:'詳解',perfect:'太厲害了！滿分通關！',good:'表現不錯！繼",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/01_quiz.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/02_memory.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/02_memory.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'翻牌記憶遊戲',time:'時間',moves:'步數',pairs:'配對',restart:'重新開始',winTitle:'恭喜通關！',playAgain:'再玩一次',winDetail:'用時 {time}，共 {moves} 步完成！'},\r\n  en:{title:'Memory Match',time:'Time',moves",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/02_memory.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/03_timeline.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/03_timeline.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'互動時間軸',subtitle:'點擊各節點探索「'+SITE_CONFIG.theme+'」的重要時刻',hint:'點擊卡片展開詳細內容'},\r\n  en:{title:'Interactive Timeline',subtitle:'Click nodes to explore key moments of \"'+SITE_CONFIG.",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/03_timeline.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/04_story.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/04_story.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'滾動敘事',scroll:'向下滾動繼續'},\r\n  en:{title:'Scroll Story',scroll:'Scroll down to continue'}\r\n};\r\nlet lang='zh';\r\nfunction t(k){return I18N[lang][k]||k}\r\nfunction toggleLang(){lang",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/04_story.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/05_hotspots.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/05_hotspots.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'點擊探索熱區',found:'已探索',hint:'點擊地圖上的閃亮圓點探索各個熱區'},\r\n  en:{title:'Explore Hotspots',found:'Explored',hint:'Click the glowing dots on the map to explore each hotspot'}\r\n};\r\nlet lan",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/05_hotspots.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "COLORS",
+      "kind": "array",
+      "file": "interactive/06_puzzle.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "#b45309 | #d97706 | #8b5cf6",
+      "pipe": false
+    },
+    {
+      "name": "neighbors",
+      "kind": "array",
+      "file": "interactive/06_puzzle.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/06_puzzle.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/06_puzzle.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'滑動拼圖遊戲',time:'時間',moves:'移動',shuffle:'打亂重來',solve:'顯示解答',winTitle:'拼圖完成！',hint:'點擊空格旁的數字方塊來移動，將數字依序排列',winDetail:'用時 {time}，共 {moves} 步！'},\r\n  en:{title:'Sliding Puzzle',tim",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/06_puzzle.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "i",
+      "kind": "scalar",
+      "file": "interactive/06_puzzle.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/07_dialogue.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/07_dialogue.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'角色對話模擬器',restart:'重新對話'},\r\n  en:{title:'Dialogue Simulator',restart:'Restart'}\r\n};\r\nlet lang='zh',currentNode='start';\r\nfunction t(k){return I18N[lang][k]||k}\r\nfunction togg",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/07_dialogue.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/08_fortune.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/08_fortune.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'隨機籤詩抽取',draw:'抽一支籤',drawn:'已抽',times:'次',meaningLabel:'籤意解讀：'},\r\n  en:{title:'Fortune Drawing',draw:'Draw a Fortune',drawn:'Drawn',times:'times',meaningLabel:'Interpretation",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/08_fortune.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/09_flashcards.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/09_flashcards.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'知識卡片翻轉',total:'共',cards:'張卡片',flipped:'已翻閱',shuffle:'重新洗牌',hint:'點擊翻轉'},\r\n  en:{title:'Flashcards',total:'Total',cards:'cards',flipped:'flipped',shuffle:'Shuffle',hint:'Clic",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/09_flashcards.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CONFIG",
+      "kind": "object",
+      "file": "interactive/10_quest.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const SITE_CONFIG = {\r\n  \"siteName\": \"曾侯乙編鐘\",\r\n  \"siteNameEn\": \"曾侯乙編鐘\",\r\n  \"theme\": \"曾侯乙編鐘\",\r\n  \"themeEn\": \"曾侯乙編鐘\",\r\n  \"primaryColor\": \"#b45309\",\r\n  \"accentColor\": \"#d97706\",\r\n  \"category\": \"history\",",
+      "pipe": false
+    },
+    {
+      "name": "I18N",
+      "kind": "object",
+      "file": "interactive/10_quest.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const I18N={\r\n  zh:{title:'闖關解謎小遊戲',level:'第',check:'確認答案',next:'下一關',restart:'再玩一次',correct:'答對了！',wrong:'答錯了，再試試！',scrambled:'字母打亂了，請排出正確的字',sortHint:'拖曳排列正確順序',riddleHint:'請選擇正確答案',allDone:'全部通關！',",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/10_quest.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "body",
+      "kind": "scalar",
+      "file": "interactive/10_quest.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "lang",
+      "kind": "scalar",
+      "file": "interactive/index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    }
+  ],
+  "js_functions": [
+    {
+      "name": "initAudio",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playBell",
+      "params": [
+        "freq",
+        "duration=3",
+        "volume=0.3"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "stopAll",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "navigate",
+      "params": [
+        "route"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "toggleSidebar",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "createRipple",
+      "params": [
+        "el"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playScale",
+      "params": [
+        "type"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playDual",
+      "params": [
+        "type"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "resizeSpectrum",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "drawSpectrum",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "updateSpectrum",
+      "params": [
+        "freq"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "spectrumDemo",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopSpectrum",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playTrack",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playNext",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopTrack",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "showInscriptionDetail",
+      "params": [
+        "item"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "renderQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "answerQuiz",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "resetQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "renderAchievements",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "unlockAchievement",
+      "params": [
+        "id"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "startRecording",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopRecording",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "recordNote",
+      "params": [
+        "freq"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playRecording",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "clearRecording",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "renderRecTimeline",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "generateMelody",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMelody",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopMelody",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playChord",
+      "params": [
+        "name"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playChordProgression",
+      "params": [
+        "prog"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "setDynamics",
+      "params": [
+        "dyn",
+        "desc",
+        "vol"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playCrescendo",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playDecrescendo",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "getMetroTerm",
+      "params": [
+        "bpm"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "setBPM",
+      "params": [
+        "val"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "adjustBPM",
+      "params": [
+        "delta"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "toggleMetronome",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startMetronome",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "tickMetronome",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopMetronome",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startScalePractice",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopScalePractice",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playTempoChange",
+      "params": [
+        "type"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "stopTempoChange",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "drawTempoCurve",
+      "params": [
+        "type",
+        "start",
+        "end",
+        "progress"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "calcFreq",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playFreqNote",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "calcNote",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "selectTuning",
+      "params": [
+        "t"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playTuningScale",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "compareAll",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "selectGong",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playGongScale",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playAllGong",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "filterDict",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startPitchTrain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "answerPitch",
+      "params": [
+        "note",
+        "btn"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playPitchAgain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playReferenceA",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startRhythmTrain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "tapRhythm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "evaluateRhythm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "renderRtVisual",
+      "params": [
+        "idx",
+        "isUser"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "resetRhythmTrain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playTimbre",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playCurrentTimbre",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startTimbreQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "answerTimbre",
+      "params": [
+        "idx",
+        "btn"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playTimbreAgain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startMemoryGame",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "addMgNote",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMgSequence",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "flashMgButton",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "mgUserTap",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "resetMemoryGame",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMode",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "startModeQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "answerMode",
+      "params": [
+        "idx",
+        "btn"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playModeAgain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "getArpeggioNotes",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playArpeggio",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playArpeggioUp",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playArpeggioDown",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playArpeggioUpDown",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playArpSequence",
+      "params": [
+        "dir"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "updateTransMelodyDisplay",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playTransposedMelody",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playAllKeys",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "renderRhythmVisual",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "toggleRhythmPattern",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startRhythmPattern",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playRhythmLoop",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopRhythmPattern",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "randomizeRhythm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "updateMTDisplay",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMelodyOriginal",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMelodyReverse",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMelodyInversion",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMelodyRetroInv",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMelodySeq",
+      "params": [
+        "seq"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "changePR",
+      "params": [
+        "hand",
+        "delta"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "renderPRVisual",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "gcd",
+      "params": [
+        "a",
+        "b"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "togglePolyrhythm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startPolyrhythm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "tick",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopPolyrhythm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "resetPolyrhythm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "newAccProgression",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "toggleAccompaniment",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startAccompaniment",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playAccLoop",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "stopAccompaniment",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "renderAdvChords",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "showAdvChord",
+      "params": [
+        "chord"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "showScaleDetail",
+      "params": [
+        "s"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playCurrentScale",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "noteToMidi",
+      "params": [
+        "n"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "calcInterval",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playInterval",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "showInversions",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playInversionChord",
+      "params": [
+        "notesStr"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playCadence",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playCantusFirmus",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playCounterpoint",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "startIntervalTrain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "answerInterval",
+      "params": [
+        "semi",
+        "btn"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playIntervalAgain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startChordTrain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "answerChord",
+      "params": [
+        "ct",
+        "btn"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playChordAgain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startRhythmDictation",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "rdTap",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "checkRhythmDictation",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startMelodyDictation",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMelodyDictationAgain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "mdUserTap",
+      "params": [
+        "interval"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "checkMelodyDictation",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "resetMelodyDictation",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startComposerQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "renderComposerQuestion",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "answerComposer",
+      "params": [
+        "idx",
+        "btn"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "nextComposerQuestion",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "showPeriodDetail",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "newSightSinging",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playSightSinging",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playSightSingingSlow",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playSSMelody",
+      "params": [
+        "speed"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playQing",
+      "params": [
+        "freq"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playChi",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "showBayinDetail",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "getNote",
+      "params": [
+        "i"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "updateBreadcrumb",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "uuRenderFav",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "uuBlockCopy",
+      "params": [
+        "e"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "uuBlockCtx",
+      "params": [
+        "e"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "initAudio",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playBell",
+      "params": [
+        "freq",
+        "duration=3",
+        "volume=0.3"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopAll",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "navigate",
+      "params": [
+        "route"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "toggleSidebar",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "createRipple",
+      "params": [
+        "el"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playScale",
+      "params": [
+        "type"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playDual",
+      "params": [
+        "type"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "resizeSpectrum",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "drawSpectrum",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "updateSpectrum",
+      "params": [
+        "freq"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "spectrumDemo",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopSpectrum",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playTrack",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playNext",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopTrack",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "showInscriptionDetail",
+      "params": [
+        "item"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "renderQuiz",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "answerQuiz",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "resetQuiz",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "renderAchievements",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "unlockAchievement",
+      "params": [
+        "id"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startRecording",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopRecording",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "recordNote",
+      "params": [
+        "freq"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playRecording",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "clearRecording",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "renderRecTimeline",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "generateMelody",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMelody",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopMelody",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playChord",
+      "params": [
+        "name"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playChordProgression",
+      "params": [
+        "prog"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "setDynamics",
+      "params": [
+        "dyn",
+        "desc",
+        "vol"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playCrescendo",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playDecrescendo",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "getMetroTerm",
+      "params": [
+        "bpm"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "setBPM",
+      "params": [
+        "val"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "adjustBPM",
+      "params": [
+        "delta"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "toggleMetronome",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startMetronome",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "tickMetronome",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopMetronome",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startScalePractice",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopScalePractice",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playTempoChange",
+      "params": [
+        "type"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopTempoChange",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "drawTempoCurve",
+      "params": [
+        "type",
+        "start",
+        "end",
+        "progress"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "calcFreq",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playFreqNote",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "calcNote",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "selectTuning",
+      "params": [
+        "t"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playTuningScale",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "compareAll",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "selectGong",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playGongScale",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playAllGong",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "filterDict",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startPitchTrain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "answerPitch",
+      "params": [
+        "note",
+        "btn"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playPitchAgain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playReferenceA",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startRhythmTrain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "tapRhythm",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "evaluateRhythm",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "renderRtVisual",
+      "params": [
+        "idx",
+        "isUser"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "resetRhythmTrain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playTimbre",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playCurrentTimbre",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startTimbreQuiz",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "answerTimbre",
+      "params": [
+        "idx",
+        "btn"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playTimbreAgain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startMemoryGame",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "addMgNote",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMgSequence",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "flashMgButton",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "mgUserTap",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "resetMemoryGame",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMode",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startModeQuiz",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "answerMode",
+      "params": [
+        "idx",
+        "btn"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playModeAgain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "getArpeggioNotes",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playArpeggio",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playArpeggioUp",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playArpeggioDown",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playArpeggioUpDown",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playArpSequence",
+      "params": [
+        "dir"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "updateTransMelodyDisplay",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playTransposedMelody",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playAllKeys",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "renderRhythmVisual",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "toggleRhythmPattern",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startRhythmPattern",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playRhythmLoop",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopRhythmPattern",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "randomizeRhythm",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "updateMTDisplay",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMelodyOriginal",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMelodyReverse",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMelodyInversion",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMelodyRetroInv",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMelodySeq",
+      "params": [
+        "seq"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "changePR",
+      "params": [
+        "hand",
+        "delta"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "renderPRVisual",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "gcd",
+      "params": [
+        "a",
+        "b"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "togglePolyrhythm",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startPolyrhythm",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "tick",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopPolyrhythm",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "resetPolyrhythm",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "newAccProgression",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "toggleAccompaniment",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startAccompaniment",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playAccLoop",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "stopAccompaniment",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "renderAdvChords",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "showAdvChord",
+      "params": [
+        "chord"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "showScaleDetail",
+      "params": [
+        "s"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playCurrentScale",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "noteToMidi",
+      "params": [
+        "n"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "calcInterval",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playInterval",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "showInversions",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playInversionChord",
+      "params": [
+        "notesStr"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playCadence",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playCantusFirmus",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playCounterpoint",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startIntervalTrain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "answerInterval",
+      "params": [
+        "semi",
+        "btn"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playIntervalAgain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startChordTrain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "answerChord",
+      "params": [
+        "ct",
+        "btn"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playChordAgain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startRhythmDictation",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "rdTap",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "checkRhythmDictation",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startMelodyDictation",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playMelodyDictationAgain",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "mdUserTap",
+      "params": [
+        "interval"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "checkMelodyDictation",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "resetMelodyDictation",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "startComposerQuiz",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "renderComposerQuestion",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "answerComposer",
+      "params": [
+        "idx",
+        "btn"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "nextComposerQuestion",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "showPeriodDetail",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "newSightSinging",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playSightSinging",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playSightSingingSlow",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playSSMelody",
+      "params": [
+        "speed"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playQing",
+      "params": [
+        "freq"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "playChi",
+      "params": [],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "showBayinDetail",
+      "params": [
+        "idx"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "getNote",
+      "params": [
+        "i"
+      ],
+      "file": "index_20260904_V0_backup.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/01_quiz.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/01_quiz.html"
+    },
+    {
+      "name": "startQuiz",
+      "params": [],
+      "file": "interactive/01_quiz.html"
+    },
+    {
+      "name": "renderQuestion",
+      "params": [],
+      "file": "interactive/01_quiz.html"
+    },
+    {
+      "name": "selectAnswer",
+      "params": [
+        "idx",
+        "el"
+      ],
+      "file": "interactive/01_quiz.html"
+    },
+    {
+      "name": "nextQuestion",
+      "params": [],
+      "file": "interactive/01_quiz.html"
+    },
+    {
+      "name": "showResult",
+      "params": [],
+      "file": "interactive/01_quiz.html"
+    },
+    {
+      "name": "restartQuiz",
+      "params": [],
+      "file": "interactive/01_quiz.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/02_memory.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/02_memory.html"
+    },
+    {
+      "name": "shuffle",
+      "params": [
+        "arr"
+      ],
+      "file": "interactive/02_memory.html"
+    },
+    {
+      "name": "initGame",
+      "params": [],
+      "file": "interactive/02_memory.html"
+    },
+    {
+      "name": "startTimer",
+      "params": [],
+      "file": "interactive/02_memory.html"
+    },
+    {
+      "name": "flipCard",
+      "params": [
+        "el"
+      ],
+      "file": "interactive/02_memory.html"
+    },
+    {
+      "name": "winGame",
+      "params": [],
+      "file": "interactive/02_memory.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/03_timeline.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/03_timeline.html"
+    },
+    {
+      "name": "renderTimeline",
+      "params": [],
+      "file": "interactive/03_timeline.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/04_story.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/04_story.html"
+    },
+    {
+      "name": "renderChapters",
+      "params": [],
+      "file": "interactive/04_story.html"
+    },
+    {
+      "name": "observeChapters",
+      "params": [],
+      "file": "interactive/04_story.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/05_hotspots.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/05_hotspots.html"
+    },
+    {
+      "name": "renderHotspots",
+      "params": [],
+      "file": "interactive/05_hotspots.html"
+    },
+    {
+      "name": "showInfo",
+      "params": [
+        "idx",
+        "dot"
+      ],
+      "file": "interactive/05_hotspots.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/06_puzzle.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/06_puzzle.html"
+    },
+    {
+      "name": "initBoard",
+      "params": [],
+      "file": "interactive/06_puzzle.html"
+    },
+    {
+      "name": "render",
+      "params": [],
+      "file": "interactive/06_puzzle.html"
+    },
+    {
+      "name": "moveTile",
+      "params": [
+        "idx"
+      ],
+      "file": "interactive/06_puzzle.html"
+    },
+    {
+      "name": "checkWin",
+      "params": [],
+      "file": "interactive/06_puzzle.html"
+    },
+    {
+      "name": "shufflePuzzle",
+      "params": [],
+      "file": "interactive/06_puzzle.html"
+    },
+    {
+      "name": "solvePuzzle",
+      "params": [],
+      "file": "interactive/06_puzzle.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/07_dialogue.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/07_dialogue.html"
+    },
+    {
+      "name": "addMsg",
+      "params": [
+        "text",
+        "isPlayer"
+      ],
+      "file": "interactive/07_dialogue.html"
+    },
+    {
+      "name": "showChoices",
+      "params": [
+        "node"
+      ],
+      "file": "interactive/07_dialogue.html"
+    },
+    {
+      "name": "startDialogue",
+      "params": [],
+      "file": "interactive/07_dialogue.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/08_fortune.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/08_fortune.html"
+    },
+    {
+      "name": "drawFortune",
+      "params": [],
+      "file": "interactive/08_fortune.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/09_flashcards.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/09_flashcards.html"
+    },
+    {
+      "name": "shuffle",
+      "params": [
+        "arr"
+      ],
+      "file": "interactive/09_flashcards.html"
+    },
+    {
+      "name": "renderCards",
+      "params": [],
+      "file": "interactive/09_flashcards.html"
+    },
+    {
+      "name": "shuffleCards",
+      "params": [],
+      "file": "interactive/09_flashcards.html"
+    },
+    {
+      "name": "t",
+      "params": [
+        "k"
+      ],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "updateIndicator",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "renderLevel",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "shuffle",
+      "params": [
+        "arr"
+      ],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "setupDrag",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "updateOrderNums",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "showFeedback",
+      "params": [
+        "el",
+        "msg",
+        "isOk"
+      ],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "checkScramble",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "checkSort",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "checkRiddle",
+      "params": [
+        "idx",
+        "btn"
+      ],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "nextLevel",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "renderFinal",
+      "params": [],
+      "file": "interactive/10_quest.html"
+    },
+    {
+      "name": "toggleLang",
+      "params": [],
+      "file": "interactive/index.html"
+    }
+  ],
+  "tools": [],
+  "seo": {
+    "meta": {
+      "name:viewport": "width=device-width, initial-scale=1.0"
+    },
+    "jsonld": [],
+    "index_meta_description": ""
+  },
+  "db_schema_summary": [
+    {
+      "table": "t_harmonics_01",
+      "source_var": "harmonics",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "gain",
+        "ratio",
+        "type"
+      ]
+    },
+    {
+      "table": "t_routes_02",
+      "source_var": "routes",
+      "source_file": "index.html",
+      "rows": 61,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_bellNotes_03",
+      "source_var": "bellNotes",
+      "source_file": "index.html",
+      "rows": 9,
+      "pipe_separated": false,
+      "fields": [
+        "key",
+        "name",
+        "note"
+      ]
+    },
+    {
+      "table": "t_pentatonic_04",
+      "source_var": "pentatonic",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "color",
+        "freq",
+        "name",
+        "sol",
+        "wuxing",
+        "zang"
+      ]
+    },
+    {
+      "table": "t_sfNotes_05",
+      "source_var": "sfNotes",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "freq",
+        "len",
+        "method",
+        "name",
+        "ratio"
+      ]
+    },
+    {
+      "table": "t_compare_06",
+      "source_var": "compare",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "diff",
+        "eq",
+        "name",
+        "sf"
+      ]
+    },
+    {
+      "table": "t_tracks_07",
+      "source_var": "tracks",
+      "source_file": "index.html",
+      "rows": 74,
+      "pipe_separated": false,
+      "fields": [
+        "d",
+        "n"
+      ]
+    },
+    {
+      "table": "t_layers_08",
+      "source_var": "layers",
+      "source_file": "index.html",
+      "rows": 9,
+      "pipe_separated": false,
+      "fields": [
+        "h",
+        "length",
+        "name",
+        "w"
+      ]
+    },
+    {
+      "table": "t_inscriptionData_09",
+      "source_var": "inscriptionData",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "highlight",
+        "tags",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "table": "t_quizData_10",
+      "source_var": "quizData",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": [
+        "ans",
+        "exp",
+        "opts",
+        "q"
+      ]
+    },
+    {
+      "table": "t_achievements_11",
+      "source_var": "achievements",
+      "source_file": "index.html",
+      "rows": 10,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "icon",
+        "id",
+        "name"
+      ]
+    },
+    {
+      "table": "t_lvlNames_12",
+      "source_var": "lvlNames",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_lvlNotes_13",
+      "source_var": "lvlNotes",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_lvlMonths_14",
+      "source_var": "lvlMonths",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_lvlYinYang_15",
+      "source_var": "lvlYinYang",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_octaves_16",
+      "source_var": "octaves",
+      "source_file": "index.html",
+      "rows": 3,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_recNotes_17",
+      "source_var": "recNotes",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_vols_18",
+      "source_var": "vols",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_tempoTerms_19",
+      "source_var": "tempoTerms",
+      "source_file": "index.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": [
+        "max",
+        "min",
+        "term"
+      ]
+    },
+    {
+      "table": "t_notes_20",
+      "source_var": "notes",
+      "source_file": "index.html",
+      "rows": 15,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_noteIdx_21",
+      "source_var": "noteIdx",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_noteNames_22",
+      "source_var": "noteNames",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_tunings_23",
+      "source_var": "tunings",
+      "source_file": "index.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_degreeNames_24",
+      "source_var": "degreeNames",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_wuxingData_25",
+      "source_var": "wuxingData",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "color",
+        "emotion",
+        "freq",
+        "season",
+        "wuxing",
+        "yin",
+        "zang"
+      ]
+    },
+    {
+      "table": "t_musicDict_26",
+      "source_var": "musicDict",
+      "source_file": "index.html",
+      "rows": 20,
+      "pipe_separated": false,
+      "fields": [
+        "def",
+        "term"
+      ]
+    },
+    {
+      "table": "t_timbres_27",
+      "source_var": "timbres",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "name"
+      ]
+    },
+    {
+      "table": "t_types_28",
+      "source_var": "types",
+      "source_file": "index.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_mgNotes_29",
+      "source_var": "mgNotes",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "color",
+        "freq",
+        "name"
+      ]
+    },
+    {
+      "table": "t_modes_30",
+      "source_var": "modes",
+      "source_file": "index.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "name",
+        "notes"
+      ]
+    },
+    {
+      "table": "t_rootIdx_31",
+      "source_var": "rootIdx",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_transMelody_32",
+      "source_var": "transMelody",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_baseIdx_33",
+      "source_var": "baseIdx",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_rhythmPatterns_34",
+      "source_var": "rhythmPatterns",
+      "source_file": "index.html",
+      "rows": 9,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "name",
+        "pattern"
+      ]
+    },
+    {
+      "table": "t_mtMelody_35",
+      "source_var": "mtMelody",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_names_36",
+      "source_var": "names",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_idx_37",
+      "source_var": "idx",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_modeScales_38",
+      "source_var": "modeScales",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "formula",
+        "name",
+        "notes"
+      ]
+    },
+    {
+      "table": "t_intervalNames_39",
+      "source_var": "intervalNames",
+      "source_file": "index.html",
+      "rows": 13,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_intervalChars_40",
+      "source_var": "intervalChars",
+      "source_file": "index.html",
+      "rows": 13,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_labels_41",
+      "source_var": "labels",
+      "source_file": "index.html",
+      "rows": 3,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_rotated_42",
+      "source_var": "rotated",
+      "source_file": "index.html",
+      "rows": 1,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_cadences_43",
+      "source_var": "cadences",
+      "source_file": "index.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "name",
+        "prog",
+        "type"
+      ]
+    },
+    {
+      "table": "t_cfMelodyNotes_44",
+      "source_var": "cfMelodyNotes",
+      "source_file": "index.html",
+      "rows": 11,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_counterpoints_45",
+      "source_var": "counterpoints",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "intervals",
+        "name"
+      ]
+    },
+    {
+      "table": "t_itEasy_46",
+      "source_var": "itEasy",
+      "source_file": "index.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_itMedium_47",
+      "source_var": "itMedium",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_itHard_48",
+      "source_var": "itHard",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_chordTypes_49",
+      "source_var": "chordTypes",
+      "source_file": "index.html",
+      "rows": 7,
+      "pipe_separated": false,
+      "fields": [
+        "intervals",
+        "name"
+      ]
+    },
+    {
+      "table": "t_composerQuestions_50",
+      "source_var": "composerQuestions",
+      "source_file": "index.html",
+      "rows": 10,
+      "pipe_separated": false,
+      "fields": [
+        "ans",
+        "opts",
+        "q"
+      ]
+    },
+    {
+      "table": "t_instrumentFamilies_51",
+      "source_var": "instrumentFamilies",
+      "source_file": "index.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "examples",
+        "icon",
+        "name"
+      ]
+    },
+    {
+      "table": "t_bayinData_52",
+      "source_var": "bayinData",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": [
+        "examples",
+        "material",
+        "name"
+      ]
+    },
+    {
+      "table": "t_musicPeriods_53",
+      "source_var": "musicPeriods",
+      "source_file": "index.html",
+      "rows": 7,
+      "pipe_separated": false,
+      "fields": [
+        "composers",
+        "desc",
+        "name",
+        "years"
+      ]
+    },
+    {
+      "table": "t_solfegeNames_54",
+      "source_var": "solfegeNames",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_tombInstruments_55",
+      "source_var": "tombInstruments",
+      "source_file": "index.html",
+      "rows": 10,
+      "pipe_separated": false,
+      "fields": [
+        "category",
+        "count",
+        "desc",
+        "icon",
+        "name"
+      ]
+    },
+    {
+      "table": "t_qingNotes_56",
+      "source_var": "qingNotes",
+      "source_file": "index.html",
+      "rows": 13,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_ancientStrings_57",
+      "source_var": "ancientStrings",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "era",
+        "found",
+        "funfact",
+        "name",
+        "strings"
+      ]
+    },
+    {
+      "table": "t_ancientWinds_58",
+      "source_var": "ancientWinds",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "count",
+        "desc",
+        "era",
+        "funfact",
+        "material",
+        "name"
+      ]
+    },
+    {
+      "table": "t_lostInstruments_59",
+      "source_var": "lostInstruments",
+      "source_file": "index.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "era",
+        "name",
+        "status"
+      ]
+    },
+    {
+      "table": "t_ancientMusicians_60",
+      "source_var": "ancientMusicians",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "era",
+        "name",
+        "title"
+      ]
+    },
+    {
+      "table": "t_famousMelodies_61",
+      "source_var": "famousMelodies",
+      "source_file": "index.html",
+      "rows": 10,
+      "pipe_separated": false,
+      "fields": [
+        "era",
+        "instrument",
+        "name",
+        "story"
+      ]
+    },
+    {
+      "table": "t_shikuangStories_62",
+      "source_var": "shikuangStories",
+      "source_file": "index.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": [
+        "content",
+        "title"
+      ]
+    },
+    {
+      "table": "t_rows_63",
+      "source_var": "rows",
+      "source_file": "index.html",
+      "rows": 3,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_harmonics_64",
+      "source_var": "harmonics",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "gain",
+        "ratio",
+        "type"
+      ]
+    },
+    {
+      "table": "t_routes_65",
+      "source_var": "routes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 61,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_bellNotes_66",
+      "source_var": "bellNotes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 9,
+      "pipe_separated": false,
+      "fields": [
+        "key",
+        "name",
+        "note"
+      ]
+    },
+    {
+      "table": "t_pentatonic_67",
+      "source_var": "pentatonic",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "color",
+        "freq",
+        "name",
+        "sol",
+        "wuxing",
+        "zang"
+      ]
+    },
+    {
+      "table": "t_sfNotes_68",
+      "source_var": "sfNotes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "freq",
+        "len",
+        "method",
+        "name",
+        "ratio"
+      ]
+    },
+    {
+      "table": "t_compare_69",
+      "source_var": "compare",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "diff",
+        "eq",
+        "name",
+        "sf"
+      ]
+    },
+    {
+      "table": "t_tracks_70",
+      "source_var": "tracks",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 74,
+      "pipe_separated": false,
+      "fields": [
+        "d",
+        "n"
+      ]
+    },
+    {
+      "table": "t_layers_71",
+      "source_var": "layers",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 9,
+      "pipe_separated": false,
+      "fields": [
+        "h",
+        "length",
+        "name",
+        "w"
+      ]
+    },
+    {
+      "table": "t_inscriptionData_72",
+      "source_var": "inscriptionData",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "highlight",
+        "tags",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "table": "t_quizData_73",
+      "source_var": "quizData",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": [
+        "ans",
+        "exp",
+        "opts",
+        "q"
+      ]
+    },
+    {
+      "table": "t_achievements_74",
+      "source_var": "achievements",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 10,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "icon",
+        "id",
+        "name"
+      ]
+    },
+    {
+      "table": "t_lvlNames_75",
+      "source_var": "lvlNames",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_lvlNotes_76",
+      "source_var": "lvlNotes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_lvlMonths_77",
+      "source_var": "lvlMonths",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_lvlYinYang_78",
+      "source_var": "lvlYinYang",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_octaves_79",
+      "source_var": "octaves",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 3,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_recNotes_80",
+      "source_var": "recNotes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_vols_81",
+      "source_var": "vols",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_tempoTerms_82",
+      "source_var": "tempoTerms",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": [
+        "max",
+        "min",
+        "term"
+      ]
+    },
+    {
+      "table": "t_notes_83",
+      "source_var": "notes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 15,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_noteIdx_84",
+      "source_var": "noteIdx",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_noteNames_85",
+      "source_var": "noteNames",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_tunings_86",
+      "source_var": "tunings",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_degreeNames_87",
+      "source_var": "degreeNames",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_wuxingData_88",
+      "source_var": "wuxingData",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "color",
+        "emotion",
+        "freq",
+        "season",
+        "wuxing",
+        "yin",
+        "zang"
+      ]
+    },
+    {
+      "table": "t_musicDict_89",
+      "source_var": "musicDict",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 20,
+      "pipe_separated": false,
+      "fields": [
+        "def",
+        "term"
+      ]
+    },
+    {
+      "table": "t_timbres_90",
+      "source_var": "timbres",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "name"
+      ]
+    },
+    {
+      "table": "t_types_91",
+      "source_var": "types",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_mgNotes_92",
+      "source_var": "mgNotes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "color",
+        "freq",
+        "name"
+      ]
+    },
+    {
+      "table": "t_modes_93",
+      "source_var": "modes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "name",
+        "notes"
+      ]
+    },
+    {
+      "table": "t_rootIdx_94",
+      "source_var": "rootIdx",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_transMelody_95",
+      "source_var": "transMelody",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_baseIdx_96",
+      "source_var": "baseIdx",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_rhythmPatterns_97",
+      "source_var": "rhythmPatterns",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 9,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "name",
+        "pattern"
+      ]
+    },
+    {
+      "table": "t_mtMelody_98",
+      "source_var": "mtMelody",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_names_99",
+      "source_var": "names",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_idx_100",
+      "source_var": "idx",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_modeScales_101",
+      "source_var": "modeScales",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "formula",
+        "name",
+        "notes"
+      ]
+    },
+    {
+      "table": "t_intervalNames_102",
+      "source_var": "intervalNames",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 13,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_intervalChars_103",
+      "source_var": "intervalChars",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 13,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_labels_104",
+      "source_var": "labels",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 3,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_rotated_105",
+      "source_var": "rotated",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 1,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_cadences_106",
+      "source_var": "cadences",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "name",
+        "prog",
+        "type"
+      ]
+    },
+    {
+      "table": "t_cfMelodyNotes_107",
+      "source_var": "cfMelodyNotes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 11,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_counterpoints_108",
+      "source_var": "counterpoints",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "intervals",
+        "name"
+      ]
+    },
+    {
+      "table": "t_itEasy_109",
+      "source_var": "itEasy",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_itMedium_110",
+      "source_var": "itMedium",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_itHard_111",
+      "source_var": "itHard",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_chordTypes_112",
+      "source_var": "chordTypes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 7,
+      "pipe_separated": false,
+      "fields": [
+        "intervals",
+        "name"
+      ]
+    },
+    {
+      "table": "t_composerQuestions_113",
+      "source_var": "composerQuestions",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 10,
+      "pipe_separated": false,
+      "fields": [
+        "ans",
+        "opts",
+        "q"
+      ]
+    },
+    {
+      "table": "t_instrumentFamilies_114",
+      "source_var": "instrumentFamilies",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "examples",
+        "icon",
+        "name"
+      ]
+    },
+    {
+      "table": "t_bayinData_115",
+      "source_var": "bayinData",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": [
+        "examples",
+        "material",
+        "name"
+      ]
+    },
+    {
+      "table": "t_musicPeriods_116",
+      "source_var": "musicPeriods",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 7,
+      "pipe_separated": false,
+      "fields": [
+        "composers",
+        "desc",
+        "name",
+        "years"
+      ]
+    },
+    {
+      "table": "t_solfegeNames_117",
+      "source_var": "solfegeNames",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_tombInstruments_118",
+      "source_var": "tombInstruments",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 10,
+      "pipe_separated": false,
+      "fields": [
+        "category",
+        "count",
+        "desc",
+        "icon",
+        "name"
+      ]
+    },
+    {
+      "table": "t_qingNotes_119",
+      "source_var": "qingNotes",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 13,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_ancientStrings_120",
+      "source_var": "ancientStrings",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "era",
+        "found",
+        "funfact",
+        "name",
+        "strings"
+      ]
+    },
+    {
+      "table": "t_ancientWinds_121",
+      "source_var": "ancientWinds",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": [
+        "count",
+        "desc",
+        "era",
+        "funfact",
+        "material",
+        "name"
+      ]
+    },
+    {
+      "table": "t_lostInstruments_122",
+      "source_var": "lostInstruments",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "era",
+        "name",
+        "status"
+      ]
+    },
+    {
+      "table": "t_ancientMusicians_123",
+      "source_var": "ancientMusicians",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": [
+        "desc",
+        "era",
+        "name",
+        "title"
+      ]
+    },
+    {
+      "table": "t_famousMelodies_124",
+      "source_var": "famousMelodies",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 10,
+      "pipe_separated": false,
+      "fields": [
+        "era",
+        "instrument",
+        "name",
+        "story"
+      ]
+    },
+    {
+      "table": "t_shikuangStories_125",
+      "source_var": "shikuangStories",
+      "source_file": "index_20260904_V0_backup.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": [
+        "content",
+        "title"
+      ]
+    },
+    {
+      "table": "t_COLORS_126",
+      "source_var": "COLORS",
+      "source_file": "interactive/06_puzzle.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    }
+  ],
+  "file_list": {
+    "html": [
+      {
+        "name": "index.html",
+        "size_bytes": 383344
+      },
+      {
+        "name": "index_20260904_V0_backup.html",
+        "size_bytes": 343624
+      },
+      {
+        "name": "interactive/01_quiz.html",
+        "size_bytes": 33225
+      },
+      {
+        "name": "interactive/02_memory.html",
+        "size_bytes": 31702
+      },
+      {
+        "name": "interactive/03_timeline.html",
+        "size_bytes": 28998
+      },
+      {
+        "name": "interactive/04_story.html",
+        "size_bytes": 28991
+      },
+      {
+        "name": "interactive/05_hotspots.html",
+        "size_bytes": 29797
+      },
+      {
+        "name": "interactive/06_puzzle.html",
+        "size_bytes": 31744
+      },
+      {
+        "name": "interactive/07_dialogue.html",
+        "size_bytes": 31007
+      },
+      {
+        "name": "interactive/08_fortune.html",
+        "size_bytes": 30662
+      },
+      {
+        "name": "interactive/09_flashcards.html",
+        "size_bytes": 30272
+      },
+      {
+        "name": "interactive/10_quest.html",
+        "size_bytes": 35026
+      },
+      {
+        "name": "interactive/index.html",
+        "size_bytes": 8914
+      }
+    ],
+    "data": [],
+    "images": {
+      "count": 5,
+      "total_kb": 3014.2,
+      "samples": [
+        "graphics/feature-graphic-1024x500.png",
+        "graphics/icon-512x512.png",
+        "graphics/screenshot-01-bell-play.png",
+        "graphics/screenshot-02-pentatonic.png",
+        "graphics/screenshot-03-instruments.png"
+      ]
+    },
+    "other": [
+      {
+        "name": "GooglePlay上架指南.md",
+        "size_bytes": 4747
+      },
+      {
+        "name": "README.md",
+        "size_bytes": 2544
+      },
+      {
+        "name": "圖形資產說明.md",
+        "size_bytes": 8561
+      },
+      {
+        "name": "曾侯乙編鐘-v1.0.aab",
+        "size_bytes": 2877354
+      },
+      {
+        "name": "docs/出土紀實.md",
+        "size_bytes": 3695
+      },
+      {
+        "name": "docs/曾侯乙生平.md",
+        "size_bytes": 8561
+      },
+      {
+        "name": "docs/樂律體系.md",
+        "size_bytes": 8455
+      },
+      {
+        "name": "docs/聲學原理.md",
+        "size_bytes": 5880
+      },
+      {
+        "name": "docs/鑄造工藝.md",
+        "size_bytes": 4570
+      }
+    ]
+  },
+  "template_injection": {
+    "ai_upgrade_top": false,
+    "img_ai_lazy": false
+  },
+  "generated_date": "2026-10-01",
+  "version": "V1",
+  "generator": "P01 網站規格化總專案（自動生成）"
+}

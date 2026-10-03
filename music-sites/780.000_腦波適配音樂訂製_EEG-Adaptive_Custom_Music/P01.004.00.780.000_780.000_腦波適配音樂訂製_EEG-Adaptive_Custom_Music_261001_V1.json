@@ -1,0 +1,209 @@
+{
+  "naming": "P01.004.00.780.000_780.000_腦波適配音樂訂製_EEG-Adaptive_Custom_Music_20261001_V1.json",
+  "project_code": "P01",
+  "doc_sequence": "004",
+  "jd": "00",
+  "ddc": "780.000",
+  "site_name": "780.000_腦波適配音樂訂製_EEG-Adaptive_Custom_Music",
+  "site_folder": "D:\\_WWW_325_public\\780.000_腦波適配音樂訂製_EEG-Adaptive_Custom_Music",
+  "title": "腦波音樂客製化 — 隱藏商機深度分析",
+  "lang": "zh-Hant",
+  "encoding_issues": false,
+  "garbled": false,
+  "redirect_only": false,
+  "page_count": 1,
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "腦波音樂客製化 — 隱藏商機深度分析",
+      "role": "入口頁",
+      "size_bytes": 28072,
+      "tables": 1,
+      "tools": 0
+    }
+  ],
+  "navigation": [
+    {
+      "type": "nav",
+      "text": "深度分析 ↓",
+      "href": "#analysis",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "立即行動",
+      "href": "#action",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "重新研讀分析",
+      "href": "#analysis",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "Fork 到 GitHub ↗",
+      "href": "https://github.com",
+      "meta": "",
+      "file": "index.html"
+    }
+  ],
+  "css_variables": [
+    {
+      "name": "--bg",
+      "value": "#0a0a0f",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--bg2",
+      "value": "#12121a",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--card",
+      "value": "rgba(255,255,255,.04)",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--border",
+      "value": "rgba(255,255,255,.08)",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--text",
+      "value": "#e8e8f0",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--muted",
+      "value": "#8888a0",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--accent",
+      "value": "#6c5ce7",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--accent2",
+      "value": "#00cec9",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--accent3",
+      "value": "#fd79a8",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--gold",
+      "value": "#fdcb6e",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--green",
+      "value": "#00b894",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--red",
+      "value": "#e17055",
+      "sources": [
+        "index.html"
+      ]
+    }
+  ],
+  "js_constants": [
+    {
+      "name": "i",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "cur",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    }
+  ],
+  "js_functions": [
+    {
+      "name": "resize",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "draw",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "calcRevenue",
+      "params": [],
+      "file": "index.html"
+    }
+  ],
+  "tools": [],
+  "seo": {
+    "meta": {
+      "name:viewport": "width=device-width,initial-scale=1.0"
+    },
+    "jsonld": [],
+    "index_meta_description": "根據使用者的即時腦波狀態，即時生成對應的音樂（專注時用某種節奏、放鬆時用另一種），用訂閱制收費。"
+  },
+  "db_schema_summary": [],
+  "file_list": {
+    "html": [
+      {
+        "name": "index.html",
+        "size_bytes": 28072
+      }
+    ],
+    "data": [],
+    "images": {
+      "count": 0,
+      "total_kb": 0.0,
+      "samples": []
+    },
+    "other": []
+  },
+  "template_injection": {
+    "ai_upgrade_top": false,
+    "img_ai_lazy": false
+  },
+  "generated_date": "2026-10-01",
+  "version": "V1",
+  "generator": "P01 網站規格化總專案（自動生成）"
+}

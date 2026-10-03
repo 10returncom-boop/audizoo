@@ -1,0 +1,858 @@
+{
+  "naming": "P01.004.00.780.000_780.000_音樂就是數學互動實驗室_Music_is_Math_Lab_20261001_V1.json",
+  "project_code": "P01",
+  "doc_sequence": "004",
+  "jd": "00",
+  "ddc": "780.000",
+  "site_name": "780.000_音樂就是數學互動實驗室_Music_is_Math_Lab",
+  "site_folder": "D:\\_WWW_325_public\\780.000_音樂就是數學互動實驗室_Music_is_Math_Lab",
+  "title": "音樂就是數學 · Music = Math · 60 互動實驗室",
+  "lang": "zh-Hant",
+  "encoding_issues": false,
+  "garbled": false,
+  "redirect_only": false,
+  "page_count": 1,
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "音樂就是數學 · Music = Math · 60 互動實驗室",
+      "role": "入口頁",
+      "size_bytes": 37890,
+      "tables": 0,
+      "tools": 0
+    }
+  ],
+  "navigation": [
+    {
+      "type": "nav",
+      "text": "全部 60",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🎵 音高頻率 (12)",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🥁 節奏數學 (12)",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🎼 和聲比例 (12)",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🌈 視覺化 (12)",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🎮 互動遊戲 (12)",
+      "href": "",
+      "meta": "",
+      "file": "index.html"
+    }
+  ],
+  "css_variables": [
+    {
+      "name": "--bg",
+      "value": "#f5f3ff",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--panel",
+      "value": "#fff",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--panel2",
+      "value": "#ede9fe",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--border",
+      "value": "#ddd6fe",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--text",
+      "value": "#1e1b4b",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--muted",
+      "value": "#6b7280",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--primary",
+      "value": "#6366f1",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--accent",
+      "value": "#ec4899",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--green",
+      "value": "#10b981",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--yellow",
+      "value": "#f59e0b",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--radius",
+      "value": "12px",
+      "sources": [
+        "index.html"
+      ]
+    }
+  ],
+  "js_constants": [
+    {
+      "name": "TOOLS",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 573,
+      "fields": [],
+      "sample": "12 | freq | 頻率滑桿",
+      "pipe": false
+    },
+    {
+      "name": "tbl",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "major",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "261.6 | 293.7 | 329.6",
+      "pipe": false
+    },
+    {
+      "name": "minor",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "220 | 246.9 | 261.6",
+      "pipe": false
+    },
+    {
+      "name": "notes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 7,
+      "fields": [],
+      "sample": "C4 | D4 | E4",
+      "pipe": false
+    },
+    {
+      "name": "tapTimes",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "items",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 5,
+      "fields": [],
+      "sample": "咚 | 喀 | 噠",
+      "pipe": false
+    },
+    {
+      "name": "pattern",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 16,
+      "fields": [],
+      "sample": "1 | 0 | 0",
+      "pipe": false
+    },
+    {
+      "name": "chords",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 12,
+      "fields": [],
+      "sample": "261.6 | 329.6 | 392",
+      "pipe": false
+    },
+    {
+      "name": "bass",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 8,
+      "fields": [],
+      "sample": "146.8 | 110 | 98",
+      "pipe": false
+    },
+    {
+      "name": "drops",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "ps",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "colors",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 4,
+      "fields": [],
+      "sample": "#6366f1 | #ec4899 | #10b981",
+      "pipe": false
+    },
+    {
+      "name": "pat",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 6,
+      "fields": [],
+      "sample": "1 | 0 | 1",
+      "pipe": false
+    },
+    {
+      "name": "q",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 6,
+      "fields": [],
+      "sample": "C 大調第三級是？ | E | 八度頻率比？",
+      "pipe": false
+    },
+    {
+      "name": "qs",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 3,
+      "fields": [],
+      "sample": "五度圈順時針？ | I-V-vi-IV 是？ | A4=? Hz",
+      "pipe": false
+    },
+    {
+      "name": "map",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const map={'C':0,'C#':1,'D':2,'D#':3,'E':4,'F':5,'F#':6,'G':7,'G#':8,'A':9,'A#':10,'B':11};const m=n.match(/^([A-G]#?)(\\d)$/);return 440*Math.pow(2,(map[m[1]]+(+m[2]-4)*12-9)/12)}\r\nfunction genEQ(){co",
+      "pipe": false
+    },
+    {
+      "name": "intervals",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const intervals={major:[0,4,7],minor:[0,3,7],dim:[0,3,6],aug:[0,4,8]}[type];const base=noteToFreq(root+'4');intervals.forEach(s=>tone(base*Math.pow(2,s/12),0.8,'triangle',0.2));document.getElementById",
+      "pipe": false
+    },
+    {
+      "name": "x",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "i",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "f",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "cents",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "base",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "gap",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "t",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "y",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "a",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "n",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "pi",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "k",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    }
+  ],
+  "js_functions": [
+    {
+      "name": "ctx",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "tone",
+      "params": [
+        "freq",
+        "dur=0.5",
+        "type='sine'",
+        "vol=0.2",
+        "when=0"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "stopAll",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "toast",
+      "params": [
+        "m"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "render",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "filterCat",
+      "params": [
+        "c",
+        "el"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "randTool",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "toggleTheme",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "showHelp",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "bindAll",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "noteToFreq",
+      "params": [
+        "n"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "genEQ",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "calcInterval",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playScale",
+      "params": [
+        "type"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playHarmonics",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "checkQuiz",
+      "params": [
+        "ans",
+        "truth"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "tapBpm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "genRhythm",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playMeter",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playFib",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "spinWheel",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playSeq",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "rampSpeed",
+      "params": [
+        "type"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "metronome",
+      "params": [
+        "bpm"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "playNoteValues",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "calcBars",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playChord",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playProg",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "transpose",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "drawHarmBars",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "calcDissonance",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "addOvertones",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playCanon",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playBlues",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "play251",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "invertChord",
+      "params": [
+        "v"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "startWave",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "d",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startLissajous",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "drawStanding",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "playPi",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "drawFourier",
+      "params": [
+        "n"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "startRain",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startScope",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startParticles",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "drawCloud",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "drawSpectrum",
+      "params": [
+        "f"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "drawShare",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "toBlob",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startSimon",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startPitch",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startRhQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "startMusicQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "dailyQuestion",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "logPractice",
+      "params": [],
+      "file": "index.html"
+    }
+  ],
+  "tools": [],
+  "seo": {
+    "meta": {
+      "name:viewport": "width=device-width, initial-scale=1.0"
+    },
+    "jsonld": [],
+    "index_meta_description": ""
+  },
+  "db_schema_summary": [
+    {
+      "table": "t_TOOLS_01",
+      "source_var": "TOOLS",
+      "source_file": "index.html",
+      "rows": 573,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_major_02",
+      "source_var": "major",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_minor_03",
+      "source_var": "minor",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_notes_04",
+      "source_var": "notes",
+      "source_file": "index.html",
+      "rows": 7,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_items_05",
+      "source_var": "items",
+      "source_file": "index.html",
+      "rows": 5,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_pattern_06",
+      "source_var": "pattern",
+      "source_file": "index.html",
+      "rows": 16,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_chords_07",
+      "source_var": "chords",
+      "source_file": "index.html",
+      "rows": 12,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_bass_08",
+      "source_var": "bass",
+      "source_file": "index.html",
+      "rows": 8,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_colors_09",
+      "source_var": "colors",
+      "source_file": "index.html",
+      "rows": 4,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_pat_10",
+      "source_var": "pat",
+      "source_file": "index.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_q_11",
+      "source_var": "q",
+      "source_file": "index.html",
+      "rows": 6,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_qs_12",
+      "source_var": "qs",
+      "source_file": "index.html",
+      "rows": 3,
+      "pipe_separated": false,
+      "fields": []
+    }
+  ],
+  "file_list": {
+    "html": [
+      {
+        "name": "index.html",
+        "size_bytes": 37890
+      }
+    ],
+    "data": [],
+    "images": {
+      "count": 0,
+      "total_kb": 0.0,
+      "samples": []
+    },
+    "other": []
+  },
+  "template_injection": {
+    "ai_upgrade_top": false,
+    "img_ai_lazy": false
+  },
+  "generated_date": "2026-10-01",
+  "version": "V1",
+  "generator": "P01 網站規格化總專案（自動生成）"
+}

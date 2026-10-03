@@ -1,0 +1,829 @@
+{
+  "naming": "P01.004.00.792.000_792.000_臺灣傳統戲曲檔案_Taiwan_Traditional_Opera_Archive_20261001_V1.json",
+  "project_code": "P01",
+  "doc_sequence": "004",
+  "jd": "00",
+  "ddc": "792.000",
+  "site_name": "792.000_臺灣傳統戲曲檔案_Taiwan_Traditional_Opera_Archive",
+  "site_folder": "D:\\_WWW_325_public\\792.000_臺灣傳統戲曲檔案_Taiwan_Traditional_Opera_Archive",
+  "title": "台湾传统戏曲的档案 | 325 主題知識平台",
+  "lang": "zh-Hant",
+  "encoding_issues": false,
+  "garbled": false,
+  "redirect_only": false,
+  "page_count": 1,
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "台湾传统戏曲的档案 | 325 主題知識平台",
+      "role": "入口頁",
+      "size_bytes": 83220,
+      "tables": 1,
+      "tools": 0
+    }
+  ],
+  "navigation": [
+    {
+      "type": "nav",
+      "text": "🏠 Portal",
+      "href": "../../Portal_index.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "📊 Dashboard",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "首頁",
+      "href": "../../Portal_index.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🌐 全部入口",
+      "href": "../../Portal_index.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🏠 325入口",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🔍 搜尋",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🖶 列印",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "⛶ 全螢幕",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🌐 Portal",
+      "href": "../../Portal_index.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🏠 325",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🏠首頁",
+      "href": "#hero",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "📖關於主題",
+      "href": "#about",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🧠知識體系",
+      "href": "#knowledge",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "💼應用場景",
+      "href": "#applications",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🎮10 大創新工具",
+      "href": "#tools",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🔍智慧搜尋",
+      "href": "#tools",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🎯知識測驗",
+      "href": "#tools",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🧩拼圖遊戲",
+      "href": "#tools",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "📈趨勢展望",
+      "href": "#trends",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "❓常見問題",
+      "href": "#faq",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "🌐325 主題入口",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "← 返回入口",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "主題介紹",
+      "href": "#about",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "知識體系",
+      "href": "#knowledge",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "應用場景",
+      "href": "#applications",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "325 主題入口",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "10 大工具總覽",
+      "href": "#tools",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "智慧搜尋",
+      "href": "#tools",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "知識測驗",
+      "href": "#tools",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "拼圖遊戲",
+      "href": "#tools",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "趨勢展望",
+      "href": "#trends",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "常見問題",
+      "href": "#faq",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "全部主題",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "分類：地方特色",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "類型：冷门原创",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "編號：#80 / 325",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "優先級：低",
+      "href": "#",
+      "meta": "",
+      "file": "index.html"
+    },
+    {
+      "type": "nav",
+      "text": "返回入口",
+      "href": "../../dashboard.html",
+      "meta": "",
+      "file": "index.html"
+    }
+  ],
+  "css_variables": [
+    {
+      "name": "--primary",
+      "value": "#e17055",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--primary-dark",
+      "value": "#d35400",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--accent",
+      "value": "#55efc4",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--bg",
+      "value": "#f4f5f9",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--card",
+      "value": "#ffffff",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--text",
+      "value": "#1a1a2e",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--text-light",
+      "value": "#555770",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--border",
+      "value": "#e2e5ee",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--shadow",
+      "value": "0 2px 16px rgba(0,0,0,.07)",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--shadow-lg",
+      "value": "0 8px 32px rgba(0,0,0,.12)",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--radius",
+      "value": "14px",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--sidebar-w",
+      "value": "260px",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--sidebar-collapsed",
+      "value": "64px",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--header-h",
+      "value": "56px",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-primary",
+      "value": "#6366f1",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-accent",
+      "value": "#ec4899",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-success",
+      "value": "#22c55e",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-bg",
+      "value": "rgba(15,18,35,.92)",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-fg",
+      "value": "#e2e8f0",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-muted",
+      "value": "#94a3b8",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-border",
+      "value": "rgba(255,255,255,.12)",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-radius",
+      "value": "12px",
+      "sources": [
+        "index.html"
+      ]
+    },
+    {
+      "name": "--uu-shadow",
+      "value": "0 8px 32px rgba(0,0,0,.35)",
+      "sources": [
+        "index.html"
+      ]
+    }
+  ],
+  "js_constants": [
+    {
+      "name": "CATEGORIES",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 27,
+      "fields": [],
+      "sample": "文化歷史 | 自然科學 | 內容創作",
+      "pipe": false
+    },
+    {
+      "name": "tiles",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 9,
+      "fields": [],
+      "sample": "1 | 2 | 3",
+      "pipe": false
+    },
+    {
+      "name": "neighbors",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "THEME_DATA",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "const THEME_DATA = {\"id\": \"site_80\", \"knowledge\": [{\"title\": \"台湾传统戏曲的定義與本質內涵\", \"body\": \"關於「台湾传统戏曲的定義與本質內涵」的深入解析：涵蓋概念定義、核心要點、實務應用與常見問題，助您全面掌握此知識點。\"}, {\"title\": \"台湾传统戏曲的起源與歷史發展脈絡\", \"body\": \"關於「台湾传统戏曲的起源",
+      "pipe": false
+    },
+    {
+      "name": "SITE_CATEGORY",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_TITLE",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "SITE_ID",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "html",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "current",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "i",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "qi",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "KEY",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "devtoolsOpen",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "threshold",
+      "kind": "scalar",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "matches",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "",
+      "pipe": false
+    },
+    {
+      "name": "rows",
+      "kind": "array",
+      "file": "index.html",
+      "rows": 3,
+      "fields": [],
+      "sample": "Title | URL | Time",
+      "pipe": false
+    },
+    {
+      "name": "uu",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "var uu={\r\n    lang:'zh',\r\n    fontSize:100,\r\n    copyProtect:false,\r\n    dict:{\r\n      zh:{home:'首頁',current:'目前頁面',nav:'導覽',portal:'🌐 全部入口',portal325:'🏠 325入口',\r\n        fav:'我的最愛',recent:'最近造訪',tool",
+      "pipe": false
+    },
+    {
+      "name": "entry",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "var entry={title:document.title,url:location.href,ts:Date.now()};\r\n    var exists=favs.some(function(f){return f.url===entry.url});\r\n    if(exists){\r\n      favs=favs.filter(function(f){return f.url!==",
+      "pipe": false
+    },
+    {
+      "name": "card",
+      "kind": "object",
+      "file": "index.html",
+      "rows": 0,
+      "fields": [],
+      "sample": "var card={title:document.title,url:location.href,ts:Date.now()};\r\n    var cards=JSON.parse(localStorage.getItem('uu-cards')||'[]');\r\n    cards.unshift(card);\r\n    if(cards.length>30)cards.pop();\r\n    ",
+      "pipe": false
+    }
+  ],
+  "js_functions": [
+    {
+      "name": "generateBreadcrumb",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "buildCategoryMenu",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "switchTool",
+      "params": [
+        "idx"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "initSearch",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "doSearch",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "initIdeaGen",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "initChart",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "initPuzzle",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "render",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "move",
+      "params": [
+        "i"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "shuffle",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "initDailyKnowledge",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "show",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "initCompare",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "initQuiz",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "loadQ",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "answer",
+      "params": [
+        "i"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "initCalc",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "initTimeline",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "initNotes",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "isMobile",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "row",
+      "params": [
+        "i"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "updateBreadcrumb",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "uuRenderFav",
+      "params": [],
+      "file": "index.html"
+    },
+    {
+      "name": "uuBlockCopy",
+      "params": [
+        "e"
+      ],
+      "file": "index.html"
+    },
+    {
+      "name": "uuBlockCtx",
+      "params": [
+        "e"
+      ],
+      "file": "index.html"
+    }
+  ],
+  "tools": [],
+  "seo": {
+    "meta": {
+      "name:viewport": "width=device-width, initial-scale=1.0"
+    },
+    "jsonld": [],
+    "index_meta_description": "台湾传统戏曲的档案 - 地方特色專業知識平台，提供10大創新工具與遊戲"
+  },
+  "db_schema_summary": [
+    {
+      "table": "t_CATEGORIES_01",
+      "source_var": "CATEGORIES",
+      "source_file": "index.html",
+      "rows": 27,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_tiles_02",
+      "source_var": "tiles",
+      "source_file": "index.html",
+      "rows": 9,
+      "pipe_separated": false,
+      "fields": []
+    },
+    {
+      "table": "t_rows_03",
+      "source_var": "rows",
+      "source_file": "index.html",
+      "rows": 3,
+      "pipe_separated": false,
+      "fields": []
+    }
+  ],
+  "file_list": {
+    "html": [
+      {
+        "name": "index.html",
+        "size_bytes": 83220
+      }
+    ],
+    "data": [],
+    "images": {
+      "count": 0,
+      "total_kb": 0.0,
+      "samples": []
+    },
+    "other": []
+  },
+  "template_injection": {
+    "ai_upgrade_top": false,
+    "img_ai_lazy": false
+  },
+  "generated_date": "2026-10-01",
+  "version": "V1",
+  "generator": "P01 網站規格化總專案（自動生成）"
+}

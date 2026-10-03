@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><link rel="canonical" href="index.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="聲音品牌設計（Audio Branding） — 隱藏商機深度分析">
+<meta property="og:description" content="聲音品牌設計（Audio Branding） — 隱藏商機深度分析">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="聲音品牌設計（Audio Branding） — 隱藏商機深度分析">
+<meta name="twitter:description" content="聲音品牌設計（Audio Branding） — 隱藏商機深度分析">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>聲音品牌設計（Audio Branding） — 隱藏商機深度分析</title>
+<meta name="description" content="品牌需要專屬的聲音Logo（開機聲、APP提示音、等待音樂），但多數品牌只重視視覺，提供聲音品牌設計服務。">
+<style>
+:root{
+  --bg:#0a0a0f;--bg2:#12121a;--card:rgba(255,255,255,.04);
+  --border:rgba(255,255,255,.08);--text:#e8e8f0;--muted:#8888a0;
+  --accent:#6c5ce7;--accent2:#00cec9;--accent3:#fd79a8;
+  --gold:#fdcb6e;--green:#00b894;--red:#e17055;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7}
+a{color:var(--accent2);text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* 背景粒子 */
+#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;z-index:1}
+.hero-inner{width:100%}
+.hero-tag{display:inline-block;padding:6px 16px;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:13px;font-weight:600;margin-bottom:24px;letter-spacing:1px}
+.hero h1{font-size:clamp(36px,6vw,72px);font-weight:900;line-height:1.15;margin-bottom:20px;background:linear-gradient(135deg,#fff 30%,var(--accent2) 70%,var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p.sub{font-size:clamp(16px,2vw,22px);color:var(--muted);max-width:700px;margin-bottom:40px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;border:none;transition:all .3s}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(108,92,231,.4)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent2);color:var(--accent2)}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);animation:bounce 2s infinite;color:var(--muted);font-size:13px}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+/* 通用區塊 */
+section{padding:100px 0;position:relative;z-index:1}
+.section-label{font-size:13px;font-weight:700;letter-spacing:3px;color:var(--accent2);text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:16px;line-height:1.3}
+.section-desc{color:var(--muted);font-size:17px;max-width:650px;margin-bottom:48px}
+
+/* 玻璃卡 */
+.glass{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;backdrop-filter:blur(10px);transition:all .3s}
+.glass:hover{border-color:rgba(108,92,231,.3);transform:translateY(-4px)}
+
+/* 網格 */
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+
+/* 數據卡 */
+.stat-card{text-align:center;padding:28px 20px}
+.stat-num{font-size:36px;font-weight:900;background:linear-gradient(135deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* 時間軸 */
+.timeline{position:relative;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent)}
+.tl-item{position:relative;margin-bottom:36px}
+.tl-item::before{content:'';position:absolute;left:-34px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent2);box-shadow:0 0 16px var(--accent2)}
+.tl-phase{font-size:12px;font-weight:700;color:var(--accent2);letter-spacing:1px}
+.tl-title{font-size:18px;font-weight:700;margin:4px 0}
+.tl-desc{color:var(--muted);font-size:14px}
+
+/* 商業模式畫布 */
+.bmc{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr;gap:8px;min-height:400px}
+.bmc-cell{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;font-size:13px}
+.bmc-cell h4{font-size:11px;color:var(--accent2);margin-bottom:8px;letter-spacing:1px}
+.bmc-cell ul{list-style:none;padding:0}
+.bmc-cell li{padding:3px 0;color:var(--muted);font-size:12px;position:relative;padding-left:12px}
+.bmc-cell li::before{content:'▸';position:absolute;left:0;color:var(--accent)}
+.bmc-kp{grid-column:1;grid-row:1}
+.bmc-ka{grid-column:1;grid-row:2}
+.bmc-kr{grid-column:2;grid-row:1/3}
+.bmc-vp{grid-column:3;grid-row:1/3;background:linear-gradient(135deg,rgba(108,92,231,.1),rgba(0,206,201,.1));border-color:rgba(108,92,231,.3)}
+.bmc-cr{grid-column:4;grid-row:1}
+.bmc-ch{grid-column:4;grid-row:2}
+.bmc-cs{grid-column:5;grid-row:1/3}
+.bmc-cost{grid-column:1/3;grid-row:3;background:rgba(225,112,85,.08);border-color:rgba(225,112,85,.2)}
+.bmc-rev{grid-column:3/6;grid-row:3;background:rgba(0,184,148,.08);border-color:rgba(0,184,148,.2)}
+.bmc-cost h4,.bmc-rev h4{color:var(--gold)}
+
+/* 圖表 */
+.chart-wrap{position:relative;height:280px;margin:20px 0}
+.bar-chart{display:flex;align-items:flex-end;gap:12px;height:100%;padding-bottom:30px;position:relative}
+.bar-group{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.bar{width:100%;max-width:50px;border-radius:6px 6px 0 0;transition:all .6s cubic-bezier(.4,0,.2,1);position:relative;min-height:4px}
+.bar:hover{filter:brightness(1.3)}
+.bar-label{font-size:11px;color:var(--muted);position:absolute;bottom:-24px;white-space:nowrap}
+.bar-value{font-size:11px;font-weight:700;color:var(--text);position:absolute;top:-20px}
+
+/* 計算機 */
+.calc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}
+.calc-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)}
+.calc-row:last-child{border-bottom:none}
+.calc-label{color:var(--muted);font-size:14px}
+.calc-input{width:120px;padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);text-align:right;font-size:14px}
+.calc-result{margin-top:20px;padding:20px;border-radius:12px;background:linear-gradient(135deg,rgba(0,184,148,.15),rgba(0,206,201,.1));border:1px solid rgba(0,184,148,.3)}
+.calc-result .big{font-size:32px;font-weight:900;color:var(--green)}
+
+/* 風險矩陣 */
+.risk-item{display:flex;gap:16px;align-items:flex-start;padding:16px;border-radius:12px;background:var(--card);border:1px solid var(--border);margin-bottom:12px}
+.risk-badge{min-width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px}
+.risk-high{background:rgba(225,112,85,.15);color:var(--red);border:1px solid rgba(225,112,85,.3)}
+.risk-mid{background:rgba(253,203,110,.15);color:var(--gold);border:1px solid rgba(253,203,110,.3)}
+.risk-low{background:rgba(0,184,148,.15);color:var(--green);border:1px solid rgba(0,184,148,.3)}
+.risk-title{font-weight:700;font-size:15px;margin-bottom:4px}
+.risk-desc{color:var(--muted);font-size:13px}
+.risk-mit{font-size:12px;color:var(--accent2);margin-top:6px}
+
+/* 競爭對手表 */
+.comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.comp-table th{text-align:left;padding:14px 16px;background:var(--bg2);color:var(--accent2);font-size:12px;letter-spacing:1px;border-bottom:2px solid var(--border)}
+.comp-table td{padding:14px 16px;border-bottom:1px solid var(--border);color:var(--muted)}
+.comp-table tr:hover td{background:rgba(108,92,231,.05)}
+.comp-table .you{color:var(--green);font-weight:700}
+
+/* CTA */
+.cta-section{text-align:center;padding:120px 0}
+.cta-section h2{font-size:clamp(28px,4vw,48px);font-weight:900;margin-bottom:20px}
+.cta-section p{color:var(--muted);font-size:18px;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* Footer */
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:13px;position:relative;z-index:1}
+
+/* 動畫 */
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* 浮動數字 */
+.float-num{position:absolute;font-size:120px;font-weight:900;color:rgba(108,92,231,.05);pointer-events:none;user-select:none}
+
+/* 進度條 */
+.progress-bar{height:6px;background:var(--bg2);border-radius:3px;overflow:hidden;margin:8px 0}
+.progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s ease}
+
+/* 標籤 */
+.tag{display:inline-block;padding:4px 12px;border-radius:6px;font-size:11px;font-weight:600;margin:2px}
+.tag-accent{background:rgba(108,92,231,.15);color:var(--accent)}
+.tag-green{background:rgba(0,184,148,.15);color:var(--green)}
+.tag-gold{background:rgba(253,203,110,.15);color:var(--gold)}
+.tag-red{background:rgba(225,112,85,.15);color:var(--red)}
+
+@media(max-width:768px){
+  .bmc{grid-template-columns:1fr;grid-template-rows:none}
+  .bmc-cell{grid-column:auto!important;grid-row:auto!important}
+  section{padding:60px 0}
+}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "聲音品牌設計（Audio Branding） — 隱藏商機深度分析",
+ "url": "index.html"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "聲音品牌設計（Audio Branding） — 隱藏商機深度分析",
+   "item": "index.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-tag reveal">商機編號 A0143 · 其他冷門領域</div>
+    <h1 class="reveal reveal-delay-1">聲音品牌設計（Audio Branding）</h1>
+    <p class="sub reveal reveal-delay-2">品牌需要專屬的聲音Logo（開機聲、APP提示音、等待音樂），但多數品牌只重視視覺，提供聲音品牌設計服務。</p>
+    <div class="hero-cta reveal reveal-delay-3">
+      <a href="#analysis" class="btn btn-primary">深度分析 ↓</a>
+      <a href="#action" class="btn btn-ghost">立即行動</a>
+    </div>
+    <div style="margin-top:24px" class="reveal reveal-delay-3"><span class="tag tag-accent">其他冷門領域</span><span class="tag tag-accent">商機</span><span class="tag tag-accent">創業</span><span class="tag tag-accent">聲音品牌設計（Audio Branding）</span></div>
+  </div>
+  <div class="scroll-hint">向下捲動探索</div>
+</section>
+
+<!-- 為什麼被忽略 -->
+<section id="insight">
+  <div class="container">
+    <div class="section-label reveal">洞察</div>
+    <h2 class="section-title reveal reveal-delay-1">為什麼這個商機被忽略？</h2>
+    <div class="glass reveal reveal-delay-2" style="border-left:4px solid var(--accent3)">
+      <p style="font-size:18px;line-height:2;color:var(--text)">畢業生覺得品牌就是視覺設計，不知道「聲音品牌」在語音助理和聲音介面普及後是新興的品牌設計領域。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 市場分析 -->
+<section id="analysis">
+  <div class="container">
+    <div class="section-label reveal">市場分析</div>
+    <h2 class="section-title reveal reveal-delay-1">這個市場有多大？</h2>
+    <p class="section-desc reveal reveal-delay-2">結合人口結構、消費趨勢與產業數據，以下是這個領域的市場規模與成長動能。</p>
+    
+    <div class="grid-4" style="margin-bottom:48px">
+      <div class="glass stat-card reveal"><div class="stat-num" data-count="2.0" data-dec="1">0</div><div class="stat-label">市場規模（兆元）</div></div>
+      <div class="glass stat-card reveal reveal-delay-1"><div class="stat-num" data-count="10.0" data-dec="1">0</div><div class="stat-label">年複合成長率（%）</div></div>
+      <div class="glass stat-card reveal reveal-delay-2"><div class="stat-num" data-count="85">0</div><div class="stat-label">需求未被滿足比例（%）</div></div>
+      <div class="glass stat-card reveal reveal-delay-3"><div class="stat-num" data-count="3">0</div><div class="stat-label">主要競爭者數量（家）</div></div>
+    </div>
+
+    <div class="glass reveal">
+      <h3 style="margin-bottom:16px;font-size:20px">市場規模成長趨勢（指數=100）</h3>
+      <div class="chart-wrap"><div class="bar-chart"><div class="bar-group"><div class="bar" data-h="62" style="background:linear-gradient(180deg,#6c5ce7,#6c5ce788)"><span class="bar-value">100.0</span></div><span class="bar-label">2022</span></div><div class="bar-group"><div class="bar" data-h="68" style="background:linear-gradient(180deg,#a29bfe,#a29bfe88)"><span class="bar-value">110.0</span></div><span class="bar-label">2023</span></div><div class="bar-group"><div class="bar" data-h="75" style="background:linear-gradient(180deg,#00cec9,#00cec988)"><span class="bar-value">121.0</span></div><span class="bar-label">2024</span></div><div class="bar-group"><div class="bar" data-h="83" style="background:linear-gradient(180deg,#81ecec,#81ecec88)"><span class="bar-value">133.1</span></div><span class="bar-label">2025E</span></div><div class="bar-group"><div class="bar" data-h="91" style="background:linear-gradient(180deg,#fd79a8,#fd79a888)"><span class="bar-value">146.4</span></div><span class="bar-label">2026E</span></div><div class="bar-group"><div class="bar" data-h="100" style="background:linear-gradient(180deg,#fdcb6e,#fdcb6e88)"><span class="bar-value">161.1</span></div><span class="bar-label">2027E</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 痛點 -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">痛點分析</div>
+    <h2 class="section-title reveal reveal-delay-1">目標客戶正在痛苦什麼？</h2>
+    <div class="grid-2">
+      <div class="glass reveal"><div style="font-size:32px;margin-bottom:12px">😣</div><h3 style="margin-bottom:8px;font-size:17px">痛點 1</h3><p style="color:var(--muted);font-size:14px">現有解決方案無法滿足需求</p></div><div class="glass reveal"><div style="font-size:32px;margin-bottom:12px">😤</div><h3 style="margin-bottom:8px;font-size:17px">痛點 2</h3><p style="color:var(--muted);font-size:14px">資訊不對稱導致決策困難</p></div><div class="glass reveal"><div style="font-size:32px;margin-bottom:12px">😣</div><h3 style="margin-bottom:8px;font-size:17px">痛點 3</h3><p style="color:var(--muted);font-size:14px">服務品質參差不齊</p></div><div class="glass reveal"><div style="font-size:32px;margin-bottom:12px">😤</div><h3 style="margin-bottom:8px;font-size:17px">痛點 4</h3><p style="color:var(--muted);font-size:14px">價格與價值不匹配</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 商業模式 -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">商業模式</div>
+    <h2 class="section-title reveal reveal-delay-1">怎麼賺錢？商業模式畫布</h2>
+    <p class="section-desc reveal reveal-delay-2">一張圖看懂這個生意的所有關鍵要素，從價值主張到收入來源。</p>
+    <div class="reveal">
+    <div class="bmc">
+      <div class="bmc-cell bmc-kp"><h4>關鍵合作</h4><ul><li>供應商</li><li>通路夥伴</li><li>技術合作方</li><li>政府單位</li></ul></div>
+      <div class="bmc-cell bmc-ka"><h4>關鍵活動</h4><ul><li>服務交付</li><li>產品研發</li><li>客戶經營</li><li>市場推廣</li></ul></div>
+      <div class="bmc-cell bmc-kr"><h4>關鍵資源</h4><ul><li>專業團隊</li><li>技術或知識產權</li><li>客戶資料庫</li><li>合作網絡</li></ul></div>
+      <div class="bmc-cell bmc-vp"><h4>價值主張</h4><p style="font-size:14px;color:var(--text);line-height:1.8">品牌需要專屬的聲音Logo（開機聲、APP提示音、等待音樂），但多數品牌只重視視覺，提供聲音品牌設計服務。</p></div>
+      <div class="bmc-cell bmc-cr"><h4>客戶關係</h4><ul><li>定期關懷</li><li>會員制度</li><li>客戶成功團隊</li><li>線上社群</li></ul></div>
+      <div class="bmc-cell bmc-ch"><h4>通路</h4><ul><li>線上平台</li><li>實體據點</li><li>合作夥伴轉介</li><li>社群媒體</li></ul></div>
+      <div class="bmc-cell bmc-cs"><h4>客戶區隔</h4><p style="font-size:13px;color:var(--muted)">目標市場消費者與企業客戶</p></div>
+      <div class="bmc-cell bmc-cost"><h4>成本結構</h4><ul style="display:flex;flex-wrap:wrap;gap:4px 16px"><li style="width:45%">人力成本</li><li style="width:45%">場地與設備</li><li style="width:45%">技術研發</li><li style="width:45%">行銷獲客</li></ul></div>
+      <div class="bmc-cell bmc-rev"><h4>收入來源</h4><ul style="display:flex;flex-wrap:wrap;gap:4px 16px"><li style="width:45%">服務費</li><li style="width:45%">產品銷售</li><li style="width:45%">訂閱制會員費</li><li style="width:45%">授權與加盟金</li></ul></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- 競爭格局 -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">競爭格局</div>
+    <h2 class="section-title reveal reveal-delay-1">誰在做？我們的優勢在哪？</h2>
+    <div class="glass reveal" style="padding:0;overflow:hidden">
+      <table class="comp-table">
+        <thead><tr><th>競爭者</th><th>市場占有率</th><th>弱點</th><th>我們的突破口</th></tr></thead>
+        <tbody><tr><td>現有大企業</td><td>高</td><td>體制僵化反應慢</td><td class="you">我們的優勢：敏捷+差異化</td></tr><tr><td>中小企業</td><td>中</td><td>資源有限</td><td class="you">我們的優勢：專業化+品牌化</td></tr><tr><td>新創公司</td><td>中</td><td>資金不足</td><td class="you">我們的優勢：穩健營運+資源整合</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 實行路線圖 -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">執行計畫</div>
+    <h2 class="section-title reveal reveal-delay-1">12個月實行路線圖</h2>
+    <p class="section-desc reveal reveal-delay-2">從零到一，每個階段的關鍵任務與里程碑。</p>
+    <div class="timeline reveal"><div class="tl-item"><div class="tl-phase">第1-3月</div><div class="tl-title">驗證與準備</div><div class="tl-desc">市場調查、競品分析、MVP開發、早期客戶訪談、法規確認</div></div><div class="tl-item"><div class="tl-phase">第4-6月</div><div class="tl-title">試營運</div><div class="tl-desc">小規模試營運、收集用戶回饋、優化服務流程、建立品牌識別</div></div><div class="tl-item"><div class="tl-phase">第7-9月</div><div class="tl-title">正式營運</div><div class="tl-desc">正式上線、行銷推廣、擴大客戶基礎、建立標準作業流程</div></div><div class="tl-item"><div class="tl-phase">第10-12月</div><div class="tl-title">規模化</div><div class="tl-desc">優化營運效率、考慮擴點或擴品、尋找策略合作、準備下一階段融資</div></div></div>
+  </div>
+</section>
+
+<!-- 財務試算 -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">財務試算</div>
+    <h2 class="section-title reveal reveal-delay-1">收入潛力互動計算機</h2>
+    <p class="section-desc reveal reveal-delay-2">調整參數，即時看到這個生意的收入與利潤潛力。</p>
+    <div class="grid-2">
+      <div class="calc reveal">
+        <div class="calc-row"><span class="calc-label">付費客戶數</span><input type="number" id="calc-customers" class="calc-input" value="283" oninput="calcRevenue()"></div>
+        <div class="calc-row"><span class="calc-label">單客單價（元/月）</span><input type="number" id="calc-price" class="calc-input" value="8018" oninput="calcRevenue()"></div>
+        <div class="calc-row"><span class="calc-label">客戶留存率（%）</span><input type="number" id="calc-retention" class="calc-input" value="63" oninput="calcRevenue()"></div>
+        <div class="calc-row"><span class="calc-label">營運成本率（%）</span><input type="number" id="calc-cost" class="calc-input" value="39" oninput="calcRevenue()"></div>
+      </div>
+      <div class="calc reveal reveal-delay-1">
+        <div class="calc-row"><span class="calc-label">預估月營收</span><span id="calc-monthly" style="font-weight:700;font-size:18px;color:var(--accent2)">—</span></div>
+        <div class="calc-row"><span class="calc-label">預估年營收</span><span id="calc-annual" style="font-weight:700;font-size:18px;color:var(--gold)">—</span></div>
+        <div class="calc-result"><div style="color:var(--muted);font-size:13px;margin-bottom:4px">預估年淨利</div><div class="big" id="calc-profit">—</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 風險 -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">風險管理</div>
+    <h2 class="section-title reveal reveal-delay-1">有哪些風險？怎麼應對？</h2>
+    <div class="reveal"><div class="risk-item"><div class="risk-badge risk-high">高</div><div><div class="risk-title">法規合規風險</div><div class="risk-desc">新興領域法規可能變動，導致營運模式需要調整</div><div class="risk-mit">→ 對策：提前與法規專家合作，建立合規架構，保留彈性調整空間</div></div></div><div class="risk-item"><div class="risk-badge risk-mid">中</div><div><div class="risk-title">市場接受度風險</div><div class="risk-desc">消費者對新服務的認知不足，採用速度可能低於預期</div><div class="risk-mit">→ 對策：先從早期採用者切入，用案例和數據建立口碑，逐步擴大市場</div></div></div><div class="risk-item"><div class="risk-badge risk-mid">中</div><div><div class="risk-title">競爭加劇風險</div><div class="risk-desc">市場驗證後可能吸引大企業進入，競爭壓力增加</div><div class="risk-mit">→ 對策：建立技術壁壘和品牌忠誠度，專注細分市場，形成先發優勢</div></div></div><div class="risk-item"><div class="risk-badge risk-low">低</div><div><div class="risk-title">人才招募風險</div><div class="risk-desc">需要跨領域專業人才，招募和留任可能有困難</div><div class="risk-mit">→ 對策：建立有吸引力的薪酬和文化，與大學和培訓機構合作建立人才管道</div></div></div></div>
+  </div>
+</section>
+
+<!-- 切入點 -->
+<section id="action">
+  <div class="container">
+    <div class="section-label reveal">行動建議</div>
+    <h2 class="section-title reveal reveal-delay-1">從哪裡開始？</h2>
+    <div class="glass reveal" style="border-left:4px solid var(--green);background:linear-gradient(135deg,rgba(0,184,148,.08),transparent)">
+      <h3 style="margin-bottom:12px;color:var(--green)">切入點建議</h3>
+      <p style="font-size:17px;line-height:2">跟音樂製作人合作，先從新創公司和APP產品開始，用聲音Logo和品牌音效建立案例。</p>
+    </div>
+    <div class="grid-3" style="margin-top:32px">
+      <div class="glass reveal"><div style="font-size:28px;margin-bottom:8px">📋</div><h4 style="margin-bottom:8px">第一步</h4><p style="color:var(--muted);font-size:13px">進行30位目標客戶深度訪談，驗證痛點與付費意願</p></div>
+      <div class="glass reveal reveal-delay-1"><div style="font-size:28px;margin-bottom:8px">🔬</div><h4 style="margin-bottom:8px">第二步</h4><p style="color:var(--muted);font-size:13px">開發最小可行產品（MVP），用最低成本測試市場反應</p></div>
+      <div class="glass reveal reveal-delay-2"><div style="font-size:28px;margin-bottom:8px">🚀</div><h4 style="margin-bottom:8px">第三步</h4><p style="color:var(--muted);font-size:13px">根據數據優化後，正式上線並啟動行銷，建立早期用戶社群</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="reveal">這個商機，值得你認真看待</h2>
+    <p class="reveal reveal-delay-1">大多數人看見的是風險，少數人看見的是機會。差別在於是否願意深入理解並付諸行動。</p>
+    <div class="reveal reveal-delay-2" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="#analysis" class="btn btn-primary">重新研讀分析</a>
+      <a href="https://github.com" target="_blank" class="btn btn-ghost">Fork 到 GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>商機編號 A0143 · 聲音品牌設計（Audio Branding） · 其他冷門領域</p>
+    <p style="margin-top:8px;opacity:.6">本分析由 AI 產生，僅供參考，實際創業請進行獨立驗證與專業諮詢</p>
+  </div>
+</footer>
+
+<script>
+// 背景粒子
+(function(){
+  const c=document.getElementById('bg-canvas');if(!c)return;
+  const ctx=c.getContext('2d');let w,h,particles=[];
+  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+  resize();window.addEventListener('resize',resize);
+  for(let i=0;i<60;i++){particles.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+.5,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,o:Math.random()*.5+.1})}
+  function draw(){ctx.clearRect(0,0,w,h);particles.forEach(p=>{p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>w)p.dx*=-1;if(p.y<0||p.y>h)p.dy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(108,92,231,${p.o})`;ctx.fill()});requestAnimationFrame(draw)}
+  draw();
+})();
+
+// 滾動顯示動畫
+(function(){
+  const els=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1});
+  els.forEach(el=>obs.observe(el));
+})();
+
+// 數字增長動畫
+(function(){
+  const nums=document.querySelectorAll('[data-count]');
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const el=e.target;const target=parseFloat(el.dataset.count);const dec=el.dataset.dec||0;let cur=0;const step=target/60;const timer=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(timer)}el.textContent=cur.toFixed(dec)},16);obs.unobserve(el)}})},{threshold:.5});
+  nums.forEach(el=>obs.observe(el));
+})();
+
+// 長條圖動畫
+(function(){
+  const bars=document.querySelectorAll('.bar');
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const h=e.target.dataset.h;e.target.style.height=h+'%';obs.unobserve(e.target)}})},{threshold:.3});
+  bars.forEach(b=>{b.style.height='0%'});
+  bars.forEach(b=>obs.observe(b));
+})();
+
+// 營收計算機
+function calcRevenue(){
+  const customers=parseFloat(document.getElementById('calc-customers').value)||0;
+  const price=parseFloat(document.getElementById('calc-price').value)||0;
+  const retention=parseFloat(document.getElementById('calc-retention').value)||0;
+  const cost=parseFloat(document.getElementById('calc-cost').value)||0;
+  const monthly=customers*price;
+  const annual=monthly*12*(retention/100+0.5);
+  const profit=annual*(1-cost/100);
+  document.getElementById('calc-monthly').textContent='$'+monthly.toLocaleString();
+  document.getElementById('calc-annual').textContent='$'+Math.round(annual).toLocaleString();
+  document.getElementById('calc-profit').textContent='$'+Math.round(profit).toLocaleString();
+}
+</script>
+<script>calcRevenue();</script>
+</body>
+</html>

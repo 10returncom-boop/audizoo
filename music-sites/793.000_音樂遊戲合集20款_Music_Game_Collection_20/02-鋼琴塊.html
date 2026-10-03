@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta name="robots" content="index,follow">
+<meta name="twitter:title" content="鋼琴塊">
+<meta name="twitter:description" content="鋼琴塊">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>鋼琴塊</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;color:#fff;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;user-select:none;touch-action:none}
+#game{position:relative;width:100%;max-width:420px;height:100%;display:flex;flex-direction:column}
+#hud{display:flex;justify-content:space-between;padding:12px 16px;font-size:18px;z-index:10;background:#111}
+#score{color:#0ff;font-weight:bold}
+#best{color:#fa0;font-weight:bold}
+#board{flex:1;position:relative;overflow:hidden;background:#fff}
+.col{position:absolute;top:0;bottom:0;width:25%;border-right:1px solid #ddd}
+.col:nth-child(1){left:0}
+.col:nth-child(2){left:25%}
+.col:nth-child(3){left:50%}
+.col:nth-child(4){left:75%;border-right:none}
+.tile{position:absolute;width:100%;height:25%;background:#111;border:1px solid #333;transition:background .1s}
+.tile.clicked{background:#888}
+.tile.wrong{background:#f44}
+#bottomLine{position:absolute;bottom:0;left:0;right:0;height:3px;background:#f44;z-index:5}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:20px}
+.overlay h1{font-size:40px;color:#fff}
+.overlay p{font-size:16px;color:#aaa;text-align:center;line-height:1.8}
+.overlay button{padding:14px 40px;font-size:20px;font-weight:bold;border:none;border-radius:30px;background:#0ff;color:#000;cursor:pointer}
+.overlay .stats{font-size:20px;line-height:2;text-align:center}
+.overlay .stats b{color:#0ff}
+.hidden{display:none!important}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="鋼琴塊">
+<meta property="og:title" content="鋼琴塊">
+<meta property="og:description" content="鋼琴塊">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="音樂遊戲合集20款">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="02-鋼琴塊.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "音樂遊戲合集20款", "description": "鋼琴塊", "url": "02-鋼琴塊.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "鋼琴塊",
+   "item": "02-鋼琴塊.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "鋼琴塊",
+ "name": "鋼琴塊",
+ "url": "02-鋼琴塊.html"
+}
+</script>
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <span>分數：<span id="score">0</span></span>
+    <span>最高：<span id="best">0</span></span>
+  </div>
+  <div id="board">
+    <div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div>
+    <div id="bottomLine"></div>
+  </div>
+  <div id="startScreen" class="overlay">
+    <h1>鋼琴塊</h1>
+    <p>黑色方塊從上方落下<br>點選黑色方塊，別讓它落到底部<br>別點到白色區域！</p>
+    <button id="startBtn">開始遊戲</button>
+  </div>
+  <div id="endScreen" class="overlay hidden">
+    <h2>遊戲結束</h2>
+    <div class="stats">
+      本局分數：<b id="finalScore">0</b><br>
+      歷史最高：<b id="finalBest">0</b>
+    </div>
+    <button id="restartBtn">再來一局</button>
+  </div>
+</div>
+<script>
+const AC=window.AudioContext||window.webkitAudioContext;
+let audioCtx=null;
+function initAudio(){if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume()}
+function playNote(freq,dur=.15){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.type='triangle';o.frequency.value=freq;
+  g.gain.setValueAtTime(.25,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+dur);
+  o.connect(g);g.connect(audioCtx.destination);
+  o.start();o.stop(audioCtx.currentTime+dur);
+}
+const SCALE=[261.63,293.66,329.63,349.23,392,440,493.88,523.25];
+let noteIdx=0;
+const game={score:0,tiles:[],running:false,speed:150,lastTime:0,spawnY:0};
+const board=document.getElementById('board');
+const scoreEl=document.getElementById('score');
+let best=0;
+try{best=parseInt(localStorage.getItem('pianoTiles_best')||'0')}catch(e){}
+document.getElementById('best').textContent=best;
+
+function spawnTile(){
+  const col=Math.floor(Math.random()*4);
+  const el=document.createElement('div');
+  el.className='tile';
+  el.style.left=(col*25)+'%';
+  el.style.top='-25%';
+  el.dataset.col=col;
+  board.appendChild(el);
+  game.tiles.push({el,col,y:-25,clicked:false});
+}
+
+function clickTile(e){
+  if(!game.running)return;
+  e.preventDefault();
+  initAudio();
+  const rect=board.getBoundingClientRect();
+  const x=(e.clientX||e.touches[0].clientX)-rect.left;
+  const col=Math.floor(x/(rect.width/4));
+  const boardH=board.clientHeight;
+  let found=null;
+  for(const t of game.tiles){
+    if(t.col===col&&!t.clicked&&t.y>boardH*0.3&&t.y<boardH){found=t;break;}
+  }
+  if(found){
+    found.clicked=true;
+    found.el.classList.add('clicked');
+    setTimeout(()=>found.el.remove(),200);
+    game.score++;
+    playNote(SCALE[noteIdx%SCALE.length]);
+    noteIdx++;
+    if(game.score%10===0)game.speed=Math.min(400,game.speed+15);
+    scoreEl.textContent=game.score;
+  }else{
+    const el=document.createElement('div');
+    el.className='tile wrong';
+    el.style.left=(col*25)+'%';
+    el.style.top=(boardH*0.6)+'px';
+    board.appendChild(el);
+    setTimeout(()=>el.remove(),300);
+    playNote(100,.3,'sawtooth');
+    endGame();
+  }
+}
+
+function loop(t){
+  if(!game.running)return;
+  const dt=Math.min((t-game.lastTime)/1000,.05);
+  game.lastTime=t;
+  const boardH=board.clientHeight;
+  for(let i=game.tiles.length-1;i>=0;i--){
+    const tile=game.tiles[i];
+    tile.y+=game.speed*dt;
+    tile.el.style.top=tile.y+'px';
+    if(tile.y>boardH&&!tile.clicked){
+      endGame();return;
+    }
+  }
+  game.tiles=game.tiles.filter(t=>!t.clicked||t.y<=boardH);
+  const topTile=game.tiles[game.tiles.length-1];
+  if(!topTile||topTile.y>boardH*0.15)spawnTile();
+  requestAnimationFrame(loop);
+}
+
+function startGame(){
+  initAudio();
+  game.score=0;game.tiles.forEach(t=>t.el.remove());game.tiles=[];
+  game.speed=150;noteIdx=0;scoreEl.textContent=0;
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('endScreen').classList.add('hidden');
+  game.running=true;game.lastTime=performance.now();
+  spawnTile();
+  requestAnimationFrame(loop);
+}
+
+function endGame(){
+  game.running=false;
+  if(game.score>best){best=game.score;try{localStorage.setItem('pianoTiles_best',best)}catch(e){}}
+  document.getElementById('best').textContent=best;
+  document.getElementById('finalScore').textContent=game.score;
+  document.getElementById('finalBest').textContent=best;
+  document.getElementById('endScreen').classList.remove('hidden');
+}
+
+document.getElementById('startBtn').onclick=startGame;
+document.getElementById('restartBtn').onclick=startGame;
+board.addEventListener('pointerdown',clickTile);
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.running)game.running=false;});
+</script>
+</body>
+</html>
