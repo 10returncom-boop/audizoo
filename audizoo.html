@@ -67,7 +67,7 @@
       "name":"audizoo 音樂互動站目錄",
       "numberOfItems":28,
       "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"曾侯乙編鐘虛擬體驗","url":"https://audizoo.com/music-sites/781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience/index.html"},
+        {"@type":"ListItem","position":1,"name":"曾侯乙編鐘虛擬體驗","url":"https://audizoo.com/Bianzhong/index.html"},
         {"@type":"ListItem","position":2,"name":"音樂家都很怪","url":"https://audizoo.com/music-sites/780.000_音樂家都很怪_Eccentric_Musicians/index.html"},
         {"@type":"ListItem","position":3,"name":"音樂就是數學","url":"https://audizoo.com/music-sites/780.000_音樂就是數學互動實驗室_Music_is_Math_Lab/index.html"},
         {"@type":"ListItem","position":4,"name":"音樂遊戲合集（20 款）","url":"https://audizoo.com/music-sites/793.000_音樂遊戲合集20款_Music_Game_Collection_20/index.html"},
@@ -475,7 +475,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:72p
       <span class="tagline">聽兩千五百年前的禮樂之聲</span>
       <p>走進戰國時期的曾侯乙編鐘虛擬體驗：認識這套世界矚目的古樂重器，聽它的音階、敲它的節奏，感受青銅與音律交織的華夏之聲。</p>
       <div class="foot">
-        <a class="flag-go" href="./music-sites/781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience/index.html">開啟主題站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="flag-go" href="./Bianzhong/index.html">開啟主題站<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <span class="flag-corner">audizoo · 旗艦 01</span>
       </div>
     </div>
@@ -636,7 +636,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:72p
       <div class="foot-cols">
         <div><h5>探索</h5><a href="#ways">怎麼玩</a><a href="#journey">五站旅程</a><a href="#sites">全部音樂站</a></div>
         <div><h5>認識</h5><a href="#about">關於</a><a href="#contact">聯絡</a></div>
-        <div><h5>旗艦站</h5><a href="./music-sites/781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience/index.html">曾侯乙編鐘</a><a href="./music-sites/780.000_音樂就是數學互動實驗室_Music_is_Math_Lab/index.html">音樂就是數學</a><a href="./music-sites/793.000_音樂遊戲合集20款_Music_Game_Collection_20/index.html">20 款音樂遊戲</a></div>
+        <div><h5>旗艦站</h5><a href="./Bianzhong/index.html">曾侯乙編鐘</a><a href="./music-sites/780.000_音樂就是數學互動實驗室_Music_is_Math_Lab/index.html">音樂就是數學</a><a href="./music-sites/793.000_音樂遊戲合集20款_Music_Game_Collection_20/index.html">20 款音樂遊戲</a></div>
       </div>
     </div>
     <div class="foot-bottom">
@@ -656,7 +656,7 @@ var CATS=[
  {k:"artist",t:"音樂家歌劇"}
 ];
 var SITES=[
- {n:"曾侯乙編鐘",c:"know",f:"781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience",d:"戰國青銅重器的虛擬體驗，聽兩千五百年前的禮樂之聲。",flag:true},
+ {n:"曾侯乙編鐘",c:"know",f:"781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience",h:"Bianzhong/index.html",d:"戰國青銅重器的虛擬體驗，聽兩千五百年前的禮樂之聲。",flag:true},
  {n:"音樂家都很怪",c:"artist",f:"780.000_音樂家都很怪_Eccentric_Musicians",d:"天才音樂家背後的怪誕軼事與有趣日常。",flag:true},
  {n:"音樂就是數學",c:"learn",f:"780.000_音樂就是數學互動實驗室_Music_is_Math_Lab",d:"把音符拆成幾何、拍點藏著規律的互動實驗室。",flag:true},
  {n:"20 款音樂遊戲",c:"learn",f:"793.000_音樂遊戲合集20款_Music_Game_Collection_20",d:"集結 20 款節奏與音樂主題遊戲，邊玩邊長節奏感。",flag:true},
@@ -705,7 +705,7 @@ function render(){
   gridEl.innerHTML=list.map(function(s){
     var tag=s.flag?"<span class='s-tag flag-mark'>旗艦站</span>":"<span class='s-tag'>"+CATS.filter(function(c){return c.k===s.c})[0].t+"</span>";
     var pend=s.pending?"<span class='s-tag' style='color:var(--sun)'>路徑待確認</span>":"";
-    return "<a class='site' href='./music-sites/"+s.f+"/index.html'>"+tag+pend+"<h4>"+s.n+"</h4><p>"+s.d+"</p><span class='s-go'>開啟<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M13 6l6 6-6 6'/></svg></span></a>";
+    return "<a class='site' href='./"+(s.h||("music-sites/"+s.f+"/index.html"))+"'>"+tag+pend+"<h4>"+s.n+"</h4><p>"+s.d+"</p><span class='s-go'>開啟<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M13 6l6 6-6 6'/></svg></span></a>";
   }).join("");
 }
 chipsEl.addEventListener("click",function(e){
@@ -746,7 +746,7 @@ document.querySelectorAll(".rv").forEach(function(el){io.observe(el);});
 
 /* 播放按鈕 → 跳轉對應站 */
 var playHrefs=[
- "./music-sites/781.000_曾侯乙編鐘虛擬體驗_Marquis_Yi_Bianzhong_Experience/index.html",
+ "./Bianzhong/index.html",
  "./music-sites/780.000_音樂家都很怪_Eccentric_Musicians/index.html",
  "./music-sites/780.000_音樂就是數學互動實驗室_Music_is_Math_Lab/index.html",
  "./music-sites/793.000_音樂遊戲合集20款_Music_Game_Collection_20/index.html",

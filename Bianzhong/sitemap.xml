@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>index.html</loc></url>
+  <url><loc>interactive/01_quiz.html</loc></url>
+  <url><loc>interactive/02_memory.html</loc></url>
+  <url><loc>interactive/03_timeline.html</loc></url>
+  <url><loc>interactive/04_story.html</loc></url>
+  <url><loc>interactive/05_hotspots.html</loc></url>
+  <url><loc>interactive/06_puzzle.html</loc></url>
+  <url><loc>interactive/07_dialogue.html</loc></url>
+  <url><loc>interactive/08_fortune.html</loc></url>
+  <url><loc>interactive/09_flashcards.html</loc></url>
+  <url><loc>interactive/10_quest.html</loc></url>
+  <url><loc>interactive/index.html</loc></url>
+</urlset>
