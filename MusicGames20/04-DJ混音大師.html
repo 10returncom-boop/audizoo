@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta name="robots" content="index,follow">
+<meta name="twitter:title" content="DJ混音大師">
+<meta name="twitter:description" content="DJ混音大師">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>DJ混音大師</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;user-select:none;touch-action:none}
+#game{position:relative;width:100%;max-width:500px;height:100%;display:flex;flex-direction:column;padding:10px;gap:10px}
+#hud{display:flex;justify-content:space-between;font-size:16px;padding:4px 8px}
+#score{color:#0f0;font-weight:bold}
+#combo{color:#ff0;font-weight:bold}
+#best{color:#f80;font-weight:bold}
+#decks{flex:1;display:flex;gap:10px;align-items:center;justify-content:center}
+.deck{position:relative;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,#222,#000);border:4px solid #333;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .1s}
+.deck.active{border-color:#0ff;box-shadow:0 0 30px #0ff}
+.deck-label{position:absolute;bottom:-30px;font-size:14px;color:#888;width:100%;text-align:center}
+.vinyl{width:100px;height:100px;border-radius:50%;background:repeating-radial-gradient(circle,#111 0px,#111 2px,#1a1a1a 2px,#1a1a1a 4px);display:flex;align-items:center;justify-content:center}
+.vinyl-center{width:30px;height:30px;border-radius:50%;background:#0ff}
+.deck:nth-child(2) .vinyl-center{background:#f0f}
+#mixer{display:flex;flex-direction:column;gap:8px;align-items:center}
+#crossfader{width:120px;height:20px;background:#333;border-radius:10px;position:relative;cursor:pointer}
+#crossfader-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:#0ff;box-shadow:0 0 10px #0ff}
+#beatbar{width:100%;height:8px;background:#222;border-radius:4px;overflow:hidden}
+#beatfill{height:100%;width:0%;background:linear-gradient(90deg,#0ff,#f0f);transition:width .05s linear}
+#judge{text-align:center;font-size:24px;font-weight:bold;height:30px;opacity:0;transition:opacity .2s}
+#judge.perfect{color:#0ff;opacity:1}
+#judge.good{color:#0f0;opacity:1}
+#judge.miss{color:#f44;opacity:1}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:20px;padding:20px}
+.overlay h1{font-size:36px;background:linear-gradient(90deg,#0ff,#f0f,#ff0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.overlay p{font-size:15px;color:#aaa;text-align:center;line-height:1.8}
+.overlay button{padding:14px 40px;font-size:20px;font-weight:bold;border:none;border-radius:30px;background:linear-gradient(90deg,#0ff,#f0f);color:#000;cursor:pointer}
+.overlay .stats{font-size:18px;line-height:2;text-align:center}
+.overlay .stats b{color:#0ff}
+.hidden{display:none!important}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="DJ混音大師">
+<meta property="og:title" content="DJ混音大師">
+<meta property="og:description" content="DJ混音大師">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="音樂遊戲合集20款">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="04-DJ混音大師.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "音樂遊戲合集20款", "description": "DJ混音大師", "url": "04-DJ混音大師.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "DJ混音大師",
+   "item": "04-DJ混音大師.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "DJ混音大師",
+ "name": "DJ混音大師",
+ "url": "04-DJ混音大師.html"
+}
+</script>
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <span>分數：<span id="score">0</span></span>
+    <span>連擊：<span id="combo">0</span></span>
+    <span>最高：<span id="best">0</span></span>
+  </div>
+  <div id="judge"></div>
+  <div id="decks">
+    <div class="deck" id="deckA"><div class="vinyl"><div class="vinyl-center"></div></div><div class="deck-label">A (←)</div></div>
+    <div id="mixer">
+      <div id="crossfader"><div id="crossfader-knob"></div></div>
+      <div style="font-size:11px;color:#666">CROSSFADER</div>
+    </div>
+    <div class="deck" id="deckB"><div class="vinyl"><div class="vinyl-center"></div></div><div class="deck-label">B (→)</div></div>
+  </div>
+  <div id="beatbar"><div id="beatfill"></div></div>
+  <div id="startScreen" class="overlay">
+    <h1>DJ混音大師</h1>
+    <p>跟著節奏在正確時機點選轉盤<br>左轉盤 A：鍵盤 ← 或 A<br>右轉盤 B：鍵盤 → 或 L<br>拖動中間推桿調整混音<br>在節奏點到達頂峰時點選！</p>
+    <button id="startBtn">開始派對</button>
+  </div>
+  <div id="endScreen" class="overlay hidden">
+    <h2>派對結束</h2>
+    <div class="stats">
+      本局分數：<b id="finalScore">0</b><br>
+      最高連擊：<b id="finalCombo">0</b><br>
+      歷史最高：<b id="finalBest">0</b>
+    </div>
+    <button id="restartBtn">再來一場</button>
+  </div>
+</div>
+<script>
+const AC=window.AudioContext||window.webkitAudioContext;
+let audioCtx=null;
+function initAudio(){if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume()}
+function playKick(){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.frequency.setValueAtTime(150,audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(40,audioCtx.currentTime+.1);
+  g.gain.setValueAtTime(.4,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.15);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.15);
+}
+function playHihat(){
+  if(!audioCtx)return;
+  const buf=audioCtx.createBuffer(1,audioCtx.sampleRate*.05,audioCtx.sampleRate);
+  const d=buf.getChannelData(0);
+  for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.exp(-i/1000);
+  const src=audioCtx.createBufferSource(),g=audioCtx.createGain(),f=audioCtx.createBiquadFilter();
+  f.type='highpass';f.frequency.value=7000;
+  src.buffer=buf;src.connect(f);f.connect(g);g.connect(audioCtx.destination);
+  g.gain.setValueAtTime(.15,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.05);
+  src.start();
+}
+function playScratch(deck){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.type='sawtooth';
+  const base=deck==='A'?220:330;
+  o.frequency.setValueAtTime(base,audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(base*1.5,audioCtx.currentTime+.05);
+  o.frequency.exponentialRampToValueAtTime(base*.7,audioCtx.currentTime+.1);
+  g.gain.setValueAtTime(.15,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.12);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.12);
+}
+const game={score:0,combo:0,maxCombo:0,running:false,beatPhase:0,bpm:120,nextBeat:'A',missCount:0,lastTime:0};
+const scoreEl=document.getElementById('score');
+const comboEl=document.getElementById('combo');
+const bestEl=document.getElementById('best');
+const judgeEl=document.getElementById('judge');
+const beatfill=document.getElementById('beatfill');
+let best=0;
+try{best=parseInt(localStorage.getItem('djMaster_best')||'0')}catch(e){}
+bestEl.textContent=best;
+
+function showJudge(text,cls){judgeEl.textContent=text;judgeEl.className=cls;setTimeout(()=>judgeEl.className='',300);}
+
+function hitDeck(deck){
+  if(!game.running)return;
+  initAudio();
+  const el=document.getElementById('deck'+deck);
+  el.classList.add('active');setTimeout(()=>el.classList.remove('active'),150);
+  playScratch(deck);
+  const phase=game.beatPhase%1;
+  const dist=Math.min(phase,1-phase);
+  const expected=game.nextBeat;
+  if(deck===expected){
+    if(dist<.1){game.score+=100;showJudge('PERFECT','perfect');playKick();}
+    else if(dist<.25){game.score+=50;showJudge('GOOD','good');playHihat();}
+    else{game.score+=10;showJudge('EARLY','good');}
+    game.combo++;game.maxCombo=Math.max(game.maxCombo,game.combo);
+    game.nextBeat=Math.random()<.5?'A':'B';
+    if(game.combo%8===0)game.bpm=Math.min(160,game.bpm+5);
+  }else{
+    game.combo=0;game.missCount++;showJudge('WRONG DECK','miss');
+    if(game.missCount>=10){endGame();return;}
+  }
+  scoreEl.textContent=game.score;comboEl.textContent=game.combo;
+}
+
+function loop(t){
+  if(!game.running)return;
+  const dt=Math.min((t-game.lastTime)/1000,.05);
+  game.lastTime=t;
+  game.beatPhase+=(game.bpm/60)*dt;
+  const phase=game.beatPhase%1;
+  beatfill.style.width=(phase*100)+'%';
+  if(phase<.05&&Math.floor(game.beatPhase)!==Math.floor(game.beatPhase-(game.bpm/60)*dt)){
+    playKick();
+  }
+  requestAnimationFrame(loop);
+}
+
+function startGame(){
+  initAudio();
+  game.score=0;game.combo=0;game.maxCombo=0;game.beatPhase=0;game.bpm=120;
+  game.nextBeat=Math.random()<.5?'A':'B';game.missCount=0;
+  scoreEl.textContent=0;comboEl.textContent=0;
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('endScreen').classList.add('hidden');
+  game.running=true;game.lastTime=performance.now();
+  requestAnimationFrame(loop);
+}
+function endGame(){
+  game.running=false;
+  if(game.score>best){best=game.score;try{localStorage.setItem('djMaster_best',best)}catch(e){}}
+  bestEl.textContent=best;
+  document.getElementById('finalScore').textContent=game.score;
+  document.getElementById('finalCombo').textContent=game.maxCombo;
+  document.getElementById('finalBest').textContent=best;
+  document.getElementById('endScreen').classList.remove('hidden');
+}
+
+document.getElementById('startBtn').onclick=startGame;
+document.getElementById('restartBtn').onclick=startGame;
+document.getElementById('deckA').addEventListener('pointerdown',e=>{e.preventDefault();hitDeck('A');});
+document.getElementById('deckB').addEventListener('pointerdown',e=>{e.preventDefault();hitDeck('B');});
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft'||e.key.toLowerCase()==='a')hitDeck('A');
+  if(e.key==='ArrowRight'||e.key.toLowerCase()==='l')hitDeck('B');
+});
+const cf=document.getElementById('crossfader');
+const knob=document.getElementById('crossfader-knob');
+let dragging=false;
+cf.addEventListener('pointerdown',e=>{dragging=true;e.preventDefault();});
+document.addEventListener('pointermove',e=>{
+  if(!dragging)return;
+  const rect=cf.getBoundingClientRect();
+  let pct=(e.clientX-rect.left)/rect.width;
+  pct=Math.max(0,Math.min(1,pct));
+  knob.style.left=(pct*100)+'%';
+});
+document.addEventListener('pointerup',()=>dragging=false);
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.running)game.running=false;});
+</script>
+</body>
+</html>

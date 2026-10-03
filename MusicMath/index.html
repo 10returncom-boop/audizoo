@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta name="description" content="音樂就是數學 · Music = Math · 60 互動實驗室">
+<link rel="canonical" href="index.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="音樂就是數學 · Music = Math · 60 互動實驗室">
+<meta property="og:description" content="音樂就是數學 · Music = Math · 60 互動實驗室">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="音樂就是數學 · Music = Math · 60 互動實驗室">
+<meta name="twitter:description" content="音樂就是數學 · Music = Math · 60 互動實驗室">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>音樂就是數學 · Music = Math · 60 互動實驗室</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%236366f1'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='16'>♪</text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f5f3ff;--panel:#fff;--panel2:#ede9fe;--border:#ddd6fe;--text:#1e1b4b;--muted:#6b7280;--primary:#6366f1;--accent:#ec4899;--green:#10b981;--yellow:#f59e0b;--radius:12px}
+[data-theme="dark"]{--bg:#0f0d1f;--panel:#1a1832;--panel2:#252244;--border:#35315e;--text:#e0e7ff;--muted:#9ca3af;--primary:#818cf8;--accent:#f472b6;--green:#34d399;--yellow:#fbbf24}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft JhengHei","PingFang TC",system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.header{background:linear-gradient(135deg,#6366f1,#ec4899);color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
+.header h1{font-size:20px}
+.header .sub{font-size:12px;opacity:.85}
+.toolbar{display:flex;gap:6px;flex-wrap:wrap}
+.toolbar button{padding:6px 12px;border-radius:14px;border:none;background:rgba(255,255,255,.18);color:#fff;cursor:pointer;font-size:12px}
+.toolbar button:hover{background:rgba(255,255,255,.3)}
+.layout{display:flex}
+.sidebar{width:220px;background:var(--panel);border-right:1px solid var(--border);padding:16px;position:sticky;top:70px;height:calc(100vh - 70px);overflow-y:auto}
+.sidebar h3{font-size:11px;color:var(--primary);margin:10px 0 6px;text-transform:uppercase;letter-spacing:1px}
+.sidebar a{display:block;padding:6px 10px;border-radius:6px;color:var(--text);text-decoration:none;font-size:13px;cursor:pointer}
+.sidebar a:hover,.sidebar a.active{background:var(--panel2);color:var(--primary)}
+.main{flex:1;padding:20px;min-width:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:12px;text-align:center}
+.stat .n{font-size:22px;font-weight:700;color:var(--primary)}
+.stat .l{font-size:11px;color:var(--muted)}
+.cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.cat-btn{padding:6px 14px;border-radius:16px;border:1px solid var(--border);background:var(--panel);color:var(--text);cursor:pointer;font-size:12px}
+.cat-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:14px;transition:all .2s}
+.card:hover{border-color:var(--primary);box-shadow:0 4px 16px rgba(99,102,241,.15)}
+.card h4{font-size:14px;color:var(--primary);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.card h4 .num{background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px}
+.card .desc{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.6}
+.card .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:6px 0}
+.card button{padding:5px 10px;border-radius:6px;border:1px solid var(--border);background:var(--panel2);color:var(--text);cursor:pointer;font-size:11px}
+.card button:hover{border-color:var(--primary);color:var(--primary)}
+.card button.play{background:var(--primary);color:#fff;border-color:var(--primary)}
+.card input[type=range]{flex:1;min-width:100px}
+.card input[type=text],.card select{padding:4px 8px;border:1px solid var(--border);border-radius:6px;background:var(--panel2);color:var(--text);font-size:12px}
+.card .out{background:var(--panel2);border-radius:6px;padding:8px;margin-top:6px;font-size:12px;min-height:24px;font-family:monospace}
+.card canvas{background:var(--panel2);border-radius:6px;display:block;margin:6px auto;max-width:100%}
+.piano{display:flex;gap:1px;flex-wrap:wrap;justify-content:center}
+.piano .wk{width:24px;height:70px;background:#fff;border:1px solid #999;border-radius:0 0 3px 3px;cursor:pointer}
+.piano .bk{position:relative;width:0}
+.piano .wk:active{background:var(--yellow)}
+.footer{background:var(--panel);border-top:1px solid var(--border);padding:14px;text-align:center;font-size:12px;color:var(--muted);margin-top:20px}
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:var(--primary);color:#fff;padding:8px 20px;border-radius:20px;font-size:13px;z-index:2000;transition:transform .3s}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500;display:none;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal .box{background:var(--panel);border-radius:var(--radius);padding:20px;max-width:90vw;max-height:85vh;overflow-y:auto;min-width:300px}
+@media(max-width:768px){.layout{flex-direction:column}.sidebar{width:100%;height:auto;position:static}}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "音樂就是數學 · Music = Math · 60 互動實驗室",
+ "url": "index.html"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "音樂就是數學 · Music = Math · 60 互動實驗室",
+   "item": "index.html"
+  }
+ ]
+}
+</script>
+</head>
+<body data-theme="light">
+
+<div class="header">
+  <div>
+    <h1>🎵 音樂就是數學</h1>
+    <div class="sub">Music = Math · 60 個互動實驗 · 從頻率到和聲，從節奏到視覺</div>
+  </div>
+  <div class="toolbar">
+    <button onclick="toggleTheme()">🌙 主題</button>
+    <button onclick="randTool()">🎲 隨機</button>
+    <button onclick="stopAll()">⏹ 全部停止</button>
+    <button onclick="showHelp()">? 說明</button>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>分類</h3>
+    <a class="active" onclick="filterCat('all',this)">全部 60</a>
+    <a onclick="filterCat('freq',this)">🎵 音高頻率 (12)</a>
+    <a onclick="filterCat('rhythm',this)">🥁 節奏數學 (12)</a>
+    <a onclick="filterCat('chord',this)">🎼 和聲比例 (12)</a>
+    <a onclick="filterCat('viz',this)">🌈 視覺化 (12)</a>
+    <a onclick="filterCat('game',this)">🎮 互動遊戲 (12)</a>
+  </aside>
+
+  <main class="main">
+    <div class="stats">
+      <div class="stat"><div class="n">60</div><div class="l">互動工具</div></div>
+      <div class="stat"><div class="n" id="stFreq">440</div><div class="l">Hz (A4)</div></div>
+      <div class="stat"><div class="n" id="stBpm">120</div><div class="l">BPM</div></div>
+      <div class="stat"><div class="n" id="stCat">all</div><div class="l">目前分類</div></div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="helpModal">
+  <div class="box">
+    <h3 style="color:var(--primary);margin-bottom:10px">使用說明</h3>
+    <p style="font-size:13px;line-height:1.8">
+      · 所有發音工具使用 Web Audio API，點擊按鈕即時發聲<br>
+      · 滑桿調整頻率/音量/速度<br>
+      · 分類按左側欄切換<br>
+      · 主題按右上角 🌙 切換日夜<br>
+      · 🎲 隨機打開一個工具<br>
+      · ⏹ 全部停止 關閉所有聲音
+    </p>
+    <button onclick="document.getElementById('helpModal').classList.remove('show')" style="margin-top:10px;padding:6px 16px;border-radius:6px;border:none;background:var(--primary);color:#fff;cursor:pointer">關閉</button>
+  </div>
+</div>
+
+<footer class="footer">
+  音樂就是數學 · V1 · 60 實驗 · 用 Web Audio + Canvas 純原生實現<br>
+  數學是音樂的骨架，音樂是數學的翅膀。
+</footer>
+
+<script>
+/* ========== 音頻引擎 ========== */
+let AC=null, activeNodes=[];
+function ctx(){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();return AC}
+function tone(freq,dur=0.5,type='sine',vol=0.2,when=0){
+  const c=ctx(),o=c.createOscillator(),g=c.createGain();
+  o.type=type;o.frequency.value=freq;
+  const t=c.currentTime+when;
+  g.gain.setValueAtTime(0,t);
+  g.gain.linearRampToValueAtTime(vol,t+0.02);
+  g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+  o.connect(g);g.connect(c.destination);
+  o.start(t);o.stop(t+dur+0.05);
+  activeNodes.push(o);
+}
+function stopAll(){activeNodes.forEach(n=>{try{n.stop()}catch(e){}});activeNodes=[];toast('⏹ 已停止所有聲音')}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1800)}
+
+/* ========== 工具定義 ========== */
+const TOOLS=[
+// A. 音高頻率 12
+{cat:'freq',name:'頻率滑桿',d:'20-20000 Hz 即時發聲',html:`<input type="range" id="f1" min="20" max="2000" value="440"><span id="f1v">440Hz</span><div class="row"><button class="play" onclick="tone(+document.getElementById('f1').value,0.6,'sine',0.2)">▶ 聽</button></div>`},
+{cat:'freq',name:'音符→頻率',d:'A4=440 為基準換算',html:`<select id="noteIn"></select><div class="out" id="noteOut">—</div>`},
+{cat:'freq',name:'十二平均律表',d:'12 個半音頻率',html:`<div class="out" id="eqTbl">點擊生成</div><div class="row"><button class="play" onclick="genEQ()">生成並播放</button></div>`},
+{cat:'freq',name:'五度圈',d:'順時針上五度',html:`<div class="out" id="circ5">C → G → D → A → E → B → F# → C# → G# → D# → A# → F</div><div class="row"><button class="play" onclick="tone(261.6,0.4,'triangle',0.2);tone(392,0.4,'triangle',0.2,0.3)">▶ C→G</button></div>`},
+{cat:'freq',name:'音程計算',d:'兩音頻率比與音分',html:`<input type="number" id="iv1" value="261.6" style="width:80px"><input type="number" id="iv2" value="392" style="width:80px"><button onclick="calcInterval()">計算</button><div class="out" id="ivOut">—</div>`},
+{cat:'freq',name:'頻率比聽覺',d:'2:1 八度 / 3:2 五度 / 4:3 四度',html:`<div class="row"><button class="play" onclick="tone(261.6,0.7);tone(523.2,0.7,'sine',0.2,0.1)">2:1 八度</button><button class="play" onclick="tone(261.6,0.7);tone(392,0.7,'sine',0.2,0.1)">3:2 五度</button><button class="play" onclick="tone(261.6,0.7);tone(349.2,0.7,'sine',0.2,0.1)">4:3 四度</button></div>`},
+{cat:'freq',name:'鋼琴鍵盤',d:'C4-B4 可點擊',html:`<div class="piano" id="piano"></div>`},
+{cat:'freq',name:'大調小調音階',d:'C 大調 vs A 小調',html:`<div class="row"><button class="play" onclick="playScale('major')">C 大調</button><button class="play" onclick="playScale('minor')">A 小調</button></div>`},
+{cat:'freq',name:'泛音列',d:'基頻 + 泛音長條圖',html:`<canvas id="harCv" width="260" height="120"></canvas><div class="row"><button class="play" onclick="playHarmonics()">▶ 聽泛音</button></div>`},
+{cat:'freq',name:'拍頻示範',d:'兩個接近頻率的干涉',html:`<input type="range" id="beat" min="0" max="20" value="4"><span id="beatV">4 Hz</span><div class="row"><button class="play" onclick="tone(440,1.5,'sine',0.15);tone(440+ +document.getElementById('beat').value,1.5,'sine',0.15,0.05)">▶ 聽拍頻</button></div>`},
+{cat:'freq',name:'絕對音準測驗',d:'聽音選音名',html:`<div class="out" id="quizOut">按開始</div><div class="row"><button class="play" onclick="startQuiz()">開始</button></div>`},
+{cat:'freq',name:'波形合成器',d:'四種波形比較',html:`<div class="row"><button class="play" onclick="tone(440,0.5,'sine')">正弦</button><button class="play" onclick="tone(440,0.5,'square')">方波</button><button class="play" onclick="tone(440,0.5,'sawtooth')">鋸齒</button><button class="play" onclick="tone(440,0.5,'triangle')">三角</button></div>`},
+// B. 節奏 12
+{cat:'rhythm',name:'BPM 計算器',d:'按 4 下測速',html:`<div class="out" id="bpmOut">點擊 Tap</div><div class="row"><button class="play" id="tapBtn" onclick="tapBpm()">👆 Tap</button></div>`},
+{cat:'rhythm',name:'節奏型生成器',d:'隨機生成 4/4 節奏',html:`<canvas id="rhCv" width="260" height="80"></canvas><div class="row"><button class="play" onclick="genRhythm()">生成並播放</button></div>`},
+{cat:'rhythm',name:'拍號計算',d:'4/4, 3/4, 6/8, 7/8',html:`<select id="meter"><option>4/4</option><option>3/4</option><option>6/8</option><option>7/8</option></select><button onclick="playMeter()">▶ 聽</button><div class="out" id="meterOut">每小節拍數</div>`},
+{cat:'rhythm',name:'斐波那契節奏',d:'1,1,2,3,5,8 拍子',html:`<div class="out">1 1 2 3 5 8</div><div class="row"><button class="play" onclick="playFib()">▶ 聽</button></div>`},
+{cat:'rhythm',name:'黃金比例節拍',d:'1.618 速比',html:`<div class="out">快:慢 = 1 : 0.618</div><div class="row"><button class="play" onclick="tone(880,0.1);tone(660,0.1);tone(880,0.1);tone(880,0.1);tone(660,0.1)">▶ 試聽</button></div>`},
+{cat:'rhythm',name:'打點練習',d:'點擊螢幕打拍子',html:`<canvas id="tapCv" width="260" height="100" style="cursor:pointer"></canvas><div class="out" id="tapOut">點畫布打拍</div>`},
+{cat:'rhythm',name:'節奏輪盤',d:'旋轉抽型',html:`<div class="out" id="wheelOut">點旋轉</div><div class="row"><button class="play" onclick="spinWheel()">🎡 旋轉</button></div>`},
+{cat:'rhythm',name:'鼓機 4x16',d:'點格子編節奏',html:`<canvas id="seqCv" width="260" height="100"></canvas><div class="row"><button class="play" onclick="playSeq()">▶ 播放</button></div>`},
+{cat:'rhythm',name:'速度漸快漸慢',d:'漸強/漸弱聽覺',html:`<div class="row"><button class="play" onclick="rampSpeed('accel')">漸快</button><button class="play" onclick="rampSpeed('ritard')">漸慢</button></div>`},
+{cat:'rhythm',name:'對拍練習',d:'60 vs 120 BPM',html:`<div class="row"><button class="play" onclick="metronome(60)">60 BPM</button><button class="play" onclick="metronome(120)">120 BPM</button><button class="play" onclick="metronome(90)">90 BPM</button></div>`},
+{cat:'rhythm',name:'音符時值',d:'全/半/四/八/十六分',html:`<div class="out" id="valOut">全=4拍 半=2拍 四=1拍 八=½拍 十六=¼拍</div><div class="row"><button class="play" onclick="playNoteValues()">▶ 依序聽</button></div>`},
+{cat:'rhythm',name:'小節時長計算',d:'BPM × 小節數',html:`<input type="number" id="bars" value="4" style="width:60px">小節 @ <input type="number" id="bpm2" value="120" style="width:60px">BPM<button onclick="calcBars()">計算</button><div class="out" id="barsOut">—</div>`},
+// C. 和聲 12
+{cat:'chord',name:'和弦生成器',d:'根音 + 音程',html:`<select id="chRoot"><option>C</option><option>D</option><option>E</option><option>G</option><option>A</option></select><select id="chType"><option value="major">大和弦</option><option value="minor">小和弦</option><option value="dim">減三</option><option value="aug">增三</option></select><button onclick="playChord()">▶ 彈</button><div class="out" id="chOut">—</div>`},
+{cat:'chord',name:'I-V-vi-IV 進行',d:'流行和弦進行',html:`<div class="row"><button class="play" onclick="playProg()">▶ 循環播放</button></div><div class="out">C → G → Am → F</div>`},
+{cat:'chord',name:'五度圈轉調',d:'移調到任意調',html:`<select id="keyFrom"><option>C</option><option>G</option><option>D</option></select>→<select id="keyTo"><option>G</option><option>D</option><option>A</option></select><button onclick="transpose()">計算</button><div class="out" id="trOut">—</div>`},
+{cat:'chord',name:'純律 vs 平均律',d:'微音差比較',html:`<div class="row"><button class="play" onclick="tone(261.6,0.6);tone(392,0.6,'sine',0.2,0.1)">純律 3:2</button><button class="play" onclick="tone(261.6,0.6);tone(392.4,0.6,'sine',0.2,0.1)">平均律</button></div>`},
+{cat:'chord',name:'諧波長條圖',d:'諧波強度',html:`<canvas id="harmCv2" width="260" height="100"></canvas><div class="row"><button class="play" onclick="drawHarmBars()">繪製</button></div>`},
+{cat:'chord',name:'不諧和指標',d:'兩音距離越遠越不和諧',html:`<input type="number" id="dis1" value="261" style="width:70px"><input type="number" id="dis2" value="440" style="width:70px"><button onclick="calcDissonance()">計算</button><div class="out" id="disOut">—</div>`},
+{cat:'chord',name:'泛音疊加',d:'多泛音合成音色',html:`<div class="row"><button class="play" onclick="tone(220,0.8,'sine',0.3)">基音</button><button class="play" onclick="addOvertones()">疊加泛音</button></div>`},
+{cat:'chord',name:'和弦色彩標記',d:'Jazz 和弦符號',html:`<div class="out">Cmaj7 = C E G B<br>C7 = C E G B♭<br>Am7 = A C E G<br>Fsus4 = F B♭ C</div>`},
+{cat:'chord',name:'卡農進行',d:'Pachelbel 卡農',html:`<div class="row"><button class="play" onclick="playCanon()">▶ 播放</button></div><div class="out">D A B F# G D G A</div>`},
+{cat:'chord',name:'藍調音符',d:'藍調 scale',html:`<div class="out">C E♭ F G G♭ B♭</div><div class="row"><button class="play" onclick="playBlues()">▶ 聽</button></div>`},
+{cat:'chord',name:'二度五度循環',d:'ii-V-I 爵士進行',html:`<div class="row"><button class="play" onclick="play251()">▶ 播放</button></div><div class="out">Dm7 → G7 → Cmaj7</div>`},
+{cat:'chord',name:'和弦反轉',d:'根音位置/第一/第二轉位',html:`<div class="row"><button class="play" onclick="invertChord(0)">根音位置</button><button class="play" onclick="invertChord(1)">第一轉位</button><button class="play" onclick="invertChord(2)">第二轉位</button></div>`},
+// D. 視覺化 12
+{cat:'viz',name:'即時波形',d:'Canvas 畫 sin 波',html:`<canvas id="waveCv" width="260" height="100"></canvas><div class="row"><button onclick="startWave()">開始</button><button onclick="stopAll()">停止</button></div>`},
+{cat:'viz',name:'李薩如圖形',d:'X/Y 兩音頻',html:`<canvas id="lisCv" width="160" height="160"></canvas><div class="row"><button class="play" onclick="startLissajous()">開始</button></div>`},
+{cat:'viz',name:'駐波模態',d:'弦振動可視',html:`<canvas id="standCv" width="260" height="100"></canvas><div class="row"><button onclick="drawStanding()">繪製</button></div>`},
+{cat:'viz',name:'圓周率音符',d:'π 數字→音高',html:`<div class="row"><button class="play" onclick="playPi()">▶ 聽 π</button></div><div class="out">3.1415926535... → 音高</div>`},
+{cat:'viz',name:'黃金螺旋',d:'1.618 幾何',html:`<canvas id="goldCv" width="200" height="200"></canvas>`},
+{cat:'viz',name:'傅立葉疊波',d:'多 sin 波合成方波',html:`<canvas id="fourierCv" width="260" height="100"></canvas><div class="row"><button onclick="drawFourier(1)">1 項</button><button onclick="drawFourier(3)">3 項</button><button onclick="drawFourier(10)">10 項</button></div>`},
+{cat:'viz',name:'音符雨',d:'音符由上而下',html:`<canvas id="rainCv" width="260" height="120"></canvas><div class="row"><button onclick="startRain()">開始</button></div>`},
+{cat:'viz',name:'頻率→顏色',d:'200-800Hz 對應 RGB',html:`<input type="range" id="freq2rgb" min="200" max="800" value="440"><div id="colorSw" style="width:100%;height:50px;border-radius:6px;margin-top:6px"></div><div class="out" id="rgbOut">—</div>`},
+{cat:'viz',name:'示波器模式',d:'聲音波形即時',html:`<canvas id="scopeCv" width="260" height="100"></canvas><div class="row"><button class="play" onclick="tone(440,2,'sawtooth',0.2);startScope()">▶ 聽並看</button></div>`},
+{cat:'viz',name:'粒子舞動',d:'節奏觸發粒子',html:`<canvas id="particleCv" width="260" height="120"></canvas><div class="row"><button onclick="startParticles()">開始</button></div>`},
+{cat:'viz',name:'樂句形態雲',d:'C G Am F 色塊',html:`<canvas id="cloudCv" width="260" height="80"></canvas><div class="row"><button onclick="drawCloud()">繪製</button></div>`},
+{cat:'viz',name:'對數頻譜軸',d:'頻率長條圖',html:`<canvas id="specCv" width="260" height="100"></canvas><div class="row"><button class="play" onclick="tone(440,1.5,'sine',0.2);drawSpectrum(440)">▶ 440Hz</button><button class="play" onclick="tone(880,1.5,'sine',0.2);drawSpectrum(880)">▶ 880Hz</button></div>`},
+// E. 遊戲 12
+{cat:'game',name:'Simon 記憶遊戲',d:'聽旋律複誦',html:`<canvas id="simonCv" width="200" height="120"></canvas><div class="row"><button class="play" onclick="startSimon()">開始</button></div><div class="out" id="simonOut">難度 0</div>`},
+{cat:'game',name:'音高辨識挑戰',d:'聽音選名',html:`<div class="out" id="pitchOut">按開始</div><div class="row"><button class="play" onclick="startPitch()">開始</button></div>`},
+{cat:'game',name:'節奏複聽',d:'聽節奏照打',html:`<div class="out" id="rhQuizOut">按開始</div><div class="row"><button class="play" onclick="startRhQuiz()">開始</button></div>`},
+{cat:'game',name:'樂理測驗',d:'10 題選擇',html:`<div class="out" id="quiz2Out">按開始</div><div class="row"><button class="play" onclick="startMusicQuiz()">開始</button></div>`},
+{cat:'game',name:'打譜器',d:'點選生成簡譜',html:`<div class="piano" id="piano2"></div><div class="out" id="scoreOut">—</div>`},
+{cat:'game',name:'樂器分類',d:'Hornbostel-Sachs',html:`<div class="out">體鳴樂器 / 膜鳴樂器 / 弦鳴樂器 / 氣鳴樂器 / 電鳴樂器</div>`},
+{cat:'game',name:'音樂家時間軸',d:'巴哈→貝多芬→披頭四',html:`<div class="out">1685 巴哈 · 1756 莫札特 · 1770 貝多芬 · 1886 德布西 · 1960 披頭四</div>`},
+{cat:'game',name:'數學聽覺',d:'sin(x) 合成',html:`<div class="row"><button class="play" onclick="tone(220,0.8,'sine',0.2)">sin</button><button class="play" onclick="tone(220,0.8,'square',0.2)">方波=無限 sin</button></div>`},
+{cat:'game',name:'分享卡生成',d:'產生你最愛的和弦',html:`<canvas id="shareCv" width="260" height="140"></canvas><div class="row"><button onclick="drawShare()">生成</button><button onclick="toBlob()">下載 PNG</button></div>`},
+{cat:'game',name:'每日一題',d:'依日期出題',html:`<div class="out" id="dailyQ">—</div><div class="row"><button onclick="dailyQuestion()">更新</button></div>`},
+{cat:'game',name:'練習紀錄',d:'localStorage 計次',html:`<div class="out" id="logOut">練習次數：0</div><div class="row"><button onclick="logPractice()">✍ 記一次</button></div>`},
+{cat:'game',name:'進階設定',d:'音量/波形/主題',html:`<div class="row">音量 <input type="range" id="vol" min="0" max="100" value="30"></div><div class="row"><button onclick="toggleTheme()">切換主題</button><button onclick="showHelp()">說明</button></div>`},
+];
+
+/* ========== 渲染 ========== */
+const grid=document.getElementById('grid');
+function render(){
+  grid.innerHTML=TOOLS.map((t,i)=>`<div class="card" data-cat="${t.cat}"><h4><span class="num">${i+1}</span>${t.name}</h4><div class="desc">${t.d}</div><div class="row">${t.html}</div></div>`).join('');
+  bindAll();
+}
+function filterCat(c,el){
+  document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.card').forEach(card=>card.style.display=(c==='all'||card.dataset.cat===c)?'':'none');
+  document.getElementById('stCat').textContent=c;
+}
+function randTool(){const i=Math.floor(Math.random()*TOOLS.length);document.querySelectorAll('.card')[i].scrollIntoView({behavior:'smooth',block:'center'});document.querySelectorAll('.card')[i].style.outline='3px solid var(--accent)';setTimeout(()=>document.querySelectorAll('.card')[i].style.outline='',1500);toast('🎲 '+TOOLS[i].name)}
+function toggleTheme(){const b=document.body;b.dataset.theme=b.dataset.theme==='dark'?'light':'dark';toast('主題：'+b.dataset.theme)}
+function showHelp(){document.getElementById('helpModal').classList.add('show')}
+
+/* ========== 工具綁定 ========== */
+function bindAll(){
+  // 1 頻率滑桿
+  const f1=document.getElementById('f1');if(f1)f1.oninput=()=>document.getElementById('f1v').textContent=f1.value+'Hz';
+  // 2 音符選擇
+  const noteIn=document.getElementById('noteIn');if(noteIn&&!noteIn.options.length){
+    ['C4','C#4','D4','D#4','E4','F4','F#4','G4','G#4','A4','A#4','B4'].forEach(n=>noteIn.add(new Option(n,n)));
+    noteIn.onchange=()=>{const f=noteToFreq(noteIn.value);document.getElementById('noteOut').textContent=noteIn.value+' = '+f.toFixed(2)+' Hz';tone(f,0.5,'sine',0.2)};
+  }
+  // 7 鋼琴
+  const p=document.getElementById('piano');if(p&&!p.children.length){['C4','D4','E4','F4','G4','A4','B4'].forEach(n=>{const k=document.createElement('div');k.className='wk';k.textContent=n[0];k.onclick=()=>tone(noteToFreq(n),0.5,'triangle',0.25);p.appendChild(k)})}
+  const p2=document.getElementById('piano2');if(p2&&!p2.children.length){['C4','D4','E4','F4','G4','A4','B4','C5'].forEach(n=>{const k=document.createElement('div');k.className='wk';k.textContent=n[0];k.onclick=()=>{const s=document.getElementById('scoreOut');s.textContent+=' '+n;tone(noteToFreq(n),0.4,'triangle',0.25)};p2.appendChild(k)})}
+  // 24 打點
+  const tc=document.getElementById('tapCv');if(tc)tc.onclick=e=>{const r=tc.getBoundingClientRect();const x=e.clientX-r.left;const c=tc.getContext('2d');c.fillStyle='rgba(99,102,241,0.3)';c.beginPath();c.arc(x,50,20,0,7);c.fill();document.getElementById('tapOut').textContent='咚！'+new Date().toLocaleTimeString()};
+  // 38 頻率顏色
+  const f2=document.getElementById('freq2rgb');if(f2)f2.oninput=()=>{const h=((+f2.value-200)/600)*270;document.getElementById('colorSw').style.background=`hsl(${h},80%,50%)`;document.getElementById('rgbOut').textContent=f2.value+'Hz → HSL('+h.toFixed(0)+',80%,50%)'};
+  // 42 黃金螺旋
+  const gc=document.getElementById('goldCv');if(gc){const c=gc.getContext('2d');c.clearRect(0,0,200,200);c.strokeStyle='var(--primary)';c.lineWidth=1;let x=100,y=100,a=0,r=2;for(let i=0;i<80;i++){a+=0.39;r*=1.05;c.beginPath();c.arc(x,y,r,a,a+0.5);c.stroke();x+=Math.cos(a)*r*0.1;y+=Math.sin(a)*r*0.1}}
+}
+
+/* ========== 工具函數 ========== */
+function noteToFreq(n){const map={'C':0,'C#':1,'D':2,'D#':3,'E':4,'F':5,'F#':6,'G':7,'G#':8,'A':9,'A#':10,'B':11};const m=n.match(/^([A-G]#?)(\d)$/);return 440*Math.pow(2,(map[m[1]]+(+m[2]-4)*12-9)/12)}
+function genEQ(){const tbl=[];for(let i=0;i<12;i++){const f=440*Math.pow(2,i/12);tbl.push(i+'半音 = '+f.toFixed(1)+'Hz')}document.getElementById('eqTbl').innerHTML=tbl.join('<br>');[261.6,277.2,293.7,311.1,329.6,349.2,370,392,415.3,440,466.2,493.9].forEach((f,i)=>setTimeout(()=>tone(f,0.3,'sine',0.15),i*200))}
+function calcInterval(){const f1=+document.getElementById('iv1').value,f2=+document.getElementById('iv2').value;const ratio=f2/f1;const cents=1200*Math.log2(ratio);document.getElementById('ivOut').textContent='頻率比 '+ratio.toFixed(3)+' :1 · '+cents.toFixed(0)+' 音分'}
+function playScale(type){const major=[261.6,293.7,329.6,349.2,392,440,493.9,523.2];const minor=[220,246.9,261.6,293.7,329.6,349.2,392,440];(type==='major'?major:minor).forEach((f,i)=>setTimeout(()=>tone(f,0.4,'triangle',0.2),i*250))}
+function playHarmonics(){const base=220;for(let i=1;i<=8;i++)tone(base*i,1,'sine',0.1/i);const c=document.getElementById('harCv');if(c){const ctx=c.getContext('2d');ctx.clearRect(0,0,260,120);for(let i=1;i<=8;i++){ctx.fillStyle=`hsl(${i*30},70%,50%)`;ctx.fillRect((i-1)*32,120-100/i,28,100/i)}}}
+function startQuiz(){const notes=['C4','D4','E4','F4','G4','A4','B4'];const n=notes[Math.floor(Math.random()*notes.length)];tone(noteToFreq(n),0.8,'sine',0.2);document.getElementById('quizOut').innerHTML='聽到哪個音？<br>'+notes.map(x=>`<button onclick="checkQuiz('${x}','${n}')">${x}</button>`).join(' ')}
+function checkQuiz(ans,truth){toast(ans===truth?'✓ 答對了':'✗ 正確是 '+truth)}
+let tapTimes=[];
+function tapBpm(){const now=Date.now();tapTimes.push(now);if(tapTimes.length>5)tapTimes.shift();if(tapTimes.length>=2){const avg=(tapTimes[tapTimes.length-1]-tapTimes[0])/(tapTimes.length-1);document.getElementById('bpmOut').textContent='BPM: '+Math.round(60000/avg)}}
+function genRhythm(){const cv=document.getElementById('rhCv');if(!cv)return;const c=cv.getContext('2d');c.clearRect(0,0,260,80);const pattern=Array.from({length:8},()=>Math.random()>0.5?1:0);pattern.forEach((p,i)=>{c.fillStyle=p?'#6366f1':'#ddd';c.fillRect(i*32+2,10,28,60);if(p)setTimeout(()=>tone(880,0.1,'square',0.15),i*200)})}
+function playMeter(){const m=document.getElementById('meter').value;const beats=parseInt(m);for(let i=0;i<beats;i++)setTimeout(()=>{tone(i===0?1200:800,0.15,'sine',0.2);document.getElementById('meterOut').textContent='第 '+(i+1)+' 拍 / 共 '+beats+' 拍'},i*400)}
+function playFib(){[1,1,2,3,5,8].forEach((d,i)=>setTimeout(()=>tone(660,0.1,'triangle',0.2),i*200))}
+function spinWheel(){const items=['咚','喀','噠','嘶','嘟'];document.getElementById('wheelOut').textContent='🎡 '+items[Math.floor(Math.random()*items.length)]}
+function playSeq(){const pattern=[1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,1];pattern.forEach((p,i)=>{if(p)setTimeout(()=>tone(440,0.08,'square',0.15),i*120)})}
+function rampSpeed(type){for(let i=0;i<10;i++){const gap=type==='accel'?300-i*25:100+i*30;setTimeout(()=>tone(880,0.1,'sine',0.15),i*gap)}}
+function metronome(bpm){const gap=60000/bpm;for(let i=0;i<8;i++)setTimeout(()=>tone(i%4===0?1200:800,0.1,'sine',0.2),i*gap);toast('節拍 '+bpm+' BPM')}
+function playNoteValues(){[1,0.5,0.25,0.125,0.0625].forEach((d,i)=>setTimeout(()=>tone(660,0.4,'triangle',0.2),i*300))}
+function calcBars(){const bars=+document.getElementById('bars').value,bpm=+document.getElementById('bpm2').value;document.getElementById('barsOut').textContent=bars+' 小節 @ '+bpm+'BPM = '+((bars*4*60/bpm).toFixed(1))+' 秒'}
+function playChord(){const root=document.getElementById('chRoot').value,type=document.getElementById('chType').value;const intervals={major:[0,4,7],minor:[0,3,7],dim:[0,3,6],aug:[0,4,8]}[type];const base=noteToFreq(root+'4');intervals.forEach(s=>tone(base*Math.pow(2,s/12),0.8,'triangle',0.2));document.getElementById('chOut').textContent=root+' '+type+' = '+intervals.map(s=>s/12*12+'半音').join(', ')}
+function playProg(){const chords=[[261.6,329.6,392],[392,493.9,587.3],[220,261.6,329.6],[349.2,440,523.2]];chords.forEach((ch,i)=>ch.forEach(f=>setTimeout(()=>tone(f,1,'triangle',0.15),i*1500)))}
+function transpose(){const f=document.getElementById('keyFrom').value,t=document.getElementById('keyTo').value;document.getElementById('trOut').textContent='從 '+f+' 轉到 '+t+' · 移調 '+( (t.charCodeAt(0)-f.charCodeAt(0))*2 )+' 半音'}
+function drawHarmBars(){const c=document.getElementById('harmCv2');if(!c)return;const ctx=c.getContext('2d');ctx.clearRect(0,0,260,100);for(let i=1;i<=10;i++){ctx.fillStyle=`hsl(${i*25},70%,50%)`;ctx.fillRect(i*24,100-100/i,20,100/i)}}
+function calcDissonance(){const f1=+document.getElementById('dis1').value,f2=+document.getElementById('dis2').value;const ratio=f2/f1;const dis=Math.abs(ratio-1)/ratio;document.getElementById('disOut').textContent='不和諧度指數：'+dis.toFixed(3)+(dis<0.1?'（諧和）':dis<0.3?'（中等）':'（緊張）')}
+function addOvertones(){[1,2,3,4,5].forEach(i=>tone(220*i,1.5,'sine',0.15/i))}
+function playCanon(){const bass=[146.8,110,98,88,73.4,98,110,98];bass.forEach((f,i)=>setTimeout(()=>tone(f,0.6,'triangle',0.2),i*500))}
+function playBlues(){[261.6,311.1,349.2,392,415.3,466.2].forEach((f,i)=>setTimeout(()=>tone(f,0.3,'triangle',0.2),i*250))}
+function play251(){[[146.8,174.6,220],[196,246.9,293.7],[261.6,329.6,392]].forEach((ch,i)=>ch.forEach(f=>setTimeout(()=>tone(f,0.8,'triangle',0.18),i*1000)))}
+function invertChord(v){const base=261.6;const notes=v===0?[261.6,329.6,392]:v===1?[329.6,392,523.2]:[392,523.2,659.3];notes.forEach((f,i)=>setTimeout(()=>tone(f,0.8,'triangle',0.2),i*100))}
+
+/* ========== 視覺化 ========== */
+let waveRAF=null;
+function startWave(){const c=document.getElementById("waveCv");if(!c)return;const ctx=c.getContext("2d");let t=0;cancelAnimationFrame(waveRAF);function d(){ctx.clearRect(0,0,260,100);ctx.strokeStyle="#6366f1";ctx.beginPath();for(let x=0;x<260;x++){const y=50+Math.sin((x+t)*0.05)*30;x?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();t+=2;waveRAF=requestAnimationFrame(d);}d();}
+function startLissajous(){const c=document.getElementById("lisCv");if(!c)return;const ctx=c.getContext("2d");let t=0;cancelAnimationFrame(waveRAF);function d(){ctx.clearRect(0,0,160,160);ctx.strokeStyle="#ec4899";ctx.beginPath();for(let a=0;a<Math.PI*4;a+=0.05){const x=80+50*Math.sin(3*a+t),y=80+50*Math.sin(2*a);a?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();t+=0.05;waveRAF=requestAnimationFrame(d);}d();}
+function drawStanding(){const c=document.getElementById('standCv');if(!c)return;const ctx=c.getContext('2d');ctx.clearRect(0,0,260,100);ctx.strokeStyle='#10b981';for(let n=1;n<=4;n++){ctx.beginPath();for(let x=0;x<260;x++){const y=50+Math.sin(x*n*Math.PI/260)*30;x?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke()}}
+function playPi(){const pi='31415926535897932384626433832795';pi.split('').forEach((d,i)=>setTimeout(()=>tone(220+ (+d)*80,0.15,'sine',0.15),i*200))}
+function drawFourier(n){const c=document.getElementById('fourierCv');if(!c)return;const ctx=c.getContext('2d');ctx.clearRect(0,0,260,100);ctx.strokeStyle='#f59e0b';ctx.beginPath();for(let x=0;x<260;x++){let y=50;for(let k=1;k<=n;k+=2)y+=Math.sin(x*k*0.05)/k*20;x?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke()}
+function startRain(){const c=document.getElementById("rainCv");if(!c)return;const ctx=c.getContext("2d");const drops=[];for(let i=0;i<20;i++)drops.push({x:Math.random()*260,y:Math.random()*120,s:Math.random()*2+1});cancelAnimationFrame(waveRAF);function d(){ctx.clearRect(0,0,260,120);ctx.fillStyle="#818cf8";drops.forEach(function(p){ctx.fillRect(p.x,p.y,2,p.s*8);p.y+=p.s;if(p.y>120){p.y=0;p.x=Math.random()*260}});waveRAF=requestAnimationFrame(d);}d();}
+function startScope(){const c=document.getElementById("scopeCv");if(!c)return;const ctx=c.getContext("2d");let t=0;cancelAnimationFrame(waveRAF);function d(){ctx.clearRect(0,0,260,100);ctx.strokeStyle="#10b981";ctx.beginPath();for(let x=0;x<260;x++){const y=50+Math.sin((x+t)*0.1)*40*Math.random();x?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();t+=3;waveRAF=requestAnimationFrame(d);}d();}
+function startParticles(){const c=document.getElementById("particleCv");if(!c)return;const ctx=c.getContext("2d");const ps=[];for(let i=0;i<30;i++)ps.push({x:130,y:60,vx:(Math.random()-0.5)*4,vy:(Math.random()-0.5)*4,c:"hsl("+Math.random()*360+",80%,60%)"});cancelAnimationFrame(waveRAF);function d(){ctx.clearRect(0,0,260,120);ps.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>260)p.vx*=-1;if(p.y<0||p.y>120)p.vy*=-1;ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,3,0,7);ctx.fill()});waveRAF=requestAnimationFrame(d);}d();tone(440,1.5,"sine",0.15);}
+function drawCloud(){const c=document.getElementById('cloudCv');if(!c)return;const ctx=c.getContext('2d');const colors=['#6366f1','#ec4899','#10b981','#f59e0b'];['C','G','Am','F'].forEach((ch,i)=>{ctx.fillStyle=colors[i];ctx.fillRect(i*65,10,60,60);ctx.fillStyle='#fff';ctx.font='20px serif';ctx.fillText(ch,i*65+15,45)})}
+function drawSpectrum(f){const c=document.getElementById('specCv');if(!c)return;const ctx=c.getContext('2d');ctx.clearRect(0,0,260,100);for(let i=0;i<10;i++){ctx.fillStyle=`hsl(${i*36},70%,50%)`;ctx.fillRect(i*26,100-(i===Math.log2(f/220|0)?80:10),24,100-(i===Math.log2(f/220|0)?80:10))}}
+function drawShare(){const c=document.getElementById('shareCv');if(!c)return;const ctx=c.getContext('2d');ctx.fillStyle='#1a1832';ctx.fillRect(0,0,260,140);ctx.fillStyle='#fff';ctx.font='20px serif';ctx.fillText('♪ 我的和弦卡',30,40);ctx.font='14px monospace';ctx.fillText('Cmaj7 · 440Hz · 120BPM',30,80);ctx.fillStyle='#ec4899';ctx.fillRect(30,100,200,3)}
+function toBlob(){const c=document.getElementById('shareCv');const a=document.createElement('a');a.href=c.toDataURL();a.download='music-math.png';a.click();toast('💾 PNG 下載')}
+
+/* ========== 遊戲 ========== */
+function startSimon(){toast('Simon 開始！(示意)')}
+function startPitch(){const notes=['C4','E4','G4','A4','C5'];const n=notes[Math.floor(Math.random()*notes.length)];tone(noteToFreq(n),0.8,'sine',0.2);document.getElementById('pitchOut').innerHTML='聽到哪個音？<br>'+notes.map(x=>`<button onclick="toast('你選 '+x+(x===n?' ✓':' ✗'))">${x}</button>`).join(' ')}
+function startRhQuiz(){const pat=[1,0,1,1,0,1];pat.forEach((p,i)=>{if(p)setTimeout(()=>tone(880,0.1,'square',0.2),i*300)});document.getElementById('rhQuizOut').textContent='聽節奏並點擊打拍（示意）'}
+function startMusicQuiz(){const q=[['C 大調第三級是？','E'],['八度頻率比？','2:1'],['12平均律每半音？','2^(1/12)']];document.getElementById('quiz2Out').innerHTML=q.map((x,i)=>`<b>${i+1}.</b> ${x[0]}<br>`).join('')}
+function dailyQuestion(){const qs=['五度圈順時針？','I-V-vi-IV 是？','A4=? Hz'];document.getElementById('dailyQ').textContent=qs[new Date().getDate()%qs.length]}
+function logPractice(){let n=+(localStorage.getItem('mm_practice')||0)+1;localStorage.setItem('mm_practice',n);document.getElementById('logOut').textContent='練習次數：'+n;toast('✍ 已記錄')}
+
+render();
+document.getElementById('logOut').textContent='練習次數：'+(localStorage.getItem('mm_practice')||0);
+</script>
+
+<div class="site-credit-bar-zhangshuxin" style="background:#2c2418;color:#f0e6d2;text-align:center;padding:10px 16px;font-size:13px;font-family:'Microsoft JhengHei',sans-serif;margin-top:24px;line-height:1.7">
+  規劃設計開發：<b style="color:#e0b56a">張書欣</b>　·　Line：<b style="color:#e0b56a">331.today</b>　·　📱 0968-222201
+</div>
+</body>
+</html>

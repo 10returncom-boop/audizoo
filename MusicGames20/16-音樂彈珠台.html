@@ -1,0 +1,479 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta name="robots" content="index,follow">
+<meta name="twitter:title" content="音樂彈珠臺">
+<meta name="twitter:description" content="音樂彈珠臺">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>音樂彈珠臺</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a1a;color:#fff;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;user-select:none;touch-action:none}
+#game{position:relative;width:100%;max-width:450px;height:100%;display:flex;flex-direction:column;padding:10px;gap:8px}
+#hud{display:flex;justify-content:space-between;font-size:16px}
+#score{color:#ff0;font-weight:bold}
+#balls{color:#0ff;font-weight:bold}
+#best{color:#f80;font-weight:bold}
+canvas{flex:1;background:#0d0d2b;border:2px solid #444;border-radius:8px;display:block}
+#controls{display:flex;gap:10px;justify-content:center}
+.flipper-btn{width:100px;height:50px;border-radius:10px;font-size:16px;font-weight:bold;cursor:pointer;transition:all .1s;border:3px solid}
+.flipper-btn.left{background:rgba(0,255,255,.1);border-color:#0ff;color:#0ff}
+.flipper-btn.right{background:rgba(255,0,255,.1);border-color:#f0f;color:#f0f}
+.flipper-btn:active{transform:scale(.95);background:rgba(255,255,255,.2)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:20px;padding:20px}
+.overlay h1{font-size:34px;background:linear-gradient(90deg,#ff0,#f0f);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.overlay p{font-size:15px;color:#aaa;text-align:center;line-height:1.8;max-width:350px}
+.overlay button{padding:14px 40px;font-size:20px;font-weight:bold;border:none;border-radius:30px;background:linear-gradient(90deg,#ff0,#f0f);color:#000;cursor:pointer}
+.overlay .stats{font-size:18px;line-height:2;text-align:center}
+.overlay .stats b{color:#ff0}
+.hidden{display:none!important}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="音樂彈珠臺">
+<meta property="og:title" content="音樂彈珠臺">
+<meta property="og:description" content="音樂彈珠臺">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="音樂遊戲合集20款">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="16-音樂彈珠台.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "音樂遊戲合集20款", "description": "音樂彈珠臺", "url": "16-音樂彈珠台.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "音樂彈珠臺",
+   "item": "16-音樂彈珠台.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "音樂彈珠臺",
+ "name": "音樂彈珠臺",
+ "url": "16-音樂彈珠台.html"
+}
+</script>
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <span>分數：<span id="score">0</span></span>
+    <span>彈珠：<span id="balls">3</span></span>
+    <span>最高：<span id="best">0</span></span>
+  </div>
+  <canvas id="cv"></canvas>
+  <div id="controls">
+    <button class="flipper-btn left" id="fl">左扳機 (Z)</button>
+    <button class="flipper-btn right" id="fr">右扳機 (/)</button>
+  </div>
+  <div id="startScreen" class="overlay">
+    <h1>音樂彈珠臺</h1>
+    <p>彈珠碰撞不同顏色的障礙物會發出不同音高！<br>用左右扳機把彈珠打回檯面<br>收集金色音符獲得高分<br>鍵盤 Z = 左扳機，/ = 右扳機<br>彈珠用完遊戲結束</p>
+    <button id="startBtn">開始遊戲</button>
+  </div>
+  <div id="endScreen" class="overlay hidden">
+    <h2>遊戲結束</h2>
+    <div class="stats">
+      本局分數：<b id="finalScore">0</b><br>
+      歷史最高：<b id="finalBest">0</b>
+    </div>
+    <button id="restartBtn">再來一局</button>
+  </div>
+</div>
+<script>
+const AC=window.AudioContext||window.webkitAudioContext;
+let audioCtx=null;
+function initAudio(){if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume()}
+function playBumper(freq){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.type='sine';o.frequency.setValueAtTime(freq,audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(freq*1.5,audioCtx.currentTime+.05);
+  g.gain.setValueAtTime(.2,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.2);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.2);
+}
+function playFlipper(){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.type='square';o.frequency.setValueAtTime(300,audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(100,audioCtx.currentTime+.08);
+  g.gain.setValueAtTime(.08,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.08);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.08);
+}
+const cv=document.getElementById('cv');const ctx=cv.getContext('2d');
+let W,H;
+function resize(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*devicePixelRatio;cv.height=H*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);}
+window.addEventListener('resize',resize);
+const BUMPER_NOTES=[261.63,293.66,329.63,349.23,392,440,493.88,523.25];
+const game={score:0,balls:3,running:false,ball:null,flippers:{left:false,right:false},bumpers:[],notes:[],lastTime:0,launching:false};
+const scoreEl=document.getElementById('score');
+const ballsEl=document.getElementById('balls');
+let best=0;
+try{best=parseInt(localStorage.getItem('musicPinball_best')||'0')}catch(e){}
+document.getElementById('best').textContent=best;
+
+function initTable(){
+  game.bumpers=[];
+  game.notes=[];
+  const positions=[
+    {x:.3,y:.25,r:18},{x:.7,y:.25,r:18},
+    {x:.5,y:.35,r:22},
+    {x:.25,y:.45,r:15},{x:.75,y:.45,r:15},
+    {x:.4,y:.5,r:16},{x:.6,y:.5,r:16},
+  ];
+  positions.forEach((p,i)=>{
+    game.bumpers.push({x:p.x*W,y:p.y*H,r:p.r,note:BUMPER_NOTES[i%BUMPER_NOTES.length],color:`hsl(${i*45},80%,60%)`,flash:0});
+  });
+  for(let i=0;i<5;i++){
+    game.notes.push({x:(.2+i*.15)*W,y:(.15+Math.random()*.2)*H,r:10,collected:false,flash:0});
+  }
+}
+function launchBall(){
+  if(game.balls<=0||game.ball)return;
+  initAudio();
+  game.balls--;
+  ballsEl.textContent=game.balls;
+  game.ball={x:W-15,y:H-30,vx:-3-Math.random()*2,vy:-8-Math.random()*3,r:8};
+}
+function setFlipper(side,val){
+  game.flippers[side]=val;
+  if(val)playFlipper();
+}
+function updateFlippers(){
+  const flY=H-50,frY=H-50;
+  const flX=W*.25,frX=W*.75;
+  const len=50;
+  if(game.flippers.left){
+    const angle=-Math.PI/4;
+    const ex=flX+Math.cos(angle)*len,ey=flY+Math.sin(angle)*len;
+    if(game.ball){
+      const dx=game.ball.x-flX,dy=game.ball.y-flY;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<len+game.ball.r&&dist>5){
+        game.ball.vx+=Math.cos(angle)*8;
+        game.ball.vy+=Math.sin(angle)*8-3;
+      }
+    }
+  }
+  if(game.flippers.right){
+    const angle=Math.PI+Math.PI/4;
+    const ex=frX+Math.cos(angle)*len,ey=frY+Math.sin(angle)*len;
+    if(game.ball){
+      const dx=game.ball.x-frX,dy=game.ball.y-frY;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<len+game.ball.r&&dist>5){
+        game.ball.vx+=Math.cos(angle)*8;
+        game.ball.vy+=Math.sin(angle)*8-3;
+      }
+    }
+  }
+}
+function loop(t){
+  if(!game.running)return;
+  const dt=Math.min((t-game.lastTime)/1000,.033)*60;
+  game.lastTime=t;
+  if(game.ball){
+    game.ball.vy+=.25*dt;
+    game.ball.x+=game.ball.vx*dt;
+    game.ball.y+=game.ball.vy*dt;
+    game.ball.vx*=.995;
+    if(game.ball.x<game.ball.r){game.ball.x=game.ball.r;game.ball.vx*=-.8;}
+    if(game.ball.x>W-game.ball.r){game.ball.x=W-game.ball.r;game.ball.vx*=-.8;}
+    if(game.ball.y<game.ball.r){game.ball.y=game.ball.r;game.ball.vy*=-.8;}
+    for(const b of game.bumpers){
+      const dx=game.ball.x-b.x,dy=game.ball.y-b.y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<game.ball.r+b.r){
+        const nx=dx/dist,ny=dy/dist;
+        game.ball.x=b.x+nx*(game.ball.r+b.r);
+        game.ball.y=b.y+ny*(game.ball.r+b.r);
+        const dot=game.ball.vx*nx+game.ball.vy*ny;
+        game.ball.vx-=2*dot*nx;game.ball.vy-=2*dot*ny;
+        game.ball.vx*=1.1;game.ball.vy*=1.1;
+        b.flash=1;
+        game.score+=10;
+        playBumper(b.note);
+      }
+      if(b.flash>0)b.flash-=.05*dt;
+    }
+    for(const n of game.notes){
+      if(n.collected)continue;
+      const dx=game.ball.x-n.x,dy=game.ball.y-n.y;
+      if(dx*dx+dy*dy<(game.ball.r+n.r)*(game.ball.r+n.r)){
+        n.collected=true;game.score+=100;
+        playBumper(1046.5);
+      }
+    }
+    updateFlippers();
+    if(game.ball.y>H+20){
+      game.ball=null;
+      if(game.balls<=0){endGame();return;}
+      setTimeout(()=>{if(game.running)launchBall();},500);
+    }
+  }
+  scoreEl.textContent=game.score;
+  draw();
+  requestAnimationFrame(loop);
+}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  const grad=ctx.createLinearGradient(0,0,0,H);
+  grad.addColorStop(0,'#0d0d2b');grad.addColorStop(1,'#1a0a3e');
+  ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;
+  for(let i=0;i<8;i++){ctx.beginPath();ctx.moveTo(0,i*H/8);ctx.lineTo(W,i*H/8);ctx.stroke();}
+  for(const b of game.bumpers){
+    ctx.save();
+    if(b.flash>0){ctx.shadowColor=b.color;ctx.shadowBlur=20*b.flash;}
+    ctx.fillStyle=b.color;
+    ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(255,255,255,.4)';
+    ctx.beginPath();ctx.arc(b.x-b.r*.3,b.y-b.r*.3,b.r*.3,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+  }
+  for(const n of game.notes){
+    if(n.collected)continue;
+    ctx.save();ctx.translate(n.x,n.y);
+    ctx.fillStyle='#ff0';ctx.shadowColor='#ff0';ctx.shadowBlur=12;
+    ctx.font='bold 18px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText('♪',0,1);
+    ctx.restore();
+  }
+  const flY=H-50,frY=H-50;
+  const flX=W*.25,frX=W*.75,len=50;
+  ctx.strokeStyle=game.flippers.left?'#0ff':'#446';ctx.lineWidth=8;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(flX,flY);
+  const la=game.flippers.left?-Math.PI/4:Math.PI/6;
+  ctx.lineTo(flX+Math.cos(la)*len,flY+Math.sin(la)*len);ctx.stroke();
+  ctx.strokeStyle=game.flippers.right?'#f0f':'#646';
+  ctx.beginPath();ctx.moveTo(frX,frY);
+  const ra=game.flippers.right?Math.PI+Math.PI/4:Math.PI-Math.PI/6;
+  ctx.lineTo(frX+Math.cos(ra)*len,frY+Math.sin(ra)*len);ctx.stroke();
+  ctx.fillStyle='#333';ctx.fillRect(W-25,0,25,H);
+  ctx.fillStyle='#555';ctx.fillRect(W-22,H-80,19,80);
+  if(game.ball){
+    ctx.save();
+    const bg=ctx.createRadialGradient(game.ball.x-3,game.ball.y-3,1,game.ball.x,game.ball.y,game.ball.r);
+    bg.addColorStop(0,'#fff');bg.addColorStop(.5,'#ff0');bg.addColorStop(1,'#fa0');
+    ctx.fillStyle=bg;ctx.shadowColor='#ff0';ctx.shadowBlur=15;
+    ctx.beginPath();ctx.arc(game.ball.x,game.ball.y,game.ball.r,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+  }
+  if(!game.ball&&game.balls>0){
+    ctx.fillStyle='#0ff';ctx.font='bold 14px sans-serif';ctx.textAlign='center';
+    ctx.fillText('點擊發射彈珠',W/2,H/2);
+  }
+}
+function startGame(){
+  initAudio();resize();
+  game.score=0;game.balls=3;game.ball=null;
+  game.flippers={left:false,right:false};
+  scoreEl.textContent=0;ballsEl.textContent=3;
+  initTable();
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('endScreen').classList.add('hidden');
+  game.running=true;game.lastTime=performance.now();
+  requestAnimationFrame(loop);
+}
+function endGame(){
+  game.running=false;
+  if(game.score>best){best=game.score;try{localStorage.setItem('musicPinball_best',best)}catch(e){}}
+  document.getElementById('best').textContent=best;
+  document.getElementById('finalScore').textContent=game.score;
+  document.getElementById('finalBest').textContent=best;
+  document.getElementById('endScreen').classList.remove('hidden');
+}
+document.getElementById('startBtn').onclick=startGame;
+document.getElementById('restartBtn').onclick=startGame;
+cv.addEventListener('pointerdown',e=>{e.preventDefault();if(game.running&&!game.ball)launchBall();});
+document.getElementById('fl').addEventListener('pointerdown',e=>{e.preventDefault();setFlipper('left',true);});
+document.getElementById('fl').addEventListener('pointerup',()=>setFlipper('left',false));
+document.getElementById('fl').addEventListener('pointerleave',()=>setFlipper('left',false));
+document.getElementById('fr').addEventListener('pointerdown',e=>{e.preventDefault();setFlipper('right',true);});
+document.getElementById('fr').addEventListener('pointerup',()=>setFlipper('right',false));
+document.getElementById('fr').addEventListener('pointerleave',()=>setFlipper('right',false));
+document.addEventListener('keydown',e=>{
+  if(e.key==='z'||e.key==='Z')setFlipper('left',true);
+  if(e.key==='/')setFlipper('right',true);
+  if(e.code==='Space'&&game.running&&!game.ball){e.preventDefault();launchBall();}
+});
+document.addEventListener('keyup',e=>{
+  if(e.key==='z'||e.key==='Z')setFlipper('left',false);
+  if(e.key==='/')setFlipper('right',false);
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.running)game.running=false;});
+resize();draw();
+</script>
+</body>
+</html>

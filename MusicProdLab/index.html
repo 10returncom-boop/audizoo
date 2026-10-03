@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta name="description" content="音樂製作實驗室 60 合 1 · Music Lab">
+<link rel="canonical" href="index.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="音樂製作實驗室 60 合 1 · Music Lab">
+<meta property="og:description" content="音樂製作實驗室 60 合 1 · Music Lab">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="音樂製作實驗室 60 合 1 · Music Lab">
+<meta name="twitter:description" content="音樂製作實驗室 60 合 1 · Music Lab">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>音樂製作實驗室 60 合 1 · Music Lab</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap">
+<style>
+:root{
+  --bg-deep:#070714;--bg-mid:#0f0f24;--bg-card:rgba(20,20,45,.7);--bg-card-hover:rgba(30,30,60,.85);
+  --border:rgba(120,120,200,.15);--border-bright:rgba(140,140,255,.35);
+  --text-primary:#e8e8f5;--text-secondary:#9898b8;--text-muted:#686888;
+  --cyan:#00e5ff;--purple:#b388ff;--pink:#ff6b9d;--orange:#ffab40;--green:#69f0ae;--red:#ff5252;--yellow:#ffd740;--blue:#448aff;
+  --radius:12px;
+  --font-sans:'Noto Sans TC',-apple-system,sans-serif;
+  --sidebar-w:240px;--header-h:60px;
+}
+body.light{--bg-deep:#f4f6fb;--bg-mid:#fff;--bg-card:rgba(255,255,255,.9);--bg-card-hover:#fff;--border:rgba(80,90,140,.18);--border-bright:rgba(80,90,200,.4);--text-primary:#1a1a2e;--text-secondary:#4a4a68;--text-muted:#8a8aa8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-sans);background:var(--bg-deep);color:var(--text-primary);min-height:100vh;line-height:1.5}
+.header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:rgba(7,7,20,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;padding:0 20px;gap:12px}
+body.light .header{background:rgba(255,255,255,.9)}
+.header-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px}
+.header-logo .ic{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--green),var(--cyan));display:flex;align-items:center;justify-content:center}
+.header-actions{margin-left:auto;display:flex;gap:6px;align-items:center}
+.header-actions button{padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);cursor:pointer;font-size:12px}
+.header-actions button.on{background:var(--green);color:#001322;font-weight:700}
+.layout{display:flex;padding-top:var(--header-h)}
+.sidebar{width:var(--sidebar-w);background:var(--bg-mid);border-right:1px solid var(--border);position:sticky;top:var(--header-h);height:calc(100vh - var(--header-h));overflow-y:auto;padding:16px 0;flex-shrink:0}
+.sidebar h4{font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:1.5px;margin:14px 20px 8px;font-weight:700}
+.sidebar h4:first-child{margin-top:0}
+.cat-btn{display:block;width:calc(100% - 20px);margin:2px 10px;padding:8px 12px;border-radius:8px;background:transparent;border:none;color:var(--text-secondary);font-size:13px;cursor:pointer;text-align:left;font-family:var(--font-sans)}
+.cat-btn:hover{background:var(--bg-card);color:var(--text-primary)}
+.cat-btn.active{background:linear-gradient(135deg,rgba(105,240,174,.15),rgba(0,229,255,.15));color:var(--text-primary);border-left:3px solid var(--green)}
+.main{flex:1;padding:20px 28px;min-width:0}
+.breadcrumb{font-size:12px;color:var(--text-muted);margin-bottom:16px}
+.breadcrumb a{color:var(--green);text-decoration:none}
+.breadcrumb .sep{margin:0 8px;opacity:.5}
+.hero{padding:24px 0;border-bottom:1px solid var(--border);margin-bottom:20px}
+.hero h1{font-size:28px;margin-bottom:6px;background:linear-gradient(135deg,var(--green),var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--text-secondary);font-size:13px}
+.toolbar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.toolbar input{flex:1;min-width:200px;padding:9px 14px;border-radius:18px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:13px}
+.toolbar .count{font-size:12px;color:var(--text-muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.tool{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px}
+.tool h3{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px}
+.tool h3 .num{font-size:10px;color:var(--green);background:rgba(105,240,174,.1);padding:2px 6px;border-radius:8px;font-family:monospace}
+.tool .desc{font-size:11px;color:var(--text-secondary)}
+.tool .body{display:flex;flex-direction:column;gap:8px;font-size:12px}
+.tool input,.tool select{padding:7px 10px;border-radius:8px;border:1px solid var(--border);background:var(--bg-deep);color:var(--text-primary);font-size:12px;width:100%}
+.tool .row{display:flex;gap:8px;align-items:center}
+.tool .row>*{flex:1}
+.tool button{padding:7px 12px;border-radius:8px;border:1px solid var(--border-bright);background:var(--bg-deep);color:var(--text-primary);font-size:12px;cursor:pointer;font-family:var(--font-sans)}
+.tool button:hover{border-color:var(--green)}
+.tool button.primary{background:linear-gradient(135deg,var(--green),var(--cyan));border:none;color:#001322;font-weight:700}
+.tool .out{padding:8px 10px;border-radius:6px;background:var(--bg-deep);font-family:monospace;font-size:11px;color:var(--green);min-height:20px;word-break:break-all}
+.tool .piano{display:flex;gap:2px;flex-wrap:wrap}
+.tool .piano .k{width:28px;height:60px;background:linear-gradient(180deg,#fff,#ddd);border:1px solid #888;border-radius:0 0 4px 4px;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;font-size:9px;color:#333;padding-bottom:2px}
+.tool .piano .k:hover{background:#ffe5a0}
+.footer{border-top:1px solid var(--border);padding:20px;text-align:center;color:var(--text-muted);font-size:11px;margin-top:30px}
+@media(max-width:900px){.sidebar{display:none}.main{padding:14px}.grid{grid-template-columns:1fr}}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "音樂製作實驗室 60 合 1 · Music Lab",
+ "url": "index.html"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "音樂製作實驗室 60 合 1 · Music Lab",
+   "item": "index.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+  <div class="header-logo"><div class="ic">🎵</div>音樂製作實驗室 · 60 合 1</div>
+  <div class="header-actions">
+    <button id="audioToggle" onclick="toggleAudio()">🔇 音效</button>
+    <button onclick="toggleTheme()">🌙</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main">
+    <nav class="breadcrumb">
+      <span class="sep">›</span>
+      <a href="../">741 插畫設計</a><span class="sep">›</span>
+      <span>音樂製作實驗室</span>
+    </nav>
+    <div class="hero">
+      <h1>60 個音樂小工具，即玩即學</h1>
+      <p>音階 / 和弦 / 節奏 / 樂理 / 合成器 / 練習。Web Audio API 即時合成，無外部音檔。</p>
+    </div>
+    <div class="toolbar">
+      <input type="search" id="searchInput" placeholder="🔍 搜尋工具..." oninput="render()">
+      <span class="count" id="count"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="footer">74183 音樂製作實驗室 60 合 1 · V1 · Web Audio API 即時合成</div>
+  </main>
+</div>
+
+<script>
+/* ============ Audio Engine ============ */
+let AC=null, masterGain=null, audioOn=false;
+function ensureAudio(){
+  if(AC){ if(AC.state==='suspended')AC.resume(); return; }
+  AC = new (window.AudioContext||window.webkitAudioContext)();
+  masterGain = AC.createGain();
+  masterGain.gain.value = 0.2;
+  masterGain.connect(AC.destination);
+}
+function toggleAudio(){
+  audioOn = !audioOn;
+  const b = document.getElementById('audioToggle');
+  b.textContent = audioOn ? '🔊 音效開' : '🔇 音效';
+  b.classList.toggle('on', audioOn);
+  if(audioOn){ ensureAudio(); }
+}
+function play(freq, dur=0.8, type='sine', when=0){
+  if(!audioOn){ alert('請先點右上角 🔊 開音效'); return; }
+  ensureAudio();
+  const t = AC.currentTime + when;
+  const o = AC.createOscillator();
+  const g = AC.createGain();
+  o.type = type;
+  o.frequency.value = freq;
+  g.gain.setValueAtTime(0,t);
+  g.gain.linearRampToValueAtTime(0.5, t+0.02);
+  g.gain.exponentialRampToValueAtTime(0.001, t+dur);
+  o.connect(g); g.connect(masterGain);
+  o.start(t); o.stop(t+dur);
+}
+// Note name to freq
+const NOTES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+function noteFreq(note, octave=4){
+  const n = NOTES.indexOf(note);
+  if(n<0) return 440;
+  const midi = (octave+1)*12 + n;
+  return 440 * Math.pow(2, (midi-69)/12);
+}
+function freqNote(freq){
+  const midi = Math.round(12*Math.log2(freq/440))+69;
+  const n = midi % 12;
+  const oct = Math.floor(midi/12)-1;
+  return NOTES[n]+oct;
+}
+
+/* ============ Tool Registry ============ */
+const TOOLS = [];
+let TID = 0;
+function tool(cat, name, desc, body, init){ TOOLS.push({id:++TID, cat, name, desc, body, init}); }
+
+/* ===== 音階音高 1-12 ===== */
+tool('音階','播放指定音','點擊琴鍵播放',
+  `<div class="piano">${['C','D','E','F','G','A','B'].map(n=>`<div class="k" onclick="play(noteFreq('${n}',4))">${n}</div>`).join('')}</div>`,
+  ``);
+
+tool('音階','C 大調音階','C D E F G A B',
+  `<button class="primary" onclick="playScale('C major')">播放</button><div class="out">C4 D4 E4 F4 G4 A4 B4 C5</div>`,
+  `window.playScale = (n) => { const s=['C','D','E','F','G','A','B','C']; s.forEach((x,i)=>play(noteFreq(x, i===7?5:4), 0.5, 'sine', i*0.3)) }`);
+
+tool('音階','五聲音階','C D E G A',
+  `<button class="primary" onclick="playPent()">播放</button><div class="out">C D E G A（無半音，永遠好聽）</div>`,
+  `window.playPent = () => ['C','D','E','G','A','C'].forEach((n,i)=>play(noteFreq(n, i===5?5:4), 0.5, 'triangle', i*0.25))`);
+
+tool('音階','藍調音階','含藍音',
+  `<button class="primary" onclick="playBla()">播放</button><div class="out">C Eb F Gb G Bb</div>`,
+  `window.playBla = () => ['C','D#','F','F#','G','A#'].forEach((n,i)=>play(noteFreq(n,4), 0.4, 'sawtooth', i*0.2))`);
+
+tool('音階','自然小調','A B C D E F G',
+  `<button class="primary" onclick="playNat()">播放</button><div class="out">A B C D E F G A（陰鬱）</div>`,
+  `window.playNat = () => ['A','B','C','D','E','F','G','A'].forEach((n,i)=>play(noteFreq(n, i===7?5:4), 0.5, 'sine', i*0.3))`);
+
+tool('音階','和聲小調','升第七音',
+  `<button class="primary" onclick="playHar()">播放</button><div class="out">A B C D E F G# A</div>`,
+  `window.playHar = () => ['A','B','C','D','E','F','G#','A'].forEach((n,i)=>play(noteFreq(n, i===7?5:4), 0.5, 'sine', i*0.3))`);
+
+tool('音階','頻率→音名','計算 MIDI',
+  `<div class="row"><input type="number" value="440" id="m7-f"></div><button class="primary" onclick="m7()">計算</button><div class="out" id="m7-o">—</div>`,
+  `window.m7 = () => { const f=+document.getElementById('m7-f').value; document.getElementById('m7-o').textContent = freqNote(f) + ' · ' + f + 'Hz' }`);
+
+tool('音階','音名→頻率','MIDI 換算',
+  `<div class="row"><select id="m8-n">${NOTES.map(n=>`<option>${n}</option>`).join('')}</select><input type="number" value="4" id="m8-o"></div><button class="primary" onclick="m8()">計算</button><div class="out" id="m8-o">—</div>`,
+  `window.m8 = () => { const n=document.getElementById('m8-n').value, o=+document.getElementById('m8-o').value; document.getElementById('m8-o').textContent = noteFreq(n,o).toFixed(1)+' Hz' }`);
+
+tool('音階','八度轉換','頻率×2',
+  `<div class="row"><input type="number" value="261.63" id="m9-f"></div><button class="primary" onclick="m9()">產生</button><div class="out" id="m9-o">—</div>`,
+  `window.m9 = () => { const f=+document.getElementById('m9-f').value; document.getElementById('m9-o').textContent = \`低八度: \${(f/2).toFixed(2)}Hz · 高八度: \${(f*2).toFixed(2)}Hz\` }`);
+
+tool('音階','半音階','12 半音',
+  `<button class="primary" onclick="playChrom()">播放</button><div class="out">C C# D D# E F F# G G# A A# B</div>`,
+  `window.playChrom = () => NOTES.forEach((n,i)=>play(noteFreq(n, i===0?4:4), 0.3, 'sine', i*0.15))`);
+
+tool('音階','音程距離','半音數',
+  `<div class="row"><select id="m11-a">${NOTES.map(n=>`<option>${n}</option>`).join('')}</select><select id="m11-b">${NOTES.map(n=>`<option>${n}</option>`).join('')}</select></div><button class="primary" onclick="m11()">計算</button><div class="out" id="m11-o">—</div>`,
+  `window.m11 = () => { const a=NOTES.indexOf(document.getElementById('m11-a').value), b=NOTES.indexOf(document.getElementById('m11-b').value); const d=Math.abs(a-b); const names=['同音','小二度','大二度','小三度','大三度','純四度','增四度','純五度','小六度','大六度','小七度','大七度']; document.getElementById('m11-o').textContent = \`\${d} 半音 = \${names[d]}\` }`);
+
+tool('音階','音階比較','大小調',
+  `<div class="out" style="line-height:1.8">大調: 全全半全全全半<br>小調: 全半全全半全全</div>`,
+  ``);
+
+/* ===== 和弦 13-24 ===== */
+tool('和弦','大三和弦','1 3 5',
+  `<button class="primary" onclick="playChord(['C','E','G'],'triangle')">播放 C</button><div class="out">C E G · 明亮開放</div>`,
+  ``);
+
+tool('和弦','小三和弦','1 b3 5',
+  `<button class="primary" onclick="playChord(['C','D#','G'],'sine')">播放 Cm</button><div class="out">C Eb G · 憂鬱</div>`,
+  ``);
+
+tool('和弦','減三和弦','1 b3 b5',
+  `<button class="primary" onclick="playChord(['C','D#','F#'],'triangle')">播放 Cdim</button><div class="out">C Eb Gb · 緊張</div>`,
+  ``);
+
+tool('和弦','增三和弦','1 3 #5',
+  `<button class="primary" onclick="playChord(['C','E','G#'],'triangle')">播放 Caug</button><div class="out">C E G# · 懸浮</div>`,
+  ``);
+
+tool('和弦','大七和弦','1 3 5 7',
+  `<button class="primary" onclick="playChord(['C','E','G','B'],'sine')">播放 Cmaj7</button><div class="out">C E G B · 柔和爵士</div>`,
+  ``);
+
+tool('和弦','小七和弦','1 b3 5 b7',
+  `<button class="primary" onclick="playChord(['C','D#','G','A#'],'sine')">播放 Cm7</button><div class="out">C Eb G Bb · 順暢</div>`,
+  ``);
+
+tool('和弦','屬七和弦','1 3 5 b7',
+  `<button class="primary" onclick="playChord(['C','E','G','A#'],'triangle')">播放 C7</button><div class="out">C E G Bb · 經典 blues</div>`,
+  ``);
+
+tool('和弦','掛留和弦 sus4','1 4 5',
+  `<button class="primary" onclick="playChord(['C','F','G'],'sine')">播放 Csus4</button><div class="out">C F G · 懸而未決</div>`,
+  ``);
+
+tool('和弦','六和弦','1 3 5 6',
+  `<button class="primary" onclick="playChord(['C','E','G','A'],'sine')">播放 C6</button><div class="out">C E G A · 復古</div>`,
+  ``);
+
+tool('和弦','九和弦','1 3 5 b7 9',
+  `<button class="primary" onclick="playChord(['C','E','G','A#','D'],'sine')">播放 C9</button><div class="out">C E G Bb D · 爵士</div>`,
+  ``);
+
+tool('和弦','經典進行','I-V-vi-IV',
+  `<button class="primary" onclick="playProg()">播放</button><div class="out">C → G → Am → F（數千首流行歌）</div>`,
+  `window.playProg = () => { const chords=[['C','E','G'],['G','B','D'],['A','C','E'],['F','A','C']]; chords.forEach((ch,i)=>ch.forEach(n=>play(noteFreq(n,4),1.5,'sine',i*0.5))) }`);
+
+tool('和弦','卡農進行','Pachelbel',
+  `<button class="primary" onclick="playCanon()">播放</button><div class="out">D A Bm F#m G D G A</div>`,
+  `window.playCanon = () => { const chords=[['D','F#','A'],['A','C#','E'],['B','D','F#'],['F#','A','C#'],['G','B','D'],['D','F#','A'],['G','B','D'],['A','C#','E']]; chords.forEach((ch,i)=>ch.forEach(n=>play(noteFreq(n,4),1,'sine',i*0.5))) }`);
+
+window.playChord = (notes, type='sine') => notes.forEach((n,i)=>play(noteFreq(n,4),1.5,type,i*0.05));
+
+/* ===== 節奏 25-34 ===== */
+tool('節奏','節拍器 BPM','可調速',
+  `<div class="row"><label style="font-size:10px">BPM<input type="number" value="120" id="m25-bpm"></label><button class="primary" onclick="startMetro(this)">開始</button></div><div class="out" id="m25-o">—</div>`,
+  `window.startMetro = (btn) => { const bpm=+document.getElementById('m25-bpm').value; const interval=60000/bpm; if(btn._t){clearInterval(btn._t);btn._t=null;btn.textContent='開始';return} let beat=0; document.getElementById('m25-o').textContent='♪ 第 1 拍'; btn._t=setInterval(()=>{beat++;document.getElementById('m25-o').textContent='♪ 第 '+beat+' 拍'; play(beat%4===1?1500:800,0.1,'square')},interval); btn.textContent='停止' }`);
+
+tool('節奏','2/4 拍','進行曲',
+  `<button class="primary" onclick="playMeter([1,0])">播放</button><div class="out">強-弱 · 進行曲風格</div>`,
+  ``);
+
+tool('節奏','3/4 拍','華爾滋',
+  `<button class="primary" onclick="playMeter([1,0,0])">播放</button><div class="out">強-弱-弱 · 華爾滋</div>`,
+  ``);
+
+tool('節奏','4/4 拍','流行',
+  `<button class="primary" onclick="playMeter([1,0,0,0])">播放</button><div class="out">強-弱-次強-弱 · 流行搖滾</div>`,
+  ``);
+
+tool('節奏','6/8 拍','搖晃感',
+  `<button class="primary" onclick="playMeter([1,0,0,1,0,0])">播放</button><div class="out">長-短短-長-短短</div>`,
+  ``);
+
+tool('節奏','切分音','反拍強調',
+  `<button class="primary" onclick="playSync()">播放</button><div class="out">強調弱拍，製作律動</div>`,
+  `window.playSync = () => [0,1,0.5,1,0,1.5].forEach((v,i)=>play(v?1200:600,0.15,'square',i*0.25))`);
+
+tool('節奏','附點節奏','Long-short',
+  `<button class="primary" onclick="playDot()">播放</button><div class="out">長-短（附點八分 + 十六分）</div>`,
+  `window.playDot = () => [0,0.45,0.7,0.95].forEach((t,i)=>play(800,0.2,'triangle',t))`);
+
+tool('節奏','三連音','3 連均分',
+  `<button class="primary" onclick="playTrip()">播放</button><div class="out">一拍內三個均分音</div>`,
+  `window.playTrip = () => [0,0.2,0.4,0.6].forEach((t,i)=>play(700,0.12,'sine',t))`);
+
+tool('節奏','速度術語','BPM 對照',
+  `<div class="out" style="line-height:1.8">Largo 40–60 · Andante 76–108 · Moderato 108–120 · Allegro 120–168 · Presto 168–200</div>`,
+  ``);
+
+tool('節奏','鼓點型','Rock Beat',
+  `<button class="primary" onclick="playDrum()">播放</button><div class="out">咚 噠 咚噠咚 噠</div>`,
+  `window.playDrum = () => [[0,100],[0.25,600],[0.5,100],[0.75,200],[1,100],[1.25,600]].forEach(([t,f])=>play(f,0.15,'triangle',t))`);
+
+window.playMeter = (pattern) => { let t=0; pattern.forEach(v=>{ play(v?800:600,0.15,'triangle',t); t+=0.4 }); };
+
+/* ===== 樂理 35-44 ===== */
+tool('樂理','五度圈','調號關係',
+  `<div class="out" style="line-height:1.8">C 0♯/♭ → G 1♯ → D 2♯ → A 3♯ → E 4♯ → B 5♯ → F# 6♯<br>逆時針: C → F 1♭ → Bb 2♭ → Eb 3♭ → Ab 4♭</div>`,
+  ``);
+
+tool('樂理','調號查詢','幾個升降',
+  `<div class="row"><select id="m36-n">${NOTES.map(n=>`<option>${n}</option>`).join('')}</select><select id="m36-m"><option value="major">大調</option><option value="minor">小調</option></select></div><button class="primary" onclick="m36()">查詢</button><div class="out" id="m36-o">—</div>`,
+  `window.m36 = () => { const n=document.getElementById('m36-n').value,m=document.getElementById('m36-m').value; const order=['C','G','D','A','E','B','F#']; const pos=order.indexOf(n); document.getElementById('m36-o').textContent = m==='major'? \`\${n} 大調 \${pos>0?pos+' 個升號':pos<0?(-pos)+' 個降號':'無升降'}\` : \`\${n} 小調（相對大調 \${NOTES[(NOTES.indexOf(n)+3)%12]}）\` }`);
+
+tool('樂理','關係大小調','共享調號',
+  `<div class="out" style="line-height:1.8">C 大調 ↔ A 小調<br>G 大調 ↔ E 小調<br>D 大調 ↔ B 小調</div>`,
+  ``);
+
+tool('樂理','羅馬數字','和弦級數',
+  `<div class="out" style="line-height:1.8">I 主和弦 · ii 上主 · iii 中和 · IV 下屬 · V 屬 · vi 下中和 · vii° 導</div>`,
+  ``);
+
+tool('樂理','12-bar Blues','經典進行',
+  `<button class="primary" onclick="playBlues()">播放 C blues</button><div class="out">C C C C / F F C C / G F C C</div>`,
+  `window.playBlues = () => { const seq=['C','C','C','C','F','F','C','C','G','F','C','C']; seq.forEach((c,i)=>playChord([c,NOTES[(NOTES.indexOf(c)+2)%12],NOTES[(NOTES.indexOf(c)+4)%12]],'triangle',i*0.4)) }`);
+
+tool('樂理','轉調計算','半音平移',
+  `<div class="row"><label style="font-size:10px">原調<select id="m39-a">${NOTES.map(n=>`<option>${n}</option>`).join('')}</select></label><label style="font-size:10px">移動<input type="number" value="2" id="m39-s"></label></div><button class="primary" onclick="m39()">計算</button><div class="out" id="m39-o">—</div>`,
+  `window.m39 = () => { const a=NOTES.indexOf(document.getElementById('m39-a').value), s=+document.getElementById('m39-s').value; document.getElementById('m39-o').textContent = document.getElementById('m39-a').value+' → '+NOTES[(a+s+12)%12] }`);
+
+tool('樂理','和弦符號','解釋 Cmaj7',
+  `<div class="out" style="line-height:1.8">C=根音 · maj=大 · 7=第七音 · m=小 · dim=減 · aug=增 · sus=掛留 · add9=加九</div>`,
+  ``);
+
+tool('樂理','藍調音階公式','blues scale',
+  `<div class="out" style="line-height:1.8">1 · b3 · 4 · b5 · 5 · b7<br>C blues: C Eb F Gb G Bb</div>`,
+  ``);
+
+tool('樂理','終止式','結束句',
+  `<div class="out" style="line-height:1.8">正格終止: V → I（完全結束）<br>變格終止: IV → I（阿門）<br>半終止: 停在 V（懸念）</div>`,
+  ``);
+
+tool('樂理','樂譜基礎','線間',
+  `<div class="out" style="line-height:1.8">高音譜號 EGBDF（Every Good Boy Does Fine）<br>FACE 為間距</div>`,
+  ``);
+
+/* ===== 合成器 45-54 ===== */
+tool('合成器','波形選擇','Oscillator type',
+  `<div class="row"><select id="m45-w"><option value="sine">Sine 正弦</option><option value="triangle">Triangle 三角</option><option value="square">Square 方波</option><option value="sawtooth">Sawtooth 鋸齒</option></select></div><button class="primary" onclick="m45()">播放 A4</button><div class="out">不同波形不同音色</div>`,
+  `window.m45 = () => play(440, 1.5, document.getElementById('m45-w').value)`);
+
+tool('合成器','ADS 包絡','音量曲線',
+  `<div class="out" style="line-height:1.8">Attack 起音 · Decay 衰减 · Sustain 持續 · Release 釋放<br>ADSR 是合成器音色核心</div>`,
+  ``);
+
+tool('合成器','低通濾波器','LP Filter',
+  `<div class="row"><label style="font-size:10px">Cutoff<input type="range" min="100" max="5000" value="1000" id="m47-f"></label></div><button class="primary" onclick="m47()">播放</button><div class="out" id="m47-o">—</div>`,
+  `window.m47 = () => { if(!audioOn){alert('先開音效');return} ensureAudio(); const f=+document.getElementById('m47-f').value; const o=AC.createOscillator(); const g=AC.createGain(); const fl=AC.createBiquadFilter(); fl.type='lowpass'; fl.frequency.value=f; o.type='sawtooth'; o.frequency.value=440; o.connect(fl); fl.connect(g); g.connect(masterGain); o.start(); o.stop(AC.currentTime+1.5); document.getElementById('m47-o').textContent='LP '+f+'Hz'; setTimeout(()=>o.disconnect(),2000) }`);
+
+tool('合成器','延遲效果','Echo',
+  `<button class="primary" onclick="m48()">播放回聲音</button><div class="out">1 個音 → 3 次回聲</div>`,
+  `window.m48 = () => { play(440,0.3,'sine',0); play(440,0.3,'sine',0.4); play(440,0.3,'sine',0.8); play(440,0.3,'sine',1.2) }`);
+
+tool('合成器','顫音 Tremolo','音量抖動',
+  `<button class="primary" onclick="m49()">播放 2 秒</button><div class="out">音量快速起伏</div>`,
+  `window.m49 = () => { if(!audioOn){alert('先開音效');return} ensureAudio(); const o=AC.createOscillator(); const g=AC.createGain(); o.type='sine'; o.frequency.value=440; const lfo=AC.createOscillator(); const lfoG=AC.createGain(); lfo.frequency.value=8; lfoG.gain.value=0.3; lfo.connect(lfoG); lfoG.connect(g.gain); o.connect(g); g.connect(masterGain); o.start(); lfo.start(); o.stop(AC.currentTime+2); lfo.stop(AC.currentTime+2) }`);
+
+tool('合成器','震音 Vibrato','音高抖動',
+  `<button class="primary" onclick="m50()">播放 2 秒</button><div class="out">音高微微晃動</div>`,
+  `window.m50 = () => { if(!audioOn){alert('先開音效');return} ensureAudio(); const o=AC.createOscillator(); const g=AC.createGain(); o.type='sine'; o.frequency.value=440; const lfo=AC.createOscillator(); const lfoG=AC.createGain(); lfo.frequency.value=5; lfoG.gain.value=8; lfo.connect(lfoG); lfoG.connect(o.frequency); o.connect(g); g.connect(masterGain); o.start(); lfo.start(); o.stop(AC.currentTime+2); lfo.stop(AC.currentTime+2) }`);
+
+tool('合成器','合唱效果','Chorus',
+  `<button class="primary" onclick="m51()">播放</button><div class="out">多音微微延遲疊加</div>`,
+  `window.m51 = () => { play(440,1.5,'sine',0); play(442,1.5,'sine',0.02); play(438,1.5,'sine',0.04) }`);
+
+tool('合成器','失真','Overdrive',
+  `<button class="primary" onclick="m52()">播放</button><div class="out">方波飽和 = 失真</div>`,
+  `window.m52 = () => { play(220,1.5,'square',0); play(222,1.5,'square',0.01); play(218,1.5,'square',0.02) }`);
+
+tool('合成器','反向音','Reverse',
+  `<button class="primary" onclick="m53()">播放漸強</button><div class="out">音量由小到大 = 反向感</div>`,
+  `window.m53 = () => { if(!audioOn){alert('先開音效');return} ensureAudio(); const t=AC.currentTime; const o=AC.createOscillator(); const g=AC.createGain(); o.type='sine'; o.frequency.value=440; g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(0.5,t+1.5); o.connect(g); g.connect(masterGain); o.start(t); o.stop(t+1.5) }`);
+
+tool('合成器','白噪音','Noise',
+  `<button class="primary" onclick="m54()">播放 1 秒</button><div class="out">所有頻率隨機</div>`,
+  `window.m54 = () => { if(!audioOn){alert('先開音效');return} ensureAudio(); const buf=AC.createBuffer(1,AC.sampleRate,AC.sampleRate); const d=buf.getChannelData(0); for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1; const s=AC.createBufferSource(); s.buffer=buf; const g=AC.createGain(); g.gain.value=0.1; s.connect(g); g.connect(masterGain); s.start() }`);
+
+/* ===== 練習 55-60 ===== */
+tool('練習','C 大調琶音','C E G C',
+  `<button class="primary" onclick="playArp()">播放</button><div class="out">C4 E4 G4 C5 上行</div>`,
+  `window.playArp = () => ['C','E','G','C'].forEach((n,i)=>play(noteFreq(n, i===3?5:4),0.4,'sine',i*0.2))`);
+
+tool('練習','五度循環練習','Circle',
+  `<button class="primary" onclick="playCircle()">播放 C-G-D-A</button><div class="out">五度圈順時針</div>`,
+  `window.playCircle = () => ['C','G','D','A'].forEach((n,i)=>play(noteFreq(n,4),0.8,'triangle',i*0.5))`);
+
+tool('練習','耳朵訓練','音程辨認',
+  `<button class="primary" onclick="earTrain(this)">開始</button><div class="out" id="m57-o">按開始聽音程</div>`,
+  `window.earTrain = (btn) => { const intervals=[['同音',0],['小二度',1],['大二度',2],['小三度',3],['大三度',4],['純五度',7]]; const [name,semi]=intervals[Math.floor(Math.random()*intervals.length)]; play(440,0.5,'sine'); play(440*Math.pow(2,semi/12),0.5,'sine',0.6); const ans=prompt('這是哪種音程？（0,1,2,3,4,7 半音）'); document.getElementById('m57-o').textContent='答案: '+name+'（'+semi+' 半音）'+(+ans===semi?' ✓':' ✗') }`);
+
+tool('練習','記憶旋律','Simon 遊戲',
+  `<button class="primary" onclick="simon(this)">開始</button><div class="out" id="m58-o">看旋律序列</div>`,
+  `window.simon = (btn) => { if(!window._simonSeq){window._simonSeq=[]} const notes=['C','D','E','G']; window._simonSeq.push(notes[Math.floor(Math.random()*4)]); document.getElementById('m58-o').textContent='長度 '+window._simonSeq.length; window._simonSeq.forEach((n,i)=>play(noteFreq(n,4),0.3,'sine',i*0.3)) }`);
+
+tool('練習','吉他和弦形','C 開放和弦',
+  `<div class="out" style="line-height:1.8">C 和弦: x 3 2 0 1 0<br>G 和弦: 3 2 0 0 0 3<br>D 和弦: x x 0 2 3 2</div>`,
+  ``);
+
+tool('練習','練習計時器','15 分鐘',
+  `<button class="primary" onclick="practice(this)">開始倒數</button><div class="out" id="m60-o">15:00</div>`,
+  `window.practice = (btn) => { let s=15*60; if(btn._t){clearInterval(btn._t);btn._t=null;btn.textContent='開始倒數';return} btn.textContent='停止'; btn._t=setInterval(()=>{s--;const m=Math.floor(s/60),sec=s%60;document.getElementById('m60-o').textContent=String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0');if(s<=0){clearInterval(btn._t);btn._t=null;document.getElementById('m60-o').textContent='完成 🎉'; play(880,0.5,'sine')}},1000) }`);
+
+/* ============ Renderer ============ */
+const CATS = ['音階','和弦','節奏','樂理','合成器','練習'];
+function buildSidebar(){
+  const sb=document.getElementById('sidebar');
+  sb.innerHTML='<h4>分類</h4><button class="cat-btn active" data-cat="all" onclick="setCat(\'all\')">全部 60</button>'+CATS.map(c=>{
+    const n=TOOLS.filter(t=>t.cat===c).length;
+    return `<button class="cat-btn" data-cat="${c}" onclick="setCat('${c}')">${c} ${n}</button>`;
+  }).join('');
+}
+let curCat='all';
+function setCat(c){curCat=c;document.querySelectorAll('.cat-btn').forEach(b=>b.classList.toggle('active',b.dataset.cat===c));render();}
+function render(){
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  const list=TOOLS.filter(t=>(curCat==='all'||t.cat===curCat)&&(!q||t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q)));
+  document.getElementById('count').textContent=list.length+' / 60';
+  document.getElementById('grid').innerHTML=list.map(t=>`
+    <div class="tool">
+      <h3><span class="num">${String(t.id).padStart(2,'0')}</span>${t.name}</h3>
+      <div class="desc">${t.desc}</div>
+      <div class="body">${t.body}</div>
+    </div>`).join('');
+}
+function toggleTheme(){document.body.classList.toggle('light');document.querySelector('.header-actions button:last-child').textContent=document.body.classList.contains('light')?'☀️':'🌙'}
+buildSidebar();
+render();
+</script>
+
+<div class="site-credit-bar-zhangshuxin" style="background:#2c2418;color:#f0e6d2;text-align:center;padding:10px 16px;font-size:13px;font-family:'Microsoft JhengHei',sans-serif;margin-top:24px;line-height:1.7">
+  規劃設計開發：<b style="color:#e0b56a">張書欣</b>　·　Line：<b style="color:#e0b56a">331.today</b>　·　📱 0968-222201
+</div>
+</body>
+</html>
