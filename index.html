@@ -156,10 +156,10 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 .hero-in{position:relative;z-index:2;padding:64px 24px;max-width:1120px;margin:0 auto;width:100%}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--surface) 78%,transparent);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-soft);margin-bottom:22px;box-shadow:var(--shadow)}
 .hero-badge b{color:var(--accent);font-weight:600}
-.hero h1{font-size:clamp(34px,5.6vw,60px);font-weight:900;line-height:1.14;letter-spacing:-.02em;max-width:22ch}
+.hero h1{font-size:clamp(34px,5.6vw,60px);font-weight:900;line-height:1.5;letter-spacing:.04em;max-width:22ch}
 .hero h1 .hl{color:var(--accent)}
-.hero p.lead{font-size:clamp(16px,2.2vw,19px);color:var(--ink-soft);max-width:46ch;margin:20px 0 30px;font-weight:300}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero p.lead{font-size:clamp(16px,2.2vw,19px);color:#000;max-width:46ch;margin:30px 0 30px;font-weight:700}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:999px;font-size:15px;font-weight:600;cursor:pointer;border:none;transition:.25s var(--ease);font-family:var(--sans)}
 .btn svg{width:17px;height:17px}
 .btn-primary{background:var(--sky);color:#000}
@@ -256,6 +256,7 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 /* ---------- 底部 CTA ---------- */
 .final-cta{background:linear-gradient(120deg,var(--accent-soft),var(--sun-soft));border:1px solid var(--line);border-radius:28px;padding:clamp(30px,5vw,56px);text-align:center;margin-top:20px}
 .final-cta h2{font-size:clamp(24px,4vw,34px);font-weight:700;line-height:1.2}
+.final-cta-img{width:100%;max-width:680px;height:auto;border-radius:20px;margin:0 auto 26px;display:block;box-shadow:var(--shadow)}
 .final-cta p{color:var(--ink-soft);margin:14px auto 26px;max-width:44ch;font-size:15px}
 
 /* ---------- Footer ---------- */
@@ -309,7 +310,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:72p
 /* audizoo mobile responsive */
 @media(max-width:640px){
 .hero{min-height:auto;padding:56px 18px 44px}
-.hero h1{font-size:clamp(24px,6.8vw,34px);line-height:1.2;max-width:100%}
+.hero h1{font-size:clamp(24px,6.8vw,34px);line-height:1.5;letter-spacing:.04em;max-width:100%}
 .hero-in{text-align:center}
 .brand{white-space:nowrap}
 .lead{font-size:15px;max-width:100%}
@@ -322,11 +323,11 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:72p
   <div class="hero-bg" role="img" aria-label="米白水彩聲波插畫背景"></div>
   <div class="hero-in">
     <h1>在audizoo聽音樂<br>在音樂動物園<br>玩音樂找音樂</h1>
-    <p class="lead">audizoo 聲音動物園，把「音樂」拆成古樂器、音樂家、數學、節奏遊戲與聲紋辨識各種玩法</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#journey">開始音樂之旅<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-ghost" href="audizoo_about.html">音樂動物園</a>
     </div>
+    <p class="lead">audizoo 聲音動物園，把「音樂」拆成古樂器、音樂家、數學、節奏遊戲與聲紋辨識各種玩法</p>
   </div>
 </section>
 <section class="journey sec" id="journey">
@@ -439,6 +440,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:72p
 </section>
 <section class="sec">
   <div class="final-cta rv">
+    <img class="final-cta-img" src="assets/cta-journey.jpg" alt="用耳朵去冒險的音樂旅程水彩插畫">
     <h2>準備好，用耳朵去冒險</h2>
     <p>從古樂聲到聲紋辨識，五座旗艦站等你依序走完。選一站開始，剩下的音樂會自己帶路。</p>
     <a class="btn btn-primary" href="#journey">展開音樂之旅<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
