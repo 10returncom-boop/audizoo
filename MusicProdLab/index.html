@@ -113,12 +113,15 @@ body.light .header{background:rgba(255,255,255,.9)}
 .hero p{color:#1a1a2e;background:rgba(255,255,255,.85);display:inline-block;padding:.5em 1.2em;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.14)}
 .hero .count{color:#1a1a2e}
 </style>
+<style>
+@media(max-width:760px){.header,.hero{background-image:none!important}}
+</style>
 </head>
 <body class="light">
 <!-- audizoo 返回導覽 + 網站地圖（右下角） -->
 <div id="audizoo-backnav" style="position:fixed;left:24px;bottom:24px;z-index:99999;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start;font-family:'Noto Sans SC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;">
 <a href="javascript:history.back();" title="回上頁" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">← 回上頁</a>
-<a href="../index.html" title="返回首頁" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">返回首頁</a>
+<a href="../index.html" title="返回audizoo" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">返回audizoo</a>
 <a href="../audizoo_sites.html" title="網站地圖（全部音樂站）" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">☰ sitemap</a>
 </div>
 
@@ -139,7 +142,7 @@ body.light .header{background:rgba(255,255,255,.9)}
       <span>音樂製作實驗室</span>
     </nav>
     <div class="hero" style="background-image:url('assets/hero.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
-      <h1>60 個音樂小工具，即玩即學</h1>
+      <h1>音樂動物園小工具</h1>
       <p>音階 / 和弦 / 節奏 / 樂理 / 合成器 / 練習。Web Audio API 即時合成，無外部音檔。</p>
     </div>
     <div class="toolbar">

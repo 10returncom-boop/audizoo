@@ -84,7 +84,7 @@
 
   .hero h1 {
     font-family: 'Noto Serif TC', serif;
-    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-size: clamp(1.7rem, 4.7vw, 3.4rem);
     font-weight: 900; margin-bottom: 1rem;
     position: relative; z-index: 1;
     text-shadow: 0 2px 20px rgba(0,0,0,0.2);
@@ -938,16 +938,19 @@ input, textarea, [contenteditable="true"] {
 </script>
 <style>
 /* audizoo hero title as button + readable text */
-.hero h1{display:inline-block;background:#B6DCF6;color:#111!important;-webkit-text-fill-color:#111!important;-webkit-background-clip:initial!important;background-clip:initial!important;background-image:none!important;font-family:inherit;padding:.5em 1.1em;border-radius:999px;border:1.5px solid rgba(0,0,0,.12);box-shadow:0 6px 18px rgba(0,0,0,.2);padding:.45em 1em}
+.hero h1{display:inline-block;background:#B6DCF6;color:#111!important;-webkit-text-fill-color:#111!important;-webkit-background-clip:initial!important;background-clip:initial!important;background-image:none!important;font-family:inherit;padding:.5em 1.1em;border-radius:999px;border:1.5px solid rgba(0,0,0,.12);box-shadow:0 6px 18px rgba(0,0,0,.2);padding:.3em .68em}
 .hero-badge{color:#1a1a2e;background:rgba(255,255,255,.8);display:inline-block;padding:.35em .9em;border-radius:10px}
 .hero p{color:#1a1a2e;background:rgba(255,255,255,.85);display:inline-block;padding:.5em 1.2em;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.14);padding:.6em 1.2em}
+</style>
+<style>
+@media(max-width:760px){.header,.hero{background-image:none!important}}
 </style>
 </head>
 <body>
 <!-- audizoo 返回導覽 + 網站地圖（右下角） -->
 <div id="audizoo-backnav" style="position:fixed;left:24px;bottom:24px;z-index:99999;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start;font-family:'Noto Sans SC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;">
 <a href="javascript:history.back();" title="回上頁" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">← 回上頁</a>
-<a href="../index.html" title="返回首頁" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">返回首頁</a>
+<a href="../index.html" title="返回audizoo" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">返回audizoo</a>
 <a href="../audizoo_sites.html" title="網站地圖（全部音樂站）" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">☰ sitemap</a>
 </div>
 
