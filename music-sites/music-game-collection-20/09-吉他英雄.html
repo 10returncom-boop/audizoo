@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta property="og:url" content="https://audizoo.com/music-sites/music-game-collection-20/09-吉他英雄.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="robots" content="index,follow">
+<meta name="twitter:title" content="吉他英雄">
+<meta name="twitter:description" content="吉他英雄">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>吉他英雄</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;color:#fff;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;user-select:none;touch-action:none}
+#game{position:relative;width:100%;max-width:500px;height:100%;display:flex;flex-direction:column}
+#hud{display:flex;justify-content:space-between;padding:10px 16px;font-size:16px;z-index:10;background:linear-gradient(180deg,#000,transparent)}
+#score{color:#ff0;font-weight:bold}
+#combo{color:#0ff;font-weight:bold}
+#best{color:#f80;font-weight:bold}
+#playfield{flex:1;position:relative;overflow:hidden;background:linear-gradient(180deg,#1a0a0a,#0d0d0d)}
+.lane{position:absolute;top:0;bottom:0;width:20%;border-left:1px solid rgba(255,255,255,.08);border-right:1px solid rgba(255,255,255,.08)}
+.lane:nth-child(1){left:0}
+.lane:nth-child(2){left:20%}
+.lane:nth-child(3){left:40%}
+.lane:nth-child(4){left:60%}
+.lane:nth-child(5){left:80%}
+.note{position:absolute;width:80%;left:10%;height:28px;border-radius:14px;transition:none}
+.note.l0{background:linear-gradient(180deg,#44ff44,#11aa11);box-shadow:0 0 12px #44ff44}
+.note.l1{background:linear-gradient(180deg,#ff4444,#aa1111);box-shadow:0 0 12px #ff4444}
+.note.l2{background:linear-gradient(180deg,#ffff44,#aaaa11);box-shadow:0 0 12px #ffff44}
+.note.l3{background:linear-gradient(180deg,#4444ff,#1111aa);box-shadow:0 0 12px #4444ff}
+.note.l4{background:linear-gradient(180deg,#ff44ff,#aa11aa);box-shadow:0 0 12px #ff44ff}
+#strumbar{position:absolute;bottom:75px;left:0;right:0;height:6px;background:rgba(255,255,255,.4);z-index:5}
+#keys{display:flex;height:75px;background:#111}
+.key{flex:1;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:bold;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);transition:all .1s;cursor:pointer;border-radius:0}
+.key.active{background:rgba(255,255,255,.25);transform:scale(.95)}
+.key.k0{color:#44ff44;border-color:#44ff44}
+.key.k1{color:#ff4444;border-color:#ff4444}
+.key.k2{color:#ffff44;border-color:#ffff44}
+.key.k3{color:#4444ff;border-color:#4444ff}
+.key.k4{color:#ff44ff;border-color:#ff44ff}
+#judge{position:absolute;top:35%;left:50%;transform:translateX(-50%);font-size:26px;font-weight:bold;opacity:0;transition:opacity .15s;z-index:20;pointer-events:none;text-shadow:0 0 10px currentColor}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:20px;padding:20px}
+.overlay h1{font-size:36px;background:linear-gradient(90deg,#ff0,#f0f,#0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.overlay p{font-size:15px;color:#aaa;text-align:center;line-height:1.8;max-width:350px}
+.overlay button{padding:14px 40px;font-size:20px;font-weight:bold;border:none;border-radius:30px;background:linear-gradient(90deg,#ff0,#f0f);color:#000;cursor:pointer}
+.overlay .stats{font-size:18px;line-height:2;text-align:center}
+.overlay .stats b{color:#ff0}
+.hidden{display:none!important}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="吉他英雄">
+<meta property="og:title" content="吉他英雄">
+<meta property="og:description" content="吉他英雄">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="音樂遊戲合集20款">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="09-吉他英雄.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "音樂遊戲合集20款", "description": "吉他英雄", "url": "09-吉他英雄.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "吉他英雄",
+   "item": "09-吉他英雄.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "吉他英雄",
+ "name": "吉他英雄",
+ "url": "09-吉他英雄.html"
+}
+</script>
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <span>分數：<span id="score">0</span></span>
+    <span>連擊：<span id="combo">0</span></span>
+    <span>最高：<span id="best">0</span></span>
+  </div>
+  <div id="playfield">
+    <div class="lane"></div><div class="lane"></div><div class="lane"></div><div class="lane"></div><div class="lane"></div>
+    <div id="strumbar"></div>
+    <div id="judge"></div>
+  </div>
+  <div id="keys">
+    <div class="key k0" data-lane="0">A</div>
+    <div class="key k1" data-lane="1">S</div>
+    <div class="key k2" data-lane="2">D</div>
+    <div class="key k3" data-lane="3">F</div>
+    <div class="key k4" data-lane="4">G</div>
+  </div>
+  <div id="startScreen" class="overlay">
+    <h1>吉他英雄</h1>
+    <p>五線譜上的音符從天而降<br>按住對應顏色的琴格，在音符到達掃弦線時撥弦！<br>鍵盤 A S D F G 按住琴格，空白鍵撥弦<br>或直接點選下方按鈕（按住即時撥弦）</p>
+    <button id="startBtn">開始搖滾</button>
+  </div>
+  <div id="endScreen" class="overlay hidden">
+    <h2>表演結束</h2>
+    <div class="stats">
+      本局分數：<b id="finalScore">0</b><br>
+      最高連擊：<b id="finalCombo">0</b><br>
+      歷史最高：<b id="finalBest">0</b>
+    </div>
+    <button id="restartBtn">再來一場</button>
+  </div>
+</div>
+<script>
+const AC=window.AudioContext||window.webkitAudioContext;
+let audioCtx=null;
+function initAudio(){if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume()}
+function playNote(freq,dur=.2,type='sawtooth',vol=.15){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain(),f=audioCtx.createBiquadFilter();
+  f.type='lowpass';f.frequency.value=2000;
+  o.type=type;o.frequency.value=freq;
+  g.gain.setValueAtTime(vol,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+dur);
+  o.connect(f);f.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+dur);
+}
+const STRINGS=[82.41,110,146.83,196,246.94];
+const game={score:0,combo:0,maxCombo:0,notes:[],running:false,speed:4,spawnTimer:0,spawnInterval:.9,lastTime:0,missCount:0,held:[false,false,false,false,false]};
+const pf=document.getElementById('playfield');
+const judgeEl=document.getElementById('judge');
+const scoreEl=document.getElementById('score');
+const comboEl=document.getElementById('combo');
+let best=0;
+try{best=parseInt(localStorage.getItem('guitarHero_best')||'0')}catch(e){}
+document.getElementById('best').textContent=best;
+
+function showJudge(text,color){judgeEl.textContent=text;judgeEl.style.color=color;judgeEl.style.opacity='1';setTimeout(()=>judgeEl.style.opacity='0',250);}
+
+function spawnNote(){
+  const lane=Math.floor(Math.random()*5);
+  const el=document.createElement('div');
+  el.className='note l'+lane;
+  el.style.top='-30px';
+  pf.appendChild(el);
+  game.notes.push({el,lane,y:-30,hit:false});
+}
+
+function strum(){
+  if(!game.running)return;
+  initAudio();
+  const pfH=pf.clientHeight;
+  const hitY=pfH-75;
+  let hitAny=false;
+  for(let lane=0;lane<5;lane++){
+    if(!game.held[lane])continue;
+    let closest=null,closestDist=Infinity;
+    for(const n of game.notes){
+      if(n.lane===lane&&!n.hit){
+        const d=Math.abs(n.y-hitY);
+        if(d<closestDist){closestDist=d;closest=n;}
+      }
+    }
+    if(closest&&closestDist<45){
+      closest.hit=true;closest.el.remove();
+      hitAny=true;
+      if(closestDist<18){game.score+=100;showJudge('PERFECT','#0ff');}
+      else{game.score+=50;showJudge('GOOD','#0f0');}
+      playNote(STRINGS[lane]*4,.25,'sawtooth',.18);
+      game.combo++;game.maxCombo=Math.max(game.maxCombo,game.combo);
+      if(game.combo%10===0){game.speed=Math.min(8,game.speed+.3);game.spawnInterval=Math.max(.45,game.spawnInterval-.04);}
+    }
+  }
+  if(!hitAny){
+    let anyNear=false;
+    for(const n of game.notes){
+      if(!n.hit&&Math.abs(n.y-hitY)<45){anyNear=true;break;}
+    }
+    if(anyNear){game.combo=0;showJudge('WRONG','#f44');playNote(60,.15,'sawtooth',.1);}
+  }
+  scoreEl.textContent=game.score;comboEl.textContent=game.combo;
+}
+
+function setHeld(lane,val){
+  game.held[lane]=val;
+  const key=document.querySelector('.key[data-lane="'+lane+'"]');
+  if(val)key.classList.add('active');else key.classList.remove('active');
+}
+
+function loop(t){
+  if(!game.running)return;
+  const dt=Math.min((t-game.lastTime)/1000,.05);
+  game.lastTime=t;
+  game.spawnTimer+=dt;
+  if(game.spawnTimer>=game.spawnInterval){game.spawnTimer=0;spawnNote();}
+  const pfH=pf.clientHeight;
+  for(let i=game.notes.length-1;i>=0;i--){
+    const n=game.notes[i];
+    n.y+=game.speed*60*dt;
+    n.el.style.top=n.y+'px';
+    if(n.y>pfH-30&&!n.hit){
+      n.hit=true;n.el.remove();
+      game.combo=0;game.missCount++;
+      showJudge('MISS','#f44');
+      scoreEl.textContent=game.score;comboEl.textContent=game.combo;
+      if(game.missCount>=20){endGame();return;}
+    }
+  }
+  game.notes=game.notes.filter(n=>!n.hit);
+  requestAnimationFrame(loop);
+}
+
+function startGame(){
+  initAudio();
+  game.score=0;game.combo=0;game.maxCombo=0;game.notes.forEach(n=>n.el.remove());
+  game.notes=[];game.speed=4;game.spawnTimer=0;game.spawnInterval=.9;game.missCount=0;
+  game.held=[false,false,false,false,false];
+  document.querySelectorAll('.key').forEach(k=>k.classList.remove('active'));
+  scoreEl.textContent=0;comboEl.textContent=0;
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('endScreen').classList.add('hidden');
+  game.running=true;game.lastTime=performance.now();
+  requestAnimationFrame(loop);
+}
+function endGame(){
+  game.running=false;
+  game.notes.forEach(n=>n.el.remove());game.notes=[];
+  if(game.score>best){best=game.score;try{localStorage.setItem('guitarHero_best',best)}catch(e){}}
+  document.getElementById('best').textContent=best;
+  document.getElementById('finalScore').textContent=game.score;
+  document.getElementById('finalCombo').textContent=game.maxCombo;
+  document.getElementById('finalBest').textContent=best;
+  document.getElementById('endScreen').classList.remove('hidden');
+}
+
+document.getElementById('startBtn').onclick=startGame;
+document.getElementById('restartBtn').onclick=startGame;
+document.querySelectorAll('.key').forEach(k=>{
+  const lane=parseInt(k.dataset.lane);
+  k.addEventListener('pointerdown',e=>{e.preventDefault();setHeld(lane,true);strum();});
+  k.addEventListener('pointerup',e=>{e.preventDefault();setHeld(lane,false);});
+  k.addEventListener('pointerleave',()=>setHeld(lane,false));
+});
+document.addEventListener('keydown',e=>{
+  if(!game.running)return;
+  const map={'a':0,'s':1,'d':2,'f':3,'g':4};
+  if(map[e.key.toLowerCase()]!==undefined&&!e.repeat){setHeld(map[e.key.toLowerCase()],true);}
+  if(e.code==='Space'){e.preventDefault();strum();}
+});
+document.addEventListener('keyup',e=>{
+  const map={'a':0,'s':1,'d':2,'f':3,'g':4};
+  if(map[e.key.toLowerCase()]!==undefined)setHeld(map[e.key.toLowerCase()],false);
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.running)game.running=false;});
+</script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://audizoo.com/music-sites/music-game-collection-20/"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:site_name" content="Audizoo"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="description" content="20 款音樂遊戲合集">
+<link rel="canonical" href="index.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="20 款音樂遊戲合集">
+<meta property="og:description" content="20 款音樂遊戲合集">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="20 款音樂遊戲合集">
+<meta name="twitter:description" content="20 款音樂遊戲合集">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 款音樂遊戲合集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a1a;color:#fff;font-family:'Segoe UI',sans-serif;min-height:100vh;padding:20px}
+.header{text-align:center;padding:30px 20px 40px}
+.header h1{font-size:clamp(28px,5vw,48px);font-weight:900;background:linear-gradient(90deg,#0ff,#f0f,#ff0,#0f0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:300% 100%;animation:gradient 5s ease infinite}
+@keyframes gradient{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.header p{color:#888;margin-top:10px;font-size:16px}
+.header .count{display:inline-block;margin-top:15px;padding:6px 20px;background:rgba(0,255,255,.1);border:1px solid #0ff;border-radius:20px;color:#0ff;font-size:14px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;max-width:1200px;margin:0 auto}
+.card{position:relative;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 20px;text-decoration:none;color:#fff;transition:all .3s cubic-bezier(.4,0,.2,1);overflow:hidden;cursor:pointer}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,#0ff);opacity:.7}
+.card:hover{transform:translateY(-6px);border-color:var(--accent,#0ff);box-shadow:0 20px 40px rgba(0,0,0,.4),0 0 30px var(--glow,rgba(0,255,255,.2))}
+.card .num{font-size:13px;color:#666;font-weight:bold;letter-spacing:2px}
+.card .icon{font-size:36px;margin:12px 0;display:block;filter:drop-shadow(0 0 8px var(--glow,rgba(0,255,255,.5)))}
+.card h3{font-size:18px;font-weight:bold;margin-bottom:8px;color:var(--accent,#0ff)}
+.card p{font-size:13px;color:#999;line-height:1.5}
+.card .tag{display:inline-block;margin-top:12px;padding:3px 10px;background:rgba(255,255,255,.08);border-radius:10px;font-size:11px;color:#aaa}
+.footer{text-align:center;padding:40px 20px 20px;color:#555;font-size:13px}
+.footer a{color:#0ff;text-decoration:none}
+img{max-width:100%;height:auto}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "20 款音樂遊戲合集",
+ "url": "index.html"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "20 款音樂遊戲合集",
+   "item": "index.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<!-- Top Header Nav -->
+<header style="position:sticky;top:0;z-index:99998;background:linear-gradient(135deg,#4f46e5,#7c3aed);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.15);font-family:'Microsoft JhengHei',sans-serif">
+  <div style="display:flex;gap:8px;align-items:center">
+    
+    
+  </div>
+  <div style="color:rgba(255,255,255,.8);font-size:12px">
+    首頁 › <span id="bc-cat">音樂藝術</span> › <span id="bc-page" style="color:#fff;font-weight:600">234_【音樂遊戲】_V1</span>
+  </div>
+</header>
+<!-- /Top Header Nav -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="header">
+  <h1>🎵 20 款音樂遊戲合集</h1>
+  <p>全部使用 Web Audio API 合成音效，無需外部音訊檔案</p>
+  <div class="count">20 GAMES · PURE HTML/CSS/JS</div>
+</div>
+<div class="grid">
+  <a class="card" style="--accent:#0ff;--glow:rgba(0,255,255,.3)" href="01-節奏大師.html">
+    <div class="num">GAME 01</div>
+    <span class="icon">🎹</span>
+    <h3>節奏大師</h3>
+    <p>四軌下落音符，在判定線按下對應按鍵，D F J K 操作</p>
+    <span class="tag">節奏 · 反應</span>
+  </a>
+  <a class="card" style="--accent:#fff;--glow:rgba(255,255,255,.3)" href="02-鋼琴塊.html">
+    <div class="num">GAME 02</div>
+    <span class="icon">⬛</span>
+    <h3>鋼琴塊</h3>
+    <p>別踩白塊！點選下落的黑色鋼琴鍵，彈出優美音階</p>
+    <span class="tag">反應 · 鋼琴</span>
+  </a>
+  <a class="card" style="--accent:#f0f;--glow:rgba(255,0,255,.3)" href="03-音樂跳球.html">
+    <div class="num">GAME 03</div>
+    <span class="icon">🔮</span>
+    <h3>音樂跳球</h3>
+    <p>跟著節奏跳躍，避開紅色障礙，收集金色音符</p>
+    <span class="tag">跑酷 · 跳躍</span>
+  </a>
+  <a class="card" style="--accent:#0ff;--glow:rgba(0,255,255,.3)" href="04-DJ混音大師.html">
+    <div class="num">GAME 04</div>
+    <span class="icon">🎧</span>
+    <h3>DJ混音大師</h3>
+    <p>雙轉盤刮碟，跟著BPM節奏在正確時機點選，拖動推桿混音</p>
+    <span class="tag">DJ · 節奏</span>
+  </a>
+  <a class="card" style="--accent:#ff0;--glow:rgba(255,255,0,.3)" href="05-音符消消樂.html">
+    <div class="num">GAME 05</div>
+    <span class="icon">🎼</span>
+    <h3>音符消消樂</h3>
+    <p>交換相鄰音符，三連消除彈出和絃，30步內獲得高分</p>
+    <span class="tag">消除 · 益智</span>
+  </a>
+  <a class="card" style="--accent:#0f0;--glow:rgba(0,255,0,.3)" href="06-節奏跑酷.html">
+    <div class="num">GAME 06</div>
+    <span class="icon">🏃</span>
+    <h3>節奏跑酷</h3>
+    <p>跟著低音節奏奔跑，跳躍躲避低障礙，滑鏟躲過高障礙</p>
+    <span class="tag">跑酷 · 反應</span>
+  </a>
+  <a class="card" style="--accent:#fa0;--glow:rgba(255,170,0,.3)" href="07-鼓點大師.html">
+    <div class="num">GAME 07</div>
+    <span class="icon">🥁</span>
+    <h3>鼓點大師</h3>
+    <p>踢鼓、小鼓、中鼓、鈸四種鼓，跟著節奏打出完美鼓點</p>
+    <span class="tag">打鼓 · 節奏</span>
+  </a>
+  <a class="card" style="--accent:#0ff;--glow:rgba(0,255,255,.3)" href="08-音樂記憶.html">
+    <div class="num">GAME 08</div>
+    <span class="icon">🧠</span>
+    <h3>音樂記憶</h3>
+    <p>Simon Says 音樂版，觀看四色音板發光順序並重複，越來越長</p>
+    <span class="tag">記憶 · 益智</span>
+  </a>
+  <a class="card" style="--accent:#ff0;--glow:rgba(255,255,0,.3)" href="09-吉他英雄.html">
+    <div class="num">GAME 09</div>
+    <span class="icon">🎸</span>
+    <h3>吉他英雄</h3>
+    <p>五線譜吉他遊戲，按住琴格在掃弦線撥弦，A S D F G 操作</p>
+    <span class="tag">吉他 · 節奏</span>
+  </a>
+  <a class="card" style="--accent:#0ff;--glow:rgba(0,255,255,.3)" href="10-音樂方塊.html">
+    <div class="num">GAME 10</div>
+    <span class="icon">🧱</span>
+    <h3>音樂方塊</h3>
+    <p>俄羅斯方塊音樂版，每次消除行都會彈出越來越高亢的音階</p>
+    <span class="tag">方塊 · 益智</span>
+  </a>
+  <a class="card" style="--accent:#f44;--glow:rgba(255,68,68,.3)" href="11-節奏拳擊.html">
+    <div class="num">GAME 11</div>
+    <span class="icon">🥊</span>
+    <h3>節奏拳擊</h3>
+    <p>跟著BPM出拳打沙袋，在節拍頂峰按照提示出左拳或右拳</p>
+    <span class="tag">拳擊 · 節奏</span>
+  </a>
+  <a class="card" style="--accent:#0ff;--glow:rgba(0,255,255,.3)" href="12-音樂迷宮.html">
+    <div class="num">GAME 12</div>
+    <span class="icon">🌀</span>
+    <h3>音樂迷宮</h3>
+    <p>隨機生成迷宮，收集所有金色音符彈出音階，到達綠色終點過關</p>
+    <span class="tag">迷宮 · 探索</span>
+  </a>
+  <a class="card" style="--accent:#f0f;--glow:rgba(255,0,255,.3)" href="13-卡拉OK評分.html">
+    <div class="num">GAME 13</div>
+    <span class="icon">🎤</span>
+    <h3>卡拉OK評分</h3>
+    <p>對著麥克風唱歌，即時音高偵測與目標音符比對，獲得S/A/B/C評價</p>
+    <span class="tag">唱歌 · 麥克風</span>
+  </a>
+  <a class="card" style="--accent:#f0f;--glow:rgba(255,0,255,.3)" href="14-音樂畫布.html">
+    <div class="num">GAME 14</div>
+    <span class="icon">🎨</span>
+    <h3>音樂畫布</h3>
+    <p>在畫布上畫出旋律，橫軸時間縱軸音高，一邊畫一邊聽即時音效</p>
+    <span class="tag">創作 · 畫布</span>
+  </a>
+  <a class="card" style="--accent:#0f0;--glow:rgba(0,255,0,.3)" href="15-節奏釣魚.html">
+    <div class="num">GAME 15</div>
+    <span class="icon">🎣</span>
+    <h3>節奏釣魚</h3>
+    <p>魚兒隨節奏遊動，進入綠色目標區時收線，六種魚發出不同音高</p>
+    <span class="tag">釣魚 · 節奏</span>
+  </a>
+  <a class="card" style="--accent:#ff0;--glow:rgba(255,255,0,.3)" href="16-音樂彈珠台.html">
+    <div class="num">GAME 16</div>
+    <span class="icon">🎱</span>
+    <h3>音樂彈珠臺</h3>
+    <p>彈珠碰撞彩色彈簧發出不同音高，左右扳機把彈珠打回檯面</p>
+    <span class="tag">彈珠 · 物理</span>
+  </a>
+  <a class="card" style="--accent:#0ff;--glow:rgba(0,255,255,.3)" href="17-節奏打字.html">
+    <div class="num">GAME 17</div>
+    <span class="icon">⌨️</span>
+    <h3>節奏打字</h3>
+    <p>字母從天而降，在判定線輸入對應字母，每個字母發出獨特音高</p>
+    <span class="tag">打字 · 反應</span>
+  </a>
+  <a class="card" style="--accent:#0f0;--glow:rgba(0,255,0,.3)" href="18-音樂塔防.html">
+    <div class="num">GAME 18</div>
+    <span class="icon">🏰</span>
+    <h3>音樂塔防</h3>
+    <p>四種樂器塔防禦，鼓塔/琴塔/號角塔/鈸塔，攻擊時發出獨特樂器聲</p>
+    <span class="tag">塔防 · 策略</span>
+  </a>
+  <a class="card" style="--accent:#0ff;--glow:rgba(0,255,255,.3)" href="19-節奏太空射擊.html">
+    <div class="num">GAME 19</div>
+    <span class="icon">🚀</span>
+    <h3>節奏太空射擊</h3>
+    <p>太空射擊跟著節奏，在節拍點射擊威力加倍，躲避隕石消滅UFO</p>
+    <span class="tag">射擊 · 太空</span>
+  </a>
+  <a class="card" style="--accent:#0ff;--glow:rgba(0,255,255,.3)" href="20-音樂合成器.html">
+    <div class="num">GAME 20</div>
+    <span class="icon">🎛️</span>
+    <h3>音樂合成器</h3>
+    <p>完整互動合成器，四種波形、13鍵琴鍵、16步編曲器，創作迴圈旋律</p>
+    <span class="tag">合成器 · 創作</span>
+  </a>
+</div>
+<div class="footer">
+  <p>20 款音樂遊戲 · 全部單檔案 HTML · 使用 Web Audio API 合成音效</p>
+  <p style="margin-top:8px">支援鍵盤與觸控操作 · 最高分自動儲存於瀏覽器</p>
+</div>
+
+<!-- ===== 互動體驗專區 ===== -->
+<section id="interactive-hub" style="max-width:1200px;margin:48px auto;padding:32px 24px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));border-radius:16px;border:1px solid rgba(99,102,241,0.15);">
+  <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;color:var(--ink,#1a1a2e);">
+    <i class="fas fa-gamepad" style="color:#6366f1;"></i> 互動體驗專區
+    <span style="font-size:14px;font-weight:400;color:#888;">Interactive Experience Zone</span>
+  </h2>
+  <p style="color:#666;margin-bottom:20px;font-size:14px;">10種互動遊戲與體驗式閱讀，等你來探索！</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;">
+    <a href="interactive/01_quiz.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(99,102,241,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-question-circle" style="color:#6366f1;"></i> 知識小測驗
+    </a>
+    <a href="interactive/02_memory.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(236,72,153,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-clone" style="color:#ec4899;"></i> 翻牌記憶
+    </a>
+    <a href="interactive/03_timeline.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(245,158,11,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-stream" style="color:#f59e0b;"></i> 互動時間軸
+    </a>
+    <a href="interactive/04_scroll.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(16,185,129,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-scroll" style="color:#10b981;"></i> 滾動敘事
+    </a>
+    <a href="interactive/05_explorer.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(14,165,233,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-map-marked-alt" style="color:#0ea5e9;"></i> 點擊探索
+    </a>
+    <a href="interactive/06_puzzle.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(239,68,68,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-puzzle-piece" style="color:#ef4444;"></i> 拼圖遊戲
+    </a>
+    <a href="interactive/07_dialogue.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(139,92,246,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-comments" style="color:#8b5cf6;"></i> 對話模擬
+    </a>
+    <a href="interactive/08_fortune.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(217,119,6,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-dice" style="color:#d97706;"></i> 隨機籤詩
+    </a>
+    <a href="interactive/09_flashcards.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(5,150,105,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-id-card" style="color:#059669;"></i> 知識卡片
+    </a>
+    <a href="interactive/10_quest.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(220,38,38,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-trophy" style="color:#dc2626;"></i> 闖關解謎
+    </a>
+  </div>
+  <div style="margin-top:16px;text-align:center;">
+    <a href="interactive/index.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 28px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border-radius:50px;text-decoration:none;font-size:14px;font-weight:700;box-shadow:0 4px 16px rgba(99,102,241,0.3);">
+      <i class="fas fa-th-large"></i> 進入互動專區入口
+    </a>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- UNIFIED FOOTER -->
+<style>
+.unified-footer{background:linear-gradient(135deg,#1e293b,#334155);color:#cbd5e1;padding:14px 24px;font-size:12px;font-family:"Microsoft JhengHei","PingFang TC",sans-serif;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 20px;border-top:3px solid;border-image:linear-gradient(90deg,#6366f1,#ec4899,#22c55e) 1;margin-top:20px}
+.unified-footer .uf-item{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.unified-footer .uf-label{color:#64748b;font-weight:600}
+.unified-footer .uf-value{color:#e2e8f0;font-weight:700}
+.unified-footer .uf-sep{color:#475569}
+.unified-footer a{color:#7dd3fc;text-decoration:none;transition:color .2s}
+.unified-footer a:hover{color:#fff;text-decoration:underline}
+@media print{.unified-footer{display:none!important}}
+</style>
+<footer class="unified-footer"><div class="unified-credit">規劃 | 設計 | 開發 | 整合行銷 : 舒安境工作室 /張書欣 Line: 331.today Tel: 0968-222201 <a href="mailto:10return.com@gmail.com">10return.com@gmail.com</a></div></footer>
+<!-- /UNIFIED FOOTER -->
+
+<script>
+
+
+</script>
+
+<div class="site-credit-bar-zhangshuxin" style="background:#2c2418;color:#f0e6d2;text-align:center;padding:10px 16px;font-size:13px;font-family:'Microsoft JhengHei',sans-serif;margin-top:24px;line-height:1.7">
+  規劃設計開發：<b style="color:#e0b56a">張書欣</b>　·　Line：<b style="color:#e0b56a">331.today</b>　·　📱 0968-222201
+</div>
+</body>
+</html>

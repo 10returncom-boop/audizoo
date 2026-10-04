@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta property="og:url" content="https://audizoo.com/music-sites/musician-portfolio/about.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="robots" content="index,follow">
+<meta name="twitter:title" content="關於我 | 陳亦豐 - 青年音樂家">
+<meta name="twitter:description" content="關於我 | 陳亦豐 - 青年音樂家">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我 | 陳亦豐 - 青年音樂家</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="_shared/nav.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="關於我 | 陳亦豐 - 青年音樂家">
+<meta property="og:title" content="關於我 | 陳亦豐 - 青年音樂家">
+<meta property="og:description" content="關於我 | 陳亦豐 - 青年音樂家">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="青年音樂家陳亦豐個人網站">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="about.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "青年音樂家陳亦豐個人網站", "description": "關於我 | 陳亦豐 - 青年音樂家", "url": "about.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "關於我 | 陳亦豐 - 青年音樂家",
+   "item": "about.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "關於我 | 陳亦豐 - 青年音樂家",
+ "name": "關於我 | 陳亦豐 - 青年音樂家",
+ "url": "about.html"
+}
+</script>
+</head>
+<body>
+
+<section style="background: linear-gradient(135deg, #7f1d1d, #991b1b); color: #fff; padding: 60px 24px; text-align: center;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <span style="display: inline-block; background: rgba(212,175,55,0.25); border: 1px solid #d4af37; padding: 6px 20px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 16px;"><i class="fas fa-user" style="color: #f4d03f;"></i> 關於我</span>
+    <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 12px;">認識陳亦豐</h1>
+    <p style="opacity: 0.9; font-size: 1.1rem;">用音符說故事，用音樂連結世界</p>
+  </div>
+</section>
+
+<div class="page-container">
+
+  <h2 class="section-title"><i class="fas fa-heart"></i>藝術理念</h2>
+  <p class="section-subtitle">音樂是跨越語言與文化的橋樑</p>
+
+  <div class="grid-3" style="margin-bottom: 48px;">
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 14px;"><i class="fas fa-infinity"></i></div>
+      <h3 style="color: var(--primary); margin-bottom: 10px;">傳承與創新</h3>
+      <p style="color: var(--text-light); line-height: 1.9; font-size: 0.95rem;">
+        紮根傳統國樂的文化底蘊，融合現代作曲技法與國際視野，
+        讓傳統音樂在新時代煥發新的生命力。
+      </p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 14px;"><i class="fas fa-hands-helping"></i></div>
+      <h3 style="color: var(--primary); margin-bottom: 10px;">跨界融合</h3>
+      <p style="color: var(--text-light); line-height: 1.9; font-size: 0.95rem;">
+        以二胡演奏、鋼琴合作、樂曲創作三重身份，探索國樂與西方音樂、
+        流行音樂、電子音樂的跨界可能性。
+      </p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2.5rem; color: var(--gold); margin-bottom: 14px;"><i class="fas fa-globe-asia"></i></div>
+      <h3 style="color: var(--primary); margin-bottom: 10px;">文化交流</h3>
+      <p style="color: var(--text-light); line-height: 1.9; font-size: 0.95rem;">
+        演出足跡遍及海內外，用音樂搭建文化交流的橋樑，
+        讓世界聽見臺灣國樂的聲音。
+      </p>
+    </div>
+  </div>
+
+  <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i>師承名師</h2>
+  <p class="section-subtitle">多位名師指導，紮實的專業訓練</p>
+
+  <div class="grid-2" style="margin-bottom: 48px;">
+    <div class="card">
+      <h3 style="color: var(--primary); margin-bottom: 14px;"><i class="fas fa-guitar" style="color: var(--gold);"></i> 二胡主修</h3>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fas fa-user-tie" style="color: var(--primary);"></i>
+          <span><strong>啟蒙老師：</strong>劉瓊炫 老師（十歲啟蒙）</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fas fa-user-tie" style="color: var(--primary);"></i>
+          <span><strong>歷任老師：</strong>孟美英、李晉龍、施懿珊 老師</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fas fa-user-tie" style="color: var(--primary);"></i>
+          <span><strong>現任老師：</strong>蔡鎮宇 老師</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="color: var(--primary); margin-bottom: 14px;"><i class="fas fa-keyboard" style="color: var(--gold);"></i> 鋼琴與作曲</h3>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fas fa-user-tie" style="color: var(--primary);"></i>
+          <span><strong>鋼琴啟蒙：</strong>八歲開始學習鋼琴</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fas fa-user-tie" style="color: var(--primary);"></i>
+          <span><strong>副修專業：</strong>鋼琴合作、樂曲創作</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fas fa-user-tie" style="color: var(--primary);"></i>
+          <span><strong>系統訓練：</strong>樂理、對位、配器、和聲</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><i class="fas fa-language"></i>語言與其他能力</h2>
+  <p class="section-subtitle">全方位的藝術素養與國際視野</p>
+
+  <div class="grid-3" style="margin-bottom: 32px;">
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"><i class="fas fa-comments"></i></div>
+      <h4 style="color: var(--primary);">語言能力</h4>
+      <p style="color: var(--text-light); font-size: 0.92rem; margin-top: 8px;">中文（母語）<br>英文（精通，國際演出交流）</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"><i class="fas fa-music"></i></div>
+      <h4 style="color: var(--primary);">精通樂器</h4>
+      <p style="color: var(--text-light); font-size: 0.92rem; margin-top: 8px;">二胡（主修）、高胡、中胡<br>鋼琴（副修）、小提琴（啟蒙）</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"><i class="fas fa-laptop-code"></i></div>
+      <h4 style="color: var(--primary);">數位音樂</h4>
+      <p style="color: var(--text-light); font-size: 0.92rem; margin-top: 8px;">MIDI 編曲、數位音樂製作<br>樂譜編排、音樂後期處理</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="_shared/nav.js" defer></script>
+</body>
+</html>

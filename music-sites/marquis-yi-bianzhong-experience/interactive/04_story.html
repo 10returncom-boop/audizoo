@@ -1,0 +1,715 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://audizoo.com/music-sites/marquis-yi-bianzhong-experience/interactive/04_story.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:site_name" content="Audizoo"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="description" content="滾動動畫敘事 | 曾侯乙編鐘">
+<link rel="canonical" href="interactive/04_story.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="滾動動畫敘事 | 曾侯乙編鐘">
+<meta property="og:description" content="滾動動畫敘事 | 曾侯乙編鐘">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="滾動動畫敘事 | 曾侯乙編鐘">
+<meta name="twitter:description" content="滾動動畫敘事 | 曾侯乙編鐘">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>滾動動畫敘事 | 曾侯乙編鐘</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--primary:#b45309;--accent:#d97706;--text:#1a1a2e;--muted:rgba(255,255,255,.7)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:#fff;overflow-x:hidden}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);padding:.8rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.header h1{font-size:1.1rem;display:flex;align-items:center;gap:.5rem}
+.lang-btn{background:rgba(255,255,255,.2);border:none;color:#fff;padding:.35rem .8rem;border-radius:20px;cursor:pointer;font-size:.8rem}
+.lang-btn:hover{background:rgba(255,255,255,.35)}
+.progress-track{position:fixed;top:0;left:0;height:3px;background:rgba(255,255,255,.2);z-index:101;width:100%}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));width:0%;transition:width .1s}
+.chapter{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:4rem 1.5rem;overflow:hidden}
+.chapter::before{content:'';position:absolute;inset:0;background:inherit;z-index:-1}
+.chapter-content{max-width:680px;text-align:center;opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.chapter.visible .chapter-content{opacity:1;transform:translateY(0)}
+.chapter-num{font-size:4rem;font-weight:900;opacity:.15;margin-bottom:.5rem;line-height:1}
+.chapter-icon{font-size:3rem;margin-bottom:1rem;color:var(--accent)}
+.chapter h2{font-size:1.8rem;margin-bottom:1rem;line-height:1.4}
+.chapter p{font-size:1.05rem;line-height:1.9;opacity:.9;max-width:560px;margin:0 auto}
+.chapter .divider{width:60px;height:3px;background:var(--accent);margin:1.2rem auto;border-radius:2px}
+.ch1{background:linear-gradient(135deg,#b45309,#d97706)}
+.ch2{background:linear-gradient(135deg,#1e3a5f,#b45309)}
+.ch3{background:linear-gradient(135deg,#d97706,#d97706)}
+.ch4{background:linear-gradient(135deg,#0f766e,#b45309)}
+.ch5{background:linear-gradient(135deg,#b45309,#7c3aed)}
+.ch6{background:linear-gradient(135deg,#be185d,#d97706)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-size:.85rem;opacity:.7;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+.footer{text-align:center;padding:2rem 1rem;background:#111;color:rgba(255,255,255,.6);font-size:.85rem}
+.footer a{color:var(--accent);text-decoration:none}
+@media(max-width:480px){.chapter h2{font-size:1.4rem}.chapter p{font-size:.95rem}.chapter-num{font-size:3rem}}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "滾動動畫敘事 | 曾侯乙編鐘",
+   "item": "interactive/04_story.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+<header class="header">
+  <h1><i class="fas fa-book-open"></i> <span data-i18n="title">滾動敘事</span></h1>
+  <button class="lang-btn" onclick="toggleLang()">EN</button>
+</header>
+<div id="chapters"></div>
+<footer class="footer"><div class="unified-credit">規劃 | 設計 | 開發 | 整合行銷 : 舒安境工作室 /張書欣 Line: 331.today Tel: 0968-222201 <a href="mailto:10return.com@gmail.com">10return.com@gmail.com</a></div></footer>
+<script>
+const SITE_CONFIG = {
+  "siteName": "曾侯乙編鐘",
+  "siteNameEn": "曾侯乙編鐘",
+  "theme": "曾侯乙編鐘",
+  "themeEn": "曾侯乙編鐘",
+  "primaryColor": "#b45309",
+  "accentColor": "#d97706",
+  "category": "history",
+  "quiz": [
+    {
+      "q": "互動式學習相比傳統閱讀的優勢是？",
+      "qEn": "What is the advantage of interactive learning?",
+      "options": [
+        "提升參與度與記憶",
+        "內容比較短",
+        "不需要思考",
+        "只能滑手機"
+      ],
+      "optionsEn": [
+        "Better engagement & memory",
+        "Shorter content",
+        "No thinking needed",
+        "Only for phones"
+      ],
+      "answer": 0,
+      "explanation": "互動能加深理解與記憶留存。",
+      "explanationEn": "Interaction deepens understanding and retention."
+    },
+    {
+      "q": "下列哪個方式最能深入了解「曾侯乙編鐘」？",
+      "qEn": "Which way best helps understand \"曾侯乙編鐘\"?",
+      "options": [
+        "閱讀+實作+討論",
+        "只看標題",
+        "聽他人轉述",
+        "憑空想像"
+      ],
+      "optionsEn": [
+        "Reading+Practice+Discussion",
+        "Only read titles",
+        "Hear from others",
+        "Imagine"
+      ],
+      "answer": 0,
+      "explanation": "多元學習方式相輔相成，效果最佳。",
+      "explanationEn": "Multiple learning methods work best together."
+    },
+    {
+      "q": "下列哪一項最符合「曾侯乙編鐘」的核心精神？",
+      "qEn": "Which best reflects the spirit of \"曾侯乙編鐘\"?",
+      "options": [
+        "深入探索與體驗",
+        "快速掠過",
+        "完全忽略",
+        "隨意猜測"
+      ],
+      "optionsEn": [
+        "Deep exploration",
+        "Quick skimming",
+        "Complete ignorance",
+        "Random guessing"
+      ],
+      "answer": 0,
+      "explanation": "深入探索是理解任何主題的關鍵。",
+      "explanationEn": "Deep exploration is key to understanding any topic."
+    },
+    {
+      "q": "學習新知識時，最重要的態度是什麼？",
+      "qEn": "What is the most important attitude when learning?",
+      "options": [
+        "保持好奇心與開放心態",
+        "固執己見",
+        "拒絕改變",
+        "半途而廢"
+      ],
+      "optionsEn": [
+        "Stay curious and open",
+        "Be stubborn",
+        "Resist change",
+        "Give up halfway"
+      ],
+      "answer": 0,
+      "explanation": "好奇心是學習的最佳驅動力。",
+      "explanationEn": "Curiosity is the best driver for learning."
+    },
+    {
+      "q": "「曾侯乙編鐘」網站的主要目的是什麼？",
+      "qEn": "What is the main purpose of \"曾侯乙編鐘\"?",
+      "options": [
+        "推廣曾侯乙編鐘知識",
+        "販售商品",
+        "社交聊天",
+        "線上遊戲"
+      ],
+      "optionsEn": [
+        "Promote 曾侯乙編鐘 knowledge",
+        "Sell products",
+        "Social chat",
+        "Online gaming"
+      ],
+      "answer": 0,
+      "explanation": "網站致力於推廣「曾侯乙編鐘」相關知識與文化。",
+      "explanationEn": "The site is dedicated to promoting \"曾侯乙編鐘\" knowledge."
+    },
+    {
+      "q": "「曾侯乙編鐘」這個主題主要探討什麼領域？",
+      "qEn": "What field does \"曾侯乙編鐘\" mainly explore?",
+      "options": [
+        "曾侯乙編鐘相關知識",
+        "純數學計算",
+        "體育競技",
+        "烹飪食譜"
+      ],
+      "optionsEn": [
+        "曾侯乙編鐘 related knowledge",
+        "Pure math",
+        "Sports",
+        "Cooking recipes"
+      ],
+      "answer": 0,
+      "explanation": "本站圍繞「曾侯乙編鐘」提供深入的知識與體驗。",
+      "explanationEn": "This site provides in-depth knowledge about \"曾侯乙編鐘\"."
+    }
+  ],
+  "memoryPairs": [
+    {
+      "text": "互動體驗",
+      "textEn": "Interactive"
+    },
+    {
+      "text": "實務應用",
+      "textEn": "Practice"
+    },
+    {
+      "text": "學習樂趣",
+      "textEn": "Fun Learning"
+    },
+    {
+      "text": "深入了解",
+      "textEn": "Deep Dive"
+    },
+    {
+      "text": "知識探索",
+      "textEn": "Knowledge"
+    },
+    {
+      "text": "創新思維",
+      "textEn": "Innovation"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "起源",
+      "dateEn": "Origin",
+      "title": "「曾侯乙編鐘」的濫觴",
+      "titleEn": "Origins of 曾侯乙編鐘",
+      "summary": "一切的開始，種子自此埋下。",
+      "summaryEn": "Where it all began.",
+      "detail": "「曾侯乙編鐘」的根源可追溯至人類文明早期，是人類智慧與經驗的結晶。",
+      "detailEn": "The roots of \"曾侯乙編鐘\" trace back to early human civilization."
+    },
+    {
+      "date": "發展",
+      "dateEn": "Development",
+      "title": "觀念的演進",
+      "titleEn": "Evolution of Ideas",
+      "summary": "隨著時代推移，內涵不斷豐富。",
+      "summaryEn": "Content grew richer over time.",
+      "detail": "在不同歷史階段，此主題吸收了各種文化元素，逐漸形成今日的面貌。",
+      "detailEn": "Across historical stages, this topic absorbed cultural elements."
+    },
+    {
+      "date": "成熟",
+      "dateEn": "Maturity",
+      "title": "體系的建立",
+      "titleEn": "System Established",
+      "summary": "知識體系日趨完整。",
+      "summaryEn": "Knowledge system became complete.",
+      "detail": "學者與實務家共同努力，建立了系統化的理論與方法。",
+      "detailEn": "Scholars and practitioners built systematic theories and methods."
+    },
+    {
+      "date": "現代",
+      "dateEn": "Modern Era",
+      "title": "數位化轉型",
+      "titleEn": "Digital Transformation",
+      "summary": "結合科技開創新局。",
+      "summaryEn": "Combined with technology for new horizons.",
+      "detail": "「曾侯乙編鐘」正是此一轉型的產物，用數位方式傳承知識。",
+      "detailEn": "\"曾侯乙編鐘\" is a product of this transformation."
+    },
+    {
+      "date": "未來",
+      "dateEn": "Future",
+      "title": "無限可能",
+      "titleEn": "Endless Possibilities",
+      "summary": "持續演進，充滿期待。",
+      "summaryEn": "Continuously evolving.",
+      "detail": "隨著AI與新科技的發展，此領域將有更多創新應用。",
+      "detailEn": "With AI and new tech, more innovations await."
+    }
+  ],
+  "storyChapters": [
+    {
+      "icon": "fa-seedling",
+      "title": "第一章：初識「曾侯乙編鐘」",
+      "titleEn": "Chapter 1: Meeting 曾侯乙編鐘",
+      "content": "每一段旅程都始於一次相遇。「曾侯乙編鐘」或許對你而言並不陌生，但真正的了解，往往從放下成見、重新認識開始。在這一章，讓我們一起回到原點，感受最純粹的感動。",
+      "contentEn": "Every journey begins with an encounter. Let us return to the beginning and feel the purest inspiration of \"曾侯乙編鐘\"."
+    },
+    {
+      "icon": "fa-compass",
+      "title": "第二章：探索之路",
+      "titleEn": "Chapter 2: The Path of Exploration",
+      "content": "知識的版圖從來不是一天繪成的。每一個發現、每一次頓悟，都是無數次嘗試與失敗的結晶。沿著前人的足跡，我們看見智慧如何在時間中沉澱。",
+      "contentEn": "The map of knowledge is never drawn in a day. Each discovery is the fruit of countless attempts and failures."
+    },
+    {
+      "icon": "fa-lightbulb",
+      "title": "第三章：頓悟時刻",
+      "titleEn": "Chapter 3: Moment of Insight",
+      "content": "總有那麼一個瞬間，所有的困惑豁然開朗。那些看似零散的知識碎片，突然拼湊成完整的圖像。這就是學習最美妙的時刻——「啊，原來如此！」",
+      "contentEn": "There is always a moment when confusion clears. Scattered fragments suddenly form a complete picture. This is the beauty of learning."
+    },
+    {
+      "icon": "fa-users",
+      "title": "第四章：與人共學",
+      "titleEn": "Chapter 4: Learning Together",
+      "content": "知識在交流中昇華。與同好分享、與長者請益、與後輩討論——每一次對話都是一次成長。「曾侯乙編鐘」正是這樣一個交流的園地。",
+      "contentEn": "Knowledge is elevated through exchange. \"曾侯乙編鐘\" is such a garden for dialogue."
+    },
+    {
+      "icon": "fa-infinity",
+      "title": "終章：永不止息",
+      "titleEn": "Final Chapter: Never Ending",
+      "content": "學習是一段沒有終點的旅程。「曾侯乙編鐘」的世界如此廣闊，今天的結束只是明天的開始。願你帶著這份收穫，繼續探索無限的可能。",
+      "contentEn": "Learning is a journey without end. The world of \"曾侯乙編鐘\" is vast. May you continue to explore infinite possibilities."
+    }
+  ],
+  "hotspots": [
+    {
+      "x": 85,
+      "y": 25,
+      "icon": "fa-globe",
+      "tag": "全球",
+      "tagEn": "Global",
+      "title": "全球視野",
+      "titleEn": "Global Perspective",
+      "description": "從國際角度看此主題的發展與比較。",
+      "descriptionEn": "An international perspective on this topic's development."
+    },
+    {
+      "x": 65,
+      "y": 75,
+      "icon": "fa-rocket",
+      "tag": "未來",
+      "tagEn": "Future",
+      "title": "未來趨勢",
+      "titleEn": "Future Trends",
+      "description": "新科技與新觀念將如何影響此領域的未來？",
+      "descriptionEn": "How will new tech and ideas shape the future of this field?"
+    },
+    {
+      "x": 50,
+      "y": 20,
+      "icon": "fa-book",
+      "tag": "經典",
+      "tagEn": "Classic",
+      "title": "經典文獻",
+      "titleEn": "Classic Texts",
+      "description": "歷久彌新的經典著作，是此領域的基石，值得反覆研讀。",
+      "descriptionEn": "Timeless classics that form the foundation of this field."
+    },
+    {
+      "x": 30,
+      "y": 65,
+      "icon": "fa-history",
+      "tag": "歷史",
+      "tagEn": "History",
+      "title": "歷史演變",
+      "titleEn": "Historical Evolution",
+      "description": "回顧此主題的發展脈絡，理解變遷背後的動力。",
+      "descriptionEn": "Review the development trajectory and understand the forces behind change."
+    },
+    {
+      "x": 75,
+      "y": 45,
+      "icon": "fa-cogs",
+      "tag": "應用",
+      "tagEn": "Application",
+      "title": "實務應用",
+      "titleEn": "Practical Application",
+      "description": "理論如何落實到日常生活？這裡展示了各種實際應用場景。",
+      "descriptionEn": "How theory applies to daily life. Various practical scenarios."
+    }
+  ],
+  "dialogueTree": {
+    "start": {
+      "character": "曾侯乙編鐘導師",
+      "characterEn": "曾侯乙編鐘 Mentor",
+      "desc": "一位精通「曾侯乙編鐘」的智者",
+      "descEn": "A wise master of \"曾侯乙編鐘\"",
+      "npc": "歡迎來到「曾侯乙編鐘」！我是你的曾侯乙編鐘導師。你想從哪裡開始探索呢？",
+      "npcEn": "Welcome to \"曾侯乙編鐘\"! I am your 曾侯乙編鐘 mentor. Where would you like to begin?",
+      "choices": [
+        {
+          "text": "我想了解基礎概念",
+          "textEn": "I want to learn the basics",
+          "next": "basics"
+        },
+        {
+          "text": "有什麼有趣的故事嗎？",
+          "textEn": "Any interesting stories?",
+          "next": "stories"
+        },
+        {
+          "text": "如何實際應用？",
+          "textEn": "How to apply it practically?",
+          "next": "apply"
+        }
+      ]
+    },
+    "basics": {
+      "npc": "很好！基礎是一切的根本。這個領域有幾個核心概念需要先掌握：定義、原則、方法。你對哪個最感興趣？",
+      "npcEn": "Great! Fundamentals are essential. There are core concepts: definition, principles, methods. Which interests you most?",
+      "choices": [
+        {
+          "text": "定義是什麼？",
+          "textEn": "What is the definition?",
+          "next": "def"
+        },
+        {
+          "text": "核心原則有哪些？",
+          "textEn": "What are the core principles?",
+          "next": "principles"
+        }
+      ]
+    },
+    "stories": {
+      "npc": "說到故事，「曾侯乙編鐘」的發展史上有許多動人的篇章。有一位先賢曾說：「學而不思則罔」。你想聽哪類故事？",
+      "npcEn": "Speaking of stories, the history of \"曾侯乙編鐘\" has many moving chapters. Which kind would you like?",
+      "choices": [
+        {
+          "text": "先賢的智慧故事",
+          "textEn": "Stories of wise masters",
+          "next": "wisdom"
+        },
+        {
+          "text": "現代應用案例",
+          "textEn": "Modern application cases",
+          "next": "apply"
+        }
+      ]
+    },
+    "apply": {
+      "npc": "實務應用是檢驗所學的最好方式！建議你從小處著手，每天嘗試一點點。需要我推薦入門方法嗎？",
+      "npcEn": "Practice is the best way to test learning! Start small, try a little every day. Shall I recommend a beginner approach?",
+      "choices": [
+        {
+          "text": "好的，請推薦",
+          "textEn": "Yes, please recommend",
+          "next": "end_good"
+        },
+        {
+          "text": "我想自己摸索",
+          "textEn": "I'll explore on my own",
+          "next": "end_self"
+        }
+      ]
+    },
+    "def": {
+      "npc": "簡單來說，「曾侯乙編鐘」是一門結合理論與實踐的學問，核心在於理解事物的本質與規律。",
+      "npcEn": "Simply put, \"曾侯乙編鐘\" combines theory and practice, focusing on understanding essence and patterns.",
+      "choices": [
+        {
+          "text": "原來如此，我懂了！",
+          "textEn": "I see, now I understand!",
+          "next": "end_good"
+        }
+      ]
+    },
+    "principles": {
+      "npc": "核心原則包括：客觀觀察、系統思考、持續實踐、開放心態。掌握這四點，就能舉一反三。",
+      "npcEn": "Core principles: objective observation, systematic thinking, continuous practice, open mindset.",
+      "choices": [
+        {
+          "text": "謝謝指導！",
+          "textEn": "Thank you for the guidance!",
+          "next": "end_good"
+        }
+      ]
+    },
+    "wisdom": {
+      "npc": "相傳古代有位學者，三十年只專注一件事，最終成為一代宗師。他的秘訣是：「日拱一卒，功不唐捐。」",
+      "npcEn": "Legend says an ancient scholar focused on one thing for thirty years and became a grand master. His secret: steady daily progress.",
+      "choices": [
+        {
+          "text": "真是激勵人心！",
+          "textEn": "Truly inspiring!",
+          "next": "end_good"
+        }
+      ]
+    },
+    "end_good": {
+      "npc": "很高興能與你交流！記得常回來看看，這裡永遠有新的知識等你探索。再見！",
+      "npcEn": "Wonderful talking with you! Come back anytime — there's always new knowledge to explore. Goodbye!",
+      "choices": []
+    },
+    "end_self": {
+      "npc": "很好，自主探索是成長的關鍵！如果遇到困難，隨時回來找我。祝你學習愉快！",
+      "npcEn": "Great, self-exploration is key to growth! Come back if you need help. Happy learning!",
+      "choices": []
+    }
+  },
+  "fortunes": [
+    {
+      "level": "中吉",
+      "levelEn": "Good Fortune",
+      "quote": "博觀而約取，厚積而薄發。",
+      "quoteEn": "Observe widely, select carefully; accumulate deeply, release gradually.",
+      "source": "蘇軾",
+      "sourceEn": "Su Shi",
+      "meaning": "廣泛吸收、精準取捨，是深入學習的法門。你正在正確的軌道上。",
+      "meaningEn": "Broad absorption and careful selection is the way to deep learning. You're on the right track."
+    },
+    {
+      "level": "小吉",
+      "levelEn": "Lucky",
+      "quote": "千里之行，始於足下。",
+      "quoteEn": "A journey of a thousand miles begins with a single step.",
+      "source": "道德經",
+      "sourceEn": "Tao Te Ching",
+      "meaning": "不要因為目標遙遠而卻步，踏出第一步就是成功的開始。",
+      "meaningEn": "Don't be daunted by distant goals — taking the first step is the beginning of success."
+    },
+    {
+      "level": "大吉",
+      "levelEn": "Great Fortune",
+      "quote": "天行健，君子以自強不息。",
+      "quoteEn": "As heaven maintains vigor, the gentleman strives unceasingly.",
+      "source": "易經",
+      "sourceEn": "I Ching",
+      "meaning": "運勢向上，只要保持自強不息的態度，必能突破瓶頸、更上層樓。",
+      "meaningEn": "Fortune is rising. Maintain perseverance and you will break through bottlenecks."
+    },
+    {
+      "level": "平",
+      "levelEn": "Neutral",
+      "quote": "欲速則不達，見小利則大事不成。",
+      "quoteEn": "Haste makes waste; small gains prevent great achievements.",
+      "source": "論語",
+      "sourceEn": "Analects",
+      "meaning": "提醒你腳踏實地，不要急於求成。穩步前行才是長遠之道。",
+      "meaningEn": "Stay grounded and don't rush. Steady progress is the long-term path."
+    },
+    {
+      "level": "中吉",
+      "levelEn": "Good Fortune",
+      "quote": "知之者不如好之者，好之者不如樂之者。",
+      "quoteEn": "To enjoy it is better than to merely know it.",
+      "source": "論語",
+      "sourceEn": "Analects",
+      "meaning": "帶著樂趣學習「曾侯乙編鐘」，效果遠勝被動接受。找到你的興趣點！",
+      "meaningEn": "Learning \"曾侯乙編鐘\" with joy far surpasses passive reception."
+    },
+    {
+      "level": "吉",
+      "levelEn": "Fortune",
+      "quote": "溫故而知新，可以為師矣。",
+      "quoteEn": "Reviewing the old to know the new makes one a teacher.",
+      "source": "論語",
+      "sourceEn": "Analects",
+      "meaning": "回顧已學的知識，往往能發現新的領悟。建議你複習近期所學。",
+      "meaningEn": "Reviewing past knowledge often reveals new insights. Consider revisiting recent lessons."
+    },
+    {
+      "level": "中吉",
+      "levelEn": "Good Fortune",
+      "quote": "學而不思則罔，思而不學則殆。",
+      "quoteEn": "Learning without thought is labor lost.",
+      "source": "論語",
+      "sourceEn": "Analects",
+      "meaning": "提醒你在學習「曾侯乙編鐘」時，要兼顧輸入與思考，才能真正融會貫通。",
+      "meaningEn": "Balance input and reflection when learning \"曾侯乙編鐘\"."
+    },
+    {
+      "level": "吉",
+      "levelEn": "Fortune",
+      "quote": "業精於勤，荒於嬉。",
+      "quoteEn": "Skill is refined by diligence, wasted by idleness.",
+      "source": "韓愈",
+      "sourceEn": "Han Yu",
+      "meaning": "勤奮是精進的關鍵。每天投入一點時間，累積的效果會超出預期。",
+      "meaningEn": "Diligence is key to mastery. Daily investment yields unexpected results."
+    }
+  ],
+  "flashcards": [
+    {
+      "icon": "fa-infinity",
+      "front": "為什麼持續學習？",
+      "frontEn": "Why keep learning?",
+      "back": "知識是動態演進的，持續學習才能與時俱進，也能保持心智的活躍與成長。",
+      "backEn": "Knowledge evolves dynamically. Continuous learning keeps you current and your mind active."
+    },
+    {
+      "icon": "fa-lightbulb",
+      "front": "核心概念是什麼？",
+      "frontEn": "What is the core concept?",
+      "back": "核心在於理解本質、掌握規律、靈活應用。三者相輔相成，缺一不可。",
+      "backEn": "The core lies in understanding essence, grasping patterns, and applying flexibly."
+    },
+    {
+      "icon": "fa-globe",
+      "front": "全球發展趨勢？",
+      "frontEn": "Global trends?",
+      "back": "數位化與國際化是主要趨勢，跨領域整合也帶來了創新的可能。",
+      "backEn": "Digitalization and internationalization are key trends; cross-domain integration enables innovation."
+    },
+    {
+      "icon": "fa-graduation-cap",
+      "front": "學習的最佳途徑？",
+      "frontEn": "Best way to learn?",
+      "back": "閱讀經典、實務操作、與人討論，三者並行效果最佳。互動式學習能加深記憶。",
+      "backEn": "Reading classics, hands-on practice, and discussion work best together. Interactive learning boosts memory."
+    },
+    {
+      "icon": "fa-users",
+      "front": "代表人物有哪些？",
+      "frontEn": "Who are the key figures?",
+      "back": "歷代學者與實務家共同推動了此領域的發展，他們的智慧是後人的寶貴資產。",
+      "backEn": "Scholars and practitioners across eras advanced this field; their wisdom is a precious legacy."
+    },
+    {
+      "icon": "fa-cogs",
+      "front": "如何實務應用？",
+      "frontEn": "How to apply practically?",
+      "back": "從小處著手，每天嘗試一點點，在實踐中驗證理論，逐步建立自己的方法論。",
+      "backEn": "Start small, practice daily, verify theory in action, and build your own methodology."
+    },
+    {
+      "icon": "fa-history",
+      "front": "此領域的起源？",
+      "frontEn": "Origins of this field?",
+      "back": "可追溯至人類文明早期，經過數千年的累積與演進，形成今日的知識體系。",
+      "backEn": "Traces back to early civilization, evolving over millennia into today's knowledge system."
+    },
+    {
+      "icon": "fa-star",
+      "front": "初學者常見誤區？",
+      "frontEn": "Common beginner mistakes?",
+      "back": "急於求成、只學不思、缺乏實踐是三大誤區。避免這些，進步會更快。",
+      "backEn": "Rushing, learning without thinking, and lack of practice are the three pitfalls. Avoid them for faster progress."
+    }
+  ],
+  "questLevels": [
+    {
+      "type": "scramble",
+      "title": "第一關：文字重組",
+      "titleEn": "Level 1: Unscramble",
+      "scrambled": "習學",
+      "answer": "學習"
+    },
+    {
+      "type": "sort",
+      "title": "第二關：順序排列",
+      "titleEn": "Level 2: Sort It",
+      "items": [
+        "入門學習",
+        "深入理解",
+        "實務應用",
+        "融會貫通"
+      ]
+    },
+    {
+      "type": "riddle",
+      "title": "第三關：智慧謎題",
+      "titleEn": "Level 3: Riddle",
+      "question": "「曾侯乙編鐘」的學習過程中，最重要的態度是什麼？",
+      "questionEn": "What is the most important attitude in learning \"曾侯乙編鐘\"?",
+      "options": [
+        "保持好奇心與持續實踐",
+        "快速放棄",
+        "只記答案",
+        "拒絕思考"
+      ],
+      "optionsEn": [
+        "Stay curious and practice",
+        "Give up quickly",
+        "Only memorize answers",
+        "Refuse to think"
+      ],
+      "answer": 0
+    }
+  ]
+};
+const I18N={
+  zh:{title:'滾動敘事',scroll:'向下滾動繼續'},
+  en:{title:'Scroll Story',scroll:'Scroll down to continue'}
+};
+let lang='zh';
+function t(k){return I18N[lang][k]||k}
+function toggleLang(){lang=lang==='zh'?'en':'zh';document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));document.querySelector('.lang-btn').textContent=lang==='zh'?'EN':'中';renderChapters()}
+function renderChapters(){
+  const container=document.getElementById('chapters');container.innerHTML='';
+  SITE_CONFIG.storyChapters.forEach((ch,i)=>{
+    const div=document.createElement('section');
+    div.className='chapter ch'+((i%6)+1);
+    const isLast=i===SITE_CONFIG.storyChapters.length-1;
+    div.innerHTML='<div class="chapter-content"><div class="chapter-num">'+String(i+1).padStart(2,'0')+'</div><div class="chapter-icon"><i class="fas '+(ch.icon||'fa-star')+'"></i></div><h2>'+(lang==='zh'?ch.title:ch.titleEn)+'</h2><div class="divider"></div><p>'+(lang==='zh'?ch.content:ch.contentEn)+'</p></div>'+(isLast?'':'<div class="scroll-hint"><i class="fas fa-chevron-down"></i> '+t('scroll')+'</div>');
+    container.appendChild(div);
+  });
+  observeChapters();
+}
+function observeChapters(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+  },{threshold:0.25});
+  document.querySelectorAll('.chapter').forEach(c=>obs.observe(c));
+}
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById('progressFill').style.width=pct+'%';
+});
+renderChapters();
+</script>
+</body>
+</html>

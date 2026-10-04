@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta property="og:url" content="https://audizoo.com/music-sites/musician-portfolio/concerts.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="robots" content="index,follow">
+<meta name="twitter:title" content="音樂會演出 | 陳亦豐 - 青年音樂家">
+<meta name="twitter:description" content="音樂會演出 | 陳亦豐 - 青年音樂家">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音樂會演出 | 陳亦豐 - 青年音樂家</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="_shared/nav.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="音樂會演出 | 陳亦豐 - 青年音樂家">
+<meta property="og:title" content="音樂會演出 | 陳亦豐 - 青年音樂家">
+<meta property="og:description" content="音樂會演出 | 陳亦豐 - 青年音樂家">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="青年音樂家陳亦豐個人網站">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="concerts.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "青年音樂家陳亦豐個人網站", "description": "音樂會演出 | 陳亦豐 - 青年音樂家", "url": "concerts.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "音樂會演出 | 陳亦豐 - 青年音樂家",
+   "item": "concerts.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "音樂會演出 | 陳亦豐 - 青年音樂家",
+ "name": "音樂會演出 | 陳亦豐 - 青年音樂家",
+ "url": "concerts.html"
+}
+</script>
+</head>
+<body>
+
+<section style="background: linear-gradient(135deg, #7f1d1d, #b8860b); color: #fff; padding: 60px 24px; text-align: center;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <span style="display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.5); padding: 6px 20px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 16px;"><i class="fas fa-microphone-alt"></i> 音樂會演出</span>
+    <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 12px;">舞臺足跡</h1>
+    <p style="opacity: 0.95; font-size: 1.1rem;">演出足跡遍及海內外，50+ 場音樂會演出經驗</p>
+  </div>
+</section>
+
+<div class="page-container">
+
+  <!-- 統計 -->
+  <div class="stats-grid" style="margin-top: 0;">
+    <div class="stat-card">
+      <div class="stat-number">50+</div>
+      <div class="stat-label"><i class="fas fa-microphone-alt"></i> 音樂會演出</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">5+</div>
+      <div class="stat-label"><i class="fas fa-globe-asia"></i> 國家/地區</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">2</div>
+      <div class="stat-label"><i class="fas fa-crown"></i> 樂團首席</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">10+</div>
+      <div class="stat-label"><i class="fas fa-theater-masks"></i> 專業場館</div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><i class="fas fa-star"></i>重量級演出</h2>
+  <p class="section-subtitle">個人獨奏會與國際舞臺演出</p>
+
+  <div style="margin-bottom: 40px;">
+    <div class="concert-item">
+      <div class="concert-date-box">
+        <div class="concert-year">個人</div>
+        <div class="concert-month">獨奏會</div>
+      </div>
+      <div class="concert-info">
+        <div class="concert-title">陳亦豐 個人獨奏會（九歌民族管絃樂團協辦）</div>
+        <div class="concert-venue"><i class="fas fa-map-marker-alt"></i>專業音樂廳 · 個人大型獨奏會</div>
+        <div class="concert-desc">
+          藝術生涯的重磅成果展演，集二胡演奏、鋼琴合作、原創作曲於一體。
+          不僅獨奏《江河水》《流波曲》《炫的狂想》等經典曲目，
+          還完成高胡、中胡等多種胡琴樂器的現場切換。原創作品《影中火》在本場音樂會中完成世界首演，
+          獲得現場觀眾與業內人士的一致好評。
+        </div>
+        <div class="concert-tags">
+          <span class="concert-tag">二胡獨奏</span>
+          <span class="concert-tag">鋼琴合作</span>
+          <span class="concert-tag">原創作曲</span>
+          <span class="concert-tag">世界首演</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concert-item">
+      <div class="concert-date-box" style="background: linear-gradient(135deg, #b8860b, #d4af37);">
+        <div class="concert-year">國際</div>
+        <div class="concert-month">巡演</div>
+      </div>
+      <div class="concert-info">
+        <div class="concert-title">國際音樂節巡演（葡萄牙、法國、新加坡）</div>
+        <div class="concert-venue"><i class="fas fa-map-marker-alt"></i>葡萄牙音樂節 · 法國音樂節 · 新加坡國際音樂節</div>
+        <div class="concert-desc">
+          演出足跡遍及海內外，以二胡演奏、鋼琴合作、作曲創作三重身份，參與各類國際音樂節演出。
+          既獨奏《江河水》等經典二胡曲目，也帶來自創作品《影中火》的跨區域演出，
+          向海內外觀眾傳遞臺灣國樂的藝術魅力，用音樂搭建文化交流的橋樑。
+        </div>
+        <div class="concert-tags">
+          <span class="concert-tag">國際演出</span>
+          <span class="concert-tag">文化交流</span>
+          <span class="concert-tag">二胡獨奏</span>
+          <span class="concert-tag">原創作品</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concert-item">
+      <div class="concert-date-box" style="background: linear-gradient(135deg, #dc2626, #991b1b);">
+        <div class="concert-year">兩岸</div>
+        <div class="concert-month">交流</div>
+      </div>
+      <div class="concert-info">
+        <div class="concert-title">兩岸音樂交流演出（廈門）</div>
+        <div class="concert-venue"><i class="fas fa-map-marker-alt"></i>廈門 · 臺南藝術大學絃歌弓弦樂團</div>
+        <div class="concert-desc">
+          隨臺南藝術大學絃歌弓弦樂團赴廈門進行兩岸音樂交流演出。
+          作為樂團首席，領奏多首國樂經典曲目，展現臺灣青年國樂家的藝術水準，
+          促進兩岸音樂文化交流與友誼。
+        </div>
+        <div class="concert-tags">
+          <span class="concert-tag">兩岸交流</span>
+          <span class="concert-tag">樂團首席</span>
+          <span class="concert-tag">弓弦樂團</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><i class="fas fa-crown"></i>樂團首席演出</h2>
+  <p class="section-subtitle">擔任多個專業樂團首席，領奏大型音樂會</p>
+
+  <div style="margin-bottom: 40px;">
+    <div class="concert-item">
+      <div class="concert-date-box">
+        <div class="concert-year">南藝</div>
+        <div class="concert-month">首席</div>
+      </div>
+      <div class="concert-info">
+        <div class="concert-title">南藝大民族管絃樂團 系列音樂會</div>
+        <div class="concert-venue"><i class="fas fa-map-marker-alt"></i>臺南藝術大學 · 各專業場館</div>
+        <div class="concert-desc">
+          作為樂團首席，領奏《古巷深處》《夢釋》等多首國樂經典曲目，
+          帶領樂團完成整體演繹，展現出色的領奏把控能力。
+          同時為團內二胡、古箏等獨奏節目提供鋼琴伴奏，
+          將鋼琴的和聲支撐與國樂器的獨特音色完美融合，提升演出的整體層次感。
+        </div>
+        <div class="concert-tags">
+          <span class="concert-tag">樂團首席</span>
+          <span class="concert-tag">領奏</span>
+          <span class="concert-tag">鋼琴伴奏</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="concert-item">
+      <div class="concert-date-box" style="background: linear-gradient(135deg, #b8860b, #d4af37);">
+        <div class="concert-year">桃園</div>
+        <div class="concert-month">首席</div>
+      </div>
+      <div class="concert-info">
+        <div class="concert-title">桃園青少年國樂團 系列音樂會</div>
+        <div class="concert-venue"><i class="fas fa-map-marker-alt"></i>中壢藝術館 · 桃園展演中心 · 桃園藝文廣場</div>
+        <div class="concert-desc">
+          2017年起擔任桃園青少年國樂團首席，參與多場大型音樂會演出：
+          《笙歌笛鳴》音樂會（中壢藝術館）、《青春嗨翻天》音樂會（桃園藝文廣場）、
+          與九歌國樂團聯合音樂會（桃園展演中心）等。
+          2016年協奏劉文金《豫北敘事曲》，展現精湛的協奏能力。
+        </div>
+        <div class="concert-tags">
+          <span class="concert-tag">樂團首席</span>
+          <span class="concert-tag">協奏</span>
+          <span class="concert-tag">豫北敘事曲</span>
+          <span class="concert-tag">大型音樂會</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><i class="fas fa-list"></i>精選演出曲目</h2>
+  <p class="section-subtitle">經典曲目與原創作品的精彩演繹</p>
+
+  <div class="grid-2" style="margin-bottom: 32px;">
+    <div class="card">
+      <h3 style="color: var(--primary); margin-bottom: 14px;"><i class="fas fa-guitar" style="color: var(--gold);"></i> 二胡經典曲目</h3>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-soft); border-radius: 8px;">
+          <i class="fas fa-music" style="color: var(--primary);"></i>
+          <span>《江河水》— 二胡協奏經典</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-soft); border-radius: 8px;">
+          <i class="fas fa-music" style="color: var(--primary);"></i>
+          <span>《流波曲》— 二胡獨奏</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-soft); border-radius: 8px;">
+          <i class="fas fa-music" style="color: var(--primary);"></i>
+          <span>《炫的狂想》— 現代二胡作品</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-soft); border-radius: 8px;">
+          <i class="fas fa-music" style="color: var(--primary);"></i>
+          <span>《豫北敘事曲》— 劉文金 協奏</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-soft); border-radius: 8px;">
+          <i class="fas fa-music" style="color: var(--primary);"></i>
+          <span>《古巷深處》《夢釋》— 樂團領奏</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="color: var(--primary); margin-bottom: 14px;"><i class="fas fa-pen-fancy" style="color: var(--gold);"></i> 原創與跨界作品</h3>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: linear-gradient(135deg, #fef3c7, #fff); border-radius: 8px; border-left: 3px solid var(--gold);">
+          <i class="fas fa-star" style="color: var(--gold);"></i>
+          <span><strong>《影中火》</strong>— 原創作品 · 世界首演</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: linear-gradient(135deg, #fef3c7, #fff); border-radius: 8px; border-left: 3px solid var(--gold);">
+          <i class="fas fa-star" style="color: var(--gold);"></i>
+          <span><strong>《時空三戲【藏_迷_抓】》</strong>— MIDI 原創作曲</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-soft); border-radius: 8px;">
+          <i class="fas fa-theater-masks" style="color: var(--primary);"></i>
+          <span>《莊周夢蝶》— 跨界演出</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-soft); border-radius: 8px;">
+          <i class="fas fa-heart" style="color: var(--primary);"></i>
+          <span>《只留下愛的證據》— 合作演出</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--bg-soft); border-radius: 8px;">
+          <i class="fas fa-keyboard" style="color: var(--primary);"></i>
+          <span>數十場鋼琴伴奏實踐</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #7f1d1d, #991b1b); border-radius: 16px; padding: 32px; text-align: center; color: #fff; margin-top: 32px;">
+    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--gold-light); margin-bottom: 12px;"></i>
+    <p style="font-size: 1.15rem; font-style: italic; line-height: 2; max-width: 700px; margin: 0 auto;">
+      「每一次登臺，都是與觀眾的心靈對話。<br>
+      我希望用音樂感動每一位聽眾，讓國樂的魅力被更多人看見。」
+    </p>
+    <p style="color: var(--gold-light); margin-top: 12px;">— 陳亦豐</p>
+  </div>
+
+</div>
+
+<script src="_shared/nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta property="og:url" content="https://audizoo.com/music-sites/music-game-collection-20/06-節奏跑酷.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="robots" content="index,follow">
+<meta name="twitter:title" content="節奏跑酷">
+<meta name="twitter:description" content="節奏跑酷">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>節奏跑酷</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0b0b1a;color:#fff;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;user-select:none;touch-action:none}
+#game{position:relative;width:100%;max-width:500px;height:100%;display:flex;flex-direction:column}
+#hud{display:flex;justify-content:space-between;padding:12px 16px;font-size:18px;z-index:10}
+#score{color:#0f0;font-weight:bold}
+#best{color:#fa0;font-weight:bold}
+canvas{flex:1;display:block;width:100%}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:20px}
+.overlay h1{font-size:38px;background:linear-gradient(90deg,#0f0,#0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.overlay p{font-size:16px;color:#aaa;text-align:center;line-height:1.8}
+.overlay button{padding:14px 40px;font-size:20px;font-weight:bold;border:none;border-radius:30px;background:linear-gradient(90deg,#0f0,#0ff);color:#000;cursor:pointer}
+.overlay .stats{font-size:20px;line-height:2;text-align:center}
+.overlay .stats b{color:#0f0}
+.hidden{display:none!important}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="節奏跑酷">
+<meta property="og:title" content="節奏跑酷">
+<meta property="og:description" content="節奏跑酷">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="音樂遊戲合集20款">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="06-節奏跑酷.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "音樂遊戲合集20款", "description": "節奏跑酷", "url": "06-節奏跑酷.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "節奏跑酷",
+   "item": "06-節奏跑酷.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "節奏跑酷",
+ "name": "節奏跑酷",
+ "url": "06-節奏跑酷.html"
+}
+</script>
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <span>分數：<span id="score">0</span></span>
+    <span>最高：<span id="best">0</span></span>
+  </div>
+  <canvas id="cv"></canvas>
+  <div id="startScreen" class="overlay">
+    <h1>節奏跑酷</h1>
+    <p>跟著音樂節奏奔跑！<br>上半屏點選：跳躍（躲避低障礙）<br>下半屏點選：滑鏟（躲避高障礙）<br>鍵盤 ↑ 跳躍，↓ 滑鏟</p>
+    <button id="startBtn">開始奔跑</button>
+  </div>
+  <div id="endScreen" class="overlay hidden">
+    <h2>遊戲結束</h2>
+    <div class="stats">
+      本局分數：<b id="finalScore">0</b><br>
+      歷史最高：<b id="finalBest">0</b>
+    </div>
+    <button id="restartBtn">再來一局</button>
+  </div>
+</div>
+<script>
+const AC=window.AudioContext||window.webkitAudioContext;
+let audioCtx=null;
+function initAudio(){if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume()}
+function playTone(freq,dur,type='sine',vol=.2){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.type=type;o.frequency.value=freq;
+  g.gain.setValueAtTime(vol,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+dur);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+dur);
+}
+function playDrum(){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.frequency.setValueAtTime(120,audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(30,audioCtx.currentTime+.1);
+  g.gain.setValueAtTime(.35,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.12);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.12);
+}
+const BASS=[130.81,146.83,164.81,196,174.61,164.81,146.83,130.81];
+let bassIdx=0;
+const cv=document.getElementById('cv');const ctx=cv.getContext('2d');
+let W,H;
+function resize(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*devicePixelRatio;cv.height=H*devicePixelRatio;ctx.scale(devicePixelRatio,devicePixelRatio);}
+window.addEventListener('resize',resize);
+const game={score:0,player:{x:70,y:0,w:30,h:50,vy:0,sliding:false,slideTimer:0},obstacles:[],speed:4,gravity:.6,jump:-13,running:false,lastTime:0,groundY:0,beatTimer:0,bgOffset:0};
+const scoreEl=document.getElementById('score');
+let best=0;
+try{best=parseInt(localStorage.getItem('rhythmRunner_best')||'0')}catch(e){}
+document.getElementById('best').textContent=best;
+
+function jump(){
+  if(!game.running||game.player.sliding)return;
+  initAudio();
+  if(game.player.y>=game.groundY-game.player.h-1){
+    game.player.vy=game.jump;
+    playTone(523,.12,'square',.15);
+  }
+}
+function slide(){
+  if(!game.running)return;
+  initAudio();
+  if(game.player.y>=game.groundY-game.player.h-1&&!game.player.sliding){
+    game.player.sliding=true;game.player.slideTimer=25;
+    playTone(200,.15,'sawtooth',.12);
+  }
+}
+function spawnObstacle(){
+  const type=Math.random()<.5?'low':'high';
+  const w=25+Math.random()*20;
+  if(type==='low'){
+    game.obstacles.push({x:W+20,y:game.groundY-35,w,h:35,type,passed:false});
+  }else{
+    game.obstacles.push({x:W+20,y:game.groundY-70,w,h:25,type,passed:false});
+  }
+}
+function loop(t){
+  if(!game.running)return;
+  const dt=Math.min((t-game.lastTime)/1000,.05)*60;
+  game.lastTime=t;
+  game.beatTimer+=dt;game.bgOffset=(game.bgOffset+game.speed*dt)%40;
+  if(game.beatTimer>45){game.beatTimer=0;playDrum();playTone(BASS[bassIdx%BASS.length],.2,'triangle',.15);bassIdx++;if(Math.random()<.8)spawnObstacle();}
+  const p=game.player;
+  p.vy+=game.gravity*dt;p.y+=p.vy*dt;
+  if(p.y>game.groundY-p.h){p.y=game.groundY-p.h;p.vy=0;}
+  if(p.sliding){p.slideTimer-=dt;if(p.slideTimer<=0)p.sliding=false;}
+  const ph=p.sliding?p.h*.4:p.h;
+  const py=p.sliding?game.groundY-ph:p.y;
+  for(const o of game.obstacles){
+    o.x-=game.speed*dt;
+    if(!o.passed&&o.x+o.w<p.x){o.passed=true;game.score+=5;scoreEl.textContent=game.score;}
+    if(p.x+p.w>o.x&&p.x<o.x+o.w&&py+ph>o.y&&py<o.y+o.h){
+      playTone(80,.3,'sawtooth',.3);endGame();return;
+    }
+  }
+  game.obstacles=game.obstacles.filter(o=>o.x+o.w>-10);
+  game.score+=dt*.1;scoreEl.textContent=Math.floor(game.score);
+  if(Math.floor(game.score)%50===0&&game.score>0)game.speed=Math.min(8,game.speed+.01);
+  ctx.clearRect(0,0,W,H);
+  const grad=ctx.createLinearGradient(0,0,0,H);
+  grad.addColorStop(0,'#0b0b1a');grad.addColorStop(.7,'#1a1a3e');grad.addColorStop(1,'#2a1a4e');
+  ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='rgba(255,255,255,.3)';
+  for(let i=0;i<30;i++){
+    const x=(i*47+game.bgOffset*2)%W,y=(i*31)%(game.groundY-50);
+    ctx.fillRect(x,y,2,2);
+  }
+  ctx.fillStyle='#1a1a2e';ctx.fillRect(0,game.groundY,W,H-game.groundY);
+  ctx.strokeStyle='#0f0';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,game.groundY);ctx.lineTo(W,game.groundY);ctx.stroke();
+  ctx.fillStyle='rgba(0,255,0,.1)';
+  for(let i=-1;i<W/40+1;i++)ctx.fillRect(i*40+game.bgOffset,game.groundY+5,20,3);
+  for(const o of game.obstacles){
+    if(o.type==='low'){
+      ctx.fillStyle='#f44';ctx.fillRect(o.x,o.y,o.w,o.h);
+      ctx.fillStyle='#ff6666';ctx.fillRect(o.x+2,o.y+2,o.w-4,4);
+    }else{
+      ctx.fillStyle='#f80';ctx.fillRect(o.x,o.y,o.w,o.h);
+      ctx.fillStyle='#faa';ctx.fillRect(o.x+2,o.y+2,o.w-4,4);
+      ctx.strokeStyle='#f80';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(o.x+o.w/2,o.y+o.h);ctx.lineTo(o.x+o.w/2,game.groundY);ctx.stroke();
+    }
+  }
+  ctx.save();ctx.translate(p.x+p.w/2,py+ph/2);
+  if(p.sliding)ctx.scale(1,.5);
+  ctx.fillStyle='#0ff';ctx.shadowColor='#0ff';ctx.shadowBlur=15;
+  ctx.fillRect(-p.w/2,-ph/2,p.w,ph);
+  ctx.fillStyle='#fff';ctx.fillRect(-p.w/2+5,-ph/2+5,p.w-10,6);
+  ctx.restore();
+  requestAnimationFrame(loop);
+}
+function startGame(){
+  initAudio();resize();
+  game.groundY=H-50;game.score=0;game.speed=4;game.beatTimer=0;bassIdx=0;
+  game.player={x:70,y:game.groundY-50,w:30,h:50,vy:0,sliding:false,slideTimer:0};
+  game.obstacles=[];scoreEl.textContent=0;
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('endScreen').classList.add('hidden');
+  game.running=true;game.lastTime=performance.now();
+  requestAnimationFrame(loop);
+}
+function endGame(){
+  game.running=false;
+  const s=Math.floor(game.score);
+  if(s>best){best=s;try{localStorage.setItem('rhythmRunner_best',best)}catch(e){}}
+  document.getElementById('best').textContent=best;
+  document.getElementById('finalScore').textContent=s;
+  document.getElementById('finalBest').textContent=best;
+  document.getElementById('endScreen').classList.remove('hidden');
+}
+document.getElementById('startBtn').onclick=startGame;
+document.getElementById('restartBtn').onclick=startGame;
+cv.addEventListener('pointerdown',e=>{
+  e.preventDefault();initAudio();
+  const rect=cv.getBoundingClientRect();
+  const y=e.clientY-rect.top;
+  if(y<rect.height/2)jump();else slide();
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowUp'||e.key===' '){e.preventDefault();jump();}
+  if(e.key==='ArrowDown'){e.preventDefault();slide();}
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.running)game.running=false;});
+resize();
+</script>
+</body>
+</html>

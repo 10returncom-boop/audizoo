@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta property="og:url" content="https://audizoo.com/music-sites/musician-contact-page/contact.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="robots" content="index,follow">
+<meta name="twitter:title" content="邀約與合作｜聯絡我 | 陳亦豐 - 青年音樂家">
+<meta name="twitter:description" content="邀約與合作｜聯絡我 | 陳亦豐 - 青年音樂家">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact｜聯絡我 | 陳亦豐 - 青年音樂家</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../_shared/nav.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="聯絡我 | 陳亦豐 - 青年音樂家">
+<meta property="og:title" content="聯絡我 | 陳亦豐 - 青年音樂家">
+<meta property="og:description" content="聯絡我 | 陳亦豐 - 青年音樂家">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="陳亦豐青年音樂家聯絡頁">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="contact.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "陳亦豐青年音樂家聯絡頁", "description": "聯絡我 | 陳亦豐 - 青年音樂家", "url": "contact.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "邀約與合作｜聯絡我 | 陳亦豐 - 青年音樂家",
+   "item": "contact.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "邀約與合作｜聯絡我 | 陳亦豐 - 青年音樂家",
+ "name": "邀約與合作｜聯絡我 | 陳亦豐 - 青年音樂家",
+ "url": "contact.html"
+}
+</script>
+</head>
+<body>
+
+<section style="background: linear-gradient(135deg, #7f1d1d, #b8860b); color: #fff; padding: 60px 24px; text-align: center;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <span style="display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.5); padding: 6px 20px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 16px;"><i class="fas fa-envelope"></i> 聯絡我</span>
+    <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 12px;">邀約與合作</h1>
+    <p style="opacity: 0.95; font-size: 1.1rem;">歡迎音樂會邀約、教學、合作與各類音樂專案詢問</p>
+  </div>
+</section>
+
+<div class="page-container">
+
+  <div class="contact-grid">
+
+    <!-- 左側：聯絡資訊 -->
+    <div>
+      <h2 class="section-title"><i class="fas fa-address-book"></i>聯絡資訊</h2>
+      <p class="section-subtitle">多種方式與我聯絡</p>
+
+      <div class="contact-info-item">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <div class="contact-text">
+          <h4>電子郵件</h4>
+          <p>歡迎來信討論音樂合作與邀約</p>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon" style="background: linear-gradient(135deg, #06c755, #00b951);"><i class="fab fa-line"></i></div>
+        <div class="contact-text">
+          <h4>Line</h4>
+          <p>331.today（舒安境工作室）</p>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);"><i class="fas fa-phone"></i></div>
+        <div class="contact-text">
+          <h4>電話</h4>
+          <p>0968-222-201（舒安境工作室）</p>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon" style="background: linear-gradient(135deg, #b8860b, #d4af37);"><i class="fas fa-graduation-cap"></i></div>
+        <div class="contact-text">
+          <h4>學歷</h4>
+          <p>國立臺南藝術大學 雙碩士</p>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon" style="background: linear-gradient(135deg, #991b1b, #dc2626);"><i class="fas fa-music"></i></div>
+        <div class="contact-text">
+          <h4>專業領域</h4>
+          <p>二胡演奏 · 鋼琴合作 · 樂曲創作</p>
+        </div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #fef9f0, #fff); border: 2px solid var(--gold); border-radius: 14px; padding: 20px; margin-top: 20px;">
+        <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-lightbulb" style="color: var(--gold);"></i> 合作專案</h4>
+        <ul style="color: var(--text); line-height: 2; padding-left: 20px; font-size: 0.95rem;">
+          <li>音樂會演出邀約（獨奏/協奏/室內樂）</li>
+          <li>樂曲創作委託（國樂/西樂/跨界）</li>
+          <li>鋼琴伴奏合作</li>
+          <li>音樂教學（二胡/鋼琴/樂理）</li>
+          <li>音樂講座與工作坊</li>
+          <li>跨領域藝術合作</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 右側：聯絡表單 -->
+    <div>
+      <h2 class="section-title"><i class="fas fa-edit"></i>線上諮詢</h2>
+      <p class="section-subtitle">填寫下表，我會盡快與您聯絡</p>
+
+      <div class="card">
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div style="margin-bottom: 18px;">
+            <label style="display: block; margin-bottom: 6px; font-weight: 600; color: var(--text);"><i class="fas fa-user" style="color: var(--primary); margin-right: 6px;"></i>您的姓名</label>
+            <input type="text" id="name" required placeholder="請輸入您的姓名" style="width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; transition: border-color 0.2s;" onfocus="this.style.borderColor='#991b1b'" onblur="this.style.borderColor='#e5e7eb'">
+          </div>
+
+          <div style="margin-bottom: 18px;">
+            <label style="display: block; margin-bottom: 6px; font-weight: 600; color: var(--text);"><i class="fas fa-envelope" style="color: var(--primary); margin-right: 6px;"></i>聯絡方式</label>
+            <input type="text" id="contact" required placeholder="Line / 電話 / Email" style="width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; transition: border-color 0.2s;" onfocus="this.style.borderColor='#991b1b'" onblur="this.style.borderColor='#e5e7eb'">
+          </div>
+
+          <div style="margin-bottom: 18px;">
+            <label style="display: block; margin-bottom: 6px; font-weight: 600; color: var(--text);"><i class="fas fa-tags" style="color: var(--primary); margin-right: 6px;"></i>合作型別</label>
+            <select id="projectType" style="width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; background: #fff;">
+              <option value="">請選擇合作型別</option>
+              <option value="concert">音樂會演出邀約</option>
+              <option value="composition">樂曲創作委託</option>
+              <option value="accompaniment">鋼琴伴奏合作</option>
+              <option value="teaching">音樂教學</option>
+              <option value="lecture">音樂講座/工作坊</option>
+              <option value="collaboration">跨領域藝術合作</option>
+              <option value="other">其他</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 6px; font-weight: 600; color: var(--text);"><i class="fas fa-comment" style="color: var(--primary); margin-right: 6px;"></i>需求描述</label>
+            <textarea id="message" rows="5" required placeholder="請簡單描述您的需求、時間、地點等資訊..." style="width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem; resize: vertical; transition: border-color 0.2s;" onfocus="this.style.borderColor='#991b1b'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
+          </div>
+
+          <button type="submit" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #991b1b, #b8860b); color: #fff; border: none; border-radius: 10px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(153,27,27,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>送出諮詢
+          </button>
+        </form>
+
+        <div id="successMsg" style="display: none; text-align: center; padding: 40px 20px;">
+          <div style="font-size: 3rem; color: #10b981; margin-bottom: 16px;"><i class="fas fa-check-circle"></i></div>
+          <h3 style="margin-bottom: 8px; color: #065f46;">感謝您的來信！</h3>
+          <p style="color: var(--text-light);">我已收到您的諮詢，會盡快與您聯絡。<br>期待與您的音樂合作！</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; padding: 18px; background: #fef3c7; border-radius: 12px; border-left: 4px solid var(--gold);">
+        <p style="color: #92400e; font-size: 0.9rem; line-height: 1.7;">
+          <i class="fas fa-lightbulb" style="margin-right: 6px;"></i>
+          <strong>小提示：</strong>描述越詳細，我越能準確評估合作可行性。建議包含：演出/創作型別、時間、地點、預算範圍、參考曲目等資訊。
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const contact = document.getElementById('contact').value;
+  const projectType = document.getElementById('projectType').value;
+  const message = document.getElementById('message').value;
+
+  const submissions = JSON.parse(localStorage.getItem('chen_yifeng_contact') || '[]');
+  submissions.push({
+    name: name,
+    contact: contact,
+    projectType: projectType,
+    message: message,
+    date: new Date().toISOString()
+  });
+  localStorage.setItem('chen_yifeng_contact', JSON.stringify(submissions));
+
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+</script>
+
+<script src="../../_shared/nav.js" defer></script>
+</body>
+</html>

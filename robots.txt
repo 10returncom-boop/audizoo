@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /music-sites/
+
+Sitemap: https://audizoo.com/sitemap.xml

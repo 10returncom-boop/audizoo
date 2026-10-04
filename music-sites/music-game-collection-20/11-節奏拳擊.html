@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta property="og:url" content="https://audizoo.com/music-sites/music-game-collection-20/11-節奏拳擊.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="robots" content="index,follow">
+<meta name="twitter:title" content="節奏拳擊">
+<meta name="twitter:description" content="節奏拳擊">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>節奏拳擊</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;user-select:none;touch-action:none}
+#game{position:relative;width:100%;max-width:500px;height:100%;display:flex;flex-direction:column}
+#hud{display:flex;justify-content:space-between;padding:12px 16px;font-size:18px;z-index:10}
+#score{color:#f44;font-weight:bold}
+#combo{color:#ff0;font-weight:bold}
+#hp{color:#0f0;font-weight:bold}
+#best{color:#fa0;font-weight:bold}
+#ring{flex:1;position:relative;overflow:hidden;background:linear-gradient(180deg,#2a1a1a,#1a0a0a)}
+#bag{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100px;height:140px;background:linear-gradient(180deg,#8B0000,#5C0000);border-radius:50px 50px 30px 30px;transition:transform .1s;box-shadow:0 0 30px rgba(255,0,0,.3)}
+#bag.hit-left{transform:translate(-55%,-50%) rotate(-5deg)}
+#bag.hit-right{transform:translate(-45%,-50%) rotate(5deg)}
+#bag::before{content:'';position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:20px;height:20px;background:#444;border-radius:3px}
+.punch-indicator{position:absolute;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:bold;opacity:0;transition:opacity .1s}
+.punch-indicator.left{left:15%;top:40%;background:rgba(255,68,68,.3);border:3px solid #f44;color:#f44}
+.punch-indicator.right{right:15%;top:40%;background:rgba(68,136,255,.3);border:3px solid #48f;color:#48f}
+.punch-indicator.show{opacity:1;animation:pulse .3s}
+@keyframes pulse{0%{transform:scale(.5)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+#beatbar{position:absolute;bottom:10px;left:10%;right:10%;height:8px;background:#333;border-radius:4px;overflow:hidden}
+#beatfill{height:100%;width:0%;background:linear-gradient(90deg,#f44,#ff0);transition:width .05s linear}
+#controls{display:flex;gap:10px;padding:15px;justify-content:center}
+.punch-btn{width:120px;height:70px;border-radius:15px;font-size:20px;font-weight:bold;cursor:pointer;transition:all .1s;border:3px solid}
+.punch-btn.left{background:rgba(255,68,68,.2);border-color:#f44;color:#f44}
+.punch-btn.right{background:rgba(68,136,255,.2);border-color:#48f;color:#48f}
+.punch-btn:active{transform:scale(.95);background:rgba(255,255,255,.3)}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:20px;padding:20px}
+.overlay h1{font-size:36px;background:linear-gradient(90deg,#f44,#ff0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.overlay p{font-size:15px;color:#aaa;text-align:center;line-height:1.8;max-width:350px}
+.overlay button{padding:14px 40px;font-size:20px;font-weight:bold;border:none;border-radius:30px;background:linear-gradient(90deg,#f44,#ff0);color:#000;cursor:pointer}
+.overlay .stats{font-size:18px;line-height:2;text-align:center}
+.overlay .stats b{color:#f44}
+.hidden{display:none!important}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="節奏拳擊">
+<meta property="og:title" content="節奏拳擊">
+<meta property="og:description" content="節奏拳擊">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="音樂遊戲合集20款">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="11-節奏拳擊.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "音樂遊戲合集20款", "description": "節奏拳擊", "url": "11-節奏拳擊.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "節奏拳擊",
+   "item": "11-節奏拳擊.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "節奏拳擊",
+ "name": "節奏拳擊",
+ "url": "11-節奏拳擊.html"
+}
+</script>
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <span>分數：<span id="score">0</span></span>
+    <span>連擊：<span id="combo">0</span></span>
+    <span>體力：<span id="hp">100</span></span>
+    <span>最高：<span id="best">0</span></span>
+  </div>
+  <div id="ring">
+    <div id="bag"></div>
+    <div class="punch-indicator left" id="indL">左</div>
+    <div class="punch-indicator right" id="indR">右</div>
+    <div id="beatbar"><div id="beatfill"></div></div>
+  </div>
+  <div id="controls">
+    <button class="punch-btn left" id="btnL">左拳 (A)</button>
+    <button class="punch-btn right" id="btnR">右拳 (L)</button>
+  </div>
+  <div id="startScreen" class="overlay">
+    <h1>節奏拳擊</h1>
+    <p>跟著節奏出拳打擊沙袋！<br>當進度條到達頂峰時，按照提示出左拳或右拳<br>鍵盤 A = 左拳，L = 右拳<br>節奏越準，分數越高！</p>
+    <button id="startBtn">開始訓練</button>
+  </div>
+  <div id="endScreen" class="overlay hidden">
+    <h2>訓練結束</h2>
+    <div class="stats">
+      本局分數：<b id="finalScore">0</b><br>
+      最高連擊：<b id="finalCombo">0</b><br>
+      歷史最高：<b id="finalBest">0</b>
+    </div>
+    <button id="restartBtn">再來一場</button>
+  </div>
+</div>
+<script>
+const AC=window.AudioContext||window.webkitAudioContext;
+let audioCtx=null;
+function initAudio(){if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume()}
+function playPunch(side){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.type='sawtooth';
+  o.frequency.setValueAtTime(side==='left'?150:200,audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(50,audioCtx.currentTime+.1);
+  g.gain.setValueAtTime(.25,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.12);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.12);
+}
+function playDrum(){
+  if(!audioCtx)return;
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.frequency.setValueAtTime(120,audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(30,audioCtx.currentTime+.1);
+  g.gain.setValueAtTime(.3,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.12);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.12);
+}
+const game={score:0,combo:0,maxCombo:0,hp:100,running:false,beatPhase:0,bpm:110,nextPunch:'left',lastTime:0,punchActive:false};
+const scoreEl=document.getElementById('score');
+const comboEl=document.getElementById('combo');
+const hpEl=document.getElementById('hp');
+const beatfill=document.getElementById('beatfill');
+const bag=document.getElementById('bag');
+let best=0;
+try{best=parseInt(localStorage.getItem('rhythmBoxing_best')||'0')}catch(e){}
+document.getElementById('best').textContent=best;
+
+function showIndicator(side){
+  const el=side==='left'?document.getElementById('indL'):document.getElementById('indR');
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),400);
+}
+
+function punch(side){
+  if(!game.running||game.punchActive)return;
+  initAudio();
+  game.punchActive=true;
+  setTimeout(()=>game.punchActive=false,200);
+  playPunch(side);
+  bag.classList.remove('hit-left','hit-right');
+  void bag.offsetWidth;
+  bag.classList.add(side==='left'?'hit-left':'hit-right');
+  setTimeout(()=>bag.classList.remove('hit-left','hit-right'),150);
+  const phase=game.beatPhase%1;
+  const dist=Math.min(phase,1-phase);
+  if(side===game.nextPunch){
+    if(dist<.12){game.score+=100;game.combo++;showIndicator('perfect');}
+    else if(dist<.25){game.score+=50;game.combo++;showIndicator('good');}
+    else{game.score+=10;game.combo=0;game.hp-=3;}
+    game.maxCombo=Math.max(game.maxCombo,game.combo);
+    game.nextPunch=Math.random()<.5?'left':'right';
+    if(game.combo%8===0)game.bpm=Math.min(150,game.bpm+5);
+  }else{
+    game.combo=0;game.hp-=8;
+  }
+  if(game.hp<=0){game.hp=0;endGame();return;}
+  scoreEl.textContent=game.score;comboEl.textContent=game.combo;hpEl.textContent=game.hp;
+}
+
+function loop(t){
+  if(!game.running)return;
+  const dt=Math.min((t-game.lastTime)/1000,.05);
+  game.lastTime=t;
+  game.beatPhase+=(game.bpm/60)*dt;
+  const phase=game.beatPhase%1;
+  beatfill.style.width=(phase*100)+'%';
+  if(phase<.05&&Math.floor(game.beatPhase)!==Math.floor(game.beatPhase-(game.bpm/60)*dt)){
+    playDrum();
+  }
+  requestAnimationFrame(loop);
+}
+
+function startGame(){
+  initAudio();
+  game.score=0;game.combo=0;game.maxCombo=0;game.hp=100;game.beatPhase=0;game.bpm=110;
+  game.nextPunch=Math.random()<.5?'left':'right';game.punchActive=false;
+  scoreEl.textContent=0;comboEl.textContent=0;hpEl.textContent=100;
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('endScreen').classList.add('hidden');
+  game.running=true;game.lastTime=performance.now();
+  requestAnimationFrame(loop);
+}
+function endGame(){
+  game.running=false;
+  if(game.score>best){best=game.score;try{localStorage.setItem('rhythmBoxing_best',best)}catch(e){}}
+  document.getElementById('best').textContent=best;
+  document.getElementById('finalScore').textContent=game.score;
+  document.getElementById('finalCombo').textContent=game.maxCombo;
+  document.getElementById('finalBest').textContent=best;
+  document.getElementById('endScreen').classList.remove('hidden');
+}
+
+document.getElementById('startBtn').onclick=startGame;
+document.getElementById('restartBtn').onclick=startGame;
+document.getElementById('btnL').addEventListener('pointerdown',e=>{e.preventDefault();punch('left');});
+document.getElementById('btnR').addEventListener('pointerdown',e=>{e.preventDefault();punch('right');});
+document.addEventListener('keydown',e=>{
+  if(e.key.toLowerCase()==='a')punch('left');
+  if(e.key.toLowerCase()==='l')punch('right');
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.running)game.running=false;});
+</script>
+</body>
+</html>

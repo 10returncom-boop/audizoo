@@ -1,6 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+    <meta property="og:url" content="https://audizoo.com/MusicianPortfolio/index_20260904_V0_backup.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+    <meta name="robots" content="index, follow"/>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家</title>
@@ -325,48 +333,5 @@ input, textarea, [contenteditable="true"] {
 </div>
 
 <script src="_shared/nav.js" defer></script>
-
-<!-- ===== 與我聯絡 Contact Section ===== -->
-<section class="unified-contact" style="max-width:780px;margin:48px auto;padding:32px 28px;background:#f8f9fa;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);">
-  <h2 style="font-size:26px;font-weight:900;margin-bottom:6px;color:#0a0a0a;letter-spacing:-.5px;">與我聯絡</h2>
-  <p style="color:#666;margin-bottom:22px;font-size:14px;">有任何問題、合作需求或網站建議，歡迎填寫表單或直接聯絡</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
-    <div style="flex:1;min-width:180px;padding:16px 12px;background:#fff;border-radius:10px;text-align:center;border:1px solid #e5e7eb;">
-      <div style="font-size:28px;margin-bottom:6px;">🟢</div>
-      <div style="font-weight:800;font-size:13px;color:#0a0a0a;">Line ID</div>
-      <div style="color:#555;font-size:15px;font-weight:600;margin-top:2px;">331.today</div>
-    </div>
-    <div style="flex:1;min-width:180px;padding:16px 12px;background:#fff;border-radius:10px;text-align:center;border:1px solid #e5e7eb;">
-      <div style="font-size:28px;margin-bottom:6px;">📞</div>
-      <div style="font-weight:800;font-size:13px;color:#0a0a0a;">聯絡電話</div>
-      <div style="color:#555;font-size:15px;font-weight:600;margin-top:2px;">0968222201</div>
-    </div>
-    <div style="flex:1;min-width:180px;padding:16px 12px;background:#fff;border-radius:10px;text-align:center;border:1px solid #e5e7eb;">
-      <div style="font-size:28px;margin-bottom:6px;">🔴👤</div>
-      <div style="font-weight:800;font-size:13px;color:#0a0a0a;">聯絡人</div>
-      <div style="color:#555;font-size:15px;font-weight:600;margin-top:2px;">張書欣</div>
-    </div>
-  </div>
-  <form class="unified-contact-form" onsubmit="return _sendContactForm(this);" style="display:flex;flex-direction:column;gap:10px;">
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <input type="text" name="cf_name" placeholder="您的姓名" required style="flex:1;min-width:160px;padding:11px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0a0a0a'" onblur="this.style.borderColor='#d1d5db'">
-      <input type="text" name="cf_contact" placeholder="聯絡電話或 Email" required style="flex:1;min-width:160px;padding:11px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0a0a0a'" onblur="this.style.borderColor='#d1d5db'">
-    </div>
-    <textarea name="cf_message" placeholder="請輸入您的訊息..." rows="4" required style="padding:11px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none;resize:vertical;transition:border .2s;font-family:inherit;" onfocus="this.style.borderColor='#0a0a0a'" onblur="this.style.borderColor='#d1d5db'"></textarea>
-    <input type="hidden" name="cf_source" value="陳亦豐個人網站">
-    <button type="submit" style="padding:13px;background:#0a0a0a;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:800;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#0a0a0a'">送出訊息</button>
-    <p style="font-size:11px;color:#999;text-align:center;margin:0;">送出後將開啟您的電子郵件程式，內容自動帶入</p>
-  </form>
-</section>
-<script>
-function _sendContactForm(f){
-  var n=f.cf_name.value, c=f.cf_contact.value, m=f.cf_message.value, s=f.cf_source.value;
-  var body='姓名：'+n+'%0D%0A聯絡：'+c+'%0D%0A來源網站：'+s+'%0D%0A%0D%0A訊息內容：%0D%0A'+m;
-  window.location.href='mailto:?subject='+encodeURIComponent('網站聯絡表單 - '+n+' ('+s+')')+'&body='+body;
-  return false;
-}
-</script>
-<!-- ===== /與我聯絡 ===== -->
-
 </body>
 </html>

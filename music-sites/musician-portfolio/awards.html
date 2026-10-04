@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta property="og:url" content="https://audizoo.com/music-sites/musician-portfolio/awards.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="robots" content="index,follow">
+<meta name="twitter:title" content="得獎記錄 | 陳亦豐 - 青年音樂家">
+<meta name="twitter:description" content="得獎記錄 | 陳亦豐 - 青年音樂家">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>得獎記錄 | 陳亦豐 - 青年音樂家</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="_shared/nav.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="得獎記錄 | 陳亦豐 - 青年音樂家">
+<meta property="og:title" content="得獎記錄 | 陳亦豐 - 青年音樂家">
+<meta property="og:description" content="得獎記錄 | 陳亦豐 - 青年音樂家">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="青年音樂家陳亦豐個人網站">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="awards.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "青年音樂家陳亦豐個人網站", "description": "得獎記錄 | 陳亦豐 - 青年音樂家", "url": "awards.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "得獎記錄 | 陳亦豐 - 青年音樂家",
+   "item": "awards.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "得獎記錄 | 陳亦豐 - 青年音樂家",
+ "name": "得獎記錄 | 陳亦豐 - 青年音樂家",
+ "url": "awards.html"
+}
+</script>
+</head>
+<body>
+
+<section style="background: linear-gradient(135deg, #b8860b, #d4af37); color: #fff; padding: 60px 24px; text-align: center;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <span style="display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.5); padding: 6px 20px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 16px;"><i class="fas fa-trophy"></i> 得獎記錄</span>
+    <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 12px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">獎項與榮耀</h1>
+    <p style="opacity: 0.95; font-size: 1.1rem;">年輕即得獎無數，每一項都是實力的證明</p>
+  </div>
+</section>
+
+<div class="page-container">
+
+  <!-- 統計 -->
+  <div class="stats-grid" style="margin-top: 0;">
+    <div class="stat-card" style="background: linear-gradient(135deg, #b8860b, #d4af37);">
+      <div class="stat-number" style="color: #fff;">30+</div>
+      <div class="stat-label"><i class="fas fa-trophy"></i> 總得獎數</div>
+    </div>
+    <div class="stat-card" style="background: linear-gradient(135deg, #991b1b, #dc2626);">
+      <div class="stat-number" style="color: #f4d03f;">10+</div>
+      <div class="stat-label"><i class="fas fa-medal"></i> 第一名</div>
+    </div>
+    <div class="stat-card" style="background: linear-gradient(135deg, #7f1d1d, #991b1b);">
+      <div class="stat-number" style="color: #f4d03f;">2</div>
+      <div class="stat-label"><i class="fas fa-graduation-cap"></i> 雙碩士</div>
+    </div>
+    <div class="stat-card" style="background: linear-gradient(135deg, #b8860b, #991b1b);">
+      <div class="stat-number" style="color: #fff;">2018起</div>
+      <div class="stat-label"><i class="fas fa-calendar"></i> 連年獲獎</div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><i class="fas fa-guitar"></i>二胡演奏類獎項</h2>
+  <p class="section-subtitle">從國中到大學，在二胡演奏領域屢獲殊榮</p>
+
+  <div style="margin-bottom: 48px;">
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-trophy"></i></div>
+      <div class="award-content">
+        <div class="award-title">108年度全國學生音樂比賽 二胡/高中A組 第一名</div>
+        <div class="award-year">2019年 · 全國性比賽 · 特優第一名</div>
+        <div class="award-desc">臺灣學生音樂比賽最高殿堂，以精湛的二胡演奏技藝奪得全國第一名。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-medal"></i></div>
+      <div class="award-content">
+        <div class="award-title">桃園市學生音樂比賽 二胡獨奏 國中A組 第一名</div>
+        <div class="award-year">2018年 · 桃園市 · 特優第一名</div>
+        <div class="award-desc">國中階段即展現過人音樂天賦，以第一名佳績為專業發展奠定基礎。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-star"></i></div>
+      <div class="award-content">
+        <div class="award-title">首屆海峽兩岸民族器樂大賽 二胡獨奏 第一名</div>
+        <div class="award-year">2019年 · 兩岸交流比賽 · 金獎</div>
+        <div class="award-desc">在兩岸音樂交流平臺上與眾多選手競技，以實力脫穎而出獲得第一名。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-award"></i></div>
+      <div class="award-content">
+        <div class="award-title">第八屆海峽兩岸青少年臺灣選拔賽 二胡 第一名</div>
+        <div class="award-year">2020年 · 兩岸青少年選拔 · 特優第一名</div>
+        <div class="award-desc">連續在兩岸交流比賽中獲得佳績，展現穩定且出色的演奏水準。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-third-medal"></i></div>
+      <div class="award-content">
+        <div class="award-title">TCO臺北市民族器樂大賽 二胡組 第三名</div>
+        <div class="award-year">臺北市民族器樂大賽 · 專業組</div>
+        <div class="award-desc">在臺北市最具代表性的民族器樂大賽中獲得第三名，與眾多專業選手同場競技。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-certificate"></i></div>
+      <div class="award-content">
+        <div class="award-title">南藝高中部 二胡新秀 獲選</div>
+        <div class="award-year">2020年 · 國立臺南藝術大學</div>
+        <div class="award-desc">獲選為南藝高中部二胡新秀，代表學校參與各項演出與交流活動。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-medal"></i></div>
+      <div class="award-content">
+        <div class="award-title">各級音樂比賽 二胡獨奏 優等/特優 無數</div>
+        <div class="award-year">2018 - 2024年 · 各級比賽</div>
+        <div class="award-desc">從國中到大學，連年在各級音樂比賽中獲得優等、特優佳績，累計得獎數十項。</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><i class="fas fa-pen-fancy"></i>作曲創作類獎項</h2>
+  <p class="section-subtitle">在樂曲創作領域同樣表現傑出</p>
+
+  <div style="margin-bottom: 48px;">
+    <div class="award-item">
+      <div class="award-icon" style="background: linear-gradient(135deg, #991b1b, #b8860b);"><i class="fas fa-trophy"></i></div>
+      <div class="award-content">
+        <div class="award-title">113年度臺南學生音樂比賽 樂曲創作/大專A組 第一名</div>
+        <div class="award-year">2024年 · 臺南市 · 作曲類 · 特優第一名</div>
+        <div class="award-desc">以原創作品在樂曲創作領域脫穎而出，獲得大專A組第一名，展現作曲才華。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon" style="background: linear-gradient(135deg, #991b1b, #b8860b);"><i class="fas fa-star"></i></div>
+      <div class="award-content">
+        <div class="award-title">原創作品《影中火》 世界首演</div>
+        <div class="award-year">個人獨奏會 · 世界首演</div>
+        <div class="award-desc">原創作品《影中火》在個人獨奏會中完成世界首演，獲得現場觀眾與業內人士的一致好評。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon" style="background: linear-gradient(135deg, #991b1b, #b8860b);"><i class="fas fa-music"></i></div>
+      <div class="award-content">
+        <div class="award-title">原創作品《時空三戲【藏_迷_抓】》</div>
+        <div class="award-year">MIDI 原創作曲</div>
+        <div class="award-desc">融合傳統國樂元素與現代電子音樂技法的原創作品，展現跨界創作能力。</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><i class="fas fa-keyboard"></i>鋼琴與其他才藝獎項</h2>
+  <p class="section-subtitle">多才多藝，在多個領域皆有斬獲</p>
+
+  <div style="margin-bottom: 32px;">
+    <div class="award-item">
+      <div class="award-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);"><i class="fas fa-keyboard"></i></div>
+      <div class="award-content">
+        <div class="award-title">傑人杯鋼琴比賽 第五名</div>
+        <div class="award-year">鋼琴比賽 · 專業組</div>
+        <div class="award-desc">在鋼琴比賽中同樣表現出色，獲得第五名佳績，展現紮實的鋼琴功底。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);"><i class="fas fa-microphone"></i></div>
+      <div class="award-content">
+        <div class="award-title">大聲盃歌唱比賽 兒童組 第二名</div>
+        <div class="award-year">歌唱比賽 · 兒童組</div>
+        <div class="award-desc">從小即展現多母音樂才華，在歌唱比賽中獲得第二名。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);"><i class="fas fa-guitar"></i></div>
+      <div class="award-content">
+        <div class="award-title">各級音樂檢定 二胡/鋼琴 高階透過</div>
+        <div class="award-year">音樂檢定 · 多項高階認證</div>
+        <div class="award-desc">在課業繁忙之餘不斷精進，參加一級又一級的音樂檢定，平衡課業之餘持續提升音樂素養。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #fef9f0, #fff); border: 2px solid var(--gold); border-radius: 16px; padding: 28px; text-align: center; margin-top: 32px;">
+    <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--gold); margin-bottom: 12px;"></i>
+    <p style="font-size: 1.15rem; color: var(--primary); font-style: italic; line-height: 2; max-width: 700px; margin: 0 auto;">
+      「獎項不是終點，而是每一段努力的見證。<br>
+      我會繼續在音樂的道路上執著追求，用音符感動更多人。」
+    </p>
+    <p style="color: var(--text-light); margin-top: 12px;">— 陳亦豐</p>
+  </div>
+
+</div>
+
+<script src="_shared/nav.js" defer></script>
+</body>
+</html>

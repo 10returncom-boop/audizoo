@@ -1,0 +1,487 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta property="og:url" content="https://audizoo.com/music-sites/music-game-collection-20/18-音樂塔防.html"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="robots" content="index,follow">
+<meta name="twitter:title" content="音樂塔防">
+<meta name="twitter:description" content="音樂塔防">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>音樂塔防</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a1a0a;color:#fff;font-family:'Segoe UI',sans-serif;overflow:hidden;height:100vh;display:flex;flex-direction:column;align-items:center;user-select:none;touch-action:none}
+#game{position:relative;width:100%;max-width:500px;height:100%;display:flex;flex-direction:column;padding:8px;gap:8px}
+#hud{display:flex;justify-content:space-between;font-size:14px}
+#gold{color:#ff0;font-weight:bold}
+#lives{color:#f44;font-weight:bold}
+#wave{color:#0ff;font-weight:bold}
+#best{color:#f80;font-weight:bold}
+canvas{flex:1;background:#0d1a0d;border:2px solid #333;border-radius:8px;display:block}
+#tower-bar{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.tower-btn{padding:8px 12px;font-size:12px;font-weight:bold;border:2px solid;border-radius:8px;cursor:pointer;transition:all .1s;background:rgba(0,0,0,.3)}
+.tower-btn:hover{transform:scale(1.05)}
+.tower-btn.selected{background:rgba(255,255,255,.2)}
+.tower-btn.t0{border-color:#f44;color:#f44}
+.tower-btn.t1{border-color:#0ff;color:#0ff}
+.tower-btn.t2{border-color:#ff0;color:#ff0}
+.tower-btn.t3{border-color:#0f0;color:#0f0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:20px;padding:20px}
+.overlay h1{font-size:34px;background:linear-gradient(90deg,#0f0,#ff0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.overlay p{font-size:15px;color:#aaa;text-align:center;line-height:1.8;max-width:350px}
+.overlay button{padding:14px 40px;font-size:20px;font-weight:bold;border:none;border-radius:30px;background:linear-gradient(90deg,#0f0,#ff0);color:#000;cursor:pointer}
+.overlay .stats{font-size:18px;line-height:2;text-align:center}
+.overlay .stats b{color:#0f0}
+.hidden{display:none!important}
+</style>
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<!-- AI 升級注入層 v1 :start -->
+<meta name="description" content="音樂塔防">
+<meta property="og:title" content="音樂塔防">
+<meta property="og:description" content="音樂塔防">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="音樂遊戲合集20款">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="18-音樂塔防.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "音樂遊戲合集20款", "description": "音樂塔防", "url": "18-音樂塔防.html"}</script>
+<!-- AI 升級注入層 v1 :end -->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "音樂塔防",
+   "item": "18-音樂塔防.html"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "音樂塔防",
+ "name": "音樂塔防",
+ "url": "18-音樂塔防.html"
+}
+</script>
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <span>金幣：<span id="gold">100</span></span>
+    <span>生命：<span id="lives">10</span></span>
+    <span>波次：<span id="wave">1</span></span>
+    <span>最高：<span id="best">0</span></span>
+  </div>
+  <canvas id="cv"></canvas>
+  <div id="tower-bar">
+    <div class="tower-btn t0" data-tower="0">鼓塔 50</div>
+    <div class="tower-btn t1" data-tower="1">琴塔 80</div>
+    <div class="tower-btn t2" data-tower="2">號角塔 120</div>
+    <div class="tower-btn t3" data-tower="3">鈸塔 150</div>
+  </div>
+  <div id="startScreen" class="overlay">
+    <h1>音樂塔防</h1>
+    <p>敵人沿著路徑前進，放置音樂塔防禦！<br>每座塔攻擊時都會發出獨特的樂器聲音<br>點選下方塔按鈕選擇，再點選空地放置<br>消滅敵人獲得金幣，別讓敵人到達終點！</p>
+    <button id="startBtn">開始遊戲</button>
+  </div>
+  <div id="endScreen" class="overlay hidden">
+    <h2>遊戲結束</h2>
+    <div class="stats">
+      到達波次：<b id="finalWave">1</b><br>
+      歷史最高：<b id="finalBest">0</b>
+    </div>
+    <button id="restartBtn">再來一局</button>
+  </div>
+</div>
+<script>
+const AC=window.AudioContext||window.webkitAudioContext;
+let audioCtx=null;
+function initAudio(){if(!audioCtx)audioCtx=new AC();if(audioCtx.state==='suspended')audioCtx.resume()}
+function playTowerSound(type){
+  if(!audioCtx)return;
+  const freqs=[[150,80],[523,659],[440,880],[8000,12000]];
+  const types=['sawtooth','sine','triangle','square'];
+  const f=freqs[type];
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+  o.type=types[type];o.frequency.setValueAtTime(f[0],audioCtx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(f[1],audioCtx.currentTime+.1);
+  g.gain.setValueAtTime(.12,audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.15);
+  o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.15);
+}
+const cv=document.getElementById('cv');const ctx=cv.getContext('2d');
+let W,H,TILE;
+const PATH=[{x:0,y:2},{x:3,y:2},{x:3,y:5},{x:7,y:5},{x:7,y:1},{x:10,y:1},{x:10,y:6},{x:12,y:6}];
+const TOWER_INFO=[
+  {name:'鼓塔',cost:50,range:80,damage:15,rate:1.0,color:'#f44'},
+  {name:'琴塔',cost:80,range:100,damage:10,rate:0.5,color:'#0ff'},
+  {name:'號角塔',cost:120,range:120,damage:25,rate:1.5,color:'#ff0'},
+  {name:'鈸塔',cost:150,range:90,damage:8,rate:0.3,color:'#0f0'},
+];
+const game={gold:100,lives:10,wave:1,running:false,towers:[],enemies:[],projectiles:[],selectedTower:-1,spawnTimer:0,enemiesToSpawn:0,lastTime:0,waveActive:false};
+const goldEl=document.getElementById('gold');
+const livesEl=document.getElementById('lives');
+const waveEl=document.getElementById('wave');
+let best=0;
+try{best=parseInt(localStorage.getItem('musicTD_best')||'0')}catch(e){}
+document.getElementById('best').textContent=best;
+
+function resize(){
+  W=cv.clientWidth;H=cv.clientHeight;
+  cv.width=W*devicePixelRatio;cv.height=H*devicePixelRatio;
+  ctx.scale(devicePixelRatio,devicePixelRatio);
+  TILE=Math.min(W/13,H/8);
+}
+window.addEventListener('resize',resize);
+
+function isOnPath(gx,gy){
+  for(let i=0;i<PATH.length-1;i++){
+    const a=PATH[i],b=PATH[i+1];
+    if(a.x===b.x){
+      if(gx===a.x&&gy>=Math.min(a.y,b.y)&&gy<=Math.max(a.y,b.y))return true;
+    }else{
+      if(gy===a.y&&gx>=Math.min(a.x,b.x)&&gx<=Math.max(a.x,b.x))return true;
+    }
+  }
+  return false;
+}
+function pathPosition(progress){
+  let total=0;
+  const segs=[];
+  for(let i=0;i<PATH.length-1;i++){
+    const len=Math.abs(PATH[i+1].x-PATH[i].x)+Math.abs(PATH[i+1].y-PATH[i].y);
+    segs.push(len);total+=len;
+  }
+  let target=progress*total;
+  for(let i=0;i<segs.length;i++){
+    if(target<=segs[i]){
+      const a=PATH[i],b=PATH[i+1];
+      const t=target/segs[i];
+      return{x:(a.x+(b.x-a.x)*t+.5)*TILE,y:(a.y+(b.y-a.y)*t+.5)*TILE};
+    }
+    target-=segs[i];
+  }
+  return{x:(PATH[PATH.length-1].x+.5)*TILE,y:(PATH[PATH.length-1].y+.5)*TILE};
+}
+function spawnEnemy(){
+  const hp=30+game.wave*15;
+  game.enemies.push({progress:0,hp,maxHp:hp,speed:.0008+game.wave*.0001,reward:10+game.wave*2});
+}
+function placeTower(gx,gy){
+  if(game.selectedTower<0)return;
+  const info=TOWER_INFO[game.selectedTower];
+  if(game.gold<info.cost)return;
+  if(isOnPath(gx,gy))return;
+  if(game.towers.some(t=>t.gx===gx&&t.gy===gy))return;
+  game.gold-=info.cost;
+  game.towers.push({gx,gy,type:game.selectedTower,cooldown:0,...info});
+  goldEl.textContent=game.gold;
+  playTowerSound(game.selectedTower);
+}
+function loop(t){
+  if(!game.running)return;
+  const dt=Math.min((t-game.lastTime)/1000,.05);
+  game.lastTime=t;
+  if(game.waveActive&&game.enemiesToSpawn>0){
+    game.spawnTimer+=dt;
+    if(game.spawnTimer>=.8){game.spawnTimer=0;spawnEnemy();game.enemiesToSpawn--;}
+  }
+  for(let i=game.enemies.length-1;i>=0;i--){
+    const e=game.enemies[i];
+    e.progress+=e.speed*dt*1000;
+    if(e.progress>=1){
+      game.enemies.splice(i,1);game.lives--;livesEl.textContent=game.lives;
+      if(game.lives<=0){endGame();return;}
+      continue;
+    }
+    if(e.hp<=0){
+      game.enemies.splice(i,1);game.gold+=e.reward;goldEl.textContent=game.gold;
+    }
+  }
+  for(const tower of game.towers){
+    tower.cooldown-=dt;
+    if(tower.cooldown<=0){
+      const tx=(tower.gx+.5)*TILE,ty=(tower.gy+.5)*TILE;
+      let target=null,maxProg=-1;
+      for(const e of game.enemies){
+        const pos=pathPosition(e.progress);
+        const d=Math.sqrt((pos.x-tx)**2+(pos.y-ty)**2);
+        if(d<tower.range&&e.progress>maxProg){maxProg=e.progress;target=e;}
+      }
+      if(target){
+        tower.cooldown=tower.rate;
+        const pos=pathPosition(target.progress);
+        game.projectiles.push({x:tx,y:ty,tx:pos.x,ty:pos.y,target,damage:tower.damage,color:tower.color,speed:300});
+        playTowerSound(tower.type);
+      }
+    }
+  }
+  for(let i=game.projectiles.length-1;i>=0;i--){
+    const p=game.projectiles[i];
+    if(!p.target||p.target.hp<=0){game.projectiles.splice(i,1);continue;}
+    const pos=pathPosition(p.target.progress);
+    p.tx=pos.x;p.ty=pos.y;
+    const dx=p.tx-p.x,dy=p.ty-p.y;
+    const d=Math.sqrt(dx*dx+dy*dy);
+    if(d<10){
+      p.target.hp-=p.damage;
+      game.projectiles.splice(i,1);
+    }else{
+      p.x+=dx/d*p.speed*dt;p.y+=dy/d*p.speed*dt;
+    }
+  }
+  if(game.waveActive&&game.enemiesToSpawn===0&&game.enemies.length===0){
+    game.waveActive=false;
+    game.wave++;waveEl.textContent=game.wave;
+    game.gold+=50;goldEl.textContent=game.gold;
+    setTimeout(()=>{if(game.running){game.enemiesToSpawn=5+game.wave*2;game.waveActive=true;game.spawnTimer=0;}},2000);
+  }
+  draw();
+  requestAnimationFrame(loop);
+}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#0d1a0d';ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(255,255,255,.05)';
+  for(let x=0;x<=13;x++){ctx.beginPath();ctx.moveTo(x*TILE,0);ctx.lineTo(x*TILE,H);ctx.stroke();}
+  for(let y=0;y<=8;y++){ctx.beginPath();ctx.moveTo(0,y*TILE);ctx.lineTo(W,y*TILE);ctx.stroke();}
+  ctx.strokeStyle='#5a4a2a';ctx.lineWidth=TILE*.7;ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.beginPath();
+  ctx.moveTo((PATH[0].x+.5)*TILE,(PATH[0].y+.5)*TILE);
+  for(let i=1;i<PATH.length;i++)ctx.lineTo((PATH[i].x+.5)*TILE,(PATH[i].y+.5)*TILE);
+  ctx.stroke();
+  ctx.fillStyle='#0f0';ctx.beginPath();ctx.arc((PATH[0].x+.5)*TILE,(PATH[0].y+.5)*TILE,10,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#f44';ctx.beginPath();ctx.arc((PATH[PATH.length-1].x+.5)*TILE,(PATH[PATH.length-1].y+.5)*TILE,10,0,Math.PI*2);ctx.fill();
+  for(const tower of game.towers){
+    const x=(tower.gx+.5)*TILE,y=(tower.gy+.5)*TILE;
+    ctx.fillStyle=tower.color;ctx.shadowColor=tower.color;ctx.shadowBlur=10;
+    ctx.beginPath();ctx.arc(x,y,TILE*.35,0,Math.PI*2);ctx.fill();
+    ctx.shadowBlur=0;
+    ctx.fillStyle='#fff';ctx.font='bold 10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText(tower.name[0],x,y);
+  }
+  for(const e of game.enemies){
+    const pos=pathPosition(e.progress);
+    ctx.fillStyle='#f80';ctx.shadowColor='#f80';ctx.shadowBlur=8;
+    ctx.beginPath();ctx.arc(pos.x,pos.y,12,0,Math.PI*2);ctx.fill();
+    ctx.shadowBlur=0;
+    ctx.fillStyle='#333';ctx.fillRect(pos.x-15,pos.y-20,30,4);
+    ctx.fillStyle='#0f0';ctx.fillRect(pos.x-15,pos.y-20,30*(e.hp/e.maxHp),4);
+  }
+  for(const p of game.projectiles){
+    ctx.fillStyle=p.color;ctx.shadowColor=p.color;ctx.shadowBlur=6;
+    ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);ctx.fill();
+    ctx.shadowBlur=0;
+  }
+}
+function startGame(){
+  initAudio();resize();
+  game.gold=100;game.lives=10;game.wave=1;game.towers=[];game.enemies=[];game.projectiles=[];
+  game.selectedTower=-1;game.enemiesToSpawn=7;game.waveActive=true;game.spawnTimer=0;
+  goldEl.textContent=100;livesEl.textContent=10;waveEl.textContent=1;
+  document.querySelectorAll('.tower-btn').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('endScreen').classList.add('hidden');
+  game.running=true;game.lastTime=performance.now();
+  requestAnimationFrame(loop);
+}
+function endGame(){
+  game.running=false;
+  if(game.wave>best){best=game.wave;try{localStorage.setItem('musicTD_best',best)}catch(e){}}
+  document.getElementById('best').textContent=best;
+  document.getElementById('finalWave').textContent=game.wave;
+  document.getElementById('finalBest').textContent=best;
+  document.getElementById('endScreen').classList.remove('hidden');
+}
+document.getElementById('startBtn').onclick=startGame;
+document.getElementById('restartBtn').onclick=startGame;
+document.querySelectorAll('.tower-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    game.selectedTower=parseInt(b.dataset.tower);
+    document.querySelectorAll('.tower-btn').forEach(x=>x.classList.remove('selected'));
+    b.classList.add('selected');
+  });
+});
+cv.addEventListener('pointerdown',e=>{
+  if(!game.running)return;
+  e.preventDefault();initAudio();
+  const rect=cv.getBoundingClientRect();
+  const gx=Math.floor((e.clientX-rect.left)/TILE);
+  const gy=Math.floor((e.clientY-rect.top)/TILE);
+  placeTower(gx,gy);
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.running)game.running=false;});
+resize();draw();
+</script>
+</body>
+</html>

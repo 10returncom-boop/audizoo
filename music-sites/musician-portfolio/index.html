@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://audizoo.com/music-sites/musician-portfolio/"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:site_name" content="Audizoo"/>
+    <meta property="og:image" content="https://audizoo.com/assets/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <link rel="icon" type="image/x-icon" href="https://audizoo.com/favicon.svg"/>
+    <meta name="theme-color" content="#1a1a2e"/>
+  <meta name="description" content="陳亦豐個人網站｜陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家">
+<link rel="canonical" href="index.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="陳亦豐個人網站｜陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家">
+<meta property="og:description" content="陳亦豐個人網站｜陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="陳亦豐個人網站｜陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家">
+<meta name="twitter:description" content="陳亦豐個人網站｜陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+<!-- ANTI-COPY-PROTECT -->
+<style>
+/* ===== 防選取、防拖拽 ===== */
+html, body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
+a { -webkit-user-drag: none; user-drag: none; }
+/* 允許表單輸入框可選取 */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+/* 防列印 */
+@media print {
+  body { display: none !important; }
+  html::after {
+    content: "本頁面禁止列印";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+  }
+}
+img{max-width:100%;height:auto}
+</style>
+<script>
+(function(){
+  'use strict';
+  
+  /* ===== 禁用右鍵選單 ===== */
+  return false;
+  });
+  
+  /* ===== 禁用複製、剪下、貼上 ===== */
+  ['copy','cut','paste'].forEach(function(evt){
+    document.addEventListener(evt, function(e){
+      e.preventDefault();
+      return false;
+    });
+  });
+  
+  /* ===== 禁用選取 ===== */
+  document.addEventListener('selectstart', function(e){
+    if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  /* ===== 禁用拖拽 ===== */
+  document.addEventListener('dragstart', function(e){
+    e.preventDefault();
+    return false;
+  });
+  
+  /* ===== 禁用鍵盤快捷鍵 ===== */
+  document.addEventListener('keydown', function(e){
+    var key = e.key || e.keyCode;
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    
+    // F12 開發者工具
+    if(key === 'F12' || e.keyCode === 123){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+U 查看原始碼
+    if(ctrl && (key === 'u' || key === 'U' || e.keyCode === 85)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+S 另存新檔
+    if(ctrl && (key === 's' || key === 'S' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+C 複製
+    if(ctrl && (key === 'c' || key === 'C' || e.keyCode === 67)){
+      if(e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable){
+        e.preventDefault();
+        return false;
+      }
+    }
+    
+    // Ctrl+X 剪下
+    if(ctrl && (key === 'x' || key === 'X' || e.keyCode === 88)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+P 列印
+    if(ctrl && (key === 'p' || key === 'P' || e.keyCode === 80)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+I / J / C 開發者工具
+    if(ctrl && shift && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+K (Firefox 主控台)
+    if(ctrl && shift && (key === 'K' || key === 'k' || e.keyCode === 75)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Ctrl+Shift+S (另存)
+    if(ctrl && shift && (key === 'S' || key === 's' || e.keyCode === 83)){
+      e.preventDefault();
+      return false;
+    }
+    
+    // Alt+F4 關閉視窗(無法完全阻止，但可攔截功能鍵)
+    // Ctrl+W 關閉分頁(無法完全阻止)
+    
+  });
+  
+  /* ===== 禁用圖片另存 ===== */
+  return false;
+    }
+  });
+  
+  /* ===== 偵測開發者工具開啟(簡易版) ===== */
+  var devtoolsOpen = false;
+  var threshold = 160;
+  setInterval(function(){
+    var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+    if(widthThreshold || heightThreshold){
+      if(!devtoolsOpen){
+        devtoolsOpen = true;
+        // 可選擇：顯示提示或重新導向
+        // alert('請勿使用開發者工具');
+      }
+    } else {
+      devtoolsOpen = false;
+    }
+  }, 1000);
+  
+})();
+</script>
+
+<style>
+
+
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家",
+ "url": "index.html"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "首頁",
+   "item": "index.html"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "陳亦豐個人網站｜陳亦豐 | 二胡·鋼琴·作曲 三棲青年音樂家",
+   "item": "index.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<!-- Top Header Nav -->
+<header style="position:sticky;top:0;z-index:99998;background:linear-gradient(135deg,#4f46e5,#7c3aed);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.15);font-family:'Microsoft JhengHei',sans-serif">
+  <div style="display:flex;gap:8px;align-items:center">
+    
+    
+  </div>
+  <div style="color:rgba(255,255,255,.8);font-size:12px">
+    首頁 › <span id="bc-cat">外部移入</span> › <span id="bc-page" style="color:#fff;font-weight:600">578_bio_陳亦豐_V2</span>
+  </div>
+</header>
+<!-- /Top Header Nav -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="auto-hero-banner" style="background-image: url('https://aka.doubaocdn.com/s/nZYIlRt9rW'); background-size: cover; background-position: center; min-height: 50vh; display: flex; align-items: center; justify-content: center; position: relative; margin-top: 52px;">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 100%);"></div>
+  <div style="position:relative;z-index:2;text-align:center;color:#fff;padding:40px 20px;">
+    <h1 style="font-size:clamp(28px,5vw,56px);font-weight:900;margin-bottom:12px;text-shadow:0 2px 20px rgba(0,0,0,.5);">陳亦豐個人網站</h1>
+  </div>
+</section>
+
+<div class="page-container">
+
+  <!-- 統計數據 -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">雙碩士</div>
+      <div class="stat-label"><i class="fas fa-graduation-cap"></i> 作曲+國樂演奏</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">30+</div>
+      <div class="stat-label"><i class="fas fa-trophy"></i> 得獎記錄</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">50+</div>
+      <div class="stat-label"><i class="fas fa-microphone-alt"></i> 音樂會演出</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3棲</div>
+      <div class="stat-label"><i class="fas fa-music"></i> 二胡·鋼琴·作曲</div>
+    </div>
+  </div>
+
+  <!-- 關於我簡介 -->
+  <h2 class="section-title"><i class="fas fa-user"></i>關於陳亦豐</h2>
+  <p class="section-subtitle">一位用音符說故事的青年音樂家</p>
+
+  <div class="card" style="margin-bottom: 40px;">
+    <div style="display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <p style="font-size: 1.05rem; line-height: 2; color: var(--text); margin-bottom: 16px;">
+          <strong style="color: var(--primary);">陳亦豐</strong>，2003年出生，臺灣新生代國樂領域跨界融合的代表性人物之一。
+          八歲啟蒙音樂，先後學習鋼琴、小提琴，十歲師承劉瓊炫老師習二胡，從此與國樂結下不解之緣。
+        </p>
+        <p style="font-size: 1.05rem; line-height: 2; color: var(--text); margin-bottom: 16px;">
+          就讀國立臺南藝術大學國樂系七年一貫制，主修二胡，副修鋼琴與作曲。
+          2025年取得<strong style="color: var(--gold-dark);">作曲碩士、國樂演奏碩士雙碩士學位</strong>，
+          同年考取臺北藝術大學音樂所作曲組、臺灣師範大學表演藝術研究所鋼琴合作組及音樂所作曲組雙榜。
+        </p>
+        <p style="font-size: 1.05rem; line-height: 2; color: var(--text);">
+          曾任南藝大民族管絃樂團首席、桃園青少年國樂團首席，演出足跡遍及葡萄牙、法國、新加坡、廈門等海內外舞臺。
+          原創作品《影中火》完成世界首演，獲得現場觀眾與業內人士的一致好評。
+        </p>
+      </div>
+      <div style="min-width: 280px; flex-shrink: 0;">
+        <div style="background: linear-gradient(135deg, var(--primary), var(--gold-dark)); border-radius: 16px; padding: 28px; color: #fff;">
+          <h3 style="margin-bottom: 18px; color: var(--gold-light);"><i class="fas fa-star"></i> 核心標籤</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">二胡演奏</span>
+            <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">鋼琴合作</span>
+            <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">樂曲創作</span>
+            <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">樂團首席</span>
+            <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">雙碩士</span>
+            <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">國際演出</span>
+            <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">得獎無數</span>
+            <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">青年才俊</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 三大專業 -->
+  <h2 class="section-title"><i class="fas fa-music"></i>三大專業領域</h2>
+  <p class="section-subtitle">二胡、鋼琴、作曲，全方位的音樂藝術修養</p>
+
+  <div class="grid-3" style="margin-bottom: 40px;">
+    <div class="card" style="text-align: center; border-top: 4px solid var(--primary);">
+      <div style="width: 70px; height: 70px; margin: 0 auto 16px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.8rem;">
+        <i class="fas fa-guitar"></i>
+      </div>
+      <h3 style="color: var(--primary); margin-bottom: 10px;">二胡演奏</h3>
+      <p style="color: var(--text-light); line-height: 1.9; font-size: 0.95rem;">
+        十歲啟蒙，師承劉瓊炫、李晉龍、孟美英、蔡鎮宇等名師。
+        精通高胡、二胡、中胡多種胡琴樂器，全國學生音樂比賽第一名得主。
+      </p>
+    </div>
+    <div class="card" style="text-align: center; border-top: 4px solid var(--gold);">
+      <div style="width: 70px; height: 70px; margin: 0 auto 16px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.8rem;">
+        <i class="fas fa-keyboard"></i>
+      </div>
+      <h3 style="color: var(--primary); margin-bottom: 10px;">鋼琴合作</h3>
+      <p style="color: var(--text-light); line-height: 1.9; font-size: 0.95rem;">
+        八歲習鋼琴，副修鋼琴專業。累積數十場鋼琴伴奏實踐，
+        將鋼琴的和聲支撐與國樂器的獨特音色完美融合。
+      </p>
+    </div>
+    <div class="card" style="text-align: center; border-top: 4px solid var(--primary-light);">
+      <div style="width: 70px; height: 70px; margin: 0 auto 16px; background: linear-gradient(135deg, var(--primary-light), var(--gold)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.8rem;">
+        <i class="fas fa-pen-fancy"></i>
+      </div>
+      <h3 style="color: var(--primary); margin-bottom: 10px;">樂曲創作</h3>
+      <p style="color: var(--text-light); line-height: 1.9; font-size: 0.95rem;">
+        作曲碩士，臺南學生音樂比賽樂曲創作大專A組第一名。
+        原創作品《影中火》世界首演，融合傳統國樂與現代作曲技法。
+      </p>
+    </div>
+  </div>
+
+  <!-- 精選成就 -->
+  <h2 class="section-title"><i class="fas fa-award"></i>精選成就</h2>
+  <p class="section-subtitle">年輕即得獎無數，每一項都是實力的證明</p>
+
+  <div class="grid-2" style="margin-bottom: 40px;">
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-trophy"></i></div>
+      <div class="award-content">
+        <div class="award-title">108年度全國學生音樂比賽 二胡/高中A組 第一名</div>
+        <div class="award-year">2019年 · 全國性比賽</div>
+        <div class="award-desc">臺灣學生音樂比賽最高殿堂，以精湛的二胡演奏技藝奪得第一名。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-medal"></i></div>
+      <div class="award-content">
+        <div class="award-title">113年度臺南學生音樂比賽 樂曲創作/大專A組 第一名</div>
+        <div class="award-year">2024年 · 作曲類</div>
+        <div class="award-desc">以原創作品在樂曲創作領域脫穎而出，展現作曲才華。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-star"></i></div>
+      <div class="award-content">
+        <div class="award-title">首屆海峽兩岸民族器樂大賽 二胡獨奏 第一名</div>
+        <div class="award-year">2019年 · 兩岸交流比賽</div>
+        <div class="award-desc">在兩岸音樂交流平臺上展現實力，獲得評審一致肯定。</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div class="award-content">
+        <div class="award-title">作曲碩士 + 國樂演奏碩士 雙碩士學位</div>
+        <div class="award-year">2025年 · 國立臺南藝術大學</div>
+        <div class="award-desc">同時取得作曲與國樂演奏兩個碩士學位，展現全方位音樂專業。</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <a href="awards.html" style="display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: #fff; padding: 14px 36px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.05rem; transition: all 0.3s;">
+      <i class="fas fa-trophy"></i>檢視全部 30+ 得獎記錄
+    </a>
+  </div>
+
+</div>
+
+<!-- =====  Contact Section ===== -->
+<section class="unified-contact" style="max-width:780px;margin:48px auto;padding:32px 28px;background:#f8f9fa;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+  <h2 style="font-size:26px;font-weight:900;margin-bottom:6px;color:#0a0a0a;letter-spacing:-.5px;"></h2>
+  <p style="color:#666;margin-bottom:22px;font-size:14px;">有任何問題、合作需求或網站建議，歡迎填寫表單或直接聯絡</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
+    <div style="flex:1;min-width:180px;padding:16px 12px;background:#fff;border-radius:10px;text-align:center;border:1px solid #e5e7eb;">
+      <div style="font-size:28px;margin-bottom:6px;">🟢</div>
+      <div style="font-weight:800;font-size:13px;color:#0a0a0a;">Line ID</div>
+      <div style="color:#555;font-size:15px;font-weight:600;margin-top:2px;">331.today</div>
+    </div>
+    <div style="flex:1;min-width:180px;padding:16px 12px;background:#fff;border-radius:10px;text-align:center;border:1px solid #e5e7eb;">
+      <div style="font-size:28px;margin-bottom:6px;">📞</div>
+      <div style="font-weight:800;font-size:13px;color:#0a0a0a;">聯絡電話</div>
+      <div style="color:#555;font-size:15px;font-weight:600;margin-top:2px;">0968222201</div>
+    </div>
+    <div style="flex:1;min-width:180px;padding:16px 12px;background:#fff;border-radius:10px;text-align:center;border:1px solid #e5e7eb;">
+      <div style="font-size:28px;margin-bottom:6px;">🔴👤</div>
+      <div style="font-weight:800;font-size:13px;color:#0a0a0a;">聯絡人</div>
+      <div style="color:#555;font-size:15px;font-weight:600;margin-top:2px;">張書欣</div>
+    </div>
+  </div>
+  <form class="unified-contact-form" onsubmit="return _sendContactForm(this);" style="display:flex;flex-direction:column;gap:10px;">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <input type="text" name="cf_name" placeholder="您的姓名" required style="flex:1;min-width:160px;padding:11px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0a0a0a'" onblur="this.style.borderColor='#d1d5db'">
+      <input type="text" name="cf_contact" placeholder="聯絡電話或 Email" required style="flex:1;min-width:160px;padding:11px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none;transition:border .2s;" onfocus="this.style.borderColor='#0a0a0a'" onblur="this.style.borderColor='#d1d5db'">
+    </div>
+    <textarea name="cf_message" placeholder="請輸入您的訊息..." rows="4" required style="padding:11px 14px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;outline:none;resize:vertical;transition:border .2s;font-family:inherit;" onfocus="this.style.borderColor='#0a0a0a'" onblur="this.style.borderColor='#d1d5db'"></textarea>
+    <input type="hidden" name="cf_source" value="陳亦豐個人網站">
+    <button type="submit" style="padding:13px;background:#0a0a0a;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:800;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#0a0a0a'">送出訊息</button>
+    <p style="font-size:11px;color:#999;text-align:center;margin:0;">送出後將開啟您的電子郵件程式，內容自動帶入</p>
+  </form>
+</section>
+<script>
+function _sendContactForm(f){
+  var n=f.cf_name.value, c=f.cf_contact.value, m=f.cf_message.value, s=f.cf_source.value;
+  var body='姓名：'+n+'%0D%0A聯絡：'+c+'%0D%0A來源網站：'+s+'%0D%0A%0D%0A訊息內容：%0D%0A'+m;
+  window.location.href='mailto:?subject='+encodeURIComponent('網站聯絡表單 - '+n+' ('+s+')')+'&body='+body;
+  return false;
+}
+</script>
+<!-- ===== / ===== -->
+
+
+<!-- ===== 互動體驗專區 ===== -->
+<section id="interactive-hub" style="max-width:1200px;margin:48px auto;padding:32px 24px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));border-radius:16px;border:1px solid rgba(99,102,241,0.15);">
+  <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;color:var(--ink,#1a1a2e);">
+    <i class="fas fa-gamepad" style="color:#6366f1;"></i> 互動體驗專區
+    <span style="font-size:14px;font-weight:400;color:#888;">Interactive Experience Zone</span>
+  </h2>
+  <p style="color:#666;margin-bottom:20px;font-size:14px;">10種互動遊戲與體驗式閱讀，等你來探索！</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;">
+    <a href="interactive/01_quiz.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(99,102,241,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-question-circle" style="color:#6366f1;"></i> 知識小測驗
+    </a>
+    <a href="interactive/02_memory.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(236,72,153,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-clone" style="color:#ec4899;"></i> 翻牌記憶
+    </a>
+    <a href="interactive/03_timeline.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(245,158,11,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-stream" style="color:#f59e0b;"></i> 互動時間軸
+    </a>
+    <a href="interactive/04_scroll.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(16,185,129,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-scroll" style="color:#10b981;"></i> 滾動敘事
+    </a>
+    <a href="interactive/05_explorer.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(14,165,233,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-map-marked-alt" style="color:#0ea5e9;"></i> 點擊探索
+    </a>
+    <a href="interactive/06_puzzle.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(239,68,68,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-puzzle-piece" style="color:#ef4444;"></i> 拼圖遊戲
+    </a>
+    <a href="interactive/07_dialogue.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(139,92,246,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-comments" style="color:#8b5cf6;"></i> 對話模擬
+    </a>
+    <a href="interactive/08_fortune.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(217,119,6,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-dice" style="color:#d97706;"></i> 隨機籤詩
+    </a>
+    <a href="interactive/09_flashcards.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(5,150,105,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-id-card" style="color:#059669;"></i> 知識卡片
+    </a>
+    <a href="interactive/10_quest.html" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#fff;border-radius:10px;text-decoration:none;color:#333;font-size:13px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 16px rgba(220,38,38,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+      <i class="fas fa-trophy" style="color:#dc2626;"></i> 闖關解謎
+    </a>
+  </div>
+  <div style="margin-top:16px;text-align:center;">
+    <a href="interactive/index.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 28px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border-radius:50px;text-decoration:none;font-size:14px;font-weight:700;box-shadow:0 4px 16px rgba(99,102,241,0.3);">
+      <i class="fas fa-th-large"></i> 進入互動專區入口
+    </a>
+  </div>
+</section>
+
+
+
+<!-- UNIFIED FOOTER -->
+<style>
+.unified-footer{background:linear-gradient(135deg,#1e293b,#334155);color:#cbd5e1;padding:14px 24px;font-size:12px;font-family:"Microsoft JhengHei","PingFang TC",sans-serif;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 20px;border-top:3px solid;border-image:linear-gradient(90deg,#6366f1,#ec4899,#22c55e) 1;margin-top:20px}
+.unified-footer .uf-item{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.unified-footer .uf-label{color:#64748b;font-weight:600}
+.unified-footer .uf-value{color:#e2e8f0;font-weight:700}
+.unified-footer .uf-sep{color:#475569}
+.unified-footer a{color:#7dd3fc;text-decoration:none;transition:color .2s}
+.unified-footer a:hover{color:#fff;text-decoration:underline}
+@media print{.unified-footer{display:none!important}}
+</style>
+<footer class="unified-footer"><div class="unified-credit">規劃 | 設計 | 開發 | 整合行銷 : 舒安境工作室 /張書欣 Line: 331.today Tel: 0968-222201 <a href="mailto:10return.com@gmail.com">10return.com@gmail.com</a></div></footer>
+<!-- /UNIFIED FOOTER -->
+
+<script>
+
+
+</script>
+
+<div class="site-credit-bar-zhangshuxin" style="background:#2c2418;color:#f0e6d2;text-align:center;padding:10px 16px;font-size:13px;font-family:'Microsoft JhengHei',sans-serif;margin-top:24px;line-height:1.7">
+  規劃設計開發：<b style="color:#e0b56a">張書欣</b>　·　Line：<b style="color:#e0b56a">331.today</b>　·　📱 0968-222201
+</div>
+</body>
+</html>
