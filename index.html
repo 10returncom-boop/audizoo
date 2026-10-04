@@ -91,7 +91,7 @@ body{
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-h1,h2,h3,.serif{font-family:var(--serif)}
+h1,h2,h3,.serif{font-family:var(--sans)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 .sec{max-width:1120px;margin:0 auto;padding:72px 24px}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.22em;color:var(--accent);font-weight:500;margin-bottom:18px}
@@ -102,7 +102,7 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 /* ---------- 頂部列 ---------- */
 .topbar{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .topbar-in{display:flex;align-items:center;gap:14px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:900;font-size:20px;letter-spacing:.02em}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:900;font-size:20px;letter-spacing:.02em}
 .brand .logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center}
 .brand .logo svg{width:22px;height:22px}
 .brand small{font-family:var(--sans);font-weight:400;font-size:11px;color:var(--mute);letter-spacing:.14em;display:block;line-height:1}
@@ -151,8 +151,8 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:min(660px,86vh);display:flex;align-items:center;color:var(--ink);overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url(assets/hero.png) center/cover no-repeat;z-index:0}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(227,240,250,.55),rgba(227,240,250,.28) 55%,var(--bg) 100%)}
-[data-theme="dark"] .hero::before{background:linear-gradient(180deg,rgba(33,29,25,.62),rgba(33,29,25,.35) 55%,var(--bg) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(227,240,250,0) 72%,var(--bg) 100%),linear-gradient(90deg,rgba(227,240,250,.9),rgba(227,240,250,.55) 62%,rgba(46,42,37,.5))}
+[data-theme="dark"] .hero::before{background:linear-gradient(180deg,rgba(33,29,25,0) 72%,var(--bg) 100%),linear-gradient(90deg,rgba(33,29,25,.08),rgba(33,29,25,.35) 62%,rgba(33,29,25,.82))}
 .hero-in{position:relative;z-index:2;padding:64px 24px;max-width:1120px;margin:0 auto;width:100%}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--surface) 78%,transparent);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:13px;color:var(--ink-soft);margin-bottom:22px;box-shadow:var(--shadow)}
 .hero-badge b{color:var(--accent);font-weight:600}
@@ -167,7 +167,7 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 .btn-ghost{background:var(--sky);color:#000;border:1px solid var(--sky-2)}
 .btn-ghost:hover{border-color:var(--sky-2);color:#000;transform:translateY(-2px)}
 .hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
-.stat b{font-family:var(--serif);font-size:26px;font-weight:700;display:block;color:var(--ink)}
+.stat b{font-family:var(--sans);font-size:26px;font-weight:700;display:block;color:var(--ink)}
 .stat span{font-size:13px;color:var(--mute)}
 /* ---------- 三種玩法 ---------- */
 .way-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
@@ -177,7 +177,7 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 .way .ic svg{width:24px;height:24px}
 .way h3{font-size:18px;margin-bottom:8px}
 .way p{font-size:14px;color:var(--ink-soft);line-height:1.7}
-.way .num-stamp{position:absolute;top:16px;right:20px;font-family:var(--serif);font-size:44px;font-weight:900;color:var(--line);opacity:.8}
+.way .num-stamp{position:absolute;top:16px;right:20px;font-family:var(--sans);font-size:44px;font-weight:900;color:var(--line);opacity:.8}
 .ic-a{background:var(--accent-soft);color:var(--accent)}
 .ic-b{background:var(--sage-soft);color:var(--sage)}
 .ic-c{background:var(--mist-soft);color:var(--mist)}
@@ -192,16 +192,16 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 .flag:first-of-type{margin-top:44px}
 .flag + .flag{margin-top:0}
 .flag + .down{position:relative;display:grid;place-items:center;height:58px}
-.flag + .down::after{content:"↓";font-family:var(--serif);font-size:22px;color:var(--accent);background:var(--surface);width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow)}
+.flag + .down::after{content:"↓";font-family:var(--sans);font-size:22px;color:var(--accent);background:var(--surface);width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow)}
 .flag-media{position:relative;overflow:hidden}
 .flag-media img{width:100%;height:100%;object-fit:cover;min-height:230px}
-.flag-media .num{position:absolute;top:14px;left:14px;font-family:var(--serif);font-weight:900;font-size:16px;color:#fff;background:rgba(46,42,37,.62);padding:6px 12px;border-radius:10px;letter-spacing:.05em;backdrop-filter:blur(4px);z-index:3}
+.flag-media .num{position:absolute;top:14px;left:14px;font-family:var(--sans);font-weight:900;font-size:16px;color:#fff;background:rgba(46,42,37,.62);padding:6px 12px;border-radius:10px;letter-spacing:.05em;backdrop-filter:blur(4px);z-index:3}
 .flag-media .flagtag{position:absolute;top:14px;right:14px;font-size:12.5px;color:var(--ink);background:color-mix(in srgb,var(--surface) 86%,transparent);padding:5px 11px;border-radius:999px;backdrop-filter:blur(4px);box-shadow:var(--shadow);z-index:3;font-weight:600}
 .flag-media .play{position:absolute;bottom:14px;right:14px;width:44px;height:44px;border-radius:50%;background:var(--sky);color:#000;border:none;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.16);transition:.25s;z-index:3}
 .flag-media .play:hover{transform:scale(1.1)}
 .flag-media .play svg{width:20px;height:20px}
 .flag-body{padding:30px 32px;display:flex;flex-direction:column;gap:14px;justify-content:center}
-.flag-body .stepno{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:600}
+.flag-body .stepno{font-family:var(--sans);font-size:13px;letter-spacing:.2em;color:var(--accent);font-weight:600}
 .flag-body h3{font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.2}
 .flag-body .tagline{font-size:15.5px;color:var(--accent);font-weight:600}
 .flag-body p{font-size:14.5px;color:var(--ink-soft);line-height:1.8}
@@ -235,7 +235,7 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 .about-copy p b{color:var(--ink);font-weight:600}
 .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fact{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:18px}
-.fact b{font-family:var(--serif);font-size:26px;color:var(--accent);display:block;line-height:1.1}
+.fact b{font-family:var(--sans);font-size:26px;color:var(--accent);display:block;line-height:1.1}
 .fact span{font-size:13px;color:var(--mute)}
 .about-list{list-style:none;margin-top:6px;display:grid;gap:10px}
 .about-list li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--ink-soft)}
@@ -253,11 +253,13 @@ h1,h2,h3,.serif{font-family:var(--serif)}
 .contact-note{background:var(--sage-soft);border:1px solid color-mix(in srgb,var(--sage) 40%,transparent);border-radius:22px;padding:26px;font-size:14px;color:var(--ink-soft);line-height:1.8}
 .contact-note h3{color:var(--sage);font-size:18px;margin-bottom:10px}
 
-/* ---------- 底部 CTA ---------- */
-.final-cta{background:linear-gradient(120deg,var(--accent-soft),var(--sun-soft));border:1px solid var(--line);border-radius:28px;padding:clamp(30px,5vw,56px);text-align:center;margin-top:20px}
-.final-cta h2{font-size:clamp(24px,4vw,34px);font-weight:700;line-height:1.2}
-.final-cta-img{width:100%;max-width:680px;height:auto;border-radius:20px;margin:0 auto 26px;display:block;box-shadow:var(--shadow)}
-.final-cta p{color:var(--ink-soft);margin:14px auto 26px;max-width:44ch;font-size:15px}
+/* ---------- 旗艦站頂部整合卡（圖片+CTA） ---------- */
+.journey-hero{background:linear-gradient(120deg,#E9F4E7,#CBE8CB);border:1px solid var(--line);border-radius:28px;overflow:hidden;margin-bottom:44px;text-align:center}
+.journey-banner{width:100%;height:auto;display:block;border:0}
+.journey-hero-body{padding:clamp(26px,4vw,44px) clamp(20px,4vw,44px)}
+.journey-hero-body h2{font-size:clamp(28px,4.6vw,42px);font-weight:700;line-height:1.2}
+.journey-hero-body p{color:var(--ink);margin:16px auto 28px;max-width:44ch;font-size:17px;line-height:1.7}
+.journey-hero-body .btn{font-size:16px;padding:15px 28px}
 
 /* ---------- Footer ---------- */
 footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:72px}
@@ -331,6 +333,14 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:72p
   </div>
 </section>
 <section class="journey sec" id="journey">
+  <div class="journey-hero rv">
+    <img class="journey-banner" src="assets/cta-journey.jpg" alt="用耳朵去冒險的音樂旅程水彩插畫">
+    <div class="journey-hero-body">
+      <h2>用耳朵去冒險</h2>
+      <p>從古樂聲到聲紋辨識，五座旗艦站等你依序走完。選一站開始，剩下的音樂會自己帶路。</p>
+      <a class="btn btn-primary" href="#journey">展開音樂之旅<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
   <div class="journey-head">
     <span class="kicker">音樂之旅</span>
     <h2 class="h2">六座旗艦站，一次依序串聯的音樂旅程</h2>
@@ -438,14 +448,6 @@ footer{background:var(--bg-soft);border-top:1px solid var(--line);margin-top:72p
     </div>
   </article>
 </section>
-<section class="sec">
-  <div class="final-cta rv">
-    <img class="final-cta-img" src="assets/cta-journey.jpg" alt="用耳朵去冒險的音樂旅程水彩插畫">
-    <h2>準備好，用耳朵去冒險</h2>
-    <p>從古樂聲到聲紋辨識，五座旗艦站等你依序走完。選一站開始，剩下的音樂會自己帶路。</p>
-    <a class="btn btn-primary" href="#journey">展開音樂之旅<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  </div>
-</section>
 <footer><div class="foot-in"><div class="foot-top"><div class="foot-brand"><a class="brand" href="audizoo_about.html"><span class="logo" style="background:var(--sky)"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"><path d="M8 17V7a5 5 0 0 1 10 0v4"/><circle cx="8" cy="18" r="2"/><circle cx="18" cy="14" r="2"/></svg></span><span>audizoo 音樂動物園</span></a><p>把音樂拆成可以玩、可以看、可以找的方式，收齊多座互動網站，串成一條完整的音樂旅程。</p></div><div class="foot-drop"><button class="fd-btn" id="fdBtn" aria-label="網站地圖">網站地圖<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="fd-menu" id="fdMenu"><div class="fd-col"><h5>探索</h5><a href="index.html">首頁</a><a href="audizoo_ways.html">怎麼玩</a><a href="audizoo_journey.html">音樂之旅</a></div><div class="fd-col"><h5>認識</h5><a href="audizoo_sites.html">全部音樂站</a><a href="audizoo_about.html">關於</a><a href="audizoo_contact.html">聯絡</a></div><div class="fd-col"><h5>旗艦站</h5><a href="./zeng-hou-yi-bells/index.html">曾侯乙編鐘</a><a href="./EccentricMusicians/index.html">音樂家都很怪</a><a href="./MusicMath/index.html">音樂就是數學</a><a href="./MusicProdLab/index.html">音樂製作實驗室</a><a href="./ComposerId/index.html">用音訊找音樂家</a><a href="./MusicGames20/index.html">20 款音樂遊戲</a></div></div></div></div><div class="foot-bottom"><div class="credit">規劃 | 設計 | 開發 | 整合行銷 : 舒安境工作室 /張書欣 Line: 331.today Tel: 0968-222201 <a href="mailto:10return.com@gmail.com">10return.com@gmail.com</a></div><div style="color:var(--mute)">© audizoo 音樂動物園</div></div></div></footer>
 <style>.foot-drop{position:relative}.fd-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:14px;font-weight:600;cursor:pointer;transition:.25s var(--ease);font-family:var(--sans)}.fd-btn:hover{border-color:var(--accent);color:var(--accent)}.fd-btn svg{width:15px;height:15px;transition:.25s var(--ease)}.fd-btn.on svg{transform:rotate(180deg)}.fd-menu{position:absolute;bottom:calc(100% + 12px);right:0;z-index:960;display:none;width:min(340px,86vw);background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.16);padding:16px;font-family:var(--sans)}.fd-menu.open{display:grid;grid-template-columns:1fr 1fr;gap:14px;animation:fdIn .2s ease}@keyframes fdIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.fd-col h5{font-size:12px;color:var(--mute);font-weight:700;letter-spacing:.06em;margin-bottom:8px}.fd-col a{display:block;padding:6px 8px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:14px}.fd-col a:hover{background:var(--bg-soft);color:var(--accent)}.foot-drop .fd-col:last-child{grid-column:1/-1}.foot-drop .fd-col:last-child h5{border-top:1px solid var(--line);padding-top:12px}.foot-cols{display:none}@media(max-width:760px){.fd-menu{right:auto;left:0}}</style><style>
 /* ===== 浮動網站地圖 Popover Dropdown ===== */
@@ -543,6 +545,13 @@ function smsToggle(open){smsPop.classList.toggle("open",open);smsFab.classList.t
 /* Footer 網站地圖 dropdown */
 var fdBtn=document.getElementById("fdBtn"),fdMenu=document.getElementById("fdMenu");
 if(fdBtn&&fdMenu){fdBtn.addEventListener("click",function(e){e.stopPropagation();fdMenu.classList.toggle("open");fdBtn.classList.toggle("on",fdMenu.classList.contains("open"));});document.addEventListener("click",function(e){if(!fdMenu.contains(e.target)){fdMenu.classList.remove("open");fdBtn.classList.remove("on");}});document.addEventListener("keydown",function(e){if(e.key==="Escape"){fdMenu.classList.remove("open");fdBtn.classList.remove("on");}});}
+/* 防複製保護 */
+document.addEventListener("contextmenu",function(e){e.preventDefault();});
+document.addEventListener("copy",function(e){e.preventDefault();});
+document.addEventListener("cut",function(e){e.preventDefault();});
+document.addEventListener("selectstart",function(e){e.preventDefault();});
+document.addEventListener("dragstart",function(e){e.preventDefault();});
+document.addEventListener("keydown",function(e){if(e.ctrlKey||e.metaKey){var k=(e.key||"").toLowerCase();if(k==="c"||k==="x"||k==="s"||k==="u"||k==="p")e.preventDefault();}if(e.key==="F12")e.preventDefault();});
 })();</script>
 </body>
 </html>
