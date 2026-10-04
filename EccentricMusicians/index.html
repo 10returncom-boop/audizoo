@@ -143,6 +143,13 @@ a.chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none
 </head>
 
 <body>
+<!-- audizoo 返回導覽 + 網站地圖（右下角） -->
+<div id="audizoo-backnav" style="position:fixed;right:24px;bottom:24px;z-index:99999;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;font-family:'Noto Sans SC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;">
+<a href="javascript:history.back();" title="回上頁" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">← 回上頁</a>
+<a href="../index.html" title="返回首頁" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">返回首頁</a>
+<a href="../audizoo_sites.html" title="網站地圖（全部音樂站）" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">☰ sitemap</a>
+</div>
+
 <header class='topbar'><div class='wrap topbar-inner'><a class='brand' href='index.html'><span class='mark'><svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 18V5l12-2v13'/><circle cx='6' cy='18' r='3'/><circle cx='18' cy='16' r='3'/></svg></span>音樂家都很怪</a><ul class='topnav'><li><a href='categories/classical.html'>古典作曲家</a></li><li><a href='categories/piano.html'>鋼琴演奏家</a></li><li><a href='categories/pop.html'>流行與搖滾</a></li><li><a href='categories/jazz.html'>爵士與其他</a></li><li><a href='index.html'>全部故事</a></li></ul><div class='nav-right'><button class='icon-btn' id='themeToggle' type='button' aria-label='切換日夜主題' title='切換日夜主題'><svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z'/></svg></button></div></div></header>
 <main class='wrap'>
 <section class='hero'><img class='hero-art' src='assets/hero.webp' alt='怪咖音樂家群像插畫：大手掌鋼琴家、拖把指揮家與怪樂手的即興演出' loading='lazy'><div class='hero-inner'><span class='kicker'>史上最吸引人的音樂圈八卦</span><h1>音樂家都很怪，<br>而且越怪越偉大<span class='hl'>。</span></h1><p class='sub'>音樂家都很怪，而且越怪越偉大——貝多芬倒冰水醒腦……收錄 <b>200 位音樂家</b>，橫跨四大分類，每位都有一段真實又好笑的怪癖故事。</p></div></section>
