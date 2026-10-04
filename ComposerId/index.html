@@ -936,8 +936,14 @@ input, textarea, [contenteditable="true"] {
  ]
 }
 </script>
+<style>
+/* audizoo hero title as button + readable text */
+.hero h1{display:inline-block;background:#B6DCF6;color:#111!important;-webkit-text-fill-color:#111!important;-webkit-background-clip:initial!important;background-clip:initial!important;background-image:none!important;font-family:inherit;padding:.5em 1.1em;border-radius:999px;border:1.5px solid rgba(0,0,0,.12);box-shadow:0 6px 18px rgba(0,0,0,.2);padding:.45em 1em}
+.hero-badge{color:#1a1a2e;background:rgba(255,255,255,.8);display:inline-block;padding:.35em .9em;border-radius:10px}
+.hero p{color:#1a1a2e;background:rgba(255,255,255,.85);display:inline-block;padding:.5em 1.2em;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.14);padding:.6em 1.2em}
+</style>
 </head>
-<body style="background-image:url('assets/hero.webp');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;">
+<body>
 <!-- audizoo 返回導覽 + 網站地圖（右下角） -->
 <div id="audizoo-backnav" style="position:fixed;right:24px;bottom:24px;z-index:99999;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;font-family:'Noto Sans SC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;">
 <a href="javascript:history.back();" title="回上頁" style="display:inline-flex;align-items:center;padding:9px 15px;border-radius:999px;background:#000;color:#fff;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #000;box-shadow:0 2px 8px rgba(0,0,0,.2);">← 回上頁</a>
@@ -976,7 +982,7 @@ input, textarea, [contenteditable="true"] {
 
 
 <!-- Hero -->
-<section class="hero">
+<section class="hero" style="background-image:url('assets/hero.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
   <div class="hero-badge"><i class="fas fa-music"></i> 音訊特徵辨識</div>
   <h1>用音訊找作曲家</h1>
   <p class="subtitle">透過旋律、節奏、和聲與編曲風格，解鎖音樂背後的作曲家身分——從巴哈到鄧雨賢，跨越三百年的音樂基因圖譜</p>
